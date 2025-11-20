@@ -46,10 +46,10 @@ col_names = [
 
 df = pd.read_csv("../data/raw/agaricus-lepiota.data", names=col_names)
 
-# Drop rows with na in the target column
+# Changing the target to numeric values: poisonous=1, edible=0
 df["class_label"] = df["class"].map({"p": 1, "e": 0})
 
-# Changing the target to numeric values: poisonous=1, edible=0
+# Drop rows with na in the target column
 df = df.dropna(subset=["class_label"])
 
 df.head()
