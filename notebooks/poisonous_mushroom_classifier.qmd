@@ -2,7 +2,7 @@
 title: "Mushroom Classification"
 author: "Amar Gill, Ruth Yankson, Limor Winter, Claire Saunders"
 date: "November 18, 2025"
-# jupyter: poisonous_mushroom_classifier
+jupyter: poisonous_mushroom_classifier
 format:
   pdf: default
 execute:
@@ -89,29 +89,6 @@ df.head()
 ```
 
 ```{python}
-# rename class_label to is_poisonous for target clarity
-df.rename(columns={'class_label': 'is_poisonous'}, inplace=True)
-
-```
-
-# EDA summary
-```{python}
-# Basic information
-df.head()
-
-```
-
-```{python}
-df.info()
-
-```
-
-```{python}
-df.shape
-
-```
-
-```{python}
 df.isna().sum()
 
 ```
@@ -129,6 +106,30 @@ df.drop(columns=['stalk_root'], inplace=True)
 
 ```{python}
 df.isna().sum()
+
+```
+
+```{python}
+# rename class_label to is_poisonous for target clarity
+df.rename(columns={'class_label': 'is_poisonous'}, inplace=True)
+
+```
+
+# EDA summary
+
+```{python}
+# Basic information
+df.head()
+
+```
+
+```{python}
+df.info()
+
+```
+
+```{python}
+df.shape
 
 ```
 
@@ -340,6 +341,7 @@ def stacked_poison_chart(
     return chart
 
 ```
+
 ```{python}
 # Visualize the edible vs poisonous class proportions for each odor category
 stacked_poison_chart(1, "odor", "Odor Category", odor_map)
@@ -349,7 +351,6 @@ stacked_poison_chart(1, "odor", "Odor Category", odor_map)
 ```{python}
 # Visualize the edible vs poisonous class proportions for each gill size
 stacked_poison_chart(2, "gill_size", "Gill Size", gill_size_map)
-
 
 ```
 
