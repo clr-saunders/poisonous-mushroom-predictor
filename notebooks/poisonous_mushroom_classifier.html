@@ -117,7 +117,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<div id="a458d89f" class="cell" data-execution_count="1">
+<div id="75081dc7" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> requests</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> zipfile</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
@@ -141,7 +141,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="analysis" class="level2">
 <h2 class="anchored" data-anchor-id="analysis">Analysis</h2>
-<div id="a2664b9e" class="cell" data-execution_count="2">
+<div id="5198f0b1" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">#adding the downloaded data to the data directory by code</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co"># download data as zip and extract</span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>url <span class="op">=</span> <span class="st">"https://archive.ics.uci.edu/static/public/73/mushroom.zip"</span></span>
@@ -157,7 +157,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="data-cleaning-and-wrangling" class="level1">
 <h1>Data cleaning and wrangling</h1>
-<div id="8081eaad" class="cell" data-execution_count="3">
+<div id="0a1be992" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>col_names <span class="op">=</span> [</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">"class"</span>, <span class="st">"cap_shape"</span>, <span class="st">"cap_surface"</span>, <span class="st">"cap_color"</span>, <span class="st">"bruises"</span>, <span class="st">"odor"</span>,</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">"gill_attachment"</span>, <span class="st">"gill_spacing"</span>, <span class="st">"gill_size"</span>, <span class="st">"gill_color"</span>,</span>
@@ -177,7 +177,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Drop rows with na in the target column</span></span>
 <span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> df.dropna(subset<span class="op">=</span>[<span class="st">"class_label"</span>])</span>
 <span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>df.head()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-display" data-execution_count="3">
+<div class="cell-output cell-output-display" data-execution_count="28">
 <div>
 
 
@@ -336,17 +336,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<div id="b139d733" class="cell" data-execution_count="4">
+<div id="b9588014" class="cell" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># rename class_label to is_poisonous for target clarity</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>df.rename(columns<span class="op">=</span>{<span class="st">'class_label'</span>: <span class="st">'is_poisonous'</span>}, inplace<span class="op">=</span><span class="va">True</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="eda-summary" class="level1">
 <h1>EDA summary</h1>
-<div id="ea99d577" class="cell" data-execution_count="5">
+<div id="34377b17" class="cell" data-execution_count="5">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Basic information</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>df.head()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-display" data-execution_count="5">
+<div class="cell-output cell-output-display" data-execution_count="30">
 <div>
 
 
@@ -505,7 +505,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<div id="f67b57bc" class="cell" data-execution_count="6">
+<div id="2cce0e78" class="cell" data-execution_count="6">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>df.info()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>&lt;class 'pandas.core.frame.DataFrame'&gt;
@@ -541,15 +541,15 @@ dtypes: int64(1), object(23)
 memory usage: 1.5+ MB</code></pre>
 </div>
 </div>
-<div id="cc8cfb69" class="cell" data-execution_count="7">
+<div id="43791e93" class="cell" data-execution_count="7">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>df.shape</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-display" data-execution_count="7">
+<div class="cell-output cell-output-display" data-execution_count="32">
 <pre><code>(8124, 24)</code></pre>
 </div>
 </div>
-<div id="b852a0b3" class="cell" data-execution_count="8">
+<div id="ee178f8c" class="cell" data-execution_count="8">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>df.isna().<span class="bu">sum</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-display" data-execution_count="8">
+<div class="cell-output cell-output-display" data-execution_count="33">
 <pre><code>class                       0
 cap_shape                   0
 cap_surface                 0
@@ -577,10 +577,10 @@ is_poisonous                0
 dtype: int64</code></pre>
 </div>
 </div>
-<div id="0f312c36" class="cell" data-execution_count="9">
+<div id="daaa0968" class="cell" data-execution_count="9">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Encode "missing" (?) as NA</span></span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>(df <span class="op">==</span> <span class="st">'?'</span>).<span class="bu">sum</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-display" data-execution_count="9">
+<div class="cell-output cell-output-display" data-execution_count="34">
 <pre><code>class                          0
 cap_shape                      0
 cap_surface                    0
@@ -608,13 +608,13 @@ is_poisonous                   0
 dtype: int64</code></pre>
 </div>
 </div>
-<div id="6d09b540" class="cell" data-execution_count="10">
+<div id="947cc331" class="cell" data-execution_count="10">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Drop stalk_root column </span></span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>df.drop(columns<span class="op">=</span>[<span class="st">'stalk_root'</span>], inplace<span class="op">=</span><span class="va">True</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="fa1be451" class="cell" data-execution_count="11">
+<div id="1b16ced5" class="cell" data-execution_count="11">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>df.isna().<span class="bu">sum</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-display" data-execution_count="11">
+<div class="cell-output cell-output-display" data-execution_count="36">
 <pre><code>class                       0
 cap_shape                   0
 cap_surface                 0
@@ -641,31 +641,31 @@ is_poisonous                0
 dtype: int64</code></pre>
 </div>
 </div>
-<div id="b2e5e1e0" class="cell" data-execution_count="12">
+<div id="c52ac82c" class="cell" data-execution_count="12">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Inspect target variable: e = edible = 0, p = poisonous = 1</span></span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'is_poisonous'</span>].value_counts() </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-display" data-execution_count="12">
+<div class="cell-output cell-output-display" data-execution_count="37">
 <pre><code>is_poisonous
 0    4208
 1    3916
 Name: count, dtype: int64</code></pre>
 </div>
 </div>
-<div id="b42d33db" class="cell" data-execution_count="13">
+<div id="0a8fbd78" class="cell" data-execution_count="13">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Display the proportion of each mushroom class (edible vs poisonous)</span></span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'is_poisonous'</span>].value_counts(normalize<span class="op">=</span><span class="va">True</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-display" data-execution_count="13">
+<div class="cell-output cell-output-display" data-execution_count="38">
 <pre><code>is_poisonous
 0    0.517971
 1    0.482029
 Name: proportion, dtype: float64</code></pre>
 </div>
 </div>
-<div id="9aff9d02" class="cell" data-execution_count="14">
+<div id="db880d9a" class="cell" data-execution_count="14">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Get current col_names</span></span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>col_names <span class="op">=</span> <span class="bu">list</span>(df.columns)</span>
 <span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>col_names</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-display" data-execution_count="14">
+<div class="cell-output cell-output-display" data-execution_count="39">
 <pre><code>['class',
  'cap_shape',
  'cap_surface',
@@ -716,7 +716,7 @@ Name: proportion, dtype: float64</code></pre>
 Table&nbsp;1: Summary of mushroom feature characteristics
 </figcaption>
 <div aria-describedby="tbl-feature-summary-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div class="cell-output cell-output-display" data-execution_count="15">
+<div class="cell-output cell-output-display" data-execution_count="40">
 <div>
 
 
@@ -901,7 +901,7 @@ Table&nbsp;1: Summary of mushroom feature characteristics
 </figure>
 </div>
 </div>
-<div id="cc84752c" class="cell" data-execution_count="16">
+<div id="98482755" class="cell" data-execution_count="16">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> get_poison_rate_by(feature):</span>
 <span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>  <span class="co">"""</span></span>
 <span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a><span class="co">  Compute the proportion of poisonous and edible mushrooms for each category</span></span>
@@ -924,7 +924,7 @@ Table&nbsp;1: Summary of mushroom feature characteristics
 <span id="cb24-20"><a href="#cb24-20" aria-hidden="true" tabindex="-1"></a>  category_poisonous.columns <span class="op">=</span> [<span class="st">'edible_frac'</span>, <span class="st">'poisonous_frac'</span>]</span>
 <span id="cb24-21"><a href="#cb24-21" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> category_poisonous.sort_values(<span class="st">'poisonous_frac'</span>, ascending<span class="op">=</span><span class="va">False</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="cdbff5db" class="cell" data-execution_count="17">
+<div id="83ca6965" class="cell" data-execution_count="17">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Feature category maps</span></span>
 <span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>odor_map <span class="op">=</span> {</span>
 <span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">"a"</span>: <span class="st">"almond"</span>,</span>
@@ -978,7 +978,7 @@ Table&nbsp;1: Summary of mushroom feature characteristics
 <span id="cb25-51"><a href="#cb25-51" aria-hidden="true" tabindex="-1"></a>    <span class="st">"z"</span>: <span class="st">"zone"</span>,</span>
 <span id="cb25-52"><a href="#cb25-52" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="0be97384" class="cell" data-execution_count="18">
+<div id="5b2cb4df" class="cell" data-execution_count="18">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> stacked_poison_chart(</span>
 <span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>    figure_number: <span class="bu">int</span>,</span>
 <span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>    feature: <span class="bu">str</span>,</span>
@@ -1061,29 +1061,29 @@ Table&nbsp;1: Summary of mushroom feature characteristics
 <span id="cb26-80"><a href="#cb26-80" aria-hidden="true" tabindex="-1"></a>    )</span>
 <span id="cb26-81"><a href="#cb26-81" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> chart</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="7382ce2c" class="cell" data-execution_count="19">
+<div id="99cc4dc0" class="cell" data-execution_count="19">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Visualize the edible vs poisonous class proportions for each odor category</span></span>
 <span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>stacked_poison_chart(<span class="dv">1</span>, <span class="st">"odor"</span>, <span class="st">"Odor Category"</span>, odor_map)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-display" data-execution_count="19">
+<div class="cell-output cell-output-display" data-execution_count="44">
 
 <style>
-  #altair-viz-161982cd9dcd4f46a5166282c1c1fc3f.vega-embed {
+  #altair-viz-6bae8cb1d06444bcbc3b73fdc2c305fc.vega-embed {
     width: 100%;
     display: flex;
   }
 
-  #altair-viz-161982cd9dcd4f46a5166282c1c1fc3f.vega-embed details,
-  #altair-viz-161982cd9dcd4f46a5166282c1c1fc3f.vega-embed details summary {
+  #altair-viz-6bae8cb1d06444bcbc3b73fdc2c305fc.vega-embed details,
+  #altair-viz-6bae8cb1d06444bcbc3b73fdc2c305fc.vega-embed details summary {
     position: relative;
   }
 </style>
-<div id="altair-viz-161982cd9dcd4f46a5166282c1c1fc3f"></div>
+<div id="altair-viz-6bae8cb1d06444bcbc3b73fdc2c305fc"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-161982cd9dcd4f46a5166282c1c1fc3f") {
-      outputDiv = document.getElementById("altair-viz-161982cd9dcd4f46a5166282c1c1fc3f");
+    if (outputDiv.id !== "altair-viz-6bae8cb1d06444bcbc3b73fdc2c305fc") {
+      outputDiv = document.getElementById("altair-viz-6bae8cb1d06444bcbc3b73fdc2c305fc");
     }
 
     const paths = {
@@ -1135,29 +1135,29 @@ Table&nbsp;1: Summary of mushroom feature characteristics
 </script>
 </div>
 </div>
-<div id="e1a2b568" class="cell" data-execution_count="20">
+<div id="f82b8ee8" class="cell" data-execution_count="20">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Visualize the edible vs poisonous class proportions for each gill size</span></span>
 <span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>stacked_poison_chart(<span class="dv">2</span>, <span class="st">"gill_size"</span>, <span class="st">"Gill Size"</span>, gill_size_map)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-display" data-execution_count="20">
+<div class="cell-output cell-output-display" data-execution_count="45">
 
 <style>
-  #altair-viz-1ad9ee8f350547dcba971b4c4fa8739e.vega-embed {
+  #altair-viz-c586faf8ed724af58b3594b23a1cd4de.vega-embed {
     width: 100%;
     display: flex;
   }
 
-  #altair-viz-1ad9ee8f350547dcba971b4c4fa8739e.vega-embed details,
-  #altair-viz-1ad9ee8f350547dcba971b4c4fa8739e.vega-embed details summary {
+  #altair-viz-c586faf8ed724af58b3594b23a1cd4de.vega-embed details,
+  #altair-viz-c586faf8ed724af58b3594b23a1cd4de.vega-embed details summary {
     position: relative;
   }
 </style>
-<div id="altair-viz-1ad9ee8f350547dcba971b4c4fa8739e"></div>
+<div id="altair-viz-c586faf8ed724af58b3594b23a1cd4de"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-1ad9ee8f350547dcba971b4c4fa8739e") {
-      outputDiv = document.getElementById("altair-viz-1ad9ee8f350547dcba971b4c4fa8739e");
+    if (outputDiv.id !== "altair-viz-c586faf8ed724af58b3594b23a1cd4de") {
+      outputDiv = document.getElementById("altair-viz-c586faf8ed724af58b3594b23a1cd4de");
     }
 
     const paths = {
@@ -1209,29 +1209,29 @@ Table&nbsp;1: Summary of mushroom feature characteristics
 </script>
 </div>
 </div>
-<div id="98c084af" class="cell" data-execution_count="21">
+<div id="2a1ae6eb" class="cell" data-execution_count="21">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Visualize the edible vs poisonous class proportions for each habitat </span></span>
 <span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>stacked_poison_chart(<span class="dv">3</span>, <span class="st">"habitat"</span>, <span class="st">"Habitat"</span>, habitat_map)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-display" data-execution_count="21">
+<div class="cell-output cell-output-display" data-execution_count="46">
 
 <style>
-  #altair-viz-dc6afbfb041e467c9316ddcfd1175d89.vega-embed {
+  #altair-viz-da3d2def62b54a2eae1d9403e377e046.vega-embed {
     width: 100%;
     display: flex;
   }
 
-  #altair-viz-dc6afbfb041e467c9316ddcfd1175d89.vega-embed details,
-  #altair-viz-dc6afbfb041e467c9316ddcfd1175d89.vega-embed details summary {
+  #altair-viz-da3d2def62b54a2eae1d9403e377e046.vega-embed details,
+  #altair-viz-da3d2def62b54a2eae1d9403e377e046.vega-embed details summary {
     position: relative;
   }
 </style>
-<div id="altair-viz-dc6afbfb041e467c9316ddcfd1175d89"></div>
+<div id="altair-viz-da3d2def62b54a2eae1d9403e377e046"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-dc6afbfb041e467c9316ddcfd1175d89") {
-      outputDiv = document.getElementById("altair-viz-dc6afbfb041e467c9316ddcfd1175d89");
+    if (outputDiv.id !== "altair-viz-da3d2def62b54a2eae1d9403e377e046") {
+      outputDiv = document.getElementById("altair-viz-da3d2def62b54a2eae1d9403e377e046");
     }
 
     const paths = {
@@ -1283,29 +1283,29 @@ Table&nbsp;1: Summary of mushroom feature characteristics
 </script>
 </div>
 </div>
-<div id="26fc612c" class="cell" data-execution_count="22">
+<div id="b8968618" class="cell" data-execution_count="22">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Visualize the edible vs poisonous class proportions for each bruise category </span></span>
 <span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>stacked_poison_chart(<span class="dv">4</span>, <span class="st">"bruises"</span>, <span class="st">"Bruises"</span>, bruises_map)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-display" data-execution_count="22">
+<div class="cell-output cell-output-display" data-execution_count="47">
 
 <style>
-  #altair-viz-b27e70e5488640ed8d19671b0feaa962.vega-embed {
+  #altair-viz-852da02b5ad7493dba03c06d1f5df8fe.vega-embed {
     width: 100%;
     display: flex;
   }
 
-  #altair-viz-b27e70e5488640ed8d19671b0feaa962.vega-embed details,
-  #altair-viz-b27e70e5488640ed8d19671b0feaa962.vega-embed details summary {
+  #altair-viz-852da02b5ad7493dba03c06d1f5df8fe.vega-embed details,
+  #altair-viz-852da02b5ad7493dba03c06d1f5df8fe.vega-embed details summary {
     position: relative;
   }
 </style>
-<div id="altair-viz-b27e70e5488640ed8d19671b0feaa962"></div>
+<div id="altair-viz-852da02b5ad7493dba03c06d1f5df8fe"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-b27e70e5488640ed8d19671b0feaa962") {
-      outputDiv = document.getElementById("altair-viz-b27e70e5488640ed8d19671b0feaa962");
+    if (outputDiv.id !== "altair-viz-852da02b5ad7493dba03c06d1f5df8fe") {
+      outputDiv = document.getElementById("altair-viz-852da02b5ad7493dba03c06d1f5df8fe");
     }
 
     const paths = {
@@ -1357,29 +1357,29 @@ Table&nbsp;1: Summary of mushroom feature characteristics
 </script>
 </div>
 </div>
-<div id="9eceb188" class="cell" data-execution_count="23">
+<div id="6a915d58" class="cell" data-execution_count="23">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Visualize the edible vs poisonous class proportions for each population type </span></span>
 <span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>stacked_poison_chart(<span class="dv">5</span>, <span class="st">"population"</span>, <span class="st">"Population"</span>, population_map)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-display" data-execution_count="23">
+<div class="cell-output cell-output-display" data-execution_count="48">
 
 <style>
-  #altair-viz-96fe4f4d90ff47b98b74741fb7945674.vega-embed {
+  #altair-viz-e166666e80e249a197f7612d52e7b886.vega-embed {
     width: 100%;
     display: flex;
   }
 
-  #altair-viz-96fe4f4d90ff47b98b74741fb7945674.vega-embed details,
-  #altair-viz-96fe4f4d90ff47b98b74741fb7945674.vega-embed details summary {
+  #altair-viz-e166666e80e249a197f7612d52e7b886.vega-embed details,
+  #altair-viz-e166666e80e249a197f7612d52e7b886.vega-embed details summary {
     position: relative;
   }
 </style>
-<div id="altair-viz-96fe4f4d90ff47b98b74741fb7945674"></div>
+<div id="altair-viz-e166666e80e249a197f7612d52e7b886"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-96fe4f4d90ff47b98b74741fb7945674") {
-      outputDiv = document.getElementById("altair-viz-96fe4f4d90ff47b98b74741fb7945674");
+    if (outputDiv.id !== "altair-viz-e166666e80e249a197f7612d52e7b886") {
+      outputDiv = document.getElementById("altair-viz-e166666e80e249a197f7612d52e7b886");
     }
 
     const paths = {
@@ -1429,6 +1429,156 @@ Table&nbsp;1: Summary of mushroom feature characteristics
     }
   })({"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}}, "data": {"name": "data-2568be59ea71610a088afefcc595f75d"}, "mark": {"type": "bar"}, "encoding": {"color": {"field": "class_label", "legend": {"title": "Mushroom class"}, "scale": {"domain": ["Edible", "Poisonous"], "range": ["#17BECF", "#7E1E9C"]}, "title": "Mushroom class", "type": "nominal"}, "tooltip": [{"field": "population_label", "title": "Population", "type": "nominal"}, {"field": "class_label", "title": "Class", "type": "nominal"}, {"field": "fraction", "format": ".2f", "title": "Fraction", "type": "quantitative"}], "x": {"axis": {"format": ".2f"}, "field": "fraction", "title": "Fraction", "type": "quantitative"}, "y": {"field": "population_label", "sort": "-x", "title": "Population", "type": "nominal"}}, "title": "Figure 5: Class proportions (edible vs poisonous) by population", "width": 450, "$schema": "https://vega.github.io/schema/vega-lite/v5.20.1.json", "datasets": {"data-2568be59ea71610a088afefcc595f75d": [{"population_label": "several", "class": "edible_frac", "fraction": 0.29504950495049503, "class_label": "Edible"}, {"population_label": "solitary", "class": "edible_frac", "fraction": 0.6214953271028038, "class_label": "Edible"}, {"population_label": "scattered", "class": "edible_frac", "fraction": 0.7051282051282052, "class_label": "Edible"}, {"population_label": "clustered", "class": "edible_frac", "fraction": 0.8470588235294118, "class_label": "Edible"}, {"population_label": "abundant", "class": "edible_frac", "fraction": 1.0, "class_label": "Edible"}, {"population_label": "numerous", "class": "edible_frac", "fraction": 1.0, "class_label": "Edible"}, {"population_label": "several", "class": "poisonous_frac", "fraction": 0.7049504950495049, "class_label": "Poisonous"}, {"population_label": "solitary", "class": "poisonous_frac", "fraction": 0.37850467289719625, "class_label": "Poisonous"}, {"population_label": "scattered", "class": "poisonous_frac", "fraction": 0.2948717948717949, "class_label": "Poisonous"}, {"population_label": "clustered", "class": "poisonous_frac", "fraction": 0.15294117647058825, "class_label": "Poisonous"}, {"population_label": "abundant", "class": "poisonous_frac", "fraction": 0.0, "class_label": "Poisonous"}, {"population_label": "numerous", "class": "poisonous_frac", "fraction": 0.0, "class_label": "Poisonous"}]}}, {"mode": "vega-lite"});
 </script>
+</div>
+</div>
+<div id="5ba0d274" class="cell" data-execution_count="24">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Column namest without veil_type, or target column</span></span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>exclude <span class="op">=</span> [<span class="st">"veil_type"</span>, <span class="st">"class"</span>, <span class="st">"is_poisonous"</span>]  <span class="co"># add more if needed</span></span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>feature_cols <span class="op">=</span> [col <span class="cf">for</span> col <span class="kw">in</span> df.columns <span class="cf">if</span> col <span class="kw">not</span> <span class="kw">in</span> exclude]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="cell" data-execution_count="25">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Compute the variance in poisonous fraction across the categories of each feature</span></span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Show strongly the feature predicts toxicity</span></span>
+<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a>feature_scores <span class="op">=</span> []</span>
+<span id="cb33-5"><a href="#cb33-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-6"><a href="#cb33-6" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> col <span class="kw">in</span> feature_cols:</span>
+<span id="cb33-7"><a href="#cb33-7" aria-hidden="true" tabindex="-1"></a>    ct <span class="op">=</span> get_poison_rate_by(col)</span>
+<span id="cb33-8"><a href="#cb33-8" aria-hidden="true" tabindex="-1"></a>    score <span class="op">=</span> ct[<span class="st">'poisonous_frac'</span>].var()</span>
+<span id="cb33-9"><a href="#cb33-9" aria-hidden="true" tabindex="-1"></a>    feature_scores.append({<span class="st">'feature'</span>: col, <span class="st">'poison_variance'</span>: <span class="bu">round</span>(score, <span class="dv">2</span>)})</span>
+<span id="cb33-10"><a href="#cb33-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-11"><a href="#cb33-11" aria-hidden="true" tabindex="-1"></a>feature_importance_eda <span class="op">=</span> pd.DataFrame(feature_scores).sort_values(</span>
+<span id="cb33-12"><a href="#cb33-12" aria-hidden="true" tabindex="-1"></a>    <span class="st">'poison_variance'</span>, ascending<span class="op">=</span><span class="va">False</span></span>
+<span id="cb33-13"><a href="#cb33-13" aria-hidden="true" tabindex="-1"></a>).reset_index(drop<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb33-14"><a href="#cb33-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-15"><a href="#cb33-15" aria-hidden="true" tabindex="-1"></a>feature_importance_eda.index <span class="op">=</span> feature_importance_eda.index <span class="op">+</span> <span class="dv">1</span></span>
+<span id="cb33-16"><a href="#cb33-16" aria-hidden="true" tabindex="-1"></a>feature_importance_eda</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="tbl-poison-rank" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-execution_count="25">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-poison-rank-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;2: Ranking of features by how well they distinguish poisonous mushrooms
+</figcaption>
+<div aria-describedby="tbl-poison-rank-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output cell-output-display" data-execution_count="50">
+<div>
+
+
+<table class="dataframe do-not-create-environment cell caption-top table table-sm table-striped small" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">feature</th>
+<th data-quarto-table-cell-role="th">poison_variance</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">1</th>
+<td>odor</td>
+<td>0.24</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">2</th>
+<td>veil_color</td>
+<td>0.23</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">3</th>
+<td>stalk_color_above_ring</td>
+<td>0.22</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">4</th>
+<td>stalk_color_below_ring</td>
+<td>0.21</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">5</th>
+<td>ring_type</td>
+<td>0.21</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">6</th>
+<td>spore_print_color</td>
+<td>0.20</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">7</th>
+<td>ring_number</td>
+<td>0.19</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">8</th>
+<td>gill_size</td>
+<td>0.17</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">9</th>
+<td>gill_color</td>
+<td>0.14</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">10</th>
+<td>cap_shape</td>
+<td>0.14</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">11</th>
+<td>bruises</td>
+<td>0.13</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">12</th>
+<td>gill_spacing</td>
+<td>0.11</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">13</th>
+<td>habitat</td>
+<td>0.11</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">14</th>
+<td>stalk_surface_below_ring</td>
+<td>0.11</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">15</th>
+<td>stalk_surface_above_ring</td>
+<td>0.10</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">16</th>
+<td>cap_surface</td>
+<td>0.08</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">17</th>
+<td>gill_attachment</td>
+<td>0.08</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">18</th>
+<td>population</td>
+<td>0.07</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">19</th>
+<td>cap_color</td>
+<td>0.06</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">20</th>
+<td>stalk_shape</td>
+<td>0.01</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+</figure>
 </div>
 </div>
 </section>

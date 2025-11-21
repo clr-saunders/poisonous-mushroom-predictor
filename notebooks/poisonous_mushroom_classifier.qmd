@@ -371,9 +371,32 @@ stacked_poison_chart(5, "population", "Population", population_map)
 
 ```
 
+```{python}
+# Column namest without veil_type, or target column
+exclude = ["veil_type", "class", "is_poisonous"]  # add more if needed
+feature_cols = [col for col in df.columns if col not in exclude]
 
+```
 
 ```{python}
+#| label: tbl-poison-rank
+#| tbl-cap: "Ranking of features by how well they distinguish poisonous mushrooms"
+# Compute the variance in poisonous fraction across the categories of each feature
+# Show strongly the feature predicts toxicity
+
+feature_scores = []
+
+for col in feature_cols:
+    ct = get_poison_rate_by(col)
+    score = ct['poisonous_frac'].var()
+    feature_scores.append({'feature': col, 'poison_variance': round(score, 2)})
+
+feature_importance_eda = pd.DataFrame(feature_scores).sort_values(
+    'poison_variance', ascending=False
+).reset_index(drop=True)
+
+feature_importance_eda.index = feature_importance_eda.index + 1
+feature_importance_eda
 
 
 ```
