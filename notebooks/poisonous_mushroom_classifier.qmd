@@ -151,6 +151,9 @@ col_names
 ```
 
 ```{python}
+#| label: tbl-feature-summary
+#| tbl-cap: "Summary of mushroom feature characteristics"
+
 # Key mushroom feature summary
 summary_rows = []
 for col in col_names:
@@ -162,7 +165,12 @@ for col in col_names:
         "most_frequent_count": int(vc.iloc[0])
     })
 
-feature_summary = pd.DataFrame(summary_rows).sort_values("n_categories", ascending=False)
+feature_summary = (
+    pd.DataFrame(summary_rows)
+    .sort_values("n_categories", ascending=False)
+    .reset_index(drop=True)    
+)
+feature_summary.index = feature_summary.index + 1
 feature_summary
 
 ```
@@ -333,7 +341,6 @@ def stacked_poison_chart(
 
 ```
 ```{python}
-
 # Visualize the edible vs poisonous class proportions for each odor category
 stacked_poison_chart(1, "odor", "Odor Category", odor_map)
 

@@ -117,7 +117,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<div id="ef080ae7" class="cell" data-execution_count="1">
+<div id="a458d89f" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> requests</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> zipfile</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
@@ -141,7 +141,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="analysis" class="level2">
 <h2 class="anchored" data-anchor-id="analysis">Analysis</h2>
-<div id="9eef79d0" class="cell" data-execution_count="2">
+<div id="a2664b9e" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">#adding the downloaded data to the data directory by code</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co"># download data as zip and extract</span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>url <span class="op">=</span> <span class="st">"https://archive.ics.uci.edu/static/public/73/mushroom.zip"</span></span>
@@ -157,7 +157,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="data-cleaning-and-wrangling" class="level1">
 <h1>Data cleaning and wrangling</h1>
-<div id="dfb89130" class="cell" data-execution_count="3">
+<div id="8081eaad" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>col_names <span class="op">=</span> [</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">"class"</span>, <span class="st">"cap_shape"</span>, <span class="st">"cap_surface"</span>, <span class="st">"cap_color"</span>, <span class="st">"bruises"</span>, <span class="st">"odor"</span>,</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">"gill_attachment"</span>, <span class="st">"gill_spacing"</span>, <span class="st">"gill_size"</span>, <span class="st">"gill_color"</span>,</span>
@@ -336,14 +336,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<div id="2098a883" class="cell" data-execution_count="4">
+<div id="b139d733" class="cell" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># rename class_label to is_poisonous for target clarity</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>df.rename(columns<span class="op">=</span>{<span class="st">'class_label'</span>: <span class="st">'is_poisonous'</span>}, inplace<span class="op">=</span><span class="va">True</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="eda-summary" class="level1">
 <h1>EDA summary</h1>
-<div id="611010ba" class="cell" data-execution_count="5">
+<div id="ea99d577" class="cell" data-execution_count="5">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Basic information</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>df.head()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="5">
@@ -505,7 +505,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<div id="57fbf47c" class="cell" data-execution_count="6">
+<div id="f67b57bc" class="cell" data-execution_count="6">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>df.info()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>&lt;class 'pandas.core.frame.DataFrame'&gt;
@@ -541,13 +541,13 @@ dtypes: int64(1), object(23)
 memory usage: 1.5+ MB</code></pre>
 </div>
 </div>
-<div id="3d548ea1" class="cell" data-execution_count="7">
+<div id="cc8cfb69" class="cell" data-execution_count="7">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>df.shape</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="7">
 <pre><code>(8124, 24)</code></pre>
 </div>
 </div>
-<div id="0e3c95ba" class="cell" data-execution_count="8">
+<div id="b852a0b3" class="cell" data-execution_count="8">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>df.isna().<span class="bu">sum</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="8">
 <pre><code>class                       0
@@ -577,7 +577,7 @@ is_poisonous                0
 dtype: int64</code></pre>
 </div>
 </div>
-<div id="f5a2c70a" class="cell" data-execution_count="9">
+<div id="0f312c36" class="cell" data-execution_count="9">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Encode "missing" (?) as NA</span></span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>(df <span class="op">==</span> <span class="st">'?'</span>).<span class="bu">sum</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="9">
@@ -608,11 +608,11 @@ is_poisonous                   0
 dtype: int64</code></pre>
 </div>
 </div>
-<div id="7ff0ffbe" class="cell" data-execution_count="10">
+<div id="6d09b540" class="cell" data-execution_count="10">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Drop stalk_root column </span></span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>df.drop(columns<span class="op">=</span>[<span class="st">'stalk_root'</span>], inplace<span class="op">=</span><span class="va">True</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="cda56838" class="cell" data-execution_count="11">
+<div id="fa1be451" class="cell" data-execution_count="11">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>df.isna().<span class="bu">sum</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="11">
 <pre><code>class                       0
@@ -641,7 +641,7 @@ is_poisonous                0
 dtype: int64</code></pre>
 </div>
 </div>
-<div id="e3c7db31" class="cell" data-execution_count="12">
+<div id="b2e5e1e0" class="cell" data-execution_count="12">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Inspect target variable: e = edible = 0, p = poisonous = 1</span></span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'is_poisonous'</span>].value_counts() </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="12">
@@ -651,7 +651,7 @@ dtype: int64</code></pre>
 Name: count, dtype: int64</code></pre>
 </div>
 </div>
-<div id="4f11e2d1" class="cell" data-execution_count="13">
+<div id="b42d33db" class="cell" data-execution_count="13">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Display the proportion of each mushroom class (edible vs poisonous)</span></span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'is_poisonous'</span>].value_counts(normalize<span class="op">=</span><span class="va">True</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="13">
@@ -661,7 +661,7 @@ Name: count, dtype: int64</code></pre>
 Name: proportion, dtype: float64</code></pre>
 </div>
 </div>
-<div id="2f4a58e4" class="cell" data-execution_count="14">
+<div id="9aff9d02" class="cell" data-execution_count="14">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Get current col_names</span></span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>col_names <span class="op">=</span> <span class="bu">list</span>(df.columns)</span>
 <span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>col_names</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -691,26 +691,36 @@ Name: proportion, dtype: float64</code></pre>
  'is_poisonous']</code></pre>
 </div>
 </div>
-<div id="b6199250" class="cell" data-execution_count="15">
+<div class="cell" data-execution_count="15">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Key mushroom feature summary</span></span>
-<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>summary_rows <span class="op">=</span> []</span>
-<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> col <span class="kw">in</span> col_names:</span>
-<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>    vc <span class="op">=</span> df[col].value_counts()</span>
-<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a>    summary_rows.append({</span>
-<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a>        <span class="st">"feature"</span>: col,</span>
-<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a>        <span class="st">"n_categories"</span>: vc.shape[<span class="dv">0</span>],</span>
-<span id="cb23-9"><a href="#cb23-9" aria-hidden="true" tabindex="-1"></a>        <span class="st">"most_frequent_category"</span>: vc.index[<span class="dv">0</span>],</span>
-<span id="cb23-10"><a href="#cb23-10" aria-hidden="true" tabindex="-1"></a>        <span class="st">"most_frequent_count"</span>: <span class="bu">int</span>(vc.iloc[<span class="dv">0</span>])</span>
-<span id="cb23-11"><a href="#cb23-11" aria-hidden="true" tabindex="-1"></a>    })</span>
-<span id="cb23-12"><a href="#cb23-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-13"><a href="#cb23-13" aria-hidden="true" tabindex="-1"></a>feature_summary <span class="op">=</span> pd.DataFrame(summary_rows).sort_values(<span class="st">"n_categories"</span>, ascending<span class="op">=</span><span class="va">False</span>)</span>
-<span id="cb23-14"><a href="#cb23-14" aria-hidden="true" tabindex="-1"></a>feature_summary</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>summary_rows <span class="op">=</span> []</span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> col <span class="kw">in</span> col_names:</span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>    vc <span class="op">=</span> df[col].value_counts()</span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>    summary_rows.append({</span>
+<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a>        <span class="st">"feature"</span>: col,</span>
+<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a>        <span class="st">"n_categories"</span>: vc.shape[<span class="dv">0</span>],</span>
+<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a>        <span class="st">"most_frequent_category"</span>: vc.index[<span class="dv">0</span>],</span>
+<span id="cb23-9"><a href="#cb23-9" aria-hidden="true" tabindex="-1"></a>        <span class="st">"most_frequent_count"</span>: <span class="bu">int</span>(vc.iloc[<span class="dv">0</span>])</span>
+<span id="cb23-10"><a href="#cb23-10" aria-hidden="true" tabindex="-1"></a>    })</span>
+<span id="cb23-11"><a href="#cb23-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-12"><a href="#cb23-12" aria-hidden="true" tabindex="-1"></a>feature_summary <span class="op">=</span> (</span>
+<span id="cb23-13"><a href="#cb23-13" aria-hidden="true" tabindex="-1"></a>    pd.DataFrame(summary_rows)</span>
+<span id="cb23-14"><a href="#cb23-14" aria-hidden="true" tabindex="-1"></a>    .sort_values(<span class="st">"n_categories"</span>, ascending<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb23-15"><a href="#cb23-15" aria-hidden="true" tabindex="-1"></a>    .reset_index(drop<span class="op">=</span><span class="va">True</span>)    </span>
+<span id="cb23-16"><a href="#cb23-16" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb23-17"><a href="#cb23-17" aria-hidden="true" tabindex="-1"></a>feature_summary.index <span class="op">=</span> feature_summary.index <span class="op">+</span> <span class="dv">1</span></span>
+<span id="cb23-18"><a href="#cb23-18" aria-hidden="true" tabindex="-1"></a>feature_summary</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="tbl-feature-summary" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-execution_count="15">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-feature-summary-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;1: Summary of mushroom feature characteristics
+</figcaption>
+<div aria-describedby="tbl-feature-summary-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output cell-output-display" data-execution_count="15">
 <div>
 
 
-<table class="dataframe caption-top table table-sm table-striped small" data-border="1">
+<table class="dataframe do-not-create-environment cell caption-top table table-sm table-striped small" data-border="1">
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th"></th>
@@ -722,147 +732,147 @@ Name: proportion, dtype: float64</code></pre>
 </thead>
 <tbody>
 <tr class="odd">
-<th data-quarto-table-cell-role="th">9</th>
+<th data-quarto-table-cell-role="th">1</th>
 <td>gill_color</td>
 <td>12</td>
 <td>b</td>
 <td>1728</td>
 </tr>
 <tr class="even">
-<th data-quarto-table-cell-role="th">3</th>
+<th data-quarto-table-cell-role="th">2</th>
 <td>cap_color</td>
 <td>10</td>
 <td>n</td>
 <td>2284</td>
 </tr>
 <tr class="odd">
-<th data-quarto-table-cell-role="th">5</th>
+<th data-quarto-table-cell-role="th">3</th>
 <td>odor</td>
 <td>9</td>
 <td>n</td>
 <td>3528</td>
 </tr>
 <tr class="even">
-<th data-quarto-table-cell-role="th">19</th>
+<th data-quarto-table-cell-role="th">4</th>
 <td>spore_print_color</td>
 <td>9</td>
 <td>w</td>
 <td>2388</td>
 </tr>
 <tr class="odd">
-<th data-quarto-table-cell-role="th">13</th>
+<th data-quarto-table-cell-role="th">5</th>
 <td>stalk_color_above_ring</td>
 <td>9</td>
 <td>w</td>
 <td>4464</td>
 </tr>
 <tr class="even">
-<th data-quarto-table-cell-role="th">14</th>
+<th data-quarto-table-cell-role="th">6</th>
 <td>stalk_color_below_ring</td>
 <td>9</td>
 <td>w</td>
 <td>4384</td>
 </tr>
 <tr class="odd">
-<th data-quarto-table-cell-role="th">21</th>
+<th data-quarto-table-cell-role="th">7</th>
 <td>habitat</td>
 <td>7</td>
 <td>d</td>
 <td>3148</td>
 </tr>
 <tr class="even">
-<th data-quarto-table-cell-role="th">1</th>
+<th data-quarto-table-cell-role="th">8</th>
 <td>cap_shape</td>
 <td>6</td>
 <td>x</td>
 <td>3656</td>
 </tr>
 <tr class="odd">
-<th data-quarto-table-cell-role="th">20</th>
+<th data-quarto-table-cell-role="th">9</th>
 <td>population</td>
 <td>6</td>
 <td>v</td>
 <td>4040</td>
 </tr>
 <tr class="even">
-<th data-quarto-table-cell-role="th">18</th>
+<th data-quarto-table-cell-role="th">10</th>
 <td>ring_type</td>
 <td>5</td>
 <td>p</td>
 <td>3968</td>
 </tr>
 <tr class="odd">
-<th data-quarto-table-cell-role="th">2</th>
+<th data-quarto-table-cell-role="th">11</th>
 <td>cap_surface</td>
 <td>4</td>
 <td>y</td>
 <td>3244</td>
 </tr>
 <tr class="even">
-<th data-quarto-table-cell-role="th">16</th>
+<th data-quarto-table-cell-role="th">12</th>
 <td>veil_color</td>
 <td>4</td>
 <td>w</td>
 <td>7924</td>
 </tr>
 <tr class="odd">
-<th data-quarto-table-cell-role="th">11</th>
+<th data-quarto-table-cell-role="th">13</th>
 <td>stalk_surface_above_ring</td>
 <td>4</td>
 <td>s</td>
 <td>5176</td>
 </tr>
 <tr class="even">
-<th data-quarto-table-cell-role="th">12</th>
+<th data-quarto-table-cell-role="th">14</th>
 <td>stalk_surface_below_ring</td>
 <td>4</td>
 <td>s</td>
 <td>4936</td>
 </tr>
 <tr class="odd">
-<th data-quarto-table-cell-role="th">17</th>
+<th data-quarto-table-cell-role="th">15</th>
 <td>ring_number</td>
 <td>3</td>
 <td>o</td>
 <td>7488</td>
 </tr>
 <tr class="even">
-<th data-quarto-table-cell-role="th">6</th>
+<th data-quarto-table-cell-role="th">16</th>
 <td>gill_attachment</td>
 <td>2</td>
 <td>f</td>
 <td>7914</td>
 </tr>
 <tr class="odd">
-<th data-quarto-table-cell-role="th">4</th>
+<th data-quarto-table-cell-role="th">17</th>
 <td>bruises</td>
 <td>2</td>
 <td>f</td>
 <td>4748</td>
 </tr>
 <tr class="even">
-<th data-quarto-table-cell-role="th">0</th>
+<th data-quarto-table-cell-role="th">18</th>
 <td>class</td>
 <td>2</td>
 <td>e</td>
 <td>4208</td>
 </tr>
 <tr class="odd">
-<th data-quarto-table-cell-role="th">10</th>
+<th data-quarto-table-cell-role="th">19</th>
 <td>stalk_shape</td>
 <td>2</td>
 <td>t</td>
 <td>4608</td>
 </tr>
 <tr class="even">
-<th data-quarto-table-cell-role="th">8</th>
+<th data-quarto-table-cell-role="th">20</th>
 <td>gill_size</td>
 <td>2</td>
 <td>b</td>
 <td>5612</td>
 </tr>
 <tr class="odd">
-<th data-quarto-table-cell-role="th">7</th>
+<th data-quarto-table-cell-role="th">21</th>
 <td>gill_spacing</td>
 <td>2</td>
 <td>c</td>
@@ -876,7 +886,7 @@ Name: proportion, dtype: float64</code></pre>
 <td>4208</td>
 </tr>
 <tr class="odd">
-<th data-quarto-table-cell-role="th">15</th>
+<th data-quarto-table-cell-role="th">23</th>
 <td>veil_type</td>
 <td>1</td>
 <td>p</td>
@@ -888,36 +898,34 @@ Name: proportion, dtype: float64</code></pre>
 </div>
 </div>
 </div>
-<div id="577e6285" class="cell" data-execution_count="16">
+</figure>
+</div>
+</div>
+<div id="cc84752c" class="cell" data-execution_count="16">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> get_poison_rate_by(feature):</span>
 <span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>  <span class="co">"""</span></span>
 <span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a><span class="co">  Compute the proportion of poisonous and edible mushrooms for each category</span></span>
 <span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a><span class="co">  of a given feature.</span></span>
 <span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a><span class="co">  This function calculates a normalized crosstab between the specified</span></span>
-<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a><span class="co">  categorical feature and the target variable `is_poisonous`. For each</span></span>
-<span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a><span class="co">  category of the feature, it returns the fraction of mushrooms that are</span></span>
-<span id="cb24-9"><a href="#cb24-9" aria-hidden="true" tabindex="-1"></a><span class="co">  edible and poisonous, sorted from most to least poisonous.</span></span>
-<span id="cb24-10"><a href="#cb24-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-11"><a href="#cb24-11" aria-hidden="true" tabindex="-1"></a><span class="co">  Parameters</span></span>
-<span id="cb24-12"><a href="#cb24-12" aria-hidden="true" tabindex="-1"></a><span class="co">  ----------</span></span>
-<span id="cb24-13"><a href="#cb24-13" aria-hidden="true" tabindex="-1"></a><span class="co">  feature : str</span></span>
-<span id="cb24-14"><a href="#cb24-14" aria-hidden="true" tabindex="-1"></a><span class="co">      The name of the categorical column in `df` for which the poison rates</span></span>
-<span id="cb24-15"><a href="#cb24-15" aria-hidden="true" tabindex="-1"></a><span class="co">      should be calculated.</span></span>
-<span id="cb24-16"><a href="#cb24-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-17"><a href="#cb24-17" aria-hidden="true" tabindex="-1"></a><span class="co">  Returns</span></span>
-<span id="cb24-18"><a href="#cb24-18" aria-hidden="true" tabindex="-1"></a><span class="co">  -------</span></span>
-<span id="cb24-19"><a href="#cb24-19" aria-hidden="true" tabindex="-1"></a><span class="co">  pandas.DataFrame</span></span>
-<span id="cb24-20"><a href="#cb24-20" aria-hidden="true" tabindex="-1"></a><span class="co">      A DataFrame indexed by the feature's categories with two columns:</span></span>
-<span id="cb24-21"><a href="#cb24-21" aria-hidden="true" tabindex="-1"></a><span class="co">      `edible_frac` and `poisonous_frac`, sorted in descending order of</span></span>
-<span id="cb24-22"><a href="#cb24-22" aria-hidden="true" tabindex="-1"></a><span class="co">      `poisonous_frac`.</span></span>
-<span id="cb24-23"><a href="#cb24-23" aria-hidden="true" tabindex="-1"></a><span class="co">  """</span></span>
-<span id="cb24-24"><a href="#cb24-24" aria-hidden="true" tabindex="-1"></a>  category_poisonous <span class="op">=</span> pd.crosstab(df[feature], df[<span class="st">'is_poisonous'</span>], normalize<span class="op">=</span><span class="st">'index'</span>)</span>
-<span id="cb24-25"><a href="#cb24-25" aria-hidden="true" tabindex="-1"></a>  category_poisonous.columns <span class="op">=</span> [<span class="st">'edible_frac'</span>, <span class="st">'poisonous_frac'</span>]</span>
-<span id="cb24-26"><a href="#cb24-26" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> category_poisonous.sort_values(<span class="st">'poisonous_frac'</span>, ascending<span class="op">=</span><span class="va">False</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a><span class="co">  Parameters</span></span>
+<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a><span class="co">  ----------</span></span>
+<span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a><span class="co">  feature : str</span></span>
+<span id="cb24-9"><a href="#cb24-9" aria-hidden="true" tabindex="-1"></a><span class="co">      The name of the categorical column in `df` for which the poison rates</span></span>
+<span id="cb24-10"><a href="#cb24-10" aria-hidden="true" tabindex="-1"></a><span class="co">      should be calculated.</span></span>
+<span id="cb24-11"><a href="#cb24-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-12"><a href="#cb24-12" aria-hidden="true" tabindex="-1"></a><span class="co">  Returns</span></span>
+<span id="cb24-13"><a href="#cb24-13" aria-hidden="true" tabindex="-1"></a><span class="co">  -------</span></span>
+<span id="cb24-14"><a href="#cb24-14" aria-hidden="true" tabindex="-1"></a><span class="co">  pandas.DataFrame</span></span>
+<span id="cb24-15"><a href="#cb24-15" aria-hidden="true" tabindex="-1"></a><span class="co">      A DataFrame indexed by the feature's categories with two columns:</span></span>
+<span id="cb24-16"><a href="#cb24-16" aria-hidden="true" tabindex="-1"></a><span class="co">      `edible_frac` and `poisonous_frac`, sorted in descending order of</span></span>
+<span id="cb24-17"><a href="#cb24-17" aria-hidden="true" tabindex="-1"></a><span class="co">      `poisonous_frac`.</span></span>
+<span id="cb24-18"><a href="#cb24-18" aria-hidden="true" tabindex="-1"></a><span class="co">  """</span></span>
+<span id="cb24-19"><a href="#cb24-19" aria-hidden="true" tabindex="-1"></a>  category_poisonous <span class="op">=</span> pd.crosstab(df[feature], df[<span class="st">'is_poisonous'</span>], normalize<span class="op">=</span><span class="st">'index'</span>)</span>
+<span id="cb24-20"><a href="#cb24-20" aria-hidden="true" tabindex="-1"></a>  category_poisonous.columns <span class="op">=</span> [<span class="st">'edible_frac'</span>, <span class="st">'poisonous_frac'</span>]</span>
+<span id="cb24-21"><a href="#cb24-21" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> category_poisonous.sort_values(<span class="st">'poisonous_frac'</span>, ascending<span class="op">=</span><span class="va">False</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="05fb0d61" class="cell" data-execution_count="17">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Fraction of poisonous mushrooms for each odor category</span></span>
+<div id="cdbff5db" class="cell" data-execution_count="17">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Feature category maps</span></span>
 <span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>odor_map <span class="op">=</span> {</span>
 <span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">"a"</span>: <span class="st">"almond"</span>,</span>
 <span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">"c"</span>: <span class="st">"creosote"</span>,</span>
@@ -930,274 +938,152 @@ Name: proportion, dtype: float64</code></pre>
 <span id="cb25-11"><a href="#cb25-11" aria-hidden="true" tabindex="-1"></a>    <span class="st">"y"</span>: <span class="st">"fishy"</span>,</span>
 <span id="cb25-12"><a href="#cb25-12" aria-hidden="true" tabindex="-1"></a>}</span>
 <span id="cb25-13"><a href="#cb25-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-14"><a href="#cb25-14" aria-hidden="true" tabindex="-1"></a>odor_ct <span class="op">=</span> get_poison_rate_by(<span class="st">'odor'</span>).reset_index()</span>
-<span id="cb25-15"><a href="#cb25-15" aria-hidden="true" tabindex="-1"></a>odor_ct[<span class="st">'odor_name'</span>] <span class="op">=</span> odor_ct[<span class="st">'odor'</span>].<span class="bu">map</span>(odor_map)</span>
-<span id="cb25-16"><a href="#cb25-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-17"><a href="#cb25-17" aria-hidden="true" tabindex="-1"></a>alt.Chart(odor_ct).mark_bar().encode(</span>
-<span id="cb25-18"><a href="#cb25-18" aria-hidden="true" tabindex="-1"></a>    x<span class="op">=</span>alt.X(</span>
-<span id="cb25-19"><a href="#cb25-19" aria-hidden="true" tabindex="-1"></a>        <span class="st">'poisonous_frac:Q'</span>,</span>
-<span id="cb25-20"><a href="#cb25-20" aria-hidden="true" tabindex="-1"></a>        title<span class="op">=</span><span class="st">"Fraction poisonous"</span></span>
-<span id="cb25-21"><a href="#cb25-21" aria-hidden="true" tabindex="-1"></a>        ),</span>
-<span id="cb25-22"><a href="#cb25-22" aria-hidden="true" tabindex="-1"></a>    y<span class="op">=</span>alt.Y(</span>
-<span id="cb25-23"><a href="#cb25-23" aria-hidden="true" tabindex="-1"></a>        <span class="st">'odor_name:N'</span>, </span>
-<span id="cb25-24"><a href="#cb25-24" aria-hidden="true" tabindex="-1"></a>        title<span class="op">=</span><span class="st">"Odor category"</span></span>
-<span id="cb25-25"><a href="#cb25-25" aria-hidden="true" tabindex="-1"></a>        ).sort(),</span>
-<span id="cb25-26"><a href="#cb25-26" aria-hidden="true" tabindex="-1"></a>    tooltip<span class="op">=</span>[</span>
-<span id="cb25-27"><a href="#cb25-27" aria-hidden="true" tabindex="-1"></a>        alt.Tooltip(<span class="st">'odor_name:N'</span>, title<span class="op">=</span><span class="st">"Odor category"</span>),</span>
-<span id="cb25-28"><a href="#cb25-28" aria-hidden="true" tabindex="-1"></a>        alt.Tooltip(<span class="st">'poisonous_frac:Q'</span>, title<span class="op">=</span><span class="st">"Fraction poisonous"</span>, <span class="bu">format</span><span class="op">=</span><span class="st">".2f"</span>)</span>
-<span id="cb25-29"><a href="#cb25-29" aria-hidden="true" tabindex="-1"></a>    ]</span>
-<span id="cb25-30"><a href="#cb25-30" aria-hidden="true" tabindex="-1"></a>).properties(</span>
-<span id="cb25-31"><a href="#cb25-31" aria-hidden="true" tabindex="-1"></a>    title<span class="op">=</span><span class="st">'Poisonous fraction by odor'</span></span>
-<span id="cb25-32"><a href="#cb25-32" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-display" data-execution_count="17">
-
-<style>
-  #altair-viz-f982be2a963d48ff9240745dfff256d5.vega-embed {
-    width: 100%;
-    display: flex;
-  }
-
-  #altair-viz-f982be2a963d48ff9240745dfff256d5.vega-embed details,
-  #altair-viz-f982be2a963d48ff9240745dfff256d5.vega-embed details summary {
-    position: relative;
-  }
-</style>
-<div id="altair-viz-f982be2a963d48ff9240745dfff256d5"></div>
-<script type="text/javascript">
-  var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
-  (function(spec, embedOpt){
-    let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-f982be2a963d48ff9240745dfff256d5") {
-      outputDiv = document.getElementById("altair-viz-f982be2a963d48ff9240745dfff256d5");
-    }
-
-    const paths = {
-      "vega": "https://cdn.jsdelivr.net/npm/vega@5?noext",
-      "vega-lib": "https://cdn.jsdelivr.net/npm/vega-lib?noext",
-      "vega-lite": "https://cdn.jsdelivr.net/npm/vega-lite@5.20.1?noext",
-      "vega-embed": "https://cdn.jsdelivr.net/npm/vega-embed@6?noext",
-    };
-
-    function maybeLoadScript(lib, version) {
-      var key = `${lib.replace("-", "")}_version`;
-      return (VEGA_DEBUG[key] == version) ?
-        Promise.resolve(paths[lib]) :
-        new Promise(function(resolve, reject) {
-          var s = document.createElement('script');
-          document.getElementsByTagName("head")[0].appendChild(s);
-          s.async = true;
-          s.onload = () => {
-            VEGA_DEBUG[key] = version;
-            return resolve(paths[lib]);
-          };
-          s.onerror = () => reject(`Error loading script: ${paths[lib]}`);
-          s.src = paths[lib];
-        });
-    }
-
-    function showError(err) {
-      outputDiv.innerHTML = `<div class="error" style="color:red;">${err}</div>`;
-      throw err;
-    }
-
-    function displayChart(vegaEmbed) {
-      vegaEmbed(outputDiv, spec, embedOpt)
-        .catch(err => showError(`Javascript Error: ${err.message}<br>This usually means there's a typo in your chart specification. See the javascript console for the full traceback.`));
-    }
-
-    if(typeof define === "function" && define.amd) {
-      requirejs.config({paths});
-      let deps = ["vega-embed"];
-      require(deps, displayChart, err => showError(`Error loading script: ${err.message}`));
-    } else {
-      maybeLoadScript("vega", "5")
-        .then(() => maybeLoadScript("vega-lite", "5.20.1"))
-        .then(() => maybeLoadScript("vega-embed", "6"))
-        .catch(showError)
-        .then(() => displayChart(vegaEmbed));
-    }
-  })({"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}}, "data": {"name": "data-cb49d7fd159bc2a09431a819411805f5"}, "mark": {"type": "bar"}, "encoding": {"tooltip": [{"field": "odor_name", "title": "Odor category", "type": "nominal"}, {"field": "poisonous_frac", "format": ".2f", "title": "Fraction poisonous", "type": "quantitative"}], "x": {"field": "poisonous_frac", "title": "Fraction poisonous", "type": "quantitative"}, "y": {"field": "odor_name", "sort": {}, "title": "Odor category", "type": "nominal"}}, "title": "Poisonous fraction by odor", "$schema": "https://vega.github.io/schema/vega-lite/v5.20.1.json", "datasets": {"data-cb49d7fd159bc2a09431a819411805f5": [{"odor": "c", "edible_frac": 0.0, "poisonous_frac": 1.0, "odor_name": "creosote"}, {"odor": "y", "edible_frac": 0.0, "poisonous_frac": 1.0, "odor_name": "fishy"}, {"odor": "f", "edible_frac": 0.0, "poisonous_frac": 1.0, "odor_name": "foul"}, {"odor": "m", "edible_frac": 0.0, "poisonous_frac": 1.0, "odor_name": "musty"}, {"odor": "p", "edible_frac": 0.0, "poisonous_frac": 1.0, "odor_name": "pungent"}, {"odor": "s", "edible_frac": 0.0, "poisonous_frac": 1.0, "odor_name": "spicy"}, {"odor": "n", "edible_frac": 0.9659863945578231, "poisonous_frac": 0.034013605442176874, "odor_name": "none"}, {"odor": "a", "edible_frac": 1.0, "poisonous_frac": 0.0, "odor_name": "almond"}, {"odor": "l", "edible_frac": 1.0, "poisonous_frac": 0.0, "odor_name": "anise"}]}}, {"mode": "vega-lite"});
-</script>
+<span id="cb25-14"><a href="#cb25-14" aria-hidden="true" tabindex="-1"></a>habitat_map <span class="op">=</span> {</span>
+<span id="cb25-15"><a href="#cb25-15" aria-hidden="true" tabindex="-1"></a>    <span class="st">"g"</span>: <span class="st">"grasses"</span>,</span>
+<span id="cb25-16"><a href="#cb25-16" aria-hidden="true" tabindex="-1"></a>    <span class="st">"l"</span>: <span class="st">"leaves"</span>,</span>
+<span id="cb25-17"><a href="#cb25-17" aria-hidden="true" tabindex="-1"></a>    <span class="st">"m"</span>: <span class="st">"meadows"</span>,</span>
+<span id="cb25-18"><a href="#cb25-18" aria-hidden="true" tabindex="-1"></a>    <span class="st">"p"</span>: <span class="st">"paths"</span>,</span>
+<span id="cb25-19"><a href="#cb25-19" aria-hidden="true" tabindex="-1"></a>    <span class="st">"u"</span>: <span class="st">"urban"</span>,</span>
+<span id="cb25-20"><a href="#cb25-20" aria-hidden="true" tabindex="-1"></a>    <span class="st">"w"</span>: <span class="st">"waste"</span>,</span>
+<span id="cb25-21"><a href="#cb25-21" aria-hidden="true" tabindex="-1"></a>    <span class="st">"d"</span>: <span class="st">"woods"</span>,</span>
+<span id="cb25-22"><a href="#cb25-22" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb25-23"><a href="#cb25-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-24"><a href="#cb25-24" aria-hidden="true" tabindex="-1"></a>gill_size_map <span class="op">=</span> {</span>
+<span id="cb25-25"><a href="#cb25-25" aria-hidden="true" tabindex="-1"></a>    <span class="st">"b"</span>: <span class="st">"broad"</span>,</span>
+<span id="cb25-26"><a href="#cb25-26" aria-hidden="true" tabindex="-1"></a>    <span class="st">"n"</span>: <span class="st">"narrow"</span>,</span>
+<span id="cb25-27"><a href="#cb25-27" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb25-28"><a href="#cb25-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-29"><a href="#cb25-29" aria-hidden="true" tabindex="-1"></a>bruises_map <span class="op">=</span> {</span>
+<span id="cb25-30"><a href="#cb25-30" aria-hidden="true" tabindex="-1"></a>    <span class="st">"t"</span>: <span class="st">"bruises"</span>,</span>
+<span id="cb25-31"><a href="#cb25-31" aria-hidden="true" tabindex="-1"></a>    <span class="st">"f"</span>: <span class="st">"no bruises"</span>,</span>
+<span id="cb25-32"><a href="#cb25-32" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb25-33"><a href="#cb25-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-34"><a href="#cb25-34" aria-hidden="true" tabindex="-1"></a>population_map <span class="op">=</span> {</span>
+<span id="cb25-35"><a href="#cb25-35" aria-hidden="true" tabindex="-1"></a>    <span class="st">"a"</span>: <span class="st">"abundant"</span>,</span>
+<span id="cb25-36"><a href="#cb25-36" aria-hidden="true" tabindex="-1"></a>    <span class="st">"c"</span>: <span class="st">"clustered"</span>,</span>
+<span id="cb25-37"><a href="#cb25-37" aria-hidden="true" tabindex="-1"></a>    <span class="st">"n"</span>: <span class="st">"numerous"</span>,</span>
+<span id="cb25-38"><a href="#cb25-38" aria-hidden="true" tabindex="-1"></a>    <span class="st">"s"</span>: <span class="st">"scattered"</span>,</span>
+<span id="cb25-39"><a href="#cb25-39" aria-hidden="true" tabindex="-1"></a>    <span class="st">"v"</span>: <span class="st">"several"</span>,</span>
+<span id="cb25-40"><a href="#cb25-40" aria-hidden="true" tabindex="-1"></a>    <span class="st">"y"</span>: <span class="st">"solitary"</span>,</span>
+<span id="cb25-41"><a href="#cb25-41" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb25-42"><a href="#cb25-42" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-43"><a href="#cb25-43" aria-hidden="true" tabindex="-1"></a>ring_type_map <span class="op">=</span> {</span>
+<span id="cb25-44"><a href="#cb25-44" aria-hidden="true" tabindex="-1"></a>    <span class="st">"c"</span>: <span class="st">"cobwebby"</span>,</span>
+<span id="cb25-45"><a href="#cb25-45" aria-hidden="true" tabindex="-1"></a>    <span class="st">"e"</span>: <span class="st">"evanescent"</span>,</span>
+<span id="cb25-46"><a href="#cb25-46" aria-hidden="true" tabindex="-1"></a>    <span class="st">"f"</span>: <span class="st">"flaring"</span>,</span>
+<span id="cb25-47"><a href="#cb25-47" aria-hidden="true" tabindex="-1"></a>    <span class="st">"l"</span>: <span class="st">"large"</span>,</span>
+<span id="cb25-48"><a href="#cb25-48" aria-hidden="true" tabindex="-1"></a>    <span class="st">"n"</span>: <span class="st">"none"</span>,</span>
+<span id="cb25-49"><a href="#cb25-49" aria-hidden="true" tabindex="-1"></a>    <span class="st">"p"</span>: <span class="st">"pendant"</span>,</span>
+<span id="cb25-50"><a href="#cb25-50" aria-hidden="true" tabindex="-1"></a>    <span class="st">"s"</span>: <span class="st">"sheathing"</span>,</span>
+<span id="cb25-51"><a href="#cb25-51" aria-hidden="true" tabindex="-1"></a>    <span class="st">"z"</span>: <span class="st">"zone"</span>,</span>
+<span id="cb25-52"><a href="#cb25-52" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
+<div id="0be97384" class="cell" data-execution_count="18">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> stacked_poison_chart(</span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>    figure_number: <span class="bu">int</span>,</span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>    feature: <span class="bu">str</span>,</span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>    feature_label: <span class="bu">str</span> <span class="op">|</span> <span class="va">None</span> <span class="op">=</span> <span class="va">None</span>,</span>
+<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a>    category_labels: <span class="bu">dict</span>[<span class="bu">str</span>, <span class="bu">str</span>] <span class="op">|</span> <span class="va">None</span> <span class="op">=</span> <span class="va">None</span>,</span>
+<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a>):</span>
+<span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""</span></span>
+<span id="cb26-8"><a href="#cb26-8" aria-hidden="true" tabindex="-1"></a><span class="co">    Create a stacked bar chart showing edible vs poisonous fractions</span></span>
+<span id="cb26-9"><a href="#cb26-9" aria-hidden="true" tabindex="-1"></a><span class="co">    for each category of a given feature.</span></span>
+<span id="cb26-10"><a href="#cb26-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-11"><a href="#cb26-11" aria-hidden="true" tabindex="-1"></a><span class="co">    Parameters</span></span>
+<span id="cb26-12"><a href="#cb26-12" aria-hidden="true" tabindex="-1"></a><span class="co">    ----------</span></span>
+<span id="cb26-13"><a href="#cb26-13" aria-hidden="true" tabindex="-1"></a><span class="co">    feature : str</span></span>
+<span id="cb26-14"><a href="#cb26-14" aria-hidden="true" tabindex="-1"></a><span class="co">        Column name in df (e.g., "odor", "gill_size", "habitat").</span></span>
+<span id="cb26-15"><a href="#cb26-15" aria-hidden="true" tabindex="-1"></a><span class="co">    feature_label : str, optional</span></span>
+<span id="cb26-16"><a href="#cb26-16" aria-hidden="true" tabindex="-1"></a><span class="co">        Pretty label for axes / title. If None, derived from the column name.</span></span>
+<span id="cb26-17"><a href="#cb26-17" aria-hidden="true" tabindex="-1"></a><span class="co">    category_labels : dict[str, str], optional</span></span>
+<span id="cb26-18"><a href="#cb26-18" aria-hidden="true" tabindex="-1"></a><span class="co">        Optional mapping from raw category codes to human-readable labels.</span></span>
+<span id="cb26-19"><a href="#cb26-19" aria-hidden="true" tabindex="-1"></a><span class="co">        For example, for odor: {"a": "almond", "n": "none", ...}.</span></span>
+<span id="cb26-20"><a href="#cb26-20" aria-hidden="true" tabindex="-1"></a><span class="co">        If provided, these labels will be used on the y-axis and in tooltips.</span></span>
+<span id="cb26-21"><a href="#cb26-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-22"><a href="#cb26-22" aria-hidden="true" tabindex="-1"></a><span class="co">    Returns</span></span>
+<span id="cb26-23"><a href="#cb26-23" aria-hidden="true" tabindex="-1"></a><span class="co">    -------</span></span>
+<span id="cb26-24"><a href="#cb26-24" aria-hidden="true" tabindex="-1"></a><span class="co">    alt.Chart</span></span>
+<span id="cb26-25"><a href="#cb26-25" aria-hidden="true" tabindex="-1"></a><span class="co">        Altair chart object with stacked bars.</span></span>
+<span id="cb26-26"><a href="#cb26-26" aria-hidden="true" tabindex="-1"></a><span class="co">    """</span></span>
+<span id="cb26-27"><a href="#cb26-27" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Use a nicer label if not provided</span></span>
+<span id="cb26-28"><a href="#cb26-28" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> feature_label <span class="kw">is</span> <span class="va">None</span>:</span>
+<span id="cb26-29"><a href="#cb26-29" aria-hidden="true" tabindex="-1"></a>        feature_label <span class="op">=</span> feature.replace(<span class="st">"_"</span>, <span class="st">" "</span>).title()</span>
+<span id="cb26-30"><a href="#cb26-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-31"><a href="#cb26-31" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Table of edible / poisonous fractions by category</span></span>
+<span id="cb26-32"><a href="#cb26-32" aria-hidden="true" tabindex="-1"></a>    ct <span class="op">=</span> get_poison_rate_by(feature).reset_index()</span>
+<span id="cb26-33"><a href="#cb26-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-34"><a href="#cb26-34" aria-hidden="true" tabindex="-1"></a>    <span class="co"># If a category label map is provided, add a display column</span></span>
+<span id="cb26-35"><a href="#cb26-35" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> category_labels <span class="kw">is</span> <span class="kw">not</span> <span class="va">None</span>:</span>
+<span id="cb26-36"><a href="#cb26-36" aria-hidden="true" tabindex="-1"></a>        display_col <span class="op">=</span> <span class="ss">f"</span><span class="sc">{</span>feature<span class="sc">}</span><span class="ss">_label"</span></span>
+<span id="cb26-37"><a href="#cb26-37" aria-hidden="true" tabindex="-1"></a>        ct[display_col] <span class="op">=</span> ct[feature].<span class="bu">map</span>(category_labels).fillna(ct[feature])</span>
+<span id="cb26-38"><a href="#cb26-38" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb26-39"><a href="#cb26-39" aria-hidden="true" tabindex="-1"></a>        display_col <span class="op">=</span> feature  <span class="co"># use the raw feature values</span></span>
+<span id="cb26-40"><a href="#cb26-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-41"><a href="#cb26-41" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Long format for stacked bars</span></span>
+<span id="cb26-42"><a href="#cb26-42" aria-hidden="true" tabindex="-1"></a>    long_df <span class="op">=</span> ct.melt(</span>
+<span id="cb26-43"><a href="#cb26-43" aria-hidden="true" tabindex="-1"></a>        id_vars<span class="op">=</span>display_col,</span>
+<span id="cb26-44"><a href="#cb26-44" aria-hidden="true" tabindex="-1"></a>        value_vars<span class="op">=</span>[<span class="st">"edible_frac"</span>, <span class="st">"poisonous_frac"</span>],</span>
+<span id="cb26-45"><a href="#cb26-45" aria-hidden="true" tabindex="-1"></a>        var_name<span class="op">=</span><span class="st">"class"</span>,</span>
+<span id="cb26-46"><a href="#cb26-46" aria-hidden="true" tabindex="-1"></a>        value_name<span class="op">=</span><span class="st">"fraction"</span>,</span>
+<span id="cb26-47"><a href="#cb26-47" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb26-48"><a href="#cb26-48" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-49"><a href="#cb26-49" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Human-readable class labels for legend</span></span>
+<span id="cb26-50"><a href="#cb26-50" aria-hidden="true" tabindex="-1"></a>    long_df[<span class="st">"class_label"</span>] <span class="op">=</span> long_df[<span class="st">"class"</span>].<span class="bu">map</span>(</span>
+<span id="cb26-51"><a href="#cb26-51" aria-hidden="true" tabindex="-1"></a>        {<span class="st">"edible_frac"</span>: <span class="st">"Edible"</span>, <span class="st">"poisonous_frac"</span>: <span class="st">"Poisonous"</span>}</span>
+<span id="cb26-52"><a href="#cb26-52" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb26-53"><a href="#cb26-53" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-54"><a href="#cb26-54" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Build stacked bar chart</span></span>
+<span id="cb26-55"><a href="#cb26-55" aria-hidden="true" tabindex="-1"></a>    chart <span class="op">=</span> (</span>
+<span id="cb26-56"><a href="#cb26-56" aria-hidden="true" tabindex="-1"></a>        alt.Chart(long_df)</span>
+<span id="cb26-57"><a href="#cb26-57" aria-hidden="true" tabindex="-1"></a>        .mark_bar()</span>
+<span id="cb26-58"><a href="#cb26-58" aria-hidden="true" tabindex="-1"></a>        .encode(</span>
+<span id="cb26-59"><a href="#cb26-59" aria-hidden="true" tabindex="-1"></a>            y<span class="op">=</span>alt.Y(<span class="ss">f"</span><span class="sc">{</span>display_col<span class="sc">}</span><span class="ss">:N"</span>, title<span class="op">=</span>feature_label, sort<span class="op">=</span><span class="st">"-x"</span>),</span>
+<span id="cb26-60"><a href="#cb26-60" aria-hidden="true" tabindex="-1"></a>            x<span class="op">=</span>alt.X(<span class="st">"fraction:Q"</span>, title<span class="op">=</span><span class="st">"Fraction"</span>, axis<span class="op">=</span>alt.Axis(<span class="bu">format</span><span class="op">=</span><span class="st">".2f"</span>)),</span>
+<span id="cb26-61"><a href="#cb26-61" aria-hidden="true" tabindex="-1"></a>            color<span class="op">=</span>alt.Color(</span>
+<span id="cb26-62"><a href="#cb26-62" aria-hidden="true" tabindex="-1"></a>                <span class="st">"class_label:N"</span>,</span>
+<span id="cb26-63"><a href="#cb26-63" aria-hidden="true" tabindex="-1"></a>                title<span class="op">=</span><span class="st">"Mushroom class"</span>,</span>
+<span id="cb26-64"><a href="#cb26-64" aria-hidden="true" tabindex="-1"></a>                scale<span class="op">=</span>alt.Scale(</span>
+<span id="cb26-65"><a href="#cb26-65" aria-hidden="true" tabindex="-1"></a>                    domain<span class="op">=</span>[<span class="st">"Edible"</span>, <span class="st">"Poisonous"</span>],</span>
+<span id="cb26-66"><a href="#cb26-66" aria-hidden="true" tabindex="-1"></a>                    <span class="bu">range</span><span class="op">=</span>[<span class="st">"#17BECF"</span>, <span class="st">"#7E1E9C"</span>],</span>
+<span id="cb26-67"><a href="#cb26-67" aria-hidden="true" tabindex="-1"></a>                ),</span>
+<span id="cb26-68"><a href="#cb26-68" aria-hidden="true" tabindex="-1"></a>                legend<span class="op">=</span>alt.Legend(title<span class="op">=</span><span class="st">"Mushroom class"</span>),</span>
+<span id="cb26-69"><a href="#cb26-69" aria-hidden="true" tabindex="-1"></a>            ),</span>
+<span id="cb26-70"><a href="#cb26-70" aria-hidden="true" tabindex="-1"></a>            tooltip<span class="op">=</span>[</span>
+<span id="cb26-71"><a href="#cb26-71" aria-hidden="true" tabindex="-1"></a>                alt.Tooltip(<span class="ss">f"</span><span class="sc">{</span>display_col<span class="sc">}</span><span class="ss">:N"</span>, title<span class="op">=</span>feature_label),</span>
+<span id="cb26-72"><a href="#cb26-72" aria-hidden="true" tabindex="-1"></a>                alt.Tooltip(<span class="st">"class_label:N"</span>, title<span class="op">=</span><span class="st">"Class"</span>),</span>
+<span id="cb26-73"><a href="#cb26-73" aria-hidden="true" tabindex="-1"></a>                alt.Tooltip(<span class="st">"fraction:Q"</span>, title<span class="op">=</span><span class="st">"Fraction"</span>, <span class="bu">format</span><span class="op">=</span><span class="st">".2f"</span>),</span>
+<span id="cb26-74"><a href="#cb26-74" aria-hidden="true" tabindex="-1"></a>            ],</span>
+<span id="cb26-75"><a href="#cb26-75" aria-hidden="true" tabindex="-1"></a>        )</span>
+<span id="cb26-76"><a href="#cb26-76" aria-hidden="true" tabindex="-1"></a>        .properties(</span>
+<span id="cb26-77"><a href="#cb26-77" aria-hidden="true" tabindex="-1"></a>            title<span class="op">=</span><span class="ss">f"Figure </span><span class="sc">{</span>figure_number<span class="sc">}</span><span class="ss">: Class proportions (edible vs poisonous) by </span><span class="sc">{</span>feature_label<span class="sc">.</span>lower()<span class="sc">}</span><span class="ss">"</span>,</span>
+<span id="cb26-78"><a href="#cb26-78" aria-hidden="true" tabindex="-1"></a>            width<span class="op">=</span><span class="dv">450</span>,</span>
+<span id="cb26-79"><a href="#cb26-79" aria-hidden="true" tabindex="-1"></a>        )</span>
+<span id="cb26-80"><a href="#cb26-80" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb26-81"><a href="#cb26-81" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> chart</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="7c9cf090" class="cell" data-execution_count="18">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>odor_ct_long <span class="op">=</span> odor_ct.melt(</span>
-<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>    id_vars<span class="op">=</span><span class="st">'odor_name'</span>,</span>
-<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>    value_vars<span class="op">=</span>[<span class="st">'edible_frac'</span>, <span class="st">'poisonous_frac'</span>],</span>
-<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>    var_name<span class="op">=</span><span class="st">'class'</span>,</span>
-<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a>    value_name<span class="op">=</span><span class="st">'fraction'</span></span>
-<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a>odor_ct_long</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-display" data-execution_count="18">
-<div>
-
-
-<table class="dataframe caption-top table table-sm table-striped small" data-border="1">
-<thead>
-<tr class="header">
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th">odor_name</th>
-<th data-quarto-table-cell-role="th">class</th>
-<th data-quarto-table-cell-role="th">fraction</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<th data-quarto-table-cell-role="th">0</th>
-<td>creosote</td>
-<td>edible_frac</td>
-<td>0.000000</td>
-</tr>
-<tr class="even">
-<th data-quarto-table-cell-role="th">1</th>
-<td>fishy</td>
-<td>edible_frac</td>
-<td>0.000000</td>
-</tr>
-<tr class="odd">
-<th data-quarto-table-cell-role="th">2</th>
-<td>foul</td>
-<td>edible_frac</td>
-<td>0.000000</td>
-</tr>
-<tr class="even">
-<th data-quarto-table-cell-role="th">3</th>
-<td>musty</td>
-<td>edible_frac</td>
-<td>0.000000</td>
-</tr>
-<tr class="odd">
-<th data-quarto-table-cell-role="th">4</th>
-<td>pungent</td>
-<td>edible_frac</td>
-<td>0.000000</td>
-</tr>
-<tr class="even">
-<th data-quarto-table-cell-role="th">5</th>
-<td>spicy</td>
-<td>edible_frac</td>
-<td>0.000000</td>
-</tr>
-<tr class="odd">
-<th data-quarto-table-cell-role="th">6</th>
-<td>none</td>
-<td>edible_frac</td>
-<td>0.965986</td>
-</tr>
-<tr class="even">
-<th data-quarto-table-cell-role="th">7</th>
-<td>almond</td>
-<td>edible_frac</td>
-<td>1.000000</td>
-</tr>
-<tr class="odd">
-<th data-quarto-table-cell-role="th">8</th>
-<td>anise</td>
-<td>edible_frac</td>
-<td>1.000000</td>
-</tr>
-<tr class="even">
-<th data-quarto-table-cell-role="th">9</th>
-<td>creosote</td>
-<td>poisonous_frac</td>
-<td>1.000000</td>
-</tr>
-<tr class="odd">
-<th data-quarto-table-cell-role="th">10</th>
-<td>fishy</td>
-<td>poisonous_frac</td>
-<td>1.000000</td>
-</tr>
-<tr class="even">
-<th data-quarto-table-cell-role="th">11</th>
-<td>foul</td>
-<td>poisonous_frac</td>
-<td>1.000000</td>
-</tr>
-<tr class="odd">
-<th data-quarto-table-cell-role="th">12</th>
-<td>musty</td>
-<td>poisonous_frac</td>
-<td>1.000000</td>
-</tr>
-<tr class="even">
-<th data-quarto-table-cell-role="th">13</th>
-<td>pungent</td>
-<td>poisonous_frac</td>
-<td>1.000000</td>
-</tr>
-<tr class="odd">
-<th data-quarto-table-cell-role="th">14</th>
-<td>spicy</td>
-<td>poisonous_frac</td>
-<td>1.000000</td>
-</tr>
-<tr class="even">
-<th data-quarto-table-cell-role="th">15</th>
-<td>none</td>
-<td>poisonous_frac</td>
-<td>0.034014</td>
-</tr>
-<tr class="odd">
-<th data-quarto-table-cell-role="th">16</th>
-<td>almond</td>
-<td>poisonous_frac</td>
-<td>0.000000</td>
-</tr>
-<tr class="even">
-<th data-quarto-table-cell-role="th">17</th>
-<td>anise</td>
-<td>poisonous_frac</td>
-<td>0.000000</td>
-</tr>
-</tbody>
-</table>
-
-</div>
-</div>
-</div>
-<div id="8bf0861c" class="cell" data-execution_count="19">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>alt.Chart(odor_ct_long).mark_bar().encode(</span>
-<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>    y<span class="op">=</span>alt.Y(<span class="st">'odor_name:N'</span>, title<span class="op">=</span><span class="st">'Odor category'</span>, sort<span class="op">=</span><span class="st">'-x'</span>),</span>
-<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>    x<span class="op">=</span>alt.X(<span class="st">'fraction:Q'</span>, title<span class="op">=</span><span class="st">'Fraction'</span>, axis<span class="op">=</span>alt.Axis(<span class="bu">format</span><span class="op">=</span><span class="st">'.2f'</span>)),</span>
-<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a>    color<span class="op">=</span>alt.Color(</span>
-<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a>        <span class="st">'class:N'</span>,</span>
-<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a>        title<span class="op">=</span><span class="st">'Class'</span>,</span>
-<span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a>        scale<span class="op">=</span>alt.Scale(</span>
-<span id="cb27-8"><a href="#cb27-8" aria-hidden="true" tabindex="-1"></a>            domain<span class="op">=</span>[<span class="st">'edible_frac'</span>, <span class="st">'poisonous_frac'</span>],</span>
-<span id="cb27-9"><a href="#cb27-9" aria-hidden="true" tabindex="-1"></a>            <span class="bu">range</span><span class="op">=</span>[<span class="st">'#17BECF'</span>, <span class="st">'#7E1E9C'</span>]</span>
-<span id="cb27-10"><a href="#cb27-10" aria-hidden="true" tabindex="-1"></a>        ),</span>
-<span id="cb27-11"><a href="#cb27-11" aria-hidden="true" tabindex="-1"></a>        legend<span class="op">=</span>alt.Legend(title<span class="op">=</span><span class="st">"Mushroom class"</span>)</span>
-<span id="cb27-12"><a href="#cb27-12" aria-hidden="true" tabindex="-1"></a>    ),</span>
-<span id="cb27-13"><a href="#cb27-13" aria-hidden="true" tabindex="-1"></a>    tooltip<span class="op">=</span>[</span>
-<span id="cb27-14"><a href="#cb27-14" aria-hidden="true" tabindex="-1"></a>        alt.Tooltip(<span class="st">'odor_name:N'</span>, title<span class="op">=</span><span class="st">'Odor'</span>),</span>
-<span id="cb27-15"><a href="#cb27-15" aria-hidden="true" tabindex="-1"></a>        alt.Tooltip(<span class="st">'class:N'</span>, title<span class="op">=</span><span class="st">'Class'</span>),</span>
-<span id="cb27-16"><a href="#cb27-16" aria-hidden="true" tabindex="-1"></a>        alt.Tooltip(<span class="st">'fraction:Q'</span>, title<span class="op">=</span><span class="st">'Fraction'</span>, <span class="bu">format</span><span class="op">=</span><span class="st">'.2f'</span>)</span>
-<span id="cb27-17"><a href="#cb27-17" aria-hidden="true" tabindex="-1"></a>    ]</span>
-<span id="cb27-18"><a href="#cb27-18" aria-hidden="true" tabindex="-1"></a>).properties(</span>
-<span id="cb27-19"><a href="#cb27-19" aria-hidden="true" tabindex="-1"></a>    title<span class="op">=</span><span class="st">'Distribution of poisonous vs edible mushrooms by odor'</span>,</span>
-<span id="cb27-20"><a href="#cb27-20" aria-hidden="true" tabindex="-1"></a>    width<span class="op">=</span><span class="dv">450</span></span>
-<span id="cb27-21"><a href="#cb27-21" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="7382ce2c" class="cell" data-execution_count="19">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Visualize the edible vs poisonous class proportions for each odor category</span></span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>stacked_poison_chart(<span class="dv">1</span>, <span class="st">"odor"</span>, <span class="st">"Odor Category"</span>, odor_map)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="19">
 
 <style>
-  #altair-viz-aa86c62b58ef469ba7be6efdf7dc13ce.vega-embed {
+  #altair-viz-161982cd9dcd4f46a5166282c1c1fc3f.vega-embed {
     width: 100%;
     display: flex;
   }
 
-  #altair-viz-aa86c62b58ef469ba7be6efdf7dc13ce.vega-embed details,
-  #altair-viz-aa86c62b58ef469ba7be6efdf7dc13ce.vega-embed details summary {
+  #altair-viz-161982cd9dcd4f46a5166282c1c1fc3f.vega-embed details,
+  #altair-viz-161982cd9dcd4f46a5166282c1c1fc3f.vega-embed details summary {
     position: relative;
   }
 </style>
-<div id="altair-viz-aa86c62b58ef469ba7be6efdf7dc13ce"></div>
+<div id="altair-viz-161982cd9dcd4f46a5166282c1c1fc3f"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-aa86c62b58ef469ba7be6efdf7dc13ce") {
-      outputDiv = document.getElementById("altair-viz-aa86c62b58ef469ba7be6efdf7dc13ce");
+    if (outputDiv.id !== "altair-viz-161982cd9dcd4f46a5166282c1c1fc3f") {
+      outputDiv = document.getElementById("altair-viz-161982cd9dcd4f46a5166282c1c1fc3f");
     }
 
     const paths = {
@@ -1245,95 +1131,107 @@ Name: proportion, dtype: float64</code></pre>
         .catch(showError)
         .then(() => displayChart(vegaEmbed));
     }
-  })({"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}}, "data": {"name": "data-374b601bb2dfb13c8ffbb345b8b13289"}, "mark": {"type": "bar"}, "encoding": {"color": {"field": "class", "legend": {"title": "Mushroom class"}, "scale": {"domain": ["edible_frac", "poisonous_frac"], "range": ["#17BECF", "#7E1E9C"]}, "title": "Class", "type": "nominal"}, "tooltip": [{"field": "odor_name", "title": "Odor", "type": "nominal"}, {"field": "class", "title": "Class", "type": "nominal"}, {"field": "fraction", "format": ".2f", "title": "Fraction", "type": "quantitative"}], "x": {"axis": {"format": ".2f"}, "field": "fraction", "title": "Fraction", "type": "quantitative"}, "y": {"field": "odor_name", "sort": "-x", "title": "Odor category", "type": "nominal"}}, "title": "Distribution of poisonous vs edible mushrooms by odor", "width": 450, "$schema": "https://vega.github.io/schema/vega-lite/v5.20.1.json", "datasets": {"data-374b601bb2dfb13c8ffbb345b8b13289": [{"odor_name": "creosote", "class": "edible_frac", "fraction": 0.0}, {"odor_name": "fishy", "class": "edible_frac", "fraction": 0.0}, {"odor_name": "foul", "class": "edible_frac", "fraction": 0.0}, {"odor_name": "musty", "class": "edible_frac", "fraction": 0.0}, {"odor_name": "pungent", "class": "edible_frac", "fraction": 0.0}, {"odor_name": "spicy", "class": "edible_frac", "fraction": 0.0}, {"odor_name": "none", "class": "edible_frac", "fraction": 0.9659863945578231}, {"odor_name": "almond", "class": "edible_frac", "fraction": 1.0}, {"odor_name": "anise", "class": "edible_frac", "fraction": 1.0}, {"odor_name": "creosote", "class": "poisonous_frac", "fraction": 1.0}, {"odor_name": "fishy", "class": "poisonous_frac", "fraction": 1.0}, {"odor_name": "foul", "class": "poisonous_frac", "fraction": 1.0}, {"odor_name": "musty", "class": "poisonous_frac", "fraction": 1.0}, {"odor_name": "pungent", "class": "poisonous_frac", "fraction": 1.0}, {"odor_name": "spicy", "class": "poisonous_frac", "fraction": 1.0}, {"odor_name": "none", "class": "poisonous_frac", "fraction": 0.034013605442176874}, {"odor_name": "almond", "class": "poisonous_frac", "fraction": 0.0}, {"odor_name": "anise", "class": "poisonous_frac", "fraction": 0.0}]}}, {"mode": "vega-lite"});
+  })({"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}}, "data": {"name": "data-5eba08a56a9da3f22fbe6a5b767319f7"}, "mark": {"type": "bar"}, "encoding": {"color": {"field": "class_label", "legend": {"title": "Mushroom class"}, "scale": {"domain": ["Edible", "Poisonous"], "range": ["#17BECF", "#7E1E9C"]}, "title": "Mushroom class", "type": "nominal"}, "tooltip": [{"field": "odor_label", "title": "Odor Category", "type": "nominal"}, {"field": "class_label", "title": "Class", "type": "nominal"}, {"field": "fraction", "format": ".2f", "title": "Fraction", "type": "quantitative"}], "x": {"axis": {"format": ".2f"}, "field": "fraction", "title": "Fraction", "type": "quantitative"}, "y": {"field": "odor_label", "sort": "-x", "title": "Odor Category", "type": "nominal"}}, "title": "Figure 1: Class proportions (edible vs poisonous) by odor category", "width": 450, "$schema": "https://vega.github.io/schema/vega-lite/v5.20.1.json", "datasets": {"data-5eba08a56a9da3f22fbe6a5b767319f7": [{"odor_label": "creosote", "class": "edible_frac", "fraction": 0.0, "class_label": "Edible"}, {"odor_label": "fishy", "class": "edible_frac", "fraction": 0.0, "class_label": "Edible"}, {"odor_label": "foul", "class": "edible_frac", "fraction": 0.0, "class_label": "Edible"}, {"odor_label": "musty", "class": "edible_frac", "fraction": 0.0, "class_label": "Edible"}, {"odor_label": "pungent", "class": "edible_frac", "fraction": 0.0, "class_label": "Edible"}, {"odor_label": "spicy", "class": "edible_frac", "fraction": 0.0, "class_label": "Edible"}, {"odor_label": "none", "class": "edible_frac", "fraction": 0.9659863945578231, "class_label": "Edible"}, {"odor_label": "almond", "class": "edible_frac", "fraction": 1.0, "class_label": "Edible"}, {"odor_label": "anise", "class": "edible_frac", "fraction": 1.0, "class_label": "Edible"}, {"odor_label": "creosote", "class": "poisonous_frac", "fraction": 1.0, "class_label": "Poisonous"}, {"odor_label": "fishy", "class": "poisonous_frac", "fraction": 1.0, "class_label": "Poisonous"}, {"odor_label": "foul", "class": "poisonous_frac", "fraction": 1.0, "class_label": "Poisonous"}, {"odor_label": "musty", "class": "poisonous_frac", "fraction": 1.0, "class_label": "Poisonous"}, {"odor_label": "pungent", "class": "poisonous_frac", "fraction": 1.0, "class_label": "Poisonous"}, {"odor_label": "spicy", "class": "poisonous_frac", "fraction": 1.0, "class_label": "Poisonous"}, {"odor_label": "none", "class": "poisonous_frac", "fraction": 0.034013605442176874, "class_label": "Poisonous"}, {"odor_label": "almond", "class": "poisonous_frac", "fraction": 0.0, "class_label": "Poisonous"}, {"odor_label": "anise", "class": "poisonous_frac", "fraction": 0.0, "class_label": "Poisonous"}]}}, {"mode": "vega-lite"});
 </script>
 </div>
 </div>
-<div id="a3882f70" class="cell" data-execution_count="20">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> stacked_poison_chart(feature: <span class="bu">str</span>, feature_label: <span class="bu">str</span> <span class="op">|</span> <span class="va">None</span> <span class="op">=</span> <span class="va">None</span>):</span>
-<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""</span></span>
-<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a><span class="co">    Create a stacked bar chart showing edible vs poisonous fractions</span></span>
-<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a><span class="co">    for each category of a given feature.</span></span>
-<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a><span class="co">    Parameters</span></span>
-<span id="cb28-7"><a href="#cb28-7" aria-hidden="true" tabindex="-1"></a><span class="co">    ----------</span></span>
-<span id="cb28-8"><a href="#cb28-8" aria-hidden="true" tabindex="-1"></a><span class="co">    feature : str</span></span>
-<span id="cb28-9"><a href="#cb28-9" aria-hidden="true" tabindex="-1"></a><span class="co">        Column name in df (e.g., "odor", "gill_size", "habitat").</span></span>
-<span id="cb28-10"><a href="#cb28-10" aria-hidden="true" tabindex="-1"></a><span class="co">    feature_label : str, optional</span></span>
-<span id="cb28-11"><a href="#cb28-11" aria-hidden="true" tabindex="-1"></a><span class="co">        Pretty label for axes / title. If None, derived from the column name.</span></span>
-<span id="cb28-12"><a href="#cb28-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb28-13"><a href="#cb28-13" aria-hidden="true" tabindex="-1"></a><span class="co">    Returns</span></span>
-<span id="cb28-14"><a href="#cb28-14" aria-hidden="true" tabindex="-1"></a><span class="co">    -------</span></span>
-<span id="cb28-15"><a href="#cb28-15" aria-hidden="true" tabindex="-1"></a><span class="co">    alt.Chart</span></span>
-<span id="cb28-16"><a href="#cb28-16" aria-hidden="true" tabindex="-1"></a><span class="co">        Altair chart object with stacked bars.</span></span>
-<span id="cb28-17"><a href="#cb28-17" aria-hidden="true" tabindex="-1"></a><span class="co">    """</span></span>
-<span id="cb28-18"><a href="#cb28-18" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Use a nicer label if not provided</span></span>
-<span id="cb28-19"><a href="#cb28-19" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> feature_label <span class="kw">is</span> <span class="va">None</span>:</span>
-<span id="cb28-20"><a href="#cb28-20" aria-hidden="true" tabindex="-1"></a>        feature_label <span class="op">=</span> feature.replace(<span class="st">"_"</span>, <span class="st">" "</span>).title()</span>
-<span id="cb28-21"><a href="#cb28-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb28-22"><a href="#cb28-22" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Table of edible / poisonous fractions by category</span></span>
-<span id="cb28-23"><a href="#cb28-23" aria-hidden="true" tabindex="-1"></a>    ct <span class="op">=</span> get_poison_rate_by(feature).reset_index()</span>
-<span id="cb28-24"><a href="#cb28-24" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb28-25"><a href="#cb28-25" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Long format for stacked bars</span></span>
-<span id="cb28-26"><a href="#cb28-26" aria-hidden="true" tabindex="-1"></a>    long_df <span class="op">=</span> ct.melt(</span>
-<span id="cb28-27"><a href="#cb28-27" aria-hidden="true" tabindex="-1"></a>        id_vars<span class="op">=</span>feature,</span>
-<span id="cb28-28"><a href="#cb28-28" aria-hidden="true" tabindex="-1"></a>        value_vars<span class="op">=</span>[<span class="st">"edible_frac"</span>, <span class="st">"poisonous_frac"</span>],</span>
-<span id="cb28-29"><a href="#cb28-29" aria-hidden="true" tabindex="-1"></a>        var_name<span class="op">=</span><span class="st">"class"</span>,</span>
-<span id="cb28-30"><a href="#cb28-30" aria-hidden="true" tabindex="-1"></a>        value_name<span class="op">=</span><span class="st">"fraction"</span>,</span>
-<span id="cb28-31"><a href="#cb28-31" aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="cb28-32"><a href="#cb28-32" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb28-33"><a href="#cb28-33" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Build stacked bar chart</span></span>
-<span id="cb28-34"><a href="#cb28-34" aria-hidden="true" tabindex="-1"></a>    chart <span class="op">=</span> (</span>
-<span id="cb28-35"><a href="#cb28-35" aria-hidden="true" tabindex="-1"></a>        alt.Chart(long_df)</span>
-<span id="cb28-36"><a href="#cb28-36" aria-hidden="true" tabindex="-1"></a>        .mark_bar()</span>
-<span id="cb28-37"><a href="#cb28-37" aria-hidden="true" tabindex="-1"></a>        .encode(</span>
-<span id="cb28-38"><a href="#cb28-38" aria-hidden="true" tabindex="-1"></a>            y<span class="op">=</span>alt.Y(<span class="ss">f"</span><span class="sc">{</span>feature<span class="sc">}</span><span class="ss">:N"</span>, title<span class="op">=</span>feature_label, sort<span class="op">=</span><span class="st">"-x"</span>),</span>
-<span id="cb28-39"><a href="#cb28-39" aria-hidden="true" tabindex="-1"></a>            x<span class="op">=</span>alt.X(<span class="st">"fraction:Q"</span>, title<span class="op">=</span><span class="st">"Fraction"</span>, axis<span class="op">=</span>alt.Axis(<span class="bu">format</span><span class="op">=</span><span class="st">".2f"</span>)),</span>
-<span id="cb28-40"><a href="#cb28-40" aria-hidden="true" tabindex="-1"></a>            color<span class="op">=</span>alt.Color(</span>
-<span id="cb28-41"><a href="#cb28-41" aria-hidden="true" tabindex="-1"></a>                <span class="st">"class:N"</span>,</span>
-<span id="cb28-42"><a href="#cb28-42" aria-hidden="true" tabindex="-1"></a>                title<span class="op">=</span><span class="st">"Class"</span>,</span>
-<span id="cb28-43"><a href="#cb28-43" aria-hidden="true" tabindex="-1"></a>                scale<span class="op">=</span>alt.Scale(</span>
-<span id="cb28-44"><a href="#cb28-44" aria-hidden="true" tabindex="-1"></a>                    domain<span class="op">=</span>[<span class="st">"edible_frac"</span>, <span class="st">"poisonous_frac"</span>],</span>
-<span id="cb28-45"><a href="#cb28-45" aria-hidden="true" tabindex="-1"></a>                    <span class="bu">range</span><span class="op">=</span>[<span class="st">"#17BECF"</span>, <span class="st">"#7E1E9C"</span>],</span>
-<span id="cb28-46"><a href="#cb28-46" aria-hidden="true" tabindex="-1"></a>                ),</span>
-<span id="cb28-47"><a href="#cb28-47" aria-hidden="true" tabindex="-1"></a>                legend<span class="op">=</span>alt.Legend(title<span class="op">=</span><span class="st">"Mushroom class"</span>),</span>
-<span id="cb28-48"><a href="#cb28-48" aria-hidden="true" tabindex="-1"></a>            ),</span>
-<span id="cb28-49"><a href="#cb28-49" aria-hidden="true" tabindex="-1"></a>            tooltip<span class="op">=</span>[</span>
-<span id="cb28-50"><a href="#cb28-50" aria-hidden="true" tabindex="-1"></a>                alt.Tooltip(<span class="ss">f"</span><span class="sc">{</span>feature<span class="sc">}</span><span class="ss">:N"</span>, title<span class="op">=</span>feature_label),</span>
-<span id="cb28-51"><a href="#cb28-51" aria-hidden="true" tabindex="-1"></a>                alt.Tooltip(<span class="st">"class:N"</span>, title<span class="op">=</span><span class="st">"Class"</span>),</span>
-<span id="cb28-52"><a href="#cb28-52" aria-hidden="true" tabindex="-1"></a>                alt.Tooltip(<span class="st">"fraction:Q"</span>, title<span class="op">=</span><span class="st">"Fraction"</span>, <span class="bu">format</span><span class="op">=</span><span class="st">".2f"</span>),</span>
-<span id="cb28-53"><a href="#cb28-53" aria-hidden="true" tabindex="-1"></a>            ],</span>
-<span id="cb28-54"><a href="#cb28-54" aria-hidden="true" tabindex="-1"></a>        )</span>
-<span id="cb28-55"><a href="#cb28-55" aria-hidden="true" tabindex="-1"></a>        .properties(</span>
-<span id="cb28-56"><a href="#cb28-56" aria-hidden="true" tabindex="-1"></a>            title<span class="op">=</span><span class="ss">f"Distribution of poisonous vs edible mushrooms by </span><span class="sc">{</span>feature_label<span class="sc">.</span>lower()<span class="sc">}</span><span class="ss">"</span>,</span>
-<span id="cb28-57"><a href="#cb28-57" aria-hidden="true" tabindex="-1"></a>            width<span class="op">=</span><span class="dv">450</span>,</span>
-<span id="cb28-58"><a href="#cb28-58" aria-hidden="true" tabindex="-1"></a>        )</span>
-<span id="cb28-59"><a href="#cb28-59" aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="cb28-60"><a href="#cb28-60" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> chart</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="e1a2b568" class="cell" data-execution_count="20">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Visualize the edible vs poisonous class proportions for each gill size</span></span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>stacked_poison_chart(<span class="dv">2</span>, <span class="st">"gill_size"</span>, <span class="st">"Gill Size"</span>, gill_size_map)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="20">
+
+<style>
+  #altair-viz-1ad9ee8f350547dcba971b4c4fa8739e.vega-embed {
+    width: 100%;
+    display: flex;
+  }
+
+  #altair-viz-1ad9ee8f350547dcba971b4c4fa8739e.vega-embed details,
+  #altair-viz-1ad9ee8f350547dcba971b4c4fa8739e.vega-embed details summary {
+    position: relative;
+  }
+</style>
+<div id="altair-viz-1ad9ee8f350547dcba971b4c4fa8739e"></div>
+<script type="text/javascript">
+  var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
+  (function(spec, embedOpt){
+    let outputDiv = document.currentScript.previousElementSibling;
+    if (outputDiv.id !== "altair-viz-1ad9ee8f350547dcba971b4c4fa8739e") {
+      outputDiv = document.getElementById("altair-viz-1ad9ee8f350547dcba971b4c4fa8739e");
+    }
+
+    const paths = {
+      "vega": "https://cdn.jsdelivr.net/npm/vega@5?noext",
+      "vega-lib": "https://cdn.jsdelivr.net/npm/vega-lib?noext",
+      "vega-lite": "https://cdn.jsdelivr.net/npm/vega-lite@5.20.1?noext",
+      "vega-embed": "https://cdn.jsdelivr.net/npm/vega-embed@6?noext",
+    };
+
+    function maybeLoadScript(lib, version) {
+      var key = `${lib.replace("-", "")}_version`;
+      return (VEGA_DEBUG[key] == version) ?
+        Promise.resolve(paths[lib]) :
+        new Promise(function(resolve, reject) {
+          var s = document.createElement('script');
+          document.getElementsByTagName("head")[0].appendChild(s);
+          s.async = true;
+          s.onload = () => {
+            VEGA_DEBUG[key] = version;
+            return resolve(paths[lib]);
+          };
+          s.onerror = () => reject(`Error loading script: ${paths[lib]}`);
+          s.src = paths[lib];
+        });
+    }
+
+    function showError(err) {
+      outputDiv.innerHTML = `<div class="error" style="color:red;">${err}</div>`;
+      throw err;
+    }
+
+    function displayChart(vegaEmbed) {
+      vegaEmbed(outputDiv, spec, embedOpt)
+        .catch(err => showError(`Javascript Error: ${err.message}<br>This usually means there's a typo in your chart specification. See the javascript console for the full traceback.`));
+    }
+
+    if(typeof define === "function" && define.amd) {
+      requirejs.config({paths});
+      let deps = ["vega-embed"];
+      require(deps, displayChart, err => showError(`Error loading script: ${err.message}`));
+    } else {
+      maybeLoadScript("vega", "5")
+        .then(() => maybeLoadScript("vega-lite", "5.20.1"))
+        .then(() => maybeLoadScript("vega-embed", "6"))
+        .catch(showError)
+        .then(() => displayChart(vegaEmbed));
+    }
+  })({"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}}, "data": {"name": "data-6254e82d4bd3a594331af37050424f07"}, "mark": {"type": "bar"}, "encoding": {"color": {"field": "class_label", "legend": {"title": "Mushroom class"}, "scale": {"domain": ["Edible", "Poisonous"], "range": ["#17BECF", "#7E1E9C"]}, "title": "Mushroom class", "type": "nominal"}, "tooltip": [{"field": "gill_size_label", "title": "Gill Size", "type": "nominal"}, {"field": "class_label", "title": "Class", "type": "nominal"}, {"field": "fraction", "format": ".2f", "title": "Fraction", "type": "quantitative"}], "x": {"axis": {"format": ".2f"}, "field": "fraction", "title": "Fraction", "type": "quantitative"}, "y": {"field": "gill_size_label", "sort": "-x", "title": "Gill Size", "type": "nominal"}}, "title": "Figure 2: Class proportions (edible vs poisonous) by gill size", "width": 450, "$schema": "https://vega.github.io/schema/vega-lite/v5.20.1.json", "datasets": {"data-6254e82d4bd3a594331af37050424f07": [{"gill_size_label": "narrow", "class": "edible_frac", "fraction": 0.11464968152866242, "class_label": "Edible"}, {"gill_size_label": "broad", "class": "edible_frac", "fraction": 0.6985032074126871, "class_label": "Edible"}, {"gill_size_label": "narrow", "class": "poisonous_frac", "fraction": 0.8853503184713376, "class_label": "Poisonous"}, {"gill_size_label": "broad", "class": "poisonous_frac", "fraction": 0.3014967925873129, "class_label": "Poisonous"}]}}, {"mode": "vega-lite"});
+</script>
 </div>
-<div id="c26dc1c5" class="cell" data-execution_count="21">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Odor (what you already had)</span></span>
-<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>stacked_poison_chart(<span class="st">"odor"</span>, <span class="st">"Odor category"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="98c084af" class="cell" data-execution_count="21">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Visualize the edible vs poisonous class proportions for each habitat </span></span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>stacked_poison_chart(<span class="dv">3</span>, <span class="st">"habitat"</span>, <span class="st">"Habitat"</span>, habitat_map)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="21">
 
 <style>
-  #altair-viz-a4ed9824d38248558dfd207bff6be958.vega-embed {
+  #altair-viz-dc6afbfb041e467c9316ddcfd1175d89.vega-embed {
     width: 100%;
     display: flex;
   }
 
-  #altair-viz-a4ed9824d38248558dfd207bff6be958.vega-embed details,
-  #altair-viz-a4ed9824d38248558dfd207bff6be958.vega-embed details summary {
+  #altair-viz-dc6afbfb041e467c9316ddcfd1175d89.vega-embed details,
+  #altair-viz-dc6afbfb041e467c9316ddcfd1175d89.vega-embed details summary {
     position: relative;
   }
 </style>
-<div id="altair-viz-a4ed9824d38248558dfd207bff6be958"></div>
+<div id="altair-viz-dc6afbfb041e467c9316ddcfd1175d89"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-a4ed9824d38248558dfd207bff6be958") {
-      outputDiv = document.getElementById("altair-viz-a4ed9824d38248558dfd207bff6be958");
+    if (outputDiv.id !== "altair-viz-dc6afbfb041e467c9316ddcfd1175d89") {
+      outputDiv = document.getElementById("altair-viz-dc6afbfb041e467c9316ddcfd1175d89");
     }
 
     const paths = {
@@ -1381,33 +1279,33 @@ Name: proportion, dtype: float64</code></pre>
         .catch(showError)
         .then(() => displayChart(vegaEmbed));
     }
-  })({"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}}, "data": {"name": "data-58967b8bb2c4409b8b806e2513376a9f"}, "mark": {"type": "bar"}, "encoding": {"color": {"field": "class", "legend": {"title": "Mushroom class"}, "scale": {"domain": ["edible_frac", "poisonous_frac"], "range": ["#17BECF", "#7E1E9C"]}, "title": "Class", "type": "nominal"}, "tooltip": [{"field": "odor", "title": "Odor category", "type": "nominal"}, {"field": "class", "title": "Class", "type": "nominal"}, {"field": "fraction", "format": ".2f", "title": "Fraction", "type": "quantitative"}], "x": {"axis": {"format": ".2f"}, "field": "fraction", "title": "Fraction", "type": "quantitative"}, "y": {"field": "odor", "sort": "-x", "title": "Odor category", "type": "nominal"}}, "title": "Distribution of poisonous vs edible mushrooms by odor category", "width": 450, "$schema": "https://vega.github.io/schema/vega-lite/v5.20.1.json", "datasets": {"data-58967b8bb2c4409b8b806e2513376a9f": [{"odor": "c", "class": "edible_frac", "fraction": 0.0}, {"odor": "y", "class": "edible_frac", "fraction": 0.0}, {"odor": "f", "class": "edible_frac", "fraction": 0.0}, {"odor": "m", "class": "edible_frac", "fraction": 0.0}, {"odor": "p", "class": "edible_frac", "fraction": 0.0}, {"odor": "s", "class": "edible_frac", "fraction": 0.0}, {"odor": "n", "class": "edible_frac", "fraction": 0.9659863945578231}, {"odor": "a", "class": "edible_frac", "fraction": 1.0}, {"odor": "l", "class": "edible_frac", "fraction": 1.0}, {"odor": "c", "class": "poisonous_frac", "fraction": 1.0}, {"odor": "y", "class": "poisonous_frac", "fraction": 1.0}, {"odor": "f", "class": "poisonous_frac", "fraction": 1.0}, {"odor": "m", "class": "poisonous_frac", "fraction": 1.0}, {"odor": "p", "class": "poisonous_frac", "fraction": 1.0}, {"odor": "s", "class": "poisonous_frac", "fraction": 1.0}, {"odor": "n", "class": "poisonous_frac", "fraction": 0.034013605442176874}, {"odor": "a", "class": "poisonous_frac", "fraction": 0.0}, {"odor": "l", "class": "poisonous_frac", "fraction": 0.0}]}}, {"mode": "vega-lite"});
+  })({"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}}, "data": {"name": "data-53d90264daa3329062570bce08cae14a"}, "mark": {"type": "bar"}, "encoding": {"color": {"field": "class_label", "legend": {"title": "Mushroom class"}, "scale": {"domain": ["Edible", "Poisonous"], "range": ["#17BECF", "#7E1E9C"]}, "title": "Mushroom class", "type": "nominal"}, "tooltip": [{"field": "habitat_label", "title": "Habitat", "type": "nominal"}, {"field": "class_label", "title": "Class", "type": "nominal"}, {"field": "fraction", "format": ".2f", "title": "Fraction", "type": "quantitative"}], "x": {"axis": {"format": ".2f"}, "field": "fraction", "title": "Fraction", "type": "quantitative"}, "y": {"field": "habitat_label", "sort": "-x", "title": "Habitat", "type": "nominal"}}, "title": "Figure 3: Class proportions (edible vs poisonous) by habitat", "width": 450, "$schema": "https://vega.github.io/schema/vega-lite/v5.20.1.json", "datasets": {"data-53d90264daa3329062570bce08cae14a": [{"habitat_label": "paths", "class": "edible_frac", "fraction": 0.11888111888111888, "class_label": "Edible"}, {"habitat_label": "urban", "class": "edible_frac", "fraction": 0.2608695652173913, "class_label": "Edible"}, {"habitat_label": "leaves", "class": "edible_frac", "fraction": 0.28846153846153844, "class_label": "Edible"}, {"habitat_label": "woods", "class": "edible_frac", "fraction": 0.5972045743329097, "class_label": "Edible"}, {"habitat_label": "grasses", "class": "edible_frac", "fraction": 0.6554934823091247, "class_label": "Edible"}, {"habitat_label": "meadows", "class": "edible_frac", "fraction": 0.8767123287671232, "class_label": "Edible"}, {"habitat_label": "waste", "class": "edible_frac", "fraction": 1.0, "class_label": "Edible"}, {"habitat_label": "paths", "class": "poisonous_frac", "fraction": 0.8811188811188811, "class_label": "Poisonous"}, {"habitat_label": "urban", "class": "poisonous_frac", "fraction": 0.7391304347826086, "class_label": "Poisonous"}, {"habitat_label": "leaves", "class": "poisonous_frac", "fraction": 0.7115384615384616, "class_label": "Poisonous"}, {"habitat_label": "woods", "class": "poisonous_frac", "fraction": 0.4027954256670902, "class_label": "Poisonous"}, {"habitat_label": "grasses", "class": "poisonous_frac", "fraction": 0.34450651769087526, "class_label": "Poisonous"}, {"habitat_label": "meadows", "class": "poisonous_frac", "fraction": 0.1232876712328767, "class_label": "Poisonous"}, {"habitat_label": "waste", "class": "poisonous_frac", "fraction": 0.0, "class_label": "Poisonous"}]}}, {"mode": "vega-lite"});
 </script>
 </div>
 </div>
-<div id="1636ac57" class="cell" data-execution_count="22">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Gill size</span></span>
-<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>stacked_poison_chart(<span class="st">"gill_size"</span>, <span class="st">"Gill size"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="26fc612c" class="cell" data-execution_count="22">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Visualize the edible vs poisonous class proportions for each bruise category </span></span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>stacked_poison_chart(<span class="dv">4</span>, <span class="st">"bruises"</span>, <span class="st">"Bruises"</span>, bruises_map)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="22">
 
 <style>
-  #altair-viz-a26262df1ef74bf89bfea565d17a5123.vega-embed {
+  #altair-viz-b27e70e5488640ed8d19671b0feaa962.vega-embed {
     width: 100%;
     display: flex;
   }
 
-  #altair-viz-a26262df1ef74bf89bfea565d17a5123.vega-embed details,
-  #altair-viz-a26262df1ef74bf89bfea565d17a5123.vega-embed details summary {
+  #altair-viz-b27e70e5488640ed8d19671b0feaa962.vega-embed details,
+  #altair-viz-b27e70e5488640ed8d19671b0feaa962.vega-embed details summary {
     position: relative;
   }
 </style>
-<div id="altair-viz-a26262df1ef74bf89bfea565d17a5123"></div>
+<div id="altair-viz-b27e70e5488640ed8d19671b0feaa962"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-a26262df1ef74bf89bfea565d17a5123") {
-      outputDiv = document.getElementById("altair-viz-a26262df1ef74bf89bfea565d17a5123");
+    if (outputDiv.id !== "altair-viz-b27e70e5488640ed8d19671b0feaa962") {
+      outputDiv = document.getElementById("altair-viz-b27e70e5488640ed8d19671b0feaa962");
     }
 
     const paths = {
@@ -1455,33 +1353,33 @@ Name: proportion, dtype: float64</code></pre>
         .catch(showError)
         .then(() => displayChart(vegaEmbed));
     }
-  })({"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}}, "data": {"name": "data-92e7746b4dbdfe98893e3fb3bd426d94"}, "mark": {"type": "bar"}, "encoding": {"color": {"field": "class", "legend": {"title": "Mushroom class"}, "scale": {"domain": ["edible_frac", "poisonous_frac"], "range": ["#17BECF", "#7E1E9C"]}, "title": "Class", "type": "nominal"}, "tooltip": [{"field": "gill_size", "title": "Gill size", "type": "nominal"}, {"field": "class", "title": "Class", "type": "nominal"}, {"field": "fraction", "format": ".2f", "title": "Fraction", "type": "quantitative"}], "x": {"axis": {"format": ".2f"}, "field": "fraction", "title": "Fraction", "type": "quantitative"}, "y": {"field": "gill_size", "sort": "-x", "title": "Gill size", "type": "nominal"}}, "title": "Distribution of poisonous vs edible mushrooms by gill size", "width": 450, "$schema": "https://vega.github.io/schema/vega-lite/v5.20.1.json", "datasets": {"data-92e7746b4dbdfe98893e3fb3bd426d94": [{"gill_size": "n", "class": "edible_frac", "fraction": 0.11464968152866242}, {"gill_size": "b", "class": "edible_frac", "fraction": 0.6985032074126871}, {"gill_size": "n", "class": "poisonous_frac", "fraction": 0.8853503184713376}, {"gill_size": "b", "class": "poisonous_frac", "fraction": 0.3014967925873129}]}}, {"mode": "vega-lite"});
+  })({"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}}, "data": {"name": "data-eda3cb0625fbaa0b711ff6f83b8923c4"}, "mark": {"type": "bar"}, "encoding": {"color": {"field": "class_label", "legend": {"title": "Mushroom class"}, "scale": {"domain": ["Edible", "Poisonous"], "range": ["#17BECF", "#7E1E9C"]}, "title": "Mushroom class", "type": "nominal"}, "tooltip": [{"field": "bruises_label", "title": "Bruises", "type": "nominal"}, {"field": "class_label", "title": "Class", "type": "nominal"}, {"field": "fraction", "format": ".2f", "title": "Fraction", "type": "quantitative"}], "x": {"axis": {"format": ".2f"}, "field": "fraction", "title": "Fraction", "type": "quantitative"}, "y": {"field": "bruises_label", "sort": "-x", "title": "Bruises", "type": "nominal"}}, "title": "Figure 4: Class proportions (edible vs poisonous) by bruises", "width": 450, "$schema": "https://vega.github.io/schema/vega-lite/v5.20.1.json", "datasets": {"data-eda3cb0625fbaa0b711ff6f83b8923c4": [{"bruises_label": "no bruises", "class": "edible_frac", "fraction": 0.3066554338668913, "class_label": "Edible"}, {"bruises_label": "bruises", "class": "edible_frac", "fraction": 0.8151658767772512, "class_label": "Edible"}, {"bruises_label": "no bruises", "class": "poisonous_frac", "fraction": 0.6933445661331087, "class_label": "Poisonous"}, {"bruises_label": "bruises", "class": "poisonous_frac", "fraction": 0.1848341232227488, "class_label": "Poisonous"}]}}, {"mode": "vega-lite"});
 </script>
 </div>
 </div>
-<div id="f15f45a8" class="cell" data-execution_count="23">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Habitat</span></span>
-<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>stacked_poison_chart(<span class="st">"habitat"</span>, <span class="st">"Habitat"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="9eceb188" class="cell" data-execution_count="23">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Visualize the edible vs poisonous class proportions for each population type </span></span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>stacked_poison_chart(<span class="dv">5</span>, <span class="st">"population"</span>, <span class="st">"Population"</span>, population_map)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="23">
 
 <style>
-  #altair-viz-8468ff07d3a84dc7a84b7d55b13286ed.vega-embed {
+  #altair-viz-96fe4f4d90ff47b98b74741fb7945674.vega-embed {
     width: 100%;
     display: flex;
   }
 
-  #altair-viz-8468ff07d3a84dc7a84b7d55b13286ed.vega-embed details,
-  #altair-viz-8468ff07d3a84dc7a84b7d55b13286ed.vega-embed details summary {
+  #altair-viz-96fe4f4d90ff47b98b74741fb7945674.vega-embed details,
+  #altair-viz-96fe4f4d90ff47b98b74741fb7945674.vega-embed details summary {
     position: relative;
   }
 </style>
-<div id="altair-viz-8468ff07d3a84dc7a84b7d55b13286ed"></div>
+<div id="altair-viz-96fe4f4d90ff47b98b74741fb7945674"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-8468ff07d3a84dc7a84b7d55b13286ed") {
-      outputDiv = document.getElementById("altair-viz-8468ff07d3a84dc7a84b7d55b13286ed");
+    if (outputDiv.id !== "altair-viz-96fe4f4d90ff47b98b74741fb7945674") {
+      outputDiv = document.getElementById("altair-viz-96fe4f4d90ff47b98b74741fb7945674");
     }
 
     const paths = {
@@ -1529,7 +1427,7 @@ Name: proportion, dtype: float64</code></pre>
         .catch(showError)
         .then(() => displayChart(vegaEmbed));
     }
-  })({"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}}, "data": {"name": "data-b40d23f155b318a35c9e09a7235a7811"}, "mark": {"type": "bar"}, "encoding": {"color": {"field": "class", "legend": {"title": "Mushroom class"}, "scale": {"domain": ["edible_frac", "poisonous_frac"], "range": ["#17BECF", "#7E1E9C"]}, "title": "Class", "type": "nominal"}, "tooltip": [{"field": "habitat", "title": "Habitat", "type": "nominal"}, {"field": "class", "title": "Class", "type": "nominal"}, {"field": "fraction", "format": ".2f", "title": "Fraction", "type": "quantitative"}], "x": {"axis": {"format": ".2f"}, "field": "fraction", "title": "Fraction", "type": "quantitative"}, "y": {"field": "habitat", "sort": "-x", "title": "Habitat", "type": "nominal"}}, "title": "Distribution of poisonous vs edible mushrooms by habitat", "width": 450, "$schema": "https://vega.github.io/schema/vega-lite/v5.20.1.json", "datasets": {"data-b40d23f155b318a35c9e09a7235a7811": [{"habitat": "p", "class": "edible_frac", "fraction": 0.11888111888111888}, {"habitat": "u", "class": "edible_frac", "fraction": 0.2608695652173913}, {"habitat": "l", "class": "edible_frac", "fraction": 0.28846153846153844}, {"habitat": "d", "class": "edible_frac", "fraction": 0.5972045743329097}, {"habitat": "g", "class": "edible_frac", "fraction": 0.6554934823091247}, {"habitat": "m", "class": "edible_frac", "fraction": 0.8767123287671232}, {"habitat": "w", "class": "edible_frac", "fraction": 1.0}, {"habitat": "p", "class": "poisonous_frac", "fraction": 0.8811188811188811}, {"habitat": "u", "class": "poisonous_frac", "fraction": 0.7391304347826086}, {"habitat": "l", "class": "poisonous_frac", "fraction": 0.7115384615384616}, {"habitat": "d", "class": "poisonous_frac", "fraction": 0.4027954256670902}, {"habitat": "g", "class": "poisonous_frac", "fraction": 0.34450651769087526}, {"habitat": "m", "class": "poisonous_frac", "fraction": 0.1232876712328767}, {"habitat": "w", "class": "poisonous_frac", "fraction": 0.0}]}}, {"mode": "vega-lite"});
+  })({"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}}, "data": {"name": "data-2568be59ea71610a088afefcc595f75d"}, "mark": {"type": "bar"}, "encoding": {"color": {"field": "class_label", "legend": {"title": "Mushroom class"}, "scale": {"domain": ["Edible", "Poisonous"], "range": ["#17BECF", "#7E1E9C"]}, "title": "Mushroom class", "type": "nominal"}, "tooltip": [{"field": "population_label", "title": "Population", "type": "nominal"}, {"field": "class_label", "title": "Class", "type": "nominal"}, {"field": "fraction", "format": ".2f", "title": "Fraction", "type": "quantitative"}], "x": {"axis": {"format": ".2f"}, "field": "fraction", "title": "Fraction", "type": "quantitative"}, "y": {"field": "population_label", "sort": "-x", "title": "Population", "type": "nominal"}}, "title": "Figure 5: Class proportions (edible vs poisonous) by population", "width": 450, "$schema": "https://vega.github.io/schema/vega-lite/v5.20.1.json", "datasets": {"data-2568be59ea71610a088afefcc595f75d": [{"population_label": "several", "class": "edible_frac", "fraction": 0.29504950495049503, "class_label": "Edible"}, {"population_label": "solitary", "class": "edible_frac", "fraction": 0.6214953271028038, "class_label": "Edible"}, {"population_label": "scattered", "class": "edible_frac", "fraction": 0.7051282051282052, "class_label": "Edible"}, {"population_label": "clustered", "class": "edible_frac", "fraction": 0.8470588235294118, "class_label": "Edible"}, {"population_label": "abundant", "class": "edible_frac", "fraction": 1.0, "class_label": "Edible"}, {"population_label": "numerous", "class": "edible_frac", "fraction": 1.0, "class_label": "Edible"}, {"population_label": "several", "class": "poisonous_frac", "fraction": 0.7049504950495049, "class_label": "Poisonous"}, {"population_label": "solitary", "class": "poisonous_frac", "fraction": 0.37850467289719625, "class_label": "Poisonous"}, {"population_label": "scattered", "class": "poisonous_frac", "fraction": 0.2948717948717949, "class_label": "Poisonous"}, {"population_label": "clustered", "class": "poisonous_frac", "fraction": 0.15294117647058825, "class_label": "Poisonous"}, {"population_label": "abundant", "class": "poisonous_frac", "fraction": 0.0, "class_label": "Poisonous"}, {"population_label": "numerous", "class": "poisonous_frac", "fraction": 0.0, "class_label": "Poisonous"}]}}, {"mode": "vega-lite"});
 </script>
 </div>
 </div>
