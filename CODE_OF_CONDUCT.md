@@ -27,7 +27,7 @@ Examples of unacceptable behaviour:
 
 ## Consequences of Unacceptable Behaviour
 
-- Instances of unacceptable behaviour may be reported by contacting the project team. All complaints will be reviewed and investigated in a timely matter. Confidentiality for the reporter of any incident will be carefully and dutifully protected, and enforement will be carefully considered. Depending upon the context of the issue, verbal and written warnings may be issued along with internat investigations into all involved parties. Project contributors and maintainers who are found to be in violation of the code of conduct, may be temporarility or permanently removed by project leadership, especially for severe or repeated offences.
+Instances of unacceptable behaviour may be reported by contacting the project team. All complaints will be reviewed and investigated in a timely matter. Confidentiality for the reporter of any incident will be carefully and dutifully protected, and enforement will be carefully considered. Depending upon the context of the issue, verbal and written warnings may be issued along with internat investigations into all involved parties. Project contributors and maintainers who are found to be in violation of the code of conduct, may be temporarility or permanently removed by project leadership, especially for severe or repeated offences.
 
 ## Procedure for Reporting and Dealing with Unacceptable Behaviour
 
