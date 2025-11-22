@@ -2,7 +2,7 @@
 title: "Mushroom Classification"
 author: "Amar Gill, Ruth Yankson, Limor Winter, Claire Saunders"
 date: "November 18, 2025"
-jupyter: poisonous_mushroom_classifier
+jupyter: python3
 format:
   pdf: default
 execute:
