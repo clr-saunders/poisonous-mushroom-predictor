@@ -24,11 +24,15 @@ alt.renderers.enable("png")
 
 # Summary
 
- (Insert summary after analysis and discussion complete) 
+Here we attempt to build a classification model using a Support Vector Machine algorithm which can use physical characteristics of mushrooms to predict whether a North American mushroom from the Agaricus and Lepiota (Agaricaceae) family is edible or poisonous for human consumption. 
 
+Our final classifier performed excellently on an unseen test data set, with precision and recall of 1.0 and an overall accuracy calculated to be 1.0.
 
+On the 2,438 test data observations, the model correctly predicted all 2,438. 
 
+Although the model performs extremely well it has practical limitations, because it requires the correct identification of 20 different physical characteristics of a given mushroom in order for the corresponding prediction to be correct. 
 
+We believe the model could be a powerful tool for preventing the misidentification of the Agaricus and Lepiota family of mushrooms, but further efforts to improve the practical implementation of the model for usage by the public would be very useful.
 
 # Introduction
 
