@@ -38,11 +38,11 @@ quarto render notebooks/poisonous_mushroom_classifier.qmd
 
 ## Dependencies
 - conda (version 23.9.0 or higher)
--conda-lock (version 2.5.7 or higher)
--jupyterlab (version 4.0.0 or higher)
--nb_conda_kernels (version 2.3.1 or higher)
--Quarto** (version 1.4.0 or higher)
--Python and packages listed in environment.yml
+- conda-lock (version 2.5.7 or higher)
+- jupyterlab (version 4.0.0 or higher)
+- nb_conda_kernels (version 2.3.1 or higher)
+- Quarto** (version 1.4.0 or higher)
+- Python and packages listed in environment.yml
 
 ## License
 The Poisonous Mushroom Classifier report and documentation contained herein are licensed under the **Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)** License.  
