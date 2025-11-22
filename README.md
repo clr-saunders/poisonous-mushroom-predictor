@@ -6,6 +6,24 @@ Our final SVC model demonstrated perfect predictive performance on the unseen te
 
 The dataset used was adapted from The Audubon Society Field Guide to North American Mushrooms by Gary Lincoff (1981) and contains 8124 hypothetical samples representing 23 mushroom species. Each sample includes 22 categorical features describing observable physical traits and a binary label indicating whether the mushroom is edible or poisonous. Future work could focus on testing the model with real-world image and exploring feature simplification to improve accessibility and practical use by amateur foragers.
 
+## Project Structure
+- `notebooks/poisonous_mushroom_classifier.qmd`: Quarto notebook containing the full analysis and report.
+The repository is organized as follows:
+
+- `data/`
+  - `raw/`: Contains the original downloaded dataset.
+  - `processed/`: Contains any intermediate processed data files.
+- `notebooks/`
+  - `poisonous_mushroom_classifier.qmd`: Main analysis document.
+  - `poisonous_mushroom_classifier.pdf`: Rendered report.
+- `environment.yml`: Conda environment file listing the required packages.
+- `conda-lock.yml`: Conda lock file specifying exact package versions for reproducibility.
+- `CODE_OF_CONDUCT.md`: Community guidelines for respectful collaboration.
+- `CONTRIBUTING.md`: Instructions for how others can contribute to the project.
+- `LICENSE`: License for the code and documentation.
+- `README.md`: Project overview and instructions.
+- `.gitignore`: Specifies which files and folders Git should ignore.
+
 ## Report
 The final report can be found [here](notebooks/poisonous_mushroom_classifier.qmd)
 ## Usage
