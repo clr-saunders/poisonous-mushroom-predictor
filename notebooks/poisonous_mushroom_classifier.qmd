@@ -6,8 +6,6 @@ jupyter: python3
 format:
     pdf: 
         fig-align: left
-    html:
-        fig-align: left
 execute:
   echo: true
   warning: false
@@ -78,6 +76,9 @@ with zipfile.ZipFile("../data/raw/mushroom.zip", 'r') as zip_ref:
 
 # Data cleaning and wrangling
 ```{python}
+#| label: tbl-sample-data
+#| tbl-cap: "First five rows of the dataset."
+
 col_names = [
     "class", "cap_shape", "cap_surface", "cap_color", "bruises", "odor",
     "gill_attachment", "gill_spacing", "gill_size", "gill_color",
@@ -98,6 +99,8 @@ df["class_label"] = df["class"].map({"p": 1, "e": 0})
 df = df.dropna(subset=["class_label"])
 df.head()
 ```
+
+A preview of the first five rows of the raw dataset is shown in Table @tbl-sample-data, which illustrates the categorical structure of all features prior to cleaning.
 
 ```{python}
 df.isna().sum()
@@ -130,7 +133,7 @@ df.rename(columns={'class_label': 'is_poisonous'}, inplace=True)
 
 ```{python}
 # Basic information
-df.head()
+# df.head()
 
 ```
 
@@ -186,6 +189,8 @@ feature_summary.index = feature_summary.index + 1
 feature_summary
 
 ```
+
+We summarize all 22 categorical predictors in Table @tbl-feature-summary, which reports the number of levels and the dominant category for each feature.
 
 ```{python}
 def get_poison_rate_by(feature):
@@ -403,6 +408,9 @@ feature_cols = [col for col in df.columns if col not in exclude]
 
 ```
 
+#### Relationship Between Physical Features and Toxicity: An Exploratory Overview
+To explore how individual mushroom characteristics relate to toxicity, we compared the proportion of poisonous and edible mushrooms across several categorical features. Odor showed the strongest separation between classes (Figure @fig-odor-cat), with foul-, creosote-, and pungent-smelling mushrooms being almost exclusively poisonous, whereas almond and anise odors were strongly associated with edibility. Gill size also demonstrated a meaningful distinction (Figure @fig-gill-size), with broad gills far more common among edible mushrooms. Habitat exhibited notable patterns as well (Figure @fig-habitat): mushrooms found in wooded or grassy environments were more frequently poisonous, while those growing in urban or path environments tended to be edible. Bruising was another strong indicator (Figure @fig-bruise), as mushrooms that bruised were overwhelmingly edible, whereas those that did not bruise were frequently poisonous. Lastly, population type revealed clear group-level differences (Figure @fig-pop-type), with solitary or scattered mushrooms more often poisonous, while abundant or clustered populations were more commonly edible. Together, these figures illustrate that several features, odor in particular, provide strong discriminatory signals relevant to the classification task.
+
 ```{python}
 #| label: tbl-poison-rank
 #| tbl-cap: "Ranking of features by how well they distinguish poisonous mushrooms"
@@ -426,6 +434,8 @@ feature_importance_eda
 
 
 ```
+
+A ranking of features by their discriminatory power is shown in Table @tbl-poison-rank, using the variance in poisonous fraction across categories as an association measure.
 
 We are trying to classify whether a mushroom is edible (0) or poisonous (1). Going to do a 70/30 train/test split due to the large and roughly equal proportions of edible and poisonous mushrooms. 
 
@@ -503,10 +513,12 @@ ConfusionMatrixDisplay(cm).plot()
 ```
 # Results & Discussion
 
-Our prediction model performed excellently on test data, classifying all of the mushroom examples correctly as poisonous or edible, with no error. Given that our model predicted perfectly, no optimization was required. 
+Our prediction model performed excellently on test data, classifying all of the mushroom examples correctly as poisonous or edible, with no error. Given that our model predicted perfectly, no optimization was required. As shown in Figure @fig-confusion-matrix-svc, the SVC correctly classified every mushroom in the test set, yielding no false positives or false negatives. Furthermore, the SVC model shows consistent performance across folds, as summarized in Table @tbl-cross-val-svc.
+
 This performance is identical to the results published on the [UCI website](https://archive.ics.uci.edu/dataset/73/mushroom) from which the data was sourced (Mushroom). 
 As shown in the confusion matrix, the model has a recall and precision of 1, due to no false positivies or negatives. 
 The model also shows robustness, with no difference in the accuracy of training and test scores, so it is promising that this model could be deployed effectively to protect mushroom consumers from eating poisonous mushrooms.That said, there are some practical concerns for public implementation, namely the model is fit on 20 different features that correspond to specific categorical physical characteristics of a mushroom, and thus accuracy requires accurate identification of physical characteristics.
+
 Hence, if an amateur mushroom enthusiast aimed to utilize the model to predict edibility but misidentified the physical characeristics of the mushroom they were attempting to classify, then the accuracy of the models predictions would be effectively moot as it would not be returning a prediction for the true foraged mushroom.
 One might consider creating a similar predictor with a smaller number of features to increase the practical efficacy of the model, though they would need to consider balancing the models accuracy with efficacy, because the risk of falsely predicting a mushroom as edible could be fatal. 
 It is also worth noting that the hypothetical mushroom observations in this model are based upon a book from 1981 (Lincoff), so it would be wise to consider whether the data could be updated to be sourced from a more recent source of mushroom science. 
