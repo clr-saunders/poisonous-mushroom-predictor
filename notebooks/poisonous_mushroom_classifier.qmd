@@ -20,18 +20,21 @@ import pandas as pd
 import numpy as np
 import altair as alt
 alt.renderers.enable("png")
+from sklearn.preprocessing import OneHotEncoder
+from sklearn.model_selection import train_test_split
+from sklearn.dummy import DummyClassifier
+from sklearn.model_selection import cross_validate
+from sklearn.pipeline import make_pipeline
+from sklearn.svm import SVC
+from sklearn.metrics import confusion_matrix, ConfusionMatrixDisplay
 ```
 
 # Summary
 
 Here we attempt to build a classification model using a Support Vector Machine algorithm which can use physical characteristics of mushrooms to predict whether a North American mushroom from the Agaricus and Lepiota (Agaricaceae) family is edible or poisonous for human consumption. 
-
 Our final classifier performed excellently on an unseen test data set, with precision and recall of 1.0 and an overall accuracy calculated to be 1.0.
-
 On the 2,438 test data observations, the model correctly predicted all 2,438. 
-
 Although the model performs extremely well it has practical limitations, because it requires the correct identification of 20 different physical characteristics of a given mushroom in order for the corresponding prediction to be correct. 
-
 We believe the model could be a powerful tool for preventing the misidentification of the Agaricus and Lepiota family of mushrooms, but further efforts to improve the practical implementation of the model for usage by the public would be very useful.
 
 # Introduction
@@ -378,7 +381,7 @@ stacked_poison_chart(5, "population", "Population", population_map)
 ```
 
 ```{python}
-# Column namest without veil_type, or target column
+# Column names without veil_type, or target column
 exclude = ["veil_type", "class", "is_poisonous"]  # add more if needed
 feature_cols = [col for col in df.columns if col not in exclude]
 
@@ -415,14 +418,12 @@ A random state of `123` will ensure reproducibility when ran by subsequent users
 Before we continue, we must preprocess our data such that the features work with our models. Since all of our features are strings, we can opt to use one-hot encoding for them all.
 
 ```{python}
-from sklearn.preprocessing import OneHotEncoder
 
 preprocessor = OneHotEncoder()
 
 ```
 
 ```{python}
-from sklearn.model_selection import train_test_split
 
 X_train, X_test, y_train, y_test = train_test_split(
     df.loc[:,'class':'habitat'], df['is_poisonous'], test_size=0.3, random_state=123
@@ -434,9 +435,6 @@ X_train, X_test, y_train, y_test = train_test_split(
 We fit a `DummyClassifier` to our data as a baseline to compare our actual model with. Random state used again for reproducibility.
 
 ```{python}
-from sklearn.dummy import DummyClassifier
-from sklearn.model_selection import cross_validate
-from sklearn.pipeline import make_pipeline
 
 dc_pipe = make_pipeline(
     preprocessor, 
@@ -456,7 +454,6 @@ cross_val_dc
 In our classification problem, we opt to use `SVC` (Buitinck, L., Louppe, G., Blondel, M., Pedregosa,               Fabian, Mueller, A., Grisel, O., … Ga"el Varoquaux. (2013)) as our model of choice for its effective usage in this scenario. We do not have an extreme amount of data (< 10000 observations) on top of only being a binary classification task. 
 
 ```{python}
-from sklearn.svm import SVC
 
 svc_pipe = make_pipeline(
     preprocessor, 
@@ -475,7 +472,6 @@ cross_val_svc
 
 
 ```{python}
-from sklearn.metrics import confusion_matrix, ConfusionMatrixDisplay
 
 y_pred = svc_pipe.predict(X_test)
 
@@ -487,14 +483,10 @@ ConfusionMatrixDisplay(cm).plot()
 
 Our prediction model performed excellently on test data, classifying all of the mushroom examples correctly as poisonous or edible, with no error. Given that our model predicted perfectly, no optimization was required. 
 This performance is identical to the results published on the [UCI website](https://archive.ics.uci.edu/dataset/73/mushroom) from which the data was sourced (Mushroom). 
-
 As shown in the confusion matrix, the model has a recall and precision of 1, due to no false positivies or negatives. 
 The model also shows robustness, with no difference in the accuracy of training and test scores, so it is promising that this model could be deployed effectively to protect mushroom consumers from eating poisonous mushrooms.That said, there are some practical concerns for public implementation, namely the model is fit on 20 different features that correspond to specific categorical physical characteristics of a mushroom, and thus accuracy requires accurate identification of physical characteristics.
-
 Hence, if an amateur mushroom enthusiast aimed to utilize the model to predict edibility but misidentified the physical characeristics of the mushroom they were attempting to classify, then the accuracy of the models predictions would be effectively moot as it would not be returning a prediction for the true foraged mushroom.
-
 One might consider creating a similar predictor with a smaller number of features to increase the practical efficacy of the model, though they would need to consider balancing the models accuracy with efficacy, because the risk of falsely predicting a mushroom as edible could be fatal. 
-
 It is also worth noting that the hypothetical mushroom observations in this model are based upon a book from 1981 (Lincoff), so it would be wise to consider whether the data could be updated to be sourced from a more recent source of mushroom science. 
 
 # References 
