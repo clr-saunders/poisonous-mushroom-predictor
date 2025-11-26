@@ -28,6 +28,7 @@ from sklearn.model_selection import cross_validate
 from sklearn.pipeline import make_pipeline
 from sklearn.svm import SVC
 from sklearn.metrics import confusion_matrix, ConfusionMatrixDisplay
+from scipy.stats import chi2_contingency
 ```
 
 # Summary
@@ -458,14 +459,13 @@ train_df['is_poisonous'] = y_train
 ```
 
 ```{python}
- # Data Validation Check: Any Anomalous correlation between features or between features and the target? 
+ # Data Validation Check: any Anomalous correlation between features or between features and the target? 
 
 # create list of all pairwise feature and feature-target combinations 
 train_df_cols = list(train_df.columns)
 pairs = list(itertools.combinations(train_df_cols, 2))
 
 # compute correlation for all feature pairs and feature-target pairs 
-from scipy.stats import chi2_contingency
 
 def cramers_v(df, feature1, feature2):
     """ manually computes correlation for feature pairs from the pearsons chi-squared test statistic using cramers v formula"""
@@ -504,6 +504,13 @@ correlation_heatmap = alt.Chart(cramers_long).mark_rect().encode(
 correlation_heatmap
 ```
 
+## Summary of Anomalous Correlation Between Features:
+There is a high correlation between the feature gill_attachment and the three features stalk_color_above_ring, stalk_color_below_ring, and veil_color. I expect this is a feature of the dataset because it includes a high number of observations (5686 in our training data) and only 23 species, so there are many repeated instances of each species. If a particular species has fixed color and gill attachment characteristics than it is expected that we would find a high correlation between these features. It is not likely to be a sign of data leakage, but does suggest that there are weaknesses in the biological representativeness of the dataset. Therefore, the dataset may not be the strongest choice for generalizing predictions about the poisonousness of mushrooms across the full Agaricus and Lepiota (Agaricaceae) family, since it may not capture the true diversity and independence of these features found in nature.
+
+## Summary of Anomalous Correlation Between Feature "Odor" and Target: 
+The above heatmap shows a high correlation between the feature "odor" and the target, and a moderately high correlation between "spore_print_color" and the target. However, the dataset we are using includes background information on the logical rules discovered by prior researchers Duch, Adamczak, and Grabczewski (1996), and they found that "odor" is often the first split for identifying poisonous mushrooms, and "spore_print_color" is often the second. Hence both of these features are expected to be strong predictors of the target and the seeming anomalous correlation is simply an accurate reflection of biological reality as captured by the dataset, and not likely to be a sign of data leakage in this case. 
+
+## Model 
 
 We fit a `DummyClassifier` to our data as a baseline to compare our actual model with. Random state used again for reproducibility.
 
@@ -576,6 +583,11 @@ Buitinck, L., Louppe, G., Blondel, M., Pedregosa,               Fabian, Mueller,
 
 Diaz, J. H. (2016). Mistaken mushroom poisonings. Wilderness & Environmental Medicine, 27(2), 330-335.
 
+Duch, W., Adamczak, R., & Grabczewski, K. (1996). Extraction of logical rules from training data using backpropagation networks. In Proceedings of the 1st Online Workshop on Soft Computing, 19-30 August 1996, pp. 25-30. [Online]. Available: http://www.bioele.nuee.nagoya-u.ac.jp/wsc1/
+
 Lincoff, G. H. (1981).The Audubon Society Field Guide to North American Mushrooms (1981). New York: Alfred A. Knopf
 
 Mushroom. (1981). UCI Machine Learning Repository. https://doi.org/10.24432/C5959T
+
+
+ 
