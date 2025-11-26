@@ -443,6 +443,8 @@ Before we continue, we must preprocess our data such that the features work with
 
 preprocessor = OneHotEncoder()
 
+#removing veil_type column as we found in EDA that all values are identical and there is no info to learn
+df.drop('veil_type', axis=1, inplace=True)
 ```
 
 ```{python}
@@ -454,18 +456,49 @@ X_train, X_test, y_train, y_test = train_test_split(
 ```
 
 ```{python}
-# Data Validation Check for anomalous relations between features, using training data to avoid data leakage
-# First we test for dependence between the features using a chi-squared test for independence
+ # Data Validation Check: Anomalous correlation between features
+
+# create list of all pairwise feature combinations 
+pairs = list(itertools.combinations(feature_cols, 2))
+
+# compute correlation for all feature pairs
 from scipy.stats import chi2_contingency
 
-def perform_chi_square_test(data, feature1, feature2):
-    """ performs chi square test between two features with 5% significance level"""
-    contingency_table = pd.crosstab(data[feature1], data[feature2])
-    chi2, p, dof, expected = chi2_contingency(contingency_table)
-    significant = p < 0.05
-    return chi2, p, significant
+def cramers_v(df, feature1, feature2):
+    """ manually computes correlation for feature pairs from the pearsons chi-squared test statistic using cramers v formula"""
 
+    table = pd.crosstab(df[feature1], df[feature2])
 
+    #get chi squared test statistc
+    chi2, _, _, _ = chi2_contingency(table)
+
+    #normalize chi-squared test statistic 
+    n = table.sum().sum()
+    phi2 = chi2 / n
+    r, k = table.shape
+
+    # compute cramers v
+    return np.sqrt(phi2 / min(k-1, r-1))
+
+# create empty df with diagonal equal to 1
+cramers_matrix = pd.DataFrame(np.eye(len(feature_cols)), columns=feature_cols, index=feature_cols) 
+
+for feature1, feature2 in pairs:
+    v = cramers_v(X_train, feature1, feature2)
+    cramers_matrix.loc[feature1, feature2] = v
+    cramers_matrix.loc[feature2, feature1] = v
+
+# convert matrix to long format for Altair visualization
+cramers_long = cramers_matrix.reset_index().melt(id_vars='index')
+cramers_long.columns = ['feature_1', 'feature_2', 'cramers_v']
+
+correlation_heatmap = alt.Chart(cramers_long).mark_rect().encode(
+    x=alt.X('feature_1:N', sort=feature_cols),
+    y=alt.Y('feature_2:N', sort=feature_cols),
+    color=alt.Color('cramers_v:Q', scale=alt.Scale(domain=[0,1], scheme='purpleorange'))
+)
+
+correlation_heatmap
 ```
 
 
