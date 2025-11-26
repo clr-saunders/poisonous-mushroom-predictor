@@ -93,10 +93,10 @@ col_names = [
 df = pd.read_csv("../data/raw/agaricus-lepiota.data", names=col_names)
 
 # Changing the target to numeric values: poisonous=1, edible=0
-df["class_label"] = df["class"].map({"p": 1, "e": 0})
+df["is_poisonous"] = df["class"].map({"p": 1, "e": 0})
 
 # Drop rows with na in the target column
-df = df.dropna(subset=["class_label"])
+df = df.dropna(subset=["is_poisonous"])
 df.head()
 ```
 
@@ -113,8 +113,8 @@ df.isna().sum()
 ```
 
 ```{python}
-# Drop stalk_root column 
-df.drop(columns=['stalk_root'], inplace=True)
+# Drop stalk_root column and original target column "class" because numeric column of target values "is_poisonous" added to replace it
+df.drop(columns=['stalk_root', 'class'], inplace=True)
 
 ```
 
@@ -123,17 +123,12 @@ df.isna().sum()
 
 ```
 
-```{python}
-# rename class_label to is_poisonous for target clarity
-df.rename(columns={'class_label': 'is_poisonous'}, inplace=True)
-
-```
 
 # EDA summary
 
 ```{python}
 # Basic information
-# df.head()
+df.head()
 
 ```
 
@@ -172,12 +167,13 @@ col_names
 # Key mushroom feature summary
 summary_rows = []
 for col in col_names:
-    vc = df[col].value_counts()
-    summary_rows.append({
-        "feature": col,
-        "n_categories": vc.shape[0],
-        "most_frequent_category": vc.index[0],
-        "most_frequent_count": int(vc.iloc[0])
+    if not col == 'is_poisonous':
+        vc = df[col].value_counts()
+        summary_rows.append({
+            "feature": col,
+            "n_categories": vc.shape[0],
+            "most_frequent_category": vc.index[0],
+            "most_frequent_count": int(vc.iloc[0])
     })
 
 feature_summary = (
@@ -190,7 +186,7 @@ feature_summary
 
 ```
 
-We summarize all 22 categorical predictors in Table @tbl-feature-summary, which reports the number of levels and the dominant category for each feature.
+We summarize all 21 categorical predictors in Table @tbl-feature-summary, which reports the number of levels and the dominant category for each feature.
 
 ```{python}
 def get_poison_rate_by(feature):
@@ -403,7 +399,7 @@ stacked_poison_chart("population", "Population", population_map)
 
 ```{python}
 # Column names without veil_type, or target column
-exclude = ["veil_type", "class", "is_poisonous"]  # add more if needed
+exclude = ["veil_type", "is_poisonous"]  # add more if needed
 feature_cols = [col for col in df.columns if col not in exclude]
 
 ```
@@ -452,11 +448,26 @@ preprocessor = OneHotEncoder()
 ```{python}
 
 X_train, X_test, y_train, y_test = train_test_split(
-    df.loc[:,'class':'habitat'], df['is_poisonous'], test_size=0.3, random_state=123
+    df.loc[:,'cap_shape':'habitat'], df['is_poisonous'], test_size=0.3, random_state=123
 )
+
+```
+
+```{python}
+# Data Validation Check for anomalous relations between features, using training data to avoid data leakage
+# First we test for dependence between the features using a chi-squared test for independence
+from scipy.stats import chi2_contingency
+
+def perform_chi_square_test(data, feature1, feature2):
+    """ performs chi square test between two features with 5% significance level"""
+    contingency_table = pd.crosstab(data[feature1], data[feature2])
+    chi2, p, dof, expected = chi2_contingency(contingency_table)
+    significant = p < 0.05
+    return chi2, p, significant
 
 
 ```
+
 
 We fit a `DummyClassifier` to our data as a baseline to compare our actual model with. Random state used again for reproducibility.
 
