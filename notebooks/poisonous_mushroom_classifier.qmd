@@ -341,7 +341,12 @@ We addressed this by validating every categorical column against the official li
 Since all observed category values matched their expected sets, we conclude that no anomalous values are present in this dataset.
 
 ```{python}
-# Ensure there are no completely empty rows
+# Pandera: validate cleaned dataframe schema    
+# - Ensure there are no completely empty rows
+# - all columns must be present
+# - enforces no missing in `is_poisonous`
+# - enforces <= 5% missingness in any other column
+
 mushroom_schema = pa.DataFrameSchema(
     {
         "cap_shape": pa.Column(str),
@@ -365,19 +370,35 @@ mushroom_schema = pa.DataFrameSchema(
         "spore_print_color": pa.Column(str),
         "population": pa.Column(str),
         "habitat": pa.Column(str),
-        "is_poisonous": pa.Column(int),
+        "is_poisonous": pa.Column(
+            int,
+            Check(
+                lambda s: s.isna().mean() == 0.0,
+                element_wise=False,
+                error="Target 'is_poisonous' contains missing values.",
+            ),
+            nullable=False,
+        ),
     },
     checks=[
         # No empty observations: no row where *all* columns are missing
         Check(
             lambda df: ~(df.isna().all(axis=1)).any(),
-            error="Empty rows found."
-        )
+            element_wise=False,
+            error="Empty rows found.",
+        ),
+        # Missingness not beyond expected threshold (up to max 5% per column)
+        Check(
+            lambda df: df.isna().mean().max() <= 0.05,
+            element_wise=False,
+            error="One or more columns exceed 5% missingness.",
+        ),
     ],
 )
 
 # Validate the cleaned dataframe (will raise if check fails)
 df = mushroom_schema.validate(df, lazy=True)
+
 ```
 
 # EDA Before Data Splitting 
