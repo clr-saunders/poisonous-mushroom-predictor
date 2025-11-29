@@ -1,0 +1,17 @@
+services:
+  analysis-env:
+    image: csaunde95/dsci522-group6-mushroomclassifier
+    user: root
+    environment:
+      GRANT_SUDO: "yes"
+    build: 
+      tags:
+        - "main"
+    stdin_open: true
+    tty: true
+    ports:
+      - "8888:8888"
+    volumes:
+      - .:/home/jovyan/project
+    working_dir: /home/jovyan/project
+    entrypoint: bash
