@@ -13,6 +13,8 @@ execute:
   cache: false
 ---
 
+# Imports
+*Never forget to run imports first.*
 
 ```{python}
 import requests
@@ -21,7 +23,9 @@ import pandas as pd
 import numpy as np
 import os
 import altair as alt
+import pandera.pandas as pa
 alt.renderers.enable("png")
+
 from sklearn.preprocessing import OneHotEncoder
 from sklearn.model_selection import train_test_split
 from sklearn.dummy import DummyClassifier
@@ -29,6 +33,10 @@ from sklearn.model_selection import cross_validate
 from sklearn.pipeline import make_pipeline
 from sklearn.svm import SVC
 from sklearn.metrics import confusion_matrix, ConfusionMatrixDisplay
+from scipy.stats import chi2_contingency
+import itertools
+from pathlib import Path
+
 ```
 
 # Summary
@@ -59,28 +67,63 @@ It was sourced from the UCI Machine Learning Repository, and can be found [here]
 It includes 8124 descriptions of hypothetical mushroom samples that correspond to 23 species of mushrooms in the Agaricus and Lepiota Family (Mushroom, 1981). 
 Each row includes 22 categorical variables that are physical characteristics of the mushroom sample, including the odor, gill-spacing, gill-color, gill-size, population, habitat, etc, and is labelled as edible or poisonous. 
 
-## Analysis
+# Analysis
 
 ```{python}
 
-#adding the downloaded data to the data directory by code
-# download data as zip and extract
-url = "https://archive.ics.uci.edu/static/public/73/mushroom.zip"
+# Add the downloaded data to the data directory by code
+# Download data as zip and extract
+# With this report residing in one level below the project root (e.g., in reports/ or notebooks/)
+PROJECT_ROOT = Path("..").resolve()
+DATA_URL = "https://archive.ics.uci.edu/static/public/73/mushroom.zip"
 
-response = requests.get(url)
-with open("../data/raw/mushroom.zip", 'wb') as f:
-    f.write(response.content)
+DATA_DIR = PROJECT_ROOT / "data" / "raw"
+DATA_DIR.mkdir(parents=True, exist_ok=True)
 
-with zipfile.ZipFile("../data/raw/mushroom.zip", 'r') as zip_ref:
-    zip_ref.extractall("../data/raw")
+ZIP_PATH = DATA_DIR / "mushroom.zip"
+DATA_PATH = DATA_DIR / "agaricus-lepiota.data"
+
 ```
+
+```{python}
+# File extension validation
+correct_exts = {".csv", ".data"}
+ext = DATA_PATH.suffix.lower()
+
+assert ext in correct_exts, (
+    f"[File format] Unexpected extension '{ext}'. "
+    f"Expected one of: {sorted(correct_exts)}."
+)
+
+print("[OK] File extension validated.")
+```
+
+```{python}
+# Download only if the data file does not already exist
+print("working")
+if not DATA_PATH.exists():
+    print("[INFO] Data file not found. Downloading from UCI...")
+    response = requests.get(DATA_URL)
+    response.raise_for_status()
+    response = requests.get(DATA_URL)
+
+    with open(ZIP_PATH, 'wb') as f:
+        f.write(response.content)
+
+    with zipfile.ZipFile(ZIP_PATH, 'r') as zip_ref:
+        zip_ref.extractall(DATA_DIR)
+
+    print("[INFO] Download and extraction completed.")
+
+else:
+    print(f"[INFO] Using existing data file at: {DATA_PATH}")
+```
+
 
 # Data cleaning and wrangling
 ```{python}
-#| label: tbl-sample-data
-#| tbl-cap: "First five rows of the dataset."
-
-col_names = [
+# Expected data column names
+dataset_col_names = [
     "class", "cap_shape", "cap_surface", "cap_color", "bruises", "odor",
     "gill_attachment", "gill_spacing", "gill_size", "gill_color",
     "stalk_shape", "stalk_root",
@@ -90,19 +133,66 @@ col_names = [
     "ring_number", "ring_type",
     "spore_print_color", "population", "habitat"
 ]
-
-df = pd.read_csv("../data/raw/agaricus-lepiota.data", names=col_names)
-
-# Changing the target to numeric values: poisonous=1, edible=0
-df["class_label"] = df["class"].map({"p": 1, "e": 0})
-
-# Drop rows with na in the target column
-df = df.dropna(subset=["class_label"])
-df.head()
 ```
 
 ```{python}
-'''Correct category levels check (i.e., no string mismatches or single values)'''
+#| label: tbl-sample-data
+#| tbl-cap: "First five rows of the raw dataset."
+
+df = pd.read_csv(DATA_PATH, names=dataset_col_names)
+df.head()
+```
+
+A preview of the first five rows of the raw dataset is shown in Table @tbl-sample-data, which illustrates the categorical structure of all features prior to cleaning.
+
+## Data Validation Checks
+
+```{python}
+# Pandera Duplicate-Row Check (DataFrame-wide validation)
+duplicate_check_schema = pa.DataFrameSchema(
+    columns=None,
+    checks=[
+        pa.Check(
+            lambda df: ~df.duplicated().any(),
+            error="Duplicate rows found in the dataset."
+        )
+    ]
+)
+
+duplicate_check_schema.validate(df, lazy=True)
+print("[OK] No duplicate rows found in the dataset (Pandera validation).")
+```
+
+```{python}
+
+# Data Validation Check: Target follows expected distribution
+actual_distribution = (
+    df["class"]
+    .value_counts(normalize=True)
+    .round(3)
+    .to_dict()
+)
+
+# As per dataset documentation, expected proportions for each target
+expected_distribution = {'e': 0.518, 'p':0.482}
+
+for cls, expected_prop in expected_distribution.items():
+    observed_prop = actual_distribution.get(cls, 0.0)
+    assert np.isclose(observed_prop, expected_prop, atol=0.01), (
+        f"Class '{cls}': observed proportion {observed_prop} "
+        f"differs from expected {expected_prop}."
+    )
+
+print(
+    "[OK] Target distribution matches expected proportions "
+    "(within tolerance)."
+)
+
+```
+
+
+```{python}
+# Correct category levels check (i.e., no string mismatches or single values)
 allowed_values = {
     "class": ["e", "p"],
     "cap_shape": ["b", "c", "x", "f", "k", "s"],
@@ -128,74 +218,282 @@ allowed_values = {
     "population": ["a", "c", "n", "s", "v", "y"],
     "habitat": ["g", "l", "m", "p", "u", "w", "d"]
 }
-for col, allowed in allowed_values.items():
-    invalid = set(df[col].dropna().unique()) - set(allowed)
-    assert not invalid, f"{col} has invalid values: {invalid}"
+
 ```
 
-A preview of the first five rows of the raw dataset is shown in Table @tbl-sample-data, which illustrates the categorical structure of all features prior to cleaning.
+```{python}
+
+# Build a Pandera schema where each categorical column:
+# - is a string
+# - is restricted to its documented levels via Check.isin(...)
+category_schema = pa.DataFrameSchema(
+    {
+        col: pa.Column(
+            str,
+            pa.Check.isin(allowed),
+            nullable=False,  # all values should be present at this stage
+        )
+        for col, allowed in allowed_values.items()
+    }
+)
+
+# Validate df against the schema
+category_schema.validate(df, lazy=True)
+
+print("[OK] All categorical columns contain only expected levels (Pandera validation).")
+```
+
 
 ```{python}
+# Basic missingness summary (raw data)
+df.isna().sum()
+
+```
+
+
+```{python}
+# Encoded missingness via '?':
+(df == "?").sum()
+```
+
+```{python}
+# Convert "?" markers to proper NaN in case any other should occur apart from the known `stalk_root`_ just thinking real-world applications
+
+df = df.replace("?", np.nan)
+
+```
+
+```{python}
+# Changing the target to numeric values: poisonous=1, edible=0
+
+df["is_poisonous"] = df["class"].map({"p": 1, "e": 0})
+```
+
+```{python}
+# Drop rows with NaN in the target column (none expected, but safe)
+
+df = df.dropna(subset=["is_poisonous"])
+```
+
+```{python}
+# Drop stalk_root column due to missing values and original target column "class" because numeric column of target values "is_poisonous" added to replace it
+df.drop(columns=['stalk_root', 'class'], inplace=True)
+
+```
+
+```{python}
+# Check remaining missing values
 df.isna().sum()
 
 ```
 
 ```{python}
-# Encode "missing" (?) as NA
-(df == '?').sum()
+# Validate cleaned column names
+# Given that the dataset we read in for this model did not include headers, we assigned the names and hence encoded the correct column names initially upon read in. Here, I confirm the column names match expectations after dropping "stalk_root" and changing the name of "class" to "is_poisonous"
+expected_cols_cleaned = [
+    col for col in dataset_col_names if col not in ["stalk_root", "class"]
+] + ["is_poisonous"]
+
+assert list(df.columns) == expected_cols_cleaned, \
+    "The dataframe does not have the expected column names after cleaning."
+
+print("[OK] Cleaned column names validated.")
 ```
 
 ```{python}
-# Drop stalk_root column 
-df.drop(columns=['stalk_root'], inplace=True)
+# Pandera: validate cleaned dataframe schema
+#   - All feature columns are strings
+#   - Target column is integer and only takes values {0, 1}
+
+schema = pa.DataFrameSchema(
+    {
+        # All predictor/feature columns: stored as strings
+        **{
+            col: pa.Column(str)
+            for col in expected_cols_cleaned
+            if col != "is_poisonous"
+        },
+        # Target column: must be integer and in the set {0, 1}
+        "is_poisonous": pa.Column(
+            int,
+            pa.Check.isin([0, 1]),
+        ),
+    }
+)
+
+# Validate the cleaned dataframe against the schema
+schema.validate(df, lazy=True)
+
+print(
+    "[OK] Pandera schema validation passed:\n"
+    "   - all feature columns are string-typed\n"
+    "   - 'is_poisonous' contains only 0/1 as expected."
+)
 
 ```
+
+### Interpretation of Outlier / Anomalous Value Checks
+
+All features in this dataset are categorical, so traditional numeric outlier checks (e.g., detecting extreme continuous values) do not apply.
+Instead, the relevant "anomalous values" for categorical data are unexpected or invalid category levels.
+
+We addressed this by validating every categorical column against the official list of allowed levels from the UCI dataset documentation.
+Since all observed category values matched their expected sets, we conclude that no anomalous values are present in this dataset.
 
 ```{python}
-df.isna().sum()
+# Pandera: validate cleaned dataframe schema    
+# - Ensure there are no completely empty rows
+# - all columns must be present
+# - enforces no missing in `is_poisonous`
+# - enforces <= 5% missingness in any other column
+
+mushroom_schema = pa.DataFrameSchema(
+    {
+        "cap_shape": pa.Column(str),
+        "cap_surface": pa.Column(str),
+        "cap_color": pa.Column(str),
+        "bruises": pa.Column(str),
+        "odor": pa.Column(str),
+        "gill_attachment": pa.Column(str),
+        "gill_spacing": pa.Column(str),
+        "gill_size": pa.Column(str),
+        "gill_color": pa.Column(str),
+        "stalk_shape": pa.Column(str),
+        "stalk_surface_above_ring": pa.Column(str),
+        "stalk_surface_below_ring": pa.Column(str),
+        "stalk_color_above_ring": pa.Column(str),
+        "stalk_color_below_ring": pa.Column(str),
+        "veil_type": pa.Column(str),
+        "veil_color": pa.Column(str),
+        "ring_number": pa.Column(str),
+        "ring_type": pa.Column(str),
+        "spore_print_color": pa.Column(str),
+        "population": pa.Column(str),
+        "habitat": pa.Column(str),
+        "is_poisonous": pa.Column(
+            int,
+            pa.Check(
+                lambda s: s.isna().mean() == 0.0,
+                element_wise=False,
+                error="Target 'is_poisonous' contains missing values.",
+            ),
+            nullable=False,
+        ),
+    },
+    checks=[
+        # No empty observations: no row where *all* columns are missing
+        pa.Check(
+            lambda df: ~(df.isna().all(axis=1)).any(),
+            element_wise=False,
+            error="Empty rows found.",
+        ),
+        # Missingness not beyond expected threshold (up to max 5% per column)
+        pa.Check(
+            lambda df: df.isna().mean().max() <= 0.05,
+            element_wise=False,
+            error="One or more columns exceed 5% missingness.",
+        ),
+    ],
+)
+
+# Validate the cleaned dataframe (will raise if check fails)
+df = mushroom_schema.validate(df, lazy=True)
 
 ```
+
+# EDA Before Data Splitting 
 
 ```{python}
-# rename class_label to is_poisonous for target clarity
-df.rename(columns={'class_label': 'is_poisonous'}, inplace=True)
-
+#| label: tbl-sample-cleaned
+#| tbl-cap: "First five rows of the cleaned dataset."
+df.head()
 ```
-
-# EDA summary
 
 ```{python}
 # Basic information
-# df.head()
-
-```
-
-```{python}
 df.info()
 
 ```
 
 ```{python}
+# Data dimensions
 df.shape
+```
+
+# Data Splitting 
+
+We are trying to classify whether a mushroom is edible (0) or poisonous (1). Going to do a 70/30 train/test split due to the large and roughly equal proportions of edible and poisonous mushrooms. 
+
+A random state of `123` will ensure reproducibility when ran by subsequent users.
+
+```{python}
+# Train–test split at the row level
+#   - Keeps all columns together in each split
+#   - Stratify on the target to preserve class balance
+
+train_df, test_df = train_test_split(
+    df,
+    test_size=0.3,
+    random_state=123,
+    stratify=df["is_poisonous"],
+)
+
+print(
+    "Train df shape: ", train_df.shape,
+    "\nTest df shape: ", test_df.shape
+    )
 
 ```
 
 ```{python}
-# Inspect target variable: e = edible = 0, p = poisonous = 1
-df['is_poisonous'].value_counts() 
+# Build X/y for model training and evaluation from splits
+X_train = train_df.drop(columns=["is_poisonous"])
+y_train = train_df["is_poisonous"]
+
+X_test = test_df.drop(columns=["is_poisonous"])
+y_test = test_df["is_poisonous"]
+```
+
+# EDA After Data Splitting 
+
+```{python}
+# Sanity check: class balance in the training data
+
+train_target_counts = train_df["is_poisonous"].value_counts()
+train_target_prop = train_df["is_poisonous"].value_counts(normalize=True)
+
+print("Training set class counts:")
+print(train_target_counts.rename(index={0: "edible (0)", 1: "poisonous (1)"}))
+
+print("\nTraining set class proportions:")
+print(train_target_prop.rename(index={0: "edible (0)", 1: "poisonous (1)"}).round(3))
+```
+
+```{python}
+# Data Validation: check training target distribution roughly matches UCI proportions
+
+expected_dist = {"e": 0.518, "p": 0.482}
+# but now we’re working with numeric target: 0 = edible, 1 = poisonous
+expected_poisonous = expected_dist["p"]  # 0.482
+
+train_poisonous = train_df["is_poisonous"].mean()
+tol = 0.02
+
+assert abs(train_poisonous - expected_poisonous) <= tol, (
+    f"Training set poisonous proportion ({train_poisonous:.3f}) "
+    f"differs from expected ({expected_poisonous:.3f}) by more than {tol:.2f}."
+)
+
+print(
+    f"[OK] Training set poisonous proportion ({train_poisonous:.3f}) "
+    f"is close to expected ({expected_poisonous:.3f})."
+)
 
 ```
 
 ```{python}
-# Display the proportion of each mushroom class (edible vs poisonous)
-df['is_poisonous'].value_counts(normalize=True)
-
-```
-
-```{python}
-# Get current col_names
-col_names = list(df.columns)
-col_names
+# Feature column names
+feature_cols = X_train.columns
 ```
 
 ```{python}
@@ -204,13 +502,14 @@ col_names
 
 # Key mushroom feature summary
 summary_rows = []
-for col in col_names:
-    vc = df[col].value_counts()
-    summary_rows.append({
-        "feature": col,
-        "n_categories": vc.shape[0],
-        "most_frequent_category": vc.index[0],
-        "most_frequent_count": int(vc.iloc[0])
+for col in feature_cols:
+    if not col == 'is_poisonous':
+        vc = X_train[col].value_counts()
+        summary_rows.append({
+            "feature": col,
+            "n_categories": vc.shape[0],
+            "most_frequent_category": vc.index[0],
+            "most_frequent_count": int(vc.iloc[0])
     })
 
 feature_summary = (
@@ -218,15 +517,30 @@ feature_summary = (
     .sort_values("n_categories", ascending=False)
     .reset_index(drop=True)    
 )
+
 feature_summary.index = feature_summary.index + 1
 feature_summary
 
 ```
 
-We summarize all 22 categorical predictors in Table @tbl-feature-summary, which reports the number of levels and the dominant category for each feature.
+We summarize all 21 categorical predictors in Table @tbl-feature-summary, which reports the number of levels and the dominant category for each feature. Given that veil_type only has one level, the values are the same for all observations so we drop that column. 
 
 ```{python}
-def get_poison_rate_by(feature):
+# Drop veil_type from the feature matrices used for modeling. If check added to prevent error if not present_ in case the cell is run multiple times
+if "veil_type" in X_train.columns:
+    X_train = X_train.drop(columns=["veil_type"])
+    X_test = X_test.drop(columns=["veil_type"])
+    
+    # Redefine feature columns
+    feature_cols = X_train.columns
+
+```
+
+`veil_type` was dropped because it contains only a single category for all observations.
+A feature with no variation cannot help the model distinguish edible from poisonous mushrooms, provides no predictive signal, and only adds redundant columns after one-hot encoding. Therefore, it is removed to simplify the feature set and prevent unnecessary model complexity.
+
+```{python}
+def get_poison_rate_by(feature: str) -> pd.DataFrame:
   """
   Compute the proportion of poisonous and edible mushrooms for each category
   of a given feature.
@@ -244,7 +558,9 @@ def get_poison_rate_by(feature):
       `edible_frac` and `poisonous_frac`, sorted in descending order of
       `poisonous_frac`.
   """
-  category_poisonous = pd.crosstab(df[feature], df['is_poisonous'], normalize='index')
+  category_poisonous = pd.crosstab(train_df[feature], train_df['is_poisonous'], normalize='index')
+
+  # By construction, column 0 = edible, 1 = poisonous
   category_poisonous.columns = ['edible_frac', 'poisonous_frac']
   return category_poisonous.sort_values('poisonous_frac', ascending=False)
 
@@ -434,35 +750,6 @@ stacked_poison_chart("population", "Population", population_map)
 
 ```
 
-```{python}
-# Column names without veil_type, or target column
-exclude = ["veil_type", "class", "is_poisonous"]  # add more if needed
-feature_cols = [col for col in df.columns if col not in exclude]
-
-```
-
-## Data Validation Checks
-
-```{python}
-
-'''Correct Data File Format Check'''
-data_path = "../data/raw/agaricus-lepiota.data"
-correct_exts = {".csv",".data"}
-ext = os.path.splitext(data_path)[1].lower()
-assert ext in correct_exts, (
-    f"[File format] '{data_path}' has extension '{ext}', "
-    f"expected one of {sorted(correct_exts)}."
-)
-
-'''No Duplicate Observations Check'''
-duplicates = df.duplicated().sum()
-assert duplicates == 0, (
-    f"Found {duplicates} full-row duplicates."
-)
-
-'''All the features in this dataset are categorical, so we can't check numeric outliers. With respect to anomalous values, we confirmed earlier in the check for correct category levels that all categories only include the expected values.'''
-```
-
 #### Relationship Between Physical Features and Toxicity: An Exploratory Overview
 To explore how individual mushroom characteristics relate to toxicity, we compared the proportion of poisonous and edible mushrooms across several categorical features. Odor showed the strongest separation between classes (Figure @fig-odor-cat), with foul-, creosote-, and pungent-smelling mushrooms being almost exclusively poisonous, whereas almond and anise odors were strongly associated with edibility. Gill size also demonstrated a meaningful distinction (Figure @fig-gill-size), with broad gills far more common among edible mushrooms. Habitat exhibited notable patterns as well (Figure @fig-habitat): mushrooms found in wooded or grassy environments were more frequently poisonous, while those growing in urban or path environments tended to be edible. Bruising was another strong indicator (Figure @fig-bruise), as mushrooms that bruised were overwhelmingly edible, whereas those that did not bruise were frequently poisonous. Lastly, population type revealed clear group-level differences (Figure @fig-pop-type), with solitary or scattered mushrooms more often poisonous, while abundant or clustered populations were more commonly edible. Together, these figures illustrate that several features, odor in particular, provide strong discriminatory signals relevant to the classification task.
 
@@ -487,31 +774,86 @@ feature_importance_eda = pd.DataFrame(feature_scores).sort_values(
 feature_importance_eda.index = feature_importance_eda.index + 1
 feature_importance_eda
 
-
 ```
 
 A ranking of features by their discriminatory power is shown in Table @tbl-poison-rank, using the variance in poisonous fraction across categories as an association measure.
 
-We are trying to classify whether a mushroom is edible (0) or poisonous (1). Going to do a 70/30 train/test split due to the large and roughly equal proportions of edible and poisonous mushrooms. 
 
-A random state of `123` will ensure reproducibility when ran by subsequent users.
-
-Before we continue, we must preprocess our data such that the features work with our models. Since all of our features are strings, we can opt to use one-hot encoding for them all.
+## Data Validation Check: Any Anomalous Correlation Between Features and/or Target? 
 
 ```{python}
+#| label: fig-corr-heatmap
+#| fig-cap: "Correlation heatmap (Cramér's V) for all feature and feature-target pairs in the training data."
 
-preprocessor = OneHotEncoder()
+# create list of all pairwise feature and feature-target combinations 
+train_df_cols = list(train_df.columns)
+pairs = list(itertools.combinations(train_df_cols, 2))
+
+# compute correlation for all feature pairs and feature-target pairs 
+
+def cramers_v(df, feature1, feature2):
+    """ manually computes correlation for feature pairs from the pearsons chi-squared test statistic using cramers v formula"""
+
+    table = pd.crosstab(df[feature1], df[feature2])
+
+    #get chi squared test statistc
+    chi2, _, _, _ = chi2_contingency(table)
+
+    #normalize chi-squared test statistic 
+    n = table.sum().sum()
+    phi2 = chi2 / n
+    r, k = table.shape
+
+    # compute cramers v
+    return np.sqrt(phi2 / min(k-1, r-1))
+
+# create empty df with diagonal equal to 1
+cramers_matrix = pd.DataFrame(np.eye(len(train_df_cols)), columns=train_df_cols, index=train_df_cols) 
+
+for feature1, feature2 in pairs:
+    v = cramers_v(train_df, feature1, feature2)
+    cramers_matrix.loc[feature1, feature2] = v
+    cramers_matrix.loc[feature2, feature1] = v
+
+# convert matrix to long format for Altair visualization
+cramers_long = cramers_matrix.reset_index().melt(id_vars='index')
+cramers_long.columns = ['feature_1', 'feature_2', 'cramers_v']
+
+correlation_heatmap = alt.Chart(cramers_long).mark_rect().encode(
+    x=alt.X('feature_1:N', 
+        sort=feature_cols,
+        title='Feature 1'),
+    y=alt.Y('feature_2:N',
+         sort=feature_cols,
+         title="Feature 2"),
+    color=alt.Color('cramers_v:Q', 
+        scale=alt.Scale(domain=[0,1], scheme='purpleorange'),
+        title="Cramer's V"
+        )
+    ).properties(
+        width=300,
+        height=300
+       )
+
+correlation_heatmap
+```
+
+## Summary of Anomalous Correlation Between Features:
+@fig-corr-heatmap shows a high correlation between the feature gill_attachment and the three features stalk_color_above_ring, stalk_color_below_ring, and veil_color. I expect this is a feature of the dataset because it includes a high number of observations (5686 in our training data) and only 23 species, so there are many repeated instances of each species. If a particular species has fixed color and gill attachment characteristics than it is expected that we would find a high correlation between these features. It is not likely to be a sign of data leakage, but does suggest that there are weaknesses in the biological representativeness of the dataset. Therefore, the dataset may not be the strongest choice for generalizing predictions about the poisonousness of mushrooms across the full Agaricus and Lepiota (Agaricaceae) family, since it may not capture the true diversity and independence of these features found in nature.
+
+## Summary of Anomalous Correlation Between Feature "Odor" and Target: 
+@fig-corr-heatmap shows a high correlation between the feature "odor" and the target, and a moderately high correlation between "spore_print_color" and the target. However, the dataset we are using includes background information on the logical rules discovered by prior researchers Duch, Adamczak, and Grabczewski (1996), and they found that "odor" is often the first split for identifying poisonous mushrooms, and "spore_print_color" is often the second. Hence both of these features are expected to be strong predictors of the target and the seeming anomalous correlation is simply an accurate reflection of biological reality as captured by the dataset, and not likely to be a sign of data leakage in this case. 
+
+# Model 
+
+Before we continue, we must preprocess our data such that the features work with our models. Since all of our features are strings, we can opt to use one-hot encoding for them all. 
+
+```{python}
+# Proprocessor
+preprocessor = OneHotEncoder(handle_unknown="ignore")
 
 ```
 
-```{python}
-
-X_train, X_test, y_train, y_test = train_test_split(
-    df.loc[:,'class':'habitat'], df['is_poisonous'], test_size=0.3, random_state=123
-)
-
-
-```
 
 We fit a `DummyClassifier` to our data as a baseline to compare our actual model with. Random state used again for reproducibility.
 
@@ -566,6 +908,7 @@ cm = confusion_matrix(y_test, y_pred)
 ConfusionMatrixDisplay(cm).plot()
 
 ```
+
 # Results & Discussion
 
 Our prediction model performed excellently on test data, classifying all of the mushroom examples correctly as poisonous or edible, with no error. Given that our model predicted perfectly, no optimization was required. As shown in Figure @fig-confusion-matrix-svc, the SVC correctly classified every mushroom in the test set, yielding no false positives or false negatives. Furthermore, the SVC model shows consistent performance across folds, as summarized in Table @tbl-cross-val-svc.
@@ -584,6 +927,11 @@ Buitinck, L., Louppe, G., Blondel, M., Pedregosa,               Fabian, Mueller,
 
 Diaz, J. H. (2016). Mistaken mushroom poisonings. Wilderness & Environmental Medicine, 27(2), 330-335.
 
+Duch, W., Adamczak, R., & Grabczewski, K. (1996). Extraction of logical rules from training data using backpropagation networks. In Proceedings of the 1st Online Workshop on Soft Computing, 19-30 August 1996, pp. 25-30. [Online]. Available: http://www.bioele.nuee.nagoya-u.ac.jp/wsc1/
+
 Lincoff, G. H. (1981).The Audubon Society Field Guide to North American Mushrooms (1981). New York: Alfred A. Knopf
 
 Mushroom. (1981). UCI Machine Learning Repository. https://doi.org/10.24432/C5959T
+
+
+ 
