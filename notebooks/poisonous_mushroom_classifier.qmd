@@ -69,54 +69,23 @@ Each row includes 22 categorical variables that are physical characteristics of 
 
 # Analysis
 
-```{python}
-
-# Add the downloaded data to the data directory by code
-# Download data as zip and extract
-# With this report residing in one level below the project root (e.g., in reports/ or notebooks/)
-PROJECT_ROOT = Path("..").resolve()
-DATA_URL = "https://archive.ics.uci.edu/static/public/73/mushroom.zip"
-
-DATA_DIR = PROJECT_ROOT / "data" / "raw"
-DATA_DIR.mkdir(parents=True, exist_ok=True)
-
-ZIP_PATH = DATA_DIR / "mushroom.zip"
-DATA_PATH = DATA_DIR / "agaricus-lepiota.data"
-
-```
+## Data Validation Checks
 
 ```{python}
-# File extension validation
-correct_exts = {".csv", ".data"}
-ext = DATA_PATH.suffix.lower()
-
+'''Correct Data File Format Check'''
+data_path = "../data/raw/agaricus-lepiota.data"
+correct_exts = {".csv",".data"}
+ext = os.path.splitext(data_path)[1].lower()
 assert ext in correct_exts, (
-    f"[File format] Unexpected extension '{ext}'. "
-    f"Expected one of: {sorted(correct_exts)}."
+    f"[File format] '{data_path}' has extension '{ext}', "
+    f"expected one of {sorted(correct_exts)}."
 )
-
-print("[OK] File extension validated.")
-```
-
-```{python}
-# Download only if the data file does not already exist
-print("working")
-if not DATA_PATH.exists():
-    print("[INFO] Data file not found. Downloading from UCI...")
-    response = requests.get(DATA_URL)
-    response.raise_for_status()
-    response = requests.get(DATA_URL)
-
-    with open(ZIP_PATH, 'wb') as f:
-        f.write(response.content)
-
-    with zipfile.ZipFile(ZIP_PATH, 'r') as zip_ref:
-        zip_ref.extractall(DATA_DIR)
-
-    print("[INFO] Download and extraction completed.")
-
-else:
-    print(f"[INFO] Using existing data file at: {DATA_PATH}")
+'''No Duplicate Observations Check'''
+duplicates = df.duplicated().sum()
+assert duplicates == 0, (
+    f"Found {duplicates} full-row duplicates."
+)
+'''All the features in this dataset are categorical, so we can't check numeric outliers. With respect to anomalous values, we confirmed earlier in the check for correct category levels that all categories only include the expected values.'''
 ```
 
 
