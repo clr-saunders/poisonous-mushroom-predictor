@@ -230,7 +230,7 @@ category_schema = pa.DataFrameSchema(
     {
         col: pa.Column(
             str,
-            Check.isin(allowed),
+            pa.Check.isin(allowed),
             nullable=False,  # all values should be present at this stage
         )
         for col, allowed in allowed_values.items()
@@ -372,7 +372,7 @@ mushroom_schema = pa.DataFrameSchema(
         "habitat": pa.Column(str),
         "is_poisonous": pa.Column(
             int,
-            Check(
+            pa.Check(
                 lambda s: s.isna().mean() == 0.0,
                 element_wise=False,
                 error="Target 'is_poisonous' contains missing values.",
@@ -382,13 +382,13 @@ mushroom_schema = pa.DataFrameSchema(
     },
     checks=[
         # No empty observations: no row where *all* columns are missing
-        Check(
+        pa.Check(
             lambda df: ~(df.isna().all(axis=1)).any(),
             element_wise=False,
             error="Empty rows found.",
         ),
         # Missingness not beyond expected threshold (up to max 5% per column)
-        Check(
+        pa.Check(
             lambda df: df.isna().mean().max() <= 0.05,
             element_wise=False,
             error="One or more columns exceed 5% missingness.",
