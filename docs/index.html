@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.23">
+<meta name="generator" content="quarto-1.7.33">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -45,19 +45,18 @@ div.csl-indent {
 }</style>
 
 
-<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" integrity="sha384-ZvpUoO/+PpLXR1lu4jmpXWu80pZlYUAfxl5NsBMWOEPSjUn/6Z/hRTt8+pR6L4N2" crossorigin="anonymous"></script><script src="poisonous_mushroom_classifier_files/libs/clipboard/clipboard.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="poisonous_mushroom_classifier_files/libs/clipboard/clipboard.min.js"></script>
 <script src="poisonous_mushroom_classifier_files/libs/quarto-html/quarto.js" type="module"></script>
 <script src="poisonous_mushroom_classifier_files/libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="poisonous_mushroom_classifier_files/libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="poisonous_mushroom_classifier_files/libs/quarto-html/popper.min.js"></script>
 <script src="poisonous_mushroom_classifier_files/libs/quarto-html/tippy.umd.min.js"></script>
 <script src="poisonous_mushroom_classifier_files/libs/quarto-html/anchor.min.js"></script>
 <link href="poisonous_mushroom_classifier_files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="poisonous_mushroom_classifier_files/libs/quarto-html/quarto-syntax-highlighting-1fe81d0376b2c50856e68e651e390326.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="poisonous_mushroom_classifier_files/libs/quarto-html/quarto-syntax-highlighting-ea385d0e468b0dd5ea5bf0780b1290d9.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="poisonous_mushroom_classifier_files/libs/bootstrap/bootstrap.min.js"></script>
 <link href="poisonous_mushroom_classifier_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="poisonous_mushroom_classifier_files/libs/bootstrap/bootstrap-9e3ffae467580fdb927a41352e75a2e0.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
-<script src="https://cdn.jsdelivr.net/npm/requirejs@2.3.6/require.min.js" integrity="sha384-c9c+LnTbwQ3aujuU7ULEPVvgLs+Fn6fJUvIGTsuu1ZcCf11fiEubah0ttpca4ntM sha384-6V1/AdqZRWk1KAlWbKBlGhN7VG4iE/yAZcO6NZPMF8od0vukrvr0tg4qY6NSrItx" crossorigin="anonymous"></script>
+<link href="poisonous_mushroom_classifier_files/libs/bootstrap/bootstrap-bb462d781dde1847d9e3ccf7736099dd.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
 
 <script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 
@@ -164,12 +163,11 @@ div.csl-indent {
 Table&nbsp;1: First five rows of the raw dataset.
 </figcaption>
 <div aria-describedby="tbl-sample-data-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div class="cell-output cell-output-display" data-execution_count="5">
-<div class="cell-output cell-output-display" data-execution_count="5">
+<div class="cell-output cell-output-display" data-execution_count="30">
 <div>
 
 
-<table class="dataframe do-not-create-environment cell caption-top table table-sm table-striped small" data-border="1">
+<table class="dataframe do-not-create-environment cell caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th"></th>
@@ -198,7 +196,7 @@ Table&nbsp;1: First five rows of the raw dataset.
 </thead>
 <tbody>
 <tr class="odd">
-<th data-quarto-table-cell-role="th">0</th>
+<td data-quarto-table-cell-role="th">0</td>
 <td>p</td>
 <td>x</td>
 <td>s</td>
@@ -222,7 +220,7 @@ Table&nbsp;1: First five rows of the raw dataset.
 <td>u</td>
 </tr>
 <tr class="even">
-<th data-quarto-table-cell-role="th">1</th>
+<td data-quarto-table-cell-role="th">1</td>
 <td>e</td>
 <td>x</td>
 <td>s</td>
@@ -246,7 +244,7 @@ Table&nbsp;1: First five rows of the raw dataset.
 <td>g</td>
 </tr>
 <tr class="odd">
-<th data-quarto-table-cell-role="th">2</th>
+<td data-quarto-table-cell-role="th">2</td>
 <td>e</td>
 <td>b</td>
 <td>s</td>
@@ -270,7 +268,7 @@ Table&nbsp;1: First five rows of the raw dataset.
 <td>m</td>
 </tr>
 <tr class="even">
-<th data-quarto-table-cell-role="th">3</th>
+<td data-quarto-table-cell-role="th">3</td>
 <td>p</td>
 <td>x</td>
 <td>y</td>
@@ -294,7 +292,7 @@ Table&nbsp;1: First five rows of the raw dataset.
 <td>u</td>
 </tr>
 <tr class="odd">
-<th data-quarto-table-cell-role="th">4</th>
+<td data-quarto-table-cell-role="th">4</td>
 <td>e</td>
 <td>x</td>
 <td>s</td>
@@ -330,13 +328,13 @@ Table&nbsp;1: First five rows of the raw dataset.
 <p>A preview of the first five rows of the raw dataset is shown in <a href="#tbl-sample-data" class="quarto-xref">Table&nbsp;1</a>, which illustrates the categorical structure of all features prior to cleaning.</p>
 <section id="data-validation-checks-1" class="level2">
 <h2 class="anchored" data-anchor-id="data-validation-checks-1">Data Validation Checks</h2>
-<div id="88636b77" class="cell" data-execution_count="7">
+<div id="8fee316b" class="cell" data-execution_count="7">
 <div class="cell-output cell-output-stdout">
 <pre><code>[OK] Target distribution matches expected proportions (within tolerance).</code></pre>
 </div>
 </div>
-<div id="48df500e" class="cell" data-execution_count="9">
-<div class="cell-output cell-output-display" data-execution_count="9">
+<div id="88f88040" class="cell" data-execution_count="9">
+<div class="cell-output cell-output-display" data-execution_count="34">
 <pre><code>class                       0
 cap_shape                   0
 cap_surface                 0
@@ -363,8 +361,8 @@ habitat                     0
 dtype: int64</code></pre>
 </div>
 </div>
-<div id="28861cd8" class="cell" data-execution_count="10">
-<div class="cell-output cell-output-display" data-execution_count="10">
+<div id="a9ece25d" class="cell" data-execution_count="10">
+<div class="cell-output cell-output-display" data-execution_count="35">
 <pre><code>class                          0
 cap_shape                      0
 cap_surface                    0
@@ -391,8 +389,8 @@ habitat                        0
 dtype: int64</code></pre>
 </div>
 </div>
-<div id="4df327c4" class="cell" data-execution_count="15">
-<div class="cell-output cell-output-display" data-execution_count="15">
+<div id="bb7a9f40" class="cell" data-execution_count="15">
+<div class="cell-output cell-output-display" data-execution_count="40">
 <pre><code>cap_shape                   0
 cap_surface                 0
 cap_color                   0
@@ -418,12 +416,12 @@ is_poisonous                0
 dtype: int64</code></pre>
 </div>
 </div>
-<div id="d1abfb2b" class="cell" data-execution_count="16">
+<div id="07fb5bdc" class="cell" data-execution_count="16">
 <div class="cell-output cell-output-stdout">
 <pre><code>[OK] Cleaned column names validated.</code></pre>
 </div>
 </div>
-<div id="8a6e785a" class="cell" data-execution_count="17">
+<div id="d1d397a3" class="cell" data-execution_count="17">
 <div class="cell-output cell-output-stdout">
 <pre><code>[OK] Pandera schema validation passed:
    - all feature columns are string-typed
@@ -446,12 +444,11 @@ dtype: int64</code></pre>
 Table&nbsp;2: First five rows of the cleaned dataset.
 </figcaption>
 <div aria-describedby="tbl-sample-cleaned-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div class="cell-output cell-output-display" data-execution_count="19">
-<div class="cell-output cell-output-display" data-execution_count="19">
+<div class="cell-output cell-output-display" data-execution_count="44">
 <div>
 
 
-<table class="dataframe do-not-create-environment cell caption-top table table-sm table-striped small" data-border="1">
+<table class="dataframe do-not-create-environment cell caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th"></th>
@@ -480,7 +477,7 @@ Table&nbsp;2: First five rows of the cleaned dataset.
 </thead>
 <tbody>
 <tr class="odd">
-<th data-quarto-table-cell-role="th">0</th>
+<td data-quarto-table-cell-role="th">0</td>
 <td>x</td>
 <td>s</td>
 <td>n</td>
@@ -504,7 +501,7 @@ Table&nbsp;2: First five rows of the cleaned dataset.
 <td>1</td>
 </tr>
 <tr class="even">
-<th data-quarto-table-cell-role="th">1</th>
+<td data-quarto-table-cell-role="th">1</td>
 <td>x</td>
 <td>s</td>
 <td>y</td>
@@ -528,7 +525,7 @@ Table&nbsp;2: First five rows of the cleaned dataset.
 <td>0</td>
 </tr>
 <tr class="odd">
-<th data-quarto-table-cell-role="th">2</th>
+<td data-quarto-table-cell-role="th">2</td>
 <td>b</td>
 <td>s</td>
 <td>w</td>
@@ -552,7 +549,7 @@ Table&nbsp;2: First five rows of the cleaned dataset.
 <td>0</td>
 </tr>
 <tr class="even">
-<th data-quarto-table-cell-role="th">3</th>
+<td data-quarto-table-cell-role="th">3</td>
 <td>x</td>
 <td>y</td>
 <td>w</td>
@@ -576,7 +573,7 @@ Table&nbsp;2: First five rows of the cleaned dataset.
 <td>1</td>
 </tr>
 <tr class="odd">
-<th data-quarto-table-cell-role="th">4</th>
+<td data-quarto-table-cell-role="th">4</td>
 <td>x</td>
 <td>s</td>
 <td>g</td>
@@ -607,44 +604,6 @@ Table&nbsp;2: First five rows of the cleaned dataset.
 </div>
 </div>
 </figure>
-</div>
-</div>
-<div id="62238c9a" class="cell" data-execution_count="20">
-<div class="cell-output cell-output-stdout">
-<pre><code>&lt;class 'pandas.core.frame.DataFrame'&gt;
-RangeIndex: 8124 entries, 0 to 8123
-Data columns (total 22 columns):
- #   Column                    Non-Null Count  Dtype 
----  ------                    --------------  ----- 
- 0   cap_shape                 8124 non-null   object
- 1   cap_surface               8124 non-null   object
- 2   cap_color                 8124 non-null   object
- 3   bruises                   8124 non-null   object
- 4   odor                      8124 non-null   object
- 5   gill_attachment           8124 non-null   object
- 6   gill_spacing              8124 non-null   object
- 7   gill_size                 8124 non-null   object
- 8   gill_color                8124 non-null   object
- 9   stalk_shape               8124 non-null   object
- 10  stalk_surface_above_ring  8124 non-null   object
- 11  stalk_surface_below_ring  8124 non-null   object
- 12  stalk_color_above_ring    8124 non-null   object
- 13  stalk_color_below_ring    8124 non-null   object
- 14  veil_type                 8124 non-null   object
- 15  veil_color                8124 non-null   object
- 16  ring_number               8124 non-null   object
- 17  ring_type                 8124 non-null   object
- 18  spore_print_color         8124 non-null   object
- 19  population                8124 non-null   object
- 20  habitat                   8124 non-null   object
- 21  is_poisonous              8124 non-null   int64 
-dtypes: int64(1), object(21)
-memory usage: 1.4+ MB</code></pre>
-</div>
-</div>
-<div id="79298eae" class="cell" data-execution_count="21">
-<div class="cell-output cell-output-display" data-execution_count="21">
-<pre><code>(8124, 22)</code></pre>
 </div>
 </div>
 </section>
@@ -688,14 +647,187 @@ print(
 )
 
 ``` -->
-<p>We summarize all 21 categorical predictors in <strong>?@tbl-feature-summary</strong>, which reports the number of levels and the dominant category for each feature. Given that veil_type only has one level, the values are the same for all observations so we drop that column.</p>
+<div class="cell" data-execution_count="20">
+<div id="tbl-feature-summary" class="cell quarto-float quarto-figure quarto-figure-left anchored" data-execution_count="20">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-feature-summary-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;3: Summary of mushroom feature characteristics
+</figcaption>
+<div aria-describedby="tbl-feature-summary-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output cell-output-display cell-output-markdown" data-execution_count="45">
+<table class="do-not-create-environment cell caption-top table table-sm table-striped small">
+<colgroup>
+<col style="width: 13%">
+<col style="width: 24%">
+<col style="width: 15%">
+<col style="width: 24%">
+<col style="width: 21%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: right;">Unnamed: 0</th>
+<th style="text-align: left;">feature</th>
+<th style="text-align: right;">n_categories</th>
+<th style="text-align: left;">most_frequent_category</th>
+<th style="text-align: right;">most_frequent_count</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">gill_color</td>
+<td style="text-align: right;">12</td>
+<td style="text-align: left;">b</td>
+<td style="text-align: right;">1202</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">2</td>
+<td style="text-align: left;">cap_color</td>
+<td style="text-align: right;">10</td>
+<td style="text-align: left;">n</td>
+<td style="text-align: right;">1567</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">3</td>
+<td style="text-align: left;">odor</td>
+<td style="text-align: right;">9</td>
+<td style="text-align: left;">n</td>
+<td style="text-align: right;">2439</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">4</td>
+<td style="text-align: left;">stalk_color_below_ring</td>
+<td style="text-align: right;">9</td>
+<td style="text-align: left;">w</td>
+<td style="text-align: right;">3071</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">5</td>
+<td style="text-align: left;">spore_print_color</td>
+<td style="text-align: right;">9</td>
+<td style="text-align: left;">w</td>
+<td style="text-align: right;">1655</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">6</td>
+<td style="text-align: left;">stalk_color_above_ring</td>
+<td style="text-align: right;">9</td>
+<td style="text-align: left;">w</td>
+<td style="text-align: right;">3131</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">7</td>
+<td style="text-align: left;">habitat</td>
+<td style="text-align: right;">7</td>
+<td style="text-align: left;">d</td>
+<td style="text-align: right;">2195</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">8</td>
+<td style="text-align: left;">cap_shape</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: left;">x</td>
+<td style="text-align: right;">2534</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">9</td>
+<td style="text-align: left;">population</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: left;">v</td>
+<td style="text-align: right;">2813</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">10</td>
+<td style="text-align: left;">ring_type</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: left;">p</td>
+<td style="text-align: right;">2778</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">11</td>
+<td style="text-align: left;">stalk_surface_below_ring</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: left;">s</td>
+<td style="text-align: right;">3434</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">12</td>
+<td style="text-align: left;">cap_surface</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: left;">y</td>
+<td style="text-align: right;">2291</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">13</td>
+<td style="text-align: left;">veil_color</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: left;">w</td>
+<td style="text-align: right;">5542</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">14</td>
+<td style="text-align: left;">stalk_surface_above_ring</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: left;">s</td>
+<td style="text-align: right;">3630</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">15</td>
+<td style="text-align: left;">ring_number</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: left;">o</td>
+<td style="text-align: right;">5246</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">16</td>
+<td style="text-align: left;">bruises</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: left;">f</td>
+<td style="text-align: right;">3330</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">17</td>
+<td style="text-align: left;">stalk_shape</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: left;">t</td>
+<td style="text-align: right;">3211</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">18</td>
+<td style="text-align: left;">gill_attachment</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: left;">f</td>
+<td style="text-align: right;">5534</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">19</td>
+<td style="text-align: left;">gill_spacing</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: left;">c</td>
+<td style="text-align: right;">4766</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">20</td>
+<td style="text-align: left;">gill_size</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: left;">b</td>
+<td style="text-align: right;">3939</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</figure>
+</div>
+</div>
+<p>We summarize all 21 categorical predictors in <a href="#tbl-feature-summary" class="quarto-xref">Table&nbsp;3</a>, which reports the number of levels and the dominant category for each feature. Given that <code>veil_type</code> only has one level, the values are the same for all observations so we drop that column.</p>
 <!-- ```{python}
     X_train.to_csv('data/processed/x_train.csv')
     X_test.to_csv('data/processed/x_test.csv')
     y_train.to_csv('data/processed/y_train.csv')
     y_test.to_csv('data/processed/y_test.csv')
 ``` -->
-<p>veil_type was dropped because it contains only a single category for all observations. A feature with no variation cannot help the model distinguish edible from poisonous mushrooms, provides no predictive signal, and only adds redundant columns after one-hot encoding. Therefore, it is removed to simplify the feature set and prevent unnecessary model complexity.</p>
+<p><code>veil_type</code> was dropped because it contains only a single category for all observations. A feature with no variation cannot help the model distinguish edible from poisonous mushrooms, provides no predictive signal, and only adds redundant columns after one-hot encoding. Therefore, it is removed to simplify the feature set and prevent unnecessary model complexity.</p>
 <div id="fig-odor-cat" class="quarto-float quarto-figure quarto-figure-left anchored" width="80%">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-odor-cat-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -749,15 +881,14 @@ Figure&nbsp;5: Class Proportions (edible vs poisonous) by Population Type
 <section id="relationship-between-physical-features-and-toxicity-an-exploratory-overview" class="level4">
 <h4 class="anchored" data-anchor-id="relationship-between-physical-features-and-toxicity-an-exploratory-overview">Relationship Between Physical Features and Toxicity: An Exploratory Overview</h4>
 <p>To explore how individual mushroom characteristics relate to toxicity, we compared the proportion of poisonous and edible mushrooms across several categorical features. odor showed the strongest separation between classes (<a href="#fig-odor-cat" class="quarto-xref">Figure&nbsp;1</a>), with foul-, creosote-, and pungent-smelling mushrooms being almost exclusively poisonous, whereas almond and anise odors were strongly associated with edibility. Gill size also demonstrated a meaningful distinction (<a href="#fig-gill-size" class="quarto-xref">Figure&nbsp;2</a>), with broad gills far more common among edible mushrooms. Habitat exhibited notable patterns as well (<a href="#fig-habitat" class="quarto-xref">Figure&nbsp;3</a>): mushrooms found in wooded or grassy environments were more frequently poisonous, while those growing in urban or path environments tended to be edible. Bruising was another strong indicator (<a href="#fig-bruise" class="quarto-xref">Figure&nbsp;4</a>), as mushrooms that bruised were overwhelmingly edible, whereas those that did not bruise were frequently poisonous. Lastly, population type revealed clear group-level differences (<a href="#fig-pop-type" class="quarto-xref">Figure&nbsp;5</a>), with solitary or scattered mushrooms more often poisonous, while abundant or clustered populations were more commonly edible. Together, these figures illustrate that several features, odor in particular, provide strong discriminatory signals relevant to the classification task.</p>
-<div class="cell" data-execution_count="23">
-<div id="tbl-poison-rank" class="cell quarto-float quarto-figure quarto-figure-left anchored" data-execution_count="23">
+<div class="cell" data-execution_count="21">
+<div id="tbl-poison-rank" class="cell quarto-float quarto-figure quarto-figure-left anchored" data-execution_count="21">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-poison-rank-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;3: Ranking of features by how well they distinguish poisonous mushrooms
+Table&nbsp;4: Ranking of features by how well they distinguish poisonous mushrooms
 </figcaption>
 <div aria-describedby="tbl-poison-rank-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div class="cell-output cell-output-display cell-output-markdown" data-execution_count="23">
-<div class="cell-output cell-output-display cell-output-markdown" data-execution_count="23">
+<div class="cell-output cell-output-display cell-output-markdown" data-execution_count="46">
 <table class="do-not-create-environment cell caption-top table table-sm table-striped small">
 <thead>
 <tr class="header">
@@ -878,17 +1009,13 @@ Table&nbsp;3: Ranking of features by how well they distinguish poisonous mushroo
 <section id="relationship-between-physical-features-and-toxicity-an-exploratory-overview-1" class="level4">
 <h4 class="anchored" data-anchor-id="relationship-between-physical-features-and-toxicity-an-exploratory-overview-1">Relationship Between Physical Features and Toxicity: An Exploratory Overview</h4>
 <p>To explore how individual mushroom characteristics relate to toxicity, we compared the proportion of poisonous and edible mushrooms across several categorical features. <code>python {{ odor_strength }}</code> showed the strongest separation between classes (Figure <a href="#fig-odor-cat" class="quarto-xref">Figure&nbsp;1</a>), with foul-, creosote-, and pungent-smelling mushrooms being almost exclusively poisonous, whereas almond and anise odors were strongly associated with edibility. Gill size also demonstrated a meaningful distinction (Figure <a href="#fig-gill-size" class="quarto-xref">Figure&nbsp;2</a>), with broad gills far more common among edible mushrooms. Habitat exhibited notable patterns as well (Figure <a href="#fig-habitat" class="quarto-xref">Figure&nbsp;3</a>): mushrooms found in wooded or grassy environments were more frequently poisonous, while those growing in urban or path environments tended to be edible. Bruising was another strong indicator (Figure <a href="#fig-bruise" class="quarto-xref">Figure&nbsp;4</a>), as mushrooms that bruised were overwhelmingly edible, whereas those that did not bruise were frequently poisonous. Lastly, population type revealed clear group-level differences (Figure <a href="#fig-pop-type" class="quarto-xref">Figure&nbsp;5</a>), with solitary or scattered mushrooms more often poisonous, while abundant or clustered populations were more commonly edible. Together, these figures illustrate that several features, odor in particular, provide strong discriminatory signals relevant to the classification task.</p>
-</section>
-<section id="relationship-between-physical-features-and-toxicity-an-exploratory-overview-1" class="level4">
-<h4 class="anchored" data-anchor-id="relationship-between-physical-features-and-toxicity-an-exploratory-overview-1">Relationship Between Physical Features and Toxicity: An Exploratory Overview</h4>
-<p>To explore how individual mushroom characteristics relate to toxicity, we compared the proportion of poisonous and edible mushrooms across several categorical features. <code>python {{ odor_strength }}</code> showed the strongest separation between classes (Figure <a href="#fig-odor-cat" class="quarto-xref">Figure&nbsp;1</a>), with foul-, creosote-, and pungent-smelling mushrooms being almost exclusively poisonous, whereas almond and anise odors were strongly associated with edibility. Gill size also demonstrated a meaningful distinction (Figure <a href="#fig-gill-size" class="quarto-xref">Figure&nbsp;2</a>), with broad gills far more common among edible mushrooms. Habitat exhibited notable patterns as well (Figure <a href="#fig-habitat" class="quarto-xref">Figure&nbsp;3</a>): mushrooms found in wooded or grassy environments were more frequently poisonous, while those growing in urban or path environments tended to be edible. Bruising was another strong indicator (Figure <a href="#fig-bruise" class="quarto-xref">Figure&nbsp;4</a>), as mushrooms that bruised were overwhelmingly edible, whereas those that did not bruise were frequently poisonous. Lastly, population type revealed clear group-level differences (Figure <a href="#fig-pop-type" class="quarto-xref">Figure&nbsp;5</a>), with solitary or scattered mushrooms more often poisonous, while abundant or clustered populations were more commonly edible. Together, these figures illustrate that several features, odor in particular, provide strong discriminatory signals relevant to the classification task.</p>
 <!-- ```{python}
     X_train.to_csv('../data/processed/x_train.csv')
     X_test.to_csv('../data/processed/x_test.csv')
     y_train.to_csv('../data/processed/y_train.csv')
     y_test.to_csv('../data/processed/y_test.csv')
 ``` -->
-<p>A ranking of features by their discriminatory power is shown in <a href="#tbl-poison-rank" class="quarto-xref">Table&nbsp;3</a>, using the variance in poisonous fraction across categories as an association measure.</p>
+<p>A ranking of features by their discriminatory power is shown in <a href="#tbl-poison-rank" class="quarto-xref">Table&nbsp;4</a>, using the variance in poisonous fraction across categories as an association measure.</p>
 </section>
 <section id="data-validation-check-any-anomalous-correlation-between-features-andor-target" class="level2">
 <h2 class="anchored" data-anchor-id="data-validation-check-any-anomalous-correlation-between-features-andor-target">Data Validation Check: Any Anomalous Correlation Between Features and/or Target?</h2>
@@ -916,18 +1043,17 @@ Figure&nbsp;6: Correlation heatmap (Cramer’s V) for all feature and feature-ta
 <h1>Model</h1>
 <p>Before we continue, we must preprocess our data such that the features work with our models. Since all of our features are strings, we can opt to use one-hot encoding for them all.</p>
 <p>We fit a <code>DummyClassifier</code> to our data as a baseline to compare our actual model with. Random state used again for reproducibility.</p>
-<div id="tbl-cross-val-dc" class="cell quarto-float quarto-figure quarto-figure-left anchored" data-execution_count="25">
+<div id="tbl-cross-val-dc" class="cell quarto-float quarto-figure quarto-figure-left anchored" data-execution_count="23">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-cross-val-dc-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;4: Mean 10-Fold Cross-Validation Metrics for DummyClassifier Baseline
+Table&nbsp;5: Mean 10-Fold Cross-Validation Metrics for DummyClassifier Baseline
 </figcaption>
 <div aria-describedby="tbl-cross-val-dc-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output cell-output-error">
 <div class="ansi-escaped-output">
 <pre><span class="ansi-red-fg">---------------------------------------------------------------------------</span>
 <span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
-<span class="ansi-cyan-fg">Cell</span><span class="ansi-cyan-fg"> </span><span class="ansi-green-fg">In[25]</span><span class="ansi-green-fg">, line 6</span>
-<span class="ansi-cyan-fg">Cell</span><span class="ansi-cyan-fg"> </span><span class="ansi-green-fg">In[25]</span><span class="ansi-green-fg">, line 6</span>
+<span class="ansi-cyan-fg">Cell</span><span class="ansi-cyan-fg"> </span><span class="ansi-green-fg">In[48]</span><span class="ansi-green-fg">, line 6</span>
 <span class="ansi-green-fg">      1</span> dc_pipe = make_pipeline(
 <span class="ansi-green-fg">      2</span>     preprocessor, 
 <span class="ansi-green-fg">      3</span>     DummyClassifier(random_state=<span class="ansi-green-fg">123</span>)
@@ -946,18 +1072,17 @@ Table&nbsp;4: Mean 10-Fold Cross-Validation Metrics for DummyClassifier Baseline
 </figure>
 </div>
 <p>In our classification problem, we opt to use <code>SVC</code> <span class="citation" data-cites="svc">(<a href="#ref-svc" role="doc-biblioref">Buitinck et al. 2013</a>)</span> as our model of choice for its effective usage in this scenario. We do not have an extreme amount of data (&lt; 10000 observations) on top of only being a binary classification task.</p>
-<div id="tbl-cross-val-svc" class="cell quarto-float quarto-figure quarto-figure-left anchored" data-execution_count="26">
+<div id="tbl-cross-val-svc" class="cell quarto-float quarto-figure quarto-figure-left anchored" data-execution_count="24">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-cross-val-svc-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;5: Mean 10-Fold Cross-Validation Metrics for SVC Model
+Table&nbsp;6: Mean 10-Fold Cross-Validation Metrics for SVC Model
 </figcaption>
 <div aria-describedby="tbl-cross-val-svc-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output cell-output-error">
 <div class="ansi-escaped-output">
 <pre><span class="ansi-red-fg">---------------------------------------------------------------------------</span>
 <span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
-<span class="ansi-cyan-fg">Cell</span><span class="ansi-cyan-fg"> </span><span class="ansi-green-fg">In[26]</span><span class="ansi-green-fg">, line 6</span>
-<span class="ansi-cyan-fg">Cell</span><span class="ansi-cyan-fg"> </span><span class="ansi-green-fg">In[26]</span><span class="ansi-green-fg">, line 6</span>
+<span class="ansi-cyan-fg">Cell</span><span class="ansi-cyan-fg"> </span><span class="ansi-green-fg">In[49]</span><span class="ansi-green-fg">, line 6</span>
 <span class="ansi-green-fg">      1</span> svc_pipe = make_pipeline(
 <span class="ansi-green-fg">      2</span>     preprocessor, 
 <span class="ansi-green-fg">      3</span>     SVC(random_state=<span class="ansi-green-fg">123</span>)
@@ -975,15 +1100,14 @@ Table&nbsp;5: Mean 10-Fold Cross-Validation Metrics for SVC Model
 </div>
 </figure>
 </div>
-<div id="fig-confusion-matrix-svc" class="cell quarto-float quarto-figure quarto-figure-left anchored" data-execution_count="27">
+<div id="fig-confusion-matrix-svc" class="cell quarto-float quarto-figure quarto-figure-left anchored" data-execution_count="25">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-confusion-matrix-svc-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output cell-output-error">
 <div class="ansi-escaped-output">
 <pre><span class="ansi-red-fg">---------------------------------------------------------------------------</span>
 <span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
-<span class="ansi-cyan-fg">Cell</span><span class="ansi-cyan-fg"> </span><span class="ansi-green-fg">In[27]</span><span class="ansi-green-fg">, line 1</span>
-<span class="ansi-cyan-fg">Cell</span><span class="ansi-cyan-fg"> </span><span class="ansi-green-fg">In[27]</span><span class="ansi-green-fg">, line 1</span>
+<span class="ansi-cyan-fg">Cell</span><span class="ansi-cyan-fg"> </span><span class="ansi-green-fg">In[50]</span><span class="ansi-green-fg">, line 1</span>
 <span class="ansi-green-fg">----&gt; </span><span class="ansi-green-fg">1</span> y_pred = svc_pipe.predict(<span class="ansi-yellow-bg">X_test</span>)
 <span class="ansi-green-fg">      3</span> cm = confusion_matrix(y_test, y_pred)
 <span class="ansi-green-fg">      4</span> ConfusionMatrixDisplay(cm).plot()
@@ -1000,7 +1124,7 @@ Figure&nbsp;7
 </section>
 <section id="results-discussion" class="level1">
 <h1>Results &amp; Discussion</h1>
-<p>Our prediction model performed excellently on test data, classifying all of the mushroom examples correctly as poisonous or edible, with no error. Given that our model predicted perfectly, no optimization was required. As shown in <a href="#fig-confusion-matrix-svc" class="quarto-xref">Figure&nbsp;7</a>, the SVC correctly classified every mushroom in the test set, yielding no false positives or false negatives. Furthermore, the SVC model shows consistent performance across folds, as summarized in <a href="#tbl-cross-val-svc" class="quarto-xref">Table&nbsp;5</a>.</p>
+<p>Our prediction model performed excellently on test data, classifying all of the mushroom examples correctly as poisonous or edible, with no error. Given that our model predicted perfectly, no optimization was required. As shown in <a href="#fig-confusion-matrix-svc" class="quarto-xref">Figure&nbsp;7</a>, the SVC correctly classified every mushroom in the test set, yielding no false positives or false negatives. Furthermore, the SVC model shows consistent performance across folds, as summarized in <a href="#tbl-cross-val-svc" class="quarto-xref">Table&nbsp;6</a>.</p>
 <p>This performance is identical to the results published on the <a href="https://archive.ics.uci.edu/dataset/73/mushroom">UCI website</a> from which the data was sourced <span class="citation" data-cites="datasource">(<a href="#ref-datasource" role="doc-biblioref"><span>“Mushroom”</span> 1981</a>)</span>. As shown in the confusion matrix, the model has a recall and precision of 1, due to no false positivies or negatives. The model also shows robustness, with no difference in the accuracy of training and test scores, so it is promising that this model could be deployed effectively to protect mushroom consumers from eating poisonous mushrooms.That said, there are some practical concerns for public implementation, namely the model is fit on 20 different features that correspond to specific categorical physical characteristics of a mushroom, and thus accuracy requires accurate identification of physical characteristics.</p>
 <p>Hence, if an amateur mushroom enthusiast aimed to utilize the model to predict edibility but misidentified the physical characeristics of the mushroom they were attempting to classify, then the accuracy of the models predictions would be effectively moot as it would not be returning a prediction for the true foraged mushroom. One might consider creating a similar predictor with a smaller number of features to increase the practical efficacy of the model, though they would need to consider balancing the models accuracy with efficacy, because the risk of falsely predicting a mushroom as edible could be fatal. It is also worth noting that the hypothetical mushroom observations in this model are based upon a book from 1981 <span class="citation" data-cites="mushbook">(<a href="#ref-mushbook" role="doc-biblioref">Lincoff 1981</a>)</span>, so it would be wise to consider whether the data could be updated to be sourced from a more recent source of mushroom science.</p>
 </section>
@@ -1078,14 +1202,13 @@ Lincoff, G. H. 1981. <em>The Audubon Society Field Guide to North American Mushr
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-      const outerScaffold = trigger.parentElement.cloneNode(true);
-      const codeEl = outerScaffold.querySelector('code');
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
         }
-      }
-      return codeEl.innerText;
+        return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy

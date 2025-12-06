@@ -473,8 +473,6 @@ print(
 mushroom_feature_summary = pd.read_csv("../results/tables/feature_summary.csv")
 odor_strength = mushroom_feature_summary["feature"].iloc[2]
 Markdown(mushroom_feature_summary.to_markdown(index = False))
-
-col_drop = pd.read_csv("../data/processed/columns_to_drop.csv")
 ```
 
 We summarize all 21 categorical predictors in @tbl-feature-summary, which reports the number of levels and the dominant category for each feature. Given that `veil_type` only has one level, the values are the same for all observations so we drop that column. 
