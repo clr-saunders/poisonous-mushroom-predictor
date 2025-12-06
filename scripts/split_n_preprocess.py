@@ -8,7 +8,7 @@ from sklearn.model_selection import train_test_split
 @click.command()
 @click.option('--raw-data', type=str, help="Path to raw data")
 def main(raw_data):
-    """Preprocesses data from the read_data script and spits data """
+    """Preprocesses data from the read_data script and splits data """
     
     # Expected data column names
     dataset_col_names = [
