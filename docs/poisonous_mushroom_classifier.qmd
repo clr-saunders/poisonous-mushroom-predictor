@@ -27,6 +27,7 @@ import pandas as pd
 import numpy as np
 import os
 import altair as alt
+import pickle
 import pandera.pandas as pa
 alt.renderers.enable("png")
 
@@ -37,6 +38,7 @@ from sklearn.model_selection import cross_validate
 from sklearn.pipeline import make_pipeline
 from sklearn.svm import SVC
 from sklearn.metrics import confusion_matrix, ConfusionMatrixDisplay
+from sklearn import set_config
 from scipy.stats import chi2_contingency
 import itertools
 from pathlib import Path
@@ -84,276 +86,43 @@ This report was written and rendered using Quarto [@quarto] to ensure full repro
 # Analysis
 
 ```{python}
-#adding the downloaded data to the data directory by code
-# download data as zip and extract
-url = "https://archive.ics.uci.edu/static/public/73/mushroom.zip"
-response = requests.get(url)
-with open("../data/raw/mushroom.zip", 'wb') as f:
-    f.write(response.content)
-with zipfile.ZipFile("../data/raw/mushroom.zip", 'r') as zip_ref:
-    zip_ref.extractall("../data/raw")
-```
-
-## Data Validation Checks
-
-```{python}
-'''Correct Data File Format Check'''
-data_path = "../data/raw/agaricus-lepiota.data"
-correct_exts = {".csv",".data"}
-ext = os.path.splitext(data_path)[1].lower()
-assert ext in correct_exts, (
-    f"[File format] '{data_path}' has extension '{ext}', "
-    f"expected one of {sorted(correct_exts)}."
-)
-
-```
-
-
-## Data cleaning and wrangling
-```{python}
-# Expected data column names
-dataset_col_names = [
-    "class", "cap_shape", "cap_surface", "cap_color", "bruises", "odor",
-    "gill_attachment", "gill_spacing", "gill_size", "gill_color",
-    "stalk_shape", "stalk_root",
-    "stalk_surface_above_ring", "stalk_surface_below_ring",
-    "stalk_color_above_ring", "stalk_color_below_ring",
-    "veil_type", "veil_color",
-    "ring_number", "ring_type",
-    "spore_print_color", "population", "habitat"
-]
-```
-
-```{python}
 #| label: tbl-sample-data
 #| tbl-cap: "First five rows of the raw dataset."
 
-df = pd.read_csv(data_path, names=dataset_col_names)
+dataset_col_names = [
+        "class",
+        "cap_shape",
+        "cap_surface",
+        "cap_color",
+        "bruises",
+        "odor",
+        "gill_attachment",
+        "gill_spacing",
+        "gill_size",
+        "gill_color",
+        "stalk_shape",
+        "stalk_root",
+        "stalk_surface_above_ring",
+        "stalk_surface_below_ring",
+        "stalk_color_above_ring",
+        "stalk_color_below_ring",
+        "veil_type",
+        "veil_color",
+        "ring_number",
+        "ring_type",
+        "spore_print_color",
+        "population",
+        "habitat",
+    ]
+
+df = pd.read_csv('../data/raw/agaricus-lepiota.data', names=dataset_col_names)
 df.head()
 ```
 
 A preview of the first five rows of the raw dataset is shown in @tbl-sample-data, which illustrates the categorical structure of all features prior to cleaning.
 
-## Data Validation Checks
 
-```{python}
-'''No Duplicate Observations Check'''
-
-duplicates = df.duplicated().sum()
-assert duplicates == 0, (
-    f"Found {duplicates} full-row duplicates."
-)
-```
-
-```{python}
-
-'''Target follows expected distribution'''
-actual_distribution = (
-    df["class"]
-    .value_counts(normalize=True)
-    .round(3)
-    .to_dict()
-)
-
-# As per dataset documentation, expected proportions for each target
-expected_distribution = {'e': 0.518, 'p':0.482}
-
-for cls, expected_prop in expected_distribution.items():
-    observed_prop = actual_distribution.get(cls, 0.0)
-    assert np.isclose(observed_prop, expected_prop, atol=0.01), (
-        f"Class '{cls}': observed proportion {observed_prop} "
-        f"differs from expected {expected_prop}."
-    )
-
-print(
-    "[OK] Target distribution matches expected proportions "
-    "(within tolerance)."
-)
-
-```
-
-
-```{python}
-'''Correct category levels check (i.e., no string mismatches or single values)'''
-
-
-allowed_values = {
-
-
-    "class": ["e", "p"],
-
-
-    "cap_shape": ["b", "c", "x", "f", "k", "s"],
-
-
-    "cap_surface": ["f", "g", "y", "s"],
-
-
-    "cap_color": ["n", "b", "c", "g", "r", "p", "u", "e", "w", "y"],
-
-
-    "bruises": ["t", "f"],
-
-
-    "odor": ["a", "l", "c", "y", "f", "m", "n", "p", "s"],
-
-
-    "gill_attachment": ["a", "d", "f", "n"],
-
-
-    "gill_spacing": ["c", "w", "d"],
-
-
-    "gill_size": ["b", "n"],
-
-
-    "gill_color": ["k", "n", "b", "h", "g", "r", "o", "p", "u", "e", "w", "y"],
-
-
-    "stalk_shape": ["e", "t"],
-
-
-    "stalk_root": ["b", "c", "u", "e", "z", "r", "?"],  # ? = missing
-
-
-    "stalk_surface_above_ring": ["f", "y", "k", "s"],
-
-
-    "stalk_surface_below_ring": ["f", "y", "k", "s"],
-
-
-    "stalk_color_above_ring": ["n", "b", "c", "g", "o", "p", "e", "w", "y"],
-
-
-    "stalk_color_below_ring": ["n", "b", "c", "g", "o", "p", "e", "w", "y"],
-
-
-    "veil_type": ["p", "u"],
-
-
-    "veil_color": ["n", "o", "w", "y"],
-
-
-    "ring_number": ["n", "o", "t"],
-
-
-    "ring_type": ["c", "e", "f", "l", "n", "p", "s", "z"],
-
-
-    "spore_print_color": ["k", "n", "b", "h", "r", "o", "u", "w", "y"],
-
-
-    "population": ["a", "c", "n", "s", "v", "y"],
-
-
-    "habitat": ["g", "l", "m", "p", "u", "w", "d"]
-
-
-}
-
-
-for col, allowed in allowed_values.items():
-
-
-    invalid = set(df[col].dropna().unique()) - set(allowed)
-
-
-    assert not invalid, f"{col} has invalid values: {invalid}"
-
-
-```
-
-
-
-```{python}
-# Basic missingness summary (raw data)
-df.isna().sum()
-
-```
-
-
-```{python}
-# Encoded missingness via '?':
-(df == "?").sum()
-```
-
-```{python}
-# Convert "?" markers to proper NaN in case any other should occur apart from the known `stalk_root`_ just thinking real-world applications
-
-df = df.replace("?", np.nan)
-
-```
-
-```{python}
-# Changing the target to numeric values: poisonous=1, edible=0
-
-df["is_poisonous"] = df["class"].map({"p": 1, "e": 0})
-```
-
-```{python}
-# Drop rows with NaN in the target column (none expected, but safe)
-
-df = df.dropna(subset=["is_poisonous"])
-```
-
-```{python}
-# Drop stalk_root column due to missing values and original target column "class" because numeric column of target values "is_poisonous" added to replace it
-df.drop(columns=['stalk_root', 'class'], inplace=True)
-
-```
-
-```{python}
-# Check remaining missing values
-df.isna().sum()
-
-```
-
-```{python}
-# Validate cleaned column names
-# Given that the dataset we read in for this model did not include headers, we assigned the names and hence encoded the correct column names initially upon read in. Here, I confirm the column names match expectations after dropping "stalk_root" and changing the name of "class" to "is_poisonous"
-expected_cols_cleaned = [
-    col for col in dataset_col_names if col not in ["stalk_root", "class"]
-] + ["is_poisonous"]
-
-assert list(df.columns) == expected_cols_cleaned, \
-    "The dataframe does not have the expected column names after cleaning."
-
-print("[OK] Cleaned column names validated.")
-```
-
-```{python}
-# Pandera: validate cleaned dataframe schema
-#   - All feature columns are strings
-#   - Target column is integer and only takes values {0, 1}
-
-schema = pa.DataFrameSchema(
-    {
-        # All predictor/feature columns: stored as strings
-        **{
-            col: pa.Column(str)
-            for col in expected_cols_cleaned
-            if col != "is_poisonous"
-        },
-        # Target column: must be integer and in the set {0, 1}
-        "is_poisonous": pa.Column(
-            int,
-            pa.Check.isin([0, 1]),
-        ),
-    }
-)
-
-# Validate the cleaned dataframe against the schema
-schema.validate(df, lazy=True)
-
-print(
-    "[OK] Pandera schema validation passed:\n"
-    "   - all feature columns are string-typed\n"
-    "   - 'is_poisonous' contains only 0/1 as expected."
-)
-
-```
-
-### Interpretation of Outlier / Anomalous Value Checks
+## Interpretation of Outlier / Anomalous Value Checks
 
 All features in this dataset are categorical, so traditional numeric outlier checks (e.g., detecting extreme continuous values) do not apply.
 Instead, the relevant "anomalous values" for categorical data are unexpected or invalid category levels.
@@ -361,74 +130,6 @@ Instead, the relevant "anomalous values" for categorical data are unexpected or 
 We addressed this by validating every categorical column against the official list of allowed levels from the UCI dataset documentation.
 Since all observed category values matched their expected sets, we conclude that no anomalous values are present in this dataset.
 
-```{python}
-# Pandera: validate cleaned dataframe schema    
-# - Ensure there are no completely empty rows
-# - all columns must be present
-# - enforces no missing in `is_poisonous`
-# - enforces <= 5% missingness in any other column
-
-mushroom_schema = pa.DataFrameSchema(
-    {
-        "cap_shape": pa.Column(str),
-        "cap_surface": pa.Column(str),
-        "cap_color": pa.Column(str),
-        "bruises": pa.Column(str),
-        "odor": pa.Column(str),
-        "gill_attachment": pa.Column(str),
-        "gill_spacing": pa.Column(str),
-        "gill_size": pa.Column(str),
-        "gill_color": pa.Column(str),
-        "stalk_shape": pa.Column(str),
-        "stalk_surface_above_ring": pa.Column(str),
-        "stalk_surface_below_ring": pa.Column(str),
-        "stalk_color_above_ring": pa.Column(str),
-        "stalk_color_below_ring": pa.Column(str),
-        "veil_type": pa.Column(str),
-        "veil_color": pa.Column(str),
-        "ring_number": pa.Column(str),
-        "ring_type": pa.Column(str),
-        "spore_print_color": pa.Column(str),
-        "population": pa.Column(str),
-        "habitat": pa.Column(str),
-        "is_poisonous": pa.Column(
-            int,
-            pa.Check(
-                lambda s: s.isna().mean() == 0.0,
-                element_wise=False,
-                error="Target 'is_poisonous' contains missing values.",
-            ),
-            nullable=False,
-        ),
-    },
-    checks=[
-        # No empty observations: no row where *all* columns are missing
-        pa.Check(
-            lambda df: ~(df.isna().all(axis=1)).any(),
-            element_wise=False,
-            error="Empty rows found.",
-        ),
-        # Missingness not beyond expected threshold (up to max 5% per column)
-        pa.Check(
-            lambda df: df.isna().mean().max() <= 0.05,
-            element_wise=False,
-            error="One or more columns exceed 5% missingness.",
-        ),
-    ],
-)
-
-# Validate the cleaned dataframe (will raise if check fails)
-df = mushroom_schema.validate(df, lazy=True)
-
-```
-
-# Basic EDA
-
-```{python}
-#| label: tbl-sample-cleaned
-#| tbl-cap: "First five rows of the cleaned dataset."
-df.head()
-```
 
 # Data Splitting 
 
@@ -439,40 +140,15 @@ A random state of `123` will ensure reproducibility when ran by subsequent users
 
 # EDA After Data Splitting 
 
-<!-- ```{python}
-# Sanity check: class balance in the training data
+```{python}
+#| label: tbl-training
+#| tbl-cap: "First five rows of the cleaned dataset."
+train_df = pd.read_csv("../data/processed/mushroom_train.csv")
+train_df.head()
+```
 
-train_target_counts = train_df["is_poisonous"].value_counts()
-train_target_prop = train_df["is_poisonous"].value_counts(normalize=True)
+A preview of the first five rows of the training dataset is shown in @tbl-training, which illustrates the categorical structure of all features after cleaning and splitting.
 
-print("Training set class counts:")
-print(train_target_counts.rename(index={0: "edible (0)", 1: "poisonous (1)"}))
-
-print("\nTraining set class proportions:")
-print(train_target_prop.rename(index={0: "edible (0)", 1: "poisonous (1)"}).round(3))
-``` -->
-
-<!-- ```{python}
-# Data Validation: check training target distribution roughly matches UCI proportions
-
-expected_dist = {"e": 0.518, "p": 0.482}
-# but now we’re working with numeric target: 0 = edible, 1 = poisonous
-expected_poisonous = expected_dist["p"]  # 0.482
-
-train_poisonous = train_df["is_poisonous"].mean()
-tol = 0.02
-
-assert abs(train_poisonous - expected_poisonous) <= tol, (
-    f"Training set poisonous proportion ({train_poisonous:.3f}) "
-    f"differs from expected ({expected_poisonous:.3f}) by more than {tol:.2f}."
-)
-
-print(
-    f"[OK] Training set poisonous proportion ({train_poisonous:.3f}) "
-    f"is close to expected ({expected_poisonous:.3f})."
-)
-
-``` -->
 
 ```{python}
 #| label: tbl-feature-summary
@@ -485,13 +161,6 @@ Markdown(mushroom_feature_summary.to_markdown(index = False))
 ```
 
 We summarize all 21 categorical predictors in @tbl-feature-summary, which reports the number of levels and the dominant category for each feature. Given that `veil_type` only has one level, the values are the same for all observations so we drop that column. 
-
-<!-- ```{python}
-    X_train.to_csv('data/processed/x_train.csv')
-    X_test.to_csv('data/processed/x_test.csv')
-    y_train.to_csv('data/processed/y_train.csv')
-    y_test.to_csv('data/processed/y_test.csv')
-``` -->
 
 `veil_type` was dropped because it contains only a single category for all observations.
 A feature with no variation cannot help the model distinguish edible from poisonous mushrooms, provides no predictive signal, and only adds redundant columns after one-hot encoding. Therefore, it is removed to simplify the feature set and prevent unnecessary model complexity.
@@ -550,19 +219,7 @@ Markdown(poison_rank.to_markdown(index = False))
 
 ```
 
-
-
-<!-- ```{python}
-    X_train.to_csv('../data/processed/x_train.csv')
-    X_test.to_csv('../data/processed/x_test.csv')
-    y_train.to_csv('../data/processed/y_train.csv')
-    y_test.to_csv('../data/processed/y_test.csv')
-``` -->
-
 A ranking of features by their discriminatory power is shown in @tbl-poison-rank, using the variance in poisonous fraction across categories as an association measure.
-
-
-## Data Validation Check: Any Anomalous Correlation Between Features and/or Target? 
 
 
 ::: {#fig-corr-heatmap width=80%}
@@ -580,72 +237,39 @@ Correlation heatmap (Cramer's V) for all feature and feature-target pairs in the
 
 # Model 
 
-Before we continue, we must preprocess our data such that the features work with our models. Since all of our features are strings, we can opt to use one-hot encoding for them all. 
+Before we continue, we must preprocess our data such that the features work with our models. Since all of our features are strings, we can opt to use one-hot encoding for them all. We fit a `DummyClassifier` to our data as a baseline to compare our actual model with. Random state used again for reproducibility.
 
 ```{python}
-# Proprocessor
-preprocessor = OneHotEncoder(handle_unknown="ignore")
+set_config(display='diagram')
+
+with open('../scripts/models/dummy.pkl', 'rb') as f:
+    dc_pipe = pickle.load(f)
+
+dc_pipe
 
 ```
+SciKit Learn pipe for the Dummy Classifier model
 
-
-We fit a `DummyClassifier` to our data as a baseline to compare our actual model with. Random state used again for reproducibility.
-
-```{python}
-#| label: tbl-cross-val-dc
-#| tbl-cap: "Mean 10-Fold Cross-Validation Metrics for DummyClassifier Baseline"
-
-dc_pipe = make_pipeline(
-    preprocessor, 
-    DummyClassifier(random_state=123)
-)
-
-dc_pipe.fit(X_train, y_train)
-
-cross_val_dc = pd.DataFrame(
-    cross_validate(
-        dc_pipe, X_train, y_train, cv=10, n_jobs=-1, return_train_score=True
-    )).mean().to_frame().rename(columns={0: "mean_value"})
-
-cross_val_dc
-```
 
 In our classification problem, we opt to use `SVC` [@svc] as our model of choice for its effective usage in this scenario. We do not have an extreme amount of data (< 10000 observations) on top of only being a binary classification task. 
 
 ```{python}
-#| label: tbl-cross-val-svc
-#| tbl-cap: "Mean 10-Fold Cross-Validation Metrics for SVC Model"
 
-svc_pipe = make_pipeline(
-    preprocessor, 
-    SVC(random_state=123)
-)
+with open('../scripts/models/svc.pkl', 'rb') as f:
+    svc_pipe = pickle.load(f)
 
-svc_pipe.fit(X_train, y_train)
-
-cross_val_svc = pd.DataFrame(
-    cross_validate(
-        svc_pipe, X_train, y_train, cv=10, n_jobs=-1, return_train_score=True
-    )).mean().to_frame().rename(columns={0: "mean_value"})
-
-cross_val_svc
+svc_pipe
 ```
+SciKit Learn pipe for the SVC model
 
+![](../img/confusion_matrix.png){#fig-confusion-matrix-svc}
 
-```{python}
-#| label: fig-confusion-matrix-svc
-#| fig-cap: "Confusion matrix for the SVC classifier on the test set."
+Confusion matrix for the SVC classifier on the test set.
 
-y_pred = svc_pipe.predict(X_test)
-
-cm = confusion_matrix(y_test, y_pred)
-ConfusionMatrixDisplay(cm).plot()
-
-```
 
 # Results & Discussion
 
-Our prediction model performed excellently on test data, classifying all of the mushroom examples correctly as poisonous or edible, with no error. Given that our model predicted perfectly, no optimization was required. As shown in  @fig-confusion-matrix-svc, the SVC correctly classified every mushroom in the test set, yielding no false positives or false negatives. Furthermore, the SVC model shows consistent performance across folds, as summarized in @tbl-cross-val-svc.
+Our prediction model performed excellently on test data, classifying all of the mushroom examples correctly as poisonous or edible, with no error. Given that our model predicted perfectly, no optimization was required. As shown in  @fig-confusion-matrix-svc, the SVC correctly classified every mushroom in the test set, yielding no false positives or false negatives. 
 
 This performance is identical to the results published on the [UCI website](https://archive.ics.uci.edu/dataset/73/mushroom) from which the data was sourced [@datasource]. 
 As shown in the confusion matrix, the model has a recall and precision of 1, due to no false positivies or negatives. 
