@@ -80,21 +80,17 @@ div.csl-indent {
   </ul></li>
   <li><a href="#analysis" id="toc-analysis" class="nav-link" data-scroll-target="#analysis"><span class="header-section-number">4</span> Analysis</a>
   <ul class="collapse">
-  <li><a href="#data-validation-checks" id="toc-data-validation-checks" class="nav-link" data-scroll-target="#data-validation-checks"><span class="header-section-number">4.1</span> Data Validation Checks</a></li>
-  <li><a href="#data-cleaning-and-wrangling" id="toc-data-cleaning-and-wrangling" class="nav-link" data-scroll-target="#data-cleaning-and-wrangling"><span class="header-section-number">4.2</span> Data cleaning and wrangling</a></li>
-  <li><a href="#data-validation-checks-1" id="toc-data-validation-checks-1" class="nav-link" data-scroll-target="#data-validation-checks-1"><span class="header-section-number">4.3</span> Data Validation Checks</a></li>
+  <li><a href="#interpretation-of-outlier-anomalous-value-checks" id="toc-interpretation-of-outlier-anomalous-value-checks" class="nav-link" data-scroll-target="#interpretation-of-outlier-anomalous-value-checks"><span class="header-section-number">4.1</span> Interpretation of Outlier / Anomalous Value Checks</a></li>
   </ul></li>
-  <li><a href="#basic-eda" id="toc-basic-eda" class="nav-link" data-scroll-target="#basic-eda"><span class="header-section-number">5</span> Basic EDA</a></li>
-  <li><a href="#data-splitting" id="toc-data-splitting" class="nav-link" data-scroll-target="#data-splitting"><span class="header-section-number">6</span> Data Splitting</a></li>
-  <li><a href="#eda-after-data-splitting" id="toc-eda-after-data-splitting" class="nav-link" data-scroll-target="#eda-after-data-splitting"><span class="header-section-number">7</span> EDA After Data Splitting</a>
+  <li><a href="#data-splitting" id="toc-data-splitting" class="nav-link" data-scroll-target="#data-splitting"><span class="header-section-number">5</span> Data Splitting</a></li>
+  <li><a href="#eda-after-data-splitting" id="toc-eda-after-data-splitting" class="nav-link" data-scroll-target="#eda-after-data-splitting"><span class="header-section-number">6</span> EDA After Data Splitting</a>
   <ul class="collapse">
-  <li><a href="#data-validation-check-any-anomalous-correlation-between-features-andor-target" id="toc-data-validation-check-any-anomalous-correlation-between-features-andor-target" class="nav-link" data-scroll-target="#data-validation-check-any-anomalous-correlation-between-features-andor-target"><span class="header-section-number">7.1</span> Data Validation Check: Any Anomalous Correlation Between Features and/or Target?</a></li>
-  <li><a href="#summary-of-anomalous-correlation-between-features" id="toc-summary-of-anomalous-correlation-between-features" class="nav-link" data-scroll-target="#summary-of-anomalous-correlation-between-features"><span class="header-section-number">7.2</span> Summary of Anomalous Correlation Between Features:</a></li>
-  <li><a href="#summary-of-anomalous-correlation-between-feature-odor-and-target" id="toc-summary-of-anomalous-correlation-between-feature-odor-and-target" class="nav-link" data-scroll-target="#summary-of-anomalous-correlation-between-feature-odor-and-target"><span class="header-section-number">7.3</span> Summary of Anomalous Correlation Between Feature “Odor” and Target:</a></li>
+  <li><a href="#summary-of-anomalous-correlation-between-features" id="toc-summary-of-anomalous-correlation-between-features" class="nav-link" data-scroll-target="#summary-of-anomalous-correlation-between-features"><span class="header-section-number">6.1</span> Summary of Anomalous Correlation Between Features:</a></li>
+  <li><a href="#summary-of-anomalous-correlation-between-feature-odor-and-target" id="toc-summary-of-anomalous-correlation-between-feature-odor-and-target" class="nav-link" data-scroll-target="#summary-of-anomalous-correlation-between-feature-odor-and-target"><span class="header-section-number">6.2</span> Summary of Anomalous Correlation Between Feature “Odor” and Target:</a></li>
   </ul></li>
-  <li><a href="#model" id="toc-model" class="nav-link" data-scroll-target="#model"><span class="header-section-number">8</span> Model</a></li>
-  <li><a href="#results-discussion" id="toc-results-discussion" class="nav-link" data-scroll-target="#results-discussion"><span class="header-section-number">9</span> Results &amp; Discussion</a></li>
-  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"><span class="header-section-number">10</span> References</a></li>
+  <li><a href="#model" id="toc-model" class="nav-link" data-scroll-target="#model"><span class="header-section-number">7</span> Model</a></li>
+  <li><a href="#results-discussion" id="toc-results-discussion" class="nav-link" data-scroll-target="#results-discussion"><span class="header-section-number">8</span> Results &amp; Discussion</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"><span class="header-section-number">9</span> References</a></li>
   </ul>
 </nav>
 </div>
@@ -153,19 +149,14 @@ div.csl-indent {
 </section>
 <section id="analysis" class="level1" data-number="4">
 <h1 data-number="4"><span class="header-section-number">4</span> Analysis</h1>
-<section id="data-validation-checks" class="level2" data-number="4.1">
-<h2 data-number="4.1" class="anchored" data-anchor-id="data-validation-checks"><span class="header-section-number">4.1</span> Data Validation Checks</h2>
-</section>
-<section id="data-cleaning-and-wrangling" class="level2" data-number="4.2">
-<h2 data-number="4.2" class="anchored" data-anchor-id="data-cleaning-and-wrangling"><span class="header-section-number">4.2</span> Data cleaning and wrangling</h2>
-<div class="cell" data-execution_count="5">
-<div id="tbl-sample-data" class="cell quarto-float quarto-figure quarto-figure-left anchored" data-execution_count="5">
+<div class="cell" data-execution_count="2">
+<div id="tbl-sample-data" class="cell quarto-float quarto-figure quarto-figure-left anchored" data-execution_count="2">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-sample-data-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Table&nbsp;1: First five rows of the raw dataset.
 </figcaption>
 <div aria-describedby="tbl-sample-data-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div class="cell-output cell-output-display" data-execution_count="105">
+<div class="cell-output cell-output-display" data-execution_count="2">
 <div>
 
 
@@ -328,126 +319,27 @@ Table&nbsp;1: First five rows of the raw dataset.
 </div>
 </div>
 <p>A preview of the first five rows of the raw dataset is shown in <a href="#tbl-sample-data" class="quarto-xref">Table&nbsp;1</a>, which illustrates the categorical structure of all features prior to cleaning.</p>
-</section>
-<section id="data-validation-checks-1" class="level2" data-number="4.3">
-<h2 data-number="4.3" class="anchored" data-anchor-id="data-validation-checks-1"><span class="header-section-number">4.3</span> Data Validation Checks</h2>
-<div id="59deed0d" class="cell" data-execution_count="7">
-<div class="cell-output cell-output-stdout">
-<pre><code>[OK] Target distribution matches expected proportions (within tolerance).</code></pre>
-</div>
-</div>
-<div id="60a0dd82" class="cell" data-execution_count="9">
-<div class="cell-output cell-output-display" data-execution_count="109">
-<pre><code>class                       0
-cap_shape                   0
-cap_surface                 0
-cap_color                   0
-bruises                     0
-odor                        0
-gill_attachment             0
-gill_spacing                0
-gill_size                   0
-gill_color                  0
-stalk_shape                 0
-stalk_root                  0
-stalk_surface_above_ring    0
-stalk_surface_below_ring    0
-stalk_color_above_ring      0
-stalk_color_below_ring      0
-veil_type                   0
-veil_color                  0
-ring_number                 0
-ring_type                   0
-spore_print_color           0
-population                  0
-habitat                     0
-dtype: int64</code></pre>
-</div>
-</div>
-<div id="d2ee6bee" class="cell" data-execution_count="10">
-<div class="cell-output cell-output-display" data-execution_count="110">
-<pre><code>class                          0
-cap_shape                      0
-cap_surface                    0
-cap_color                      0
-bruises                        0
-odor                           0
-gill_attachment                0
-gill_spacing                   0
-gill_size                      0
-gill_color                     0
-stalk_shape                    0
-stalk_root                  2480
-stalk_surface_above_ring       0
-stalk_surface_below_ring       0
-stalk_color_above_ring         0
-stalk_color_below_ring         0
-veil_type                      0
-veil_color                     0
-ring_number                    0
-ring_type                      0
-spore_print_color              0
-population                     0
-habitat                        0
-dtype: int64</code></pre>
-</div>
-</div>
-<div id="45d55b7a" class="cell" data-execution_count="15">
-<div class="cell-output cell-output-display" data-execution_count="115">
-<pre><code>cap_shape                   0
-cap_surface                 0
-cap_color                   0
-bruises                     0
-odor                        0
-gill_attachment             0
-gill_spacing                0
-gill_size                   0
-gill_color                  0
-stalk_shape                 0
-stalk_surface_above_ring    0
-stalk_surface_below_ring    0
-stalk_color_above_ring      0
-stalk_color_below_ring      0
-veil_type                   0
-veil_color                  0
-ring_number                 0
-ring_type                   0
-spore_print_color           0
-population                  0
-habitat                     0
-is_poisonous                0
-dtype: int64</code></pre>
-</div>
-</div>
-<div id="a3f43322" class="cell" data-execution_count="16">
-<div class="cell-output cell-output-stdout">
-<pre><code>[OK] Cleaned column names validated.</code></pre>
-</div>
-</div>
-<div id="b59aab63" class="cell" data-execution_count="17">
-<div class="cell-output cell-output-stdout">
-<pre><code>[OK] Pandera schema validation passed:
-   - all feature columns are string-typed
-   - 'is_poisonous' contains only 0/1 as expected.</code></pre>
-</div>
-</div>
-<section id="interpretation-of-outlier-anomalous-value-checks" class="level3" data-number="4.3.1">
-<h3 data-number="4.3.1" class="anchored" data-anchor-id="interpretation-of-outlier-anomalous-value-checks"><span class="header-section-number">4.3.1</span> Interpretation of Outlier / Anomalous Value Checks</h3>
+<section id="interpretation-of-outlier-anomalous-value-checks" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="interpretation-of-outlier-anomalous-value-checks"><span class="header-section-number">4.1</span> Interpretation of Outlier / Anomalous Value Checks</h2>
 <p>All features in this dataset are categorical, so traditional numeric outlier checks (e.g., detecting extreme continuous values) do not apply. Instead, the relevant “anomalous values” for categorical data are unexpected or invalid category levels.</p>
 <p>We addressed this by validating every categorical column against the official list of allowed levels from the UCI dataset documentation. Since all observed category values matched their expected sets, we conclude that no anomalous values are present in this dataset.</p>
 </section>
 </section>
+<section id="data-splitting" class="level1" data-number="5">
+<h1 data-number="5"><span class="header-section-number">5</span> Data Splitting</h1>
+<p>We are trying to classify whether a mushroom is edible (0) or poisonous (1). Going to do a 70/30 train/test split due to the large and roughly equal proportions of edible and poisonous mushrooms.</p>
+<p>A random state of <code>123</code> will ensure reproducibility when ran by subsequent users.</p>
 </section>
-<section id="basic-eda" class="level1" data-number="5">
-<h1 data-number="5"><span class="header-section-number">5</span> Basic EDA</h1>
-<div class="cell" data-execution_count="19">
-<div id="tbl-sample-cleaned" class="cell quarto-float quarto-figure quarto-figure-left anchored" data-execution_count="19">
+<section id="eda-after-data-splitting" class="level1" data-number="6">
+<h1 data-number="6"><span class="header-section-number">6</span> EDA After Data Splitting</h1>
+<div class="cell" data-execution_count="3">
+<div id="tbl-training" class="cell quarto-float quarto-figure quarto-figure-left anchored" data-execution_count="3">
 <figure class="quarto-float quarto-float-tbl figure">
-<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-sample-cleaned-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-training-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Table&nbsp;2: First five rows of the cleaned dataset.
 </figcaption>
-<div aria-describedby="tbl-sample-cleaned-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div class="cell-output cell-output-display" data-execution_count="119">
+<div aria-describedby="tbl-training-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output cell-output-display" data-execution_count="3">
 <div>
 
 
@@ -466,9 +358,9 @@ Table&nbsp;2: First five rows of the cleaned dataset.
 <th data-quarto-table-cell-role="th">gill_color</th>
 <th data-quarto-table-cell-role="th">stalk_shape</th>
 <th data-quarto-table-cell-role="th">...</th>
+<th data-quarto-table-cell-role="th">stalk_surface_below_ring</th>
 <th data-quarto-table-cell-role="th">stalk_color_above_ring</th>
 <th data-quarto-table-cell-role="th">stalk_color_below_ring</th>
-<th data-quarto-table-cell-role="th">veil_type</th>
 <th data-quarto-table-cell-role="th">veil_color</th>
 <th data-quarto-table-cell-role="th">ring_number</th>
 <th data-quarto-table-cell-role="th">ring_type</th>
@@ -481,183 +373,143 @@ Table&nbsp;2: First five rows of the cleaned dataset.
 <tbody>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">0</td>
-<td>x</td>
-<td>s</td>
-<td>n</td>
-<td>t</td>
-<td>p</td>
 <td>f</td>
-<td>c</td>
+<td>s</td>
+<td>g</td>
+<td>f</td>
 <td>n</td>
-<td>k</td>
-<td>e</td>
+<td>f</td>
+<td>w</td>
+<td>b</td>
+<td>h</td>
+<td>t</td>
 <td>...</td>
+<td>s</td>
 <td>w</td>
 <td>w</td>
-<td>p</td>
 <td>w</td>
 <td>o</td>
-<td>p</td>
+<td>e</td>
 <td>k</td>
 <td>s</td>
-<td>u</td>
-<td>1</td>
+<td>g</td>
+<td>0</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">1</td>
 <td>x</td>
 <td>s</td>
-<td>y</td>
-<td>t</td>
-<td>a</td>
+<td>n</td>
+<td>f</td>
+<td>f</td>
 <td>f</td>
 <td>c</td>
+<td>n</td>
 <td>b</td>
-<td>k</td>
-<td>e</td>
+<td>t</td>
 <td>...</td>
-<td>w</td>
-<td>w</td>
+<td>k</td>
+<td>p</td>
 <td>p</td>
 <td>w</td>
 <td>o</td>
-<td>p</td>
-<td>n</td>
-<td>n</td>
-<td>g</td>
-<td>0</td>
+<td>e</td>
+<td>w</td>
+<td>v</td>
+<td>d</td>
+<td>1</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">2</td>
-<td>b</td>
-<td>s</td>
-<td>w</td>
-<td>t</td>
-<td>l</td>
+<td>x</td>
+<td>y</td>
+<td>y</td>
+<td>f</td>
+<td>f</td>
 <td>f</td>
 <td>c</td>
 <td>b</td>
-<td>n</td>
+<td>g</td>
 <td>e</td>
 <td>...</td>
-<td>w</td>
-<td>w</td>
-<td>p</td>
+<td>k</td>
+<td>b</td>
+<td>n</td>
 <td>w</td>
 <td>o</td>
+<td>l</td>
+<td>h</td>
+<td>y</td>
 <td>p</td>
-<td>n</td>
-<td>n</td>
-<td>m</td>
-<td>0</td>
+<td>1</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">3</td>
 <td>x</td>
+<td>f</td>
 <td>y</td>
-<td>w</td>
-<td>t</td>
-<td>p</td>
+<td>f</td>
+<td>f</td>
 <td>f</td>
 <td>c</td>
-<td>n</td>
-<td>n</td>
+<td>b</td>
+<td>p</td>
 <td>e</td>
 <td>...</td>
-<td>w</td>
-<td>w</td>
-<td>p</td>
+<td>k</td>
+<td>b</td>
+<td>n</td>
 <td>w</td>
 <td>o</td>
-<td>p</td>
-<td>k</td>
-<td>s</td>
-<td>u</td>
+<td>l</td>
+<td>h</td>
+<td>v</td>
+<td>g</td>
 <td>1</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">4</td>
 <td>x</td>
-<td>s</td>
+<td>f</td>
 <td>g</td>
 <td>f</td>
-<td>n</td>
 <td>f</td>
-<td>w</td>
+<td>f</td>
+<td>c</td>
 <td>b</td>
-<td>k</td>
-<td>t</td>
+<td>g</td>
+<td>e</td>
 <td>...</td>
-<td>w</td>
-<td>w</td>
-<td>p</td>
+<td>k</td>
+<td>n</td>
+<td>b</td>
 <td>w</td>
 <td>o</td>
-<td>e</td>
-<td>n</td>
-<td>a</td>
+<td>l</td>
+<td>h</td>
+<td>v</td>
 <td>g</td>
-<td>0</td>
+<td>1</td>
 </tr>
 </tbody>
 </table>
 
-<p>5 rows × 22 columns</p>
+<p>5 rows × 21 columns</p>
 </div>
 </div>
 </div>
 </figure>
 </div>
 </div>
-</section>
-<section id="data-splitting" class="level1" data-number="6">
-<h1 data-number="6"><span class="header-section-number">6</span> Data Splitting</h1>
-<p>We are trying to classify whether a mushroom is edible (0) or poisonous (1). Going to do a 70/30 train/test split due to the large and roughly equal proportions of edible and poisonous mushrooms.</p>
-<p>A random state of <code>123</code> will ensure reproducibility when ran by subsequent users.</p>
-</section>
-<section id="eda-after-data-splitting" class="level1" data-number="7">
-<h1 data-number="7"><span class="header-section-number">7</span> EDA After Data Splitting</h1>
-<!-- ```{python}
-# Sanity check: class balance in the training data
-
-train_target_counts = train_df["is_poisonous"].value_counts()
-train_target_prop = train_df["is_poisonous"].value_counts(normalize=True)
-
-print("Training set class counts:")
-print(train_target_counts.rename(index={0: "edible (0)", 1: "poisonous (1)"}))
-
-print("\nTraining set class proportions:")
-print(train_target_prop.rename(index={0: "edible (0)", 1: "poisonous (1)"}).round(3))
-``` -->
-<!-- ```{python}
-# Data Validation: check training target distribution roughly matches UCI proportions
-
-expected_dist = {"e": 0.518, "p": 0.482}
-# but now we’re working with numeric target: 0 = edible, 1 = poisonous
-expected_poisonous = expected_dist["p"]  # 0.482
-
-train_poisonous = train_df["is_poisonous"].mean()
-tol = 0.02
-
-assert abs(train_poisonous - expected_poisonous) <= tol, (
-    f"Training set poisonous proportion ({train_poisonous:.3f}) "
-    f"differs from expected ({expected_poisonous:.3f}) by more than {tol:.2f}."
-)
-
-print(
-    f"[OK] Training set poisonous proportion ({train_poisonous:.3f}) "
-    f"is close to expected ({expected_poisonous:.3f})."
-)
-
-``` -->
-<div class="cell" data-execution_count="20">
-<div id="tbl-feature-summary" class="cell quarto-float quarto-figure quarto-figure-left anchored" data-execution_count="20">
+<p>A preview of the first five rows of the training dataset is shown in <a href="#tbl-training" class="quarto-xref">Table&nbsp;2</a>, which illustrates the categorical structure of all features after cleaning and splitting.</p>
+<div class="cell" data-execution_count="4">
+<div id="tbl-feature-summary" class="cell quarto-float quarto-figure quarto-figure-left anchored" data-execution_count="4">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-feature-summary-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Table&nbsp;3: Summary of mushroom feature characteristics
 </figcaption>
 <div aria-describedby="tbl-feature-summary-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div class="cell-output cell-output-display cell-output-markdown" data-execution_count="120">
+<div class="cell-output cell-output-display cell-output-markdown" data-execution_count="4">
 <table class="do-not-create-environment cell caption-top table table-sm table-striped small">
 <colgroup>
 <col style="width: 13%">
@@ -824,12 +676,6 @@ Table&nbsp;3: Summary of mushroom feature characteristics
 </div>
 </div>
 <p>We summarize all 21 categorical predictors in <a href="#tbl-feature-summary" class="quarto-xref">Table&nbsp;3</a>, which reports the number of levels and the dominant category for each feature. Given that <code>veil_type</code> only has one level, the values are the same for all observations so we drop that column.</p>
-<!-- ```{python}
-    X_train.to_csv('data/processed/x_train.csv')
-    X_test.to_csv('data/processed/x_test.csv')
-    y_train.to_csv('data/processed/y_train.csv')
-    y_test.to_csv('data/processed/y_test.csv')
-``` -->
 <p><code>veil_type</code> was dropped because it contains only a single category for all observations. A feature with no variation cannot help the model distinguish edible from poisonous mushrooms, provides no predictive signal, and only adds redundant columns after one-hot encoding. Therefore, it is removed to simplify the feature set and prevent unnecessary model complexity.</p>
 <div id="fig-odor-cat" class="quarto-float quarto-figure quarto-figure-left anchored" width="80%">
 <figure class="quarto-float quarto-float-fig figure">
@@ -881,17 +727,17 @@ Figure&nbsp;5: Class Proportions (edible vs poisonous) by Population Type
 </figcaption>
 </figure>
 </div>
-<section id="relationship-between-physical-features-and-toxicity-an-exploratory-overview" class="level3" data-number="7.0.1">
-<h3 data-number="7.0.1" class="anchored" data-anchor-id="relationship-between-physical-features-and-toxicity-an-exploratory-overview"><span class="header-section-number">7.0.1</span> Relationship Between Physical Features and Toxicity: An Exploratory Overview</h3>
+<section id="relationship-between-physical-features-and-toxicity-an-exploratory-overview" class="level3" data-number="6.0.1">
+<h3 data-number="6.0.1" class="anchored" data-anchor-id="relationship-between-physical-features-and-toxicity-an-exploratory-overview"><span class="header-section-number">6.0.1</span> Relationship Between Physical Features and Toxicity: An Exploratory Overview</h3>
 <p>To explore how individual mushroom characteristics relate to toxicity, we compared the proportion of poisonous and edible mushrooms across several categorical features. odor showed the strongest separation between classes (<a href="#fig-odor-cat" class="quarto-xref">Figure&nbsp;1</a>), with foul-, creosote-, and pungent-smelling mushrooms being almost exclusively poisonous, whereas almond and anise odors were strongly associated with edibility. Gill size also demonstrated a meaningful distinction (<a href="#fig-gill-size" class="quarto-xref">Figure&nbsp;2</a>), with broad gills far more common among edible mushrooms. Habitat exhibited notable patterns as well (<a href="#fig-habitat" class="quarto-xref">Figure&nbsp;3</a>): mushrooms found in wooded or grassy environments were more frequently poisonous, while those growing in urban or path environments tended to be edible. Bruising was another strong indicator (<a href="#fig-bruise" class="quarto-xref">Figure&nbsp;4</a>), as mushrooms that bruised were overwhelmingly edible, whereas those that did not bruise were frequently poisonous. Lastly, population type revealed clear group-level differences (<a href="#fig-pop-type" class="quarto-xref">Figure&nbsp;5</a>), with solitary or scattered mushrooms more often poisonous, while abundant or clustered populations were more commonly edible. Together, these figures illustrate that several features, odor in particular, provide strong discriminatory signals relevant to the classification task.</p>
-<div class="cell" data-execution_count="21">
-<div id="tbl-poison-rank" class="cell quarto-float quarto-figure quarto-figure-left anchored" data-execution_count="21">
+<div class="cell" data-execution_count="5">
+<div id="tbl-poison-rank" class="cell quarto-float quarto-figure quarto-figure-left anchored" data-execution_count="5">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-poison-rank-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Table&nbsp;4: Ranking of features by how well they distinguish poisonous mushrooms
 </figcaption>
 <div aria-describedby="tbl-poison-rank-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div class="cell-output cell-output-display cell-output-markdown" data-execution_count="121">
+<div class="cell-output cell-output-display cell-output-markdown" data-execution_count="5">
 <table class="do-not-create-environment cell caption-top table table-sm table-striped small">
 <thead>
 <tr class="header">
@@ -1008,16 +854,7 @@ Table&nbsp;4: Ranking of features by how well they distinguish poisonous mushroo
 </figure>
 </div>
 </div>
-<!-- ```{python}
-    X_train.to_csv('../data/processed/x_train.csv')
-    X_test.to_csv('../data/processed/x_test.csv')
-    y_train.to_csv('../data/processed/y_train.csv')
-    y_test.to_csv('../data/processed/y_test.csv')
-``` -->
 <p>A ranking of features by their discriminatory power is shown in <a href="#tbl-poison-rank" class="quarto-xref">Table&nbsp;4</a>, using the variance in poisonous fraction across categories as an association measure.</p>
-</section>
-<section id="data-validation-check-any-anomalous-correlation-between-features-andor-target" class="level2" data-number="7.1">
-<h2 data-number="7.1" class="anchored" data-anchor-id="data-validation-check-any-anomalous-correlation-between-features-andor-target"><span class="header-section-number">7.1</span> Data Validation Check: Any Anomalous Correlation Between Features and/or Target?</h2>
 <div id="fig-corr-heatmap" class="quarto-float quarto-figure quarto-figure-left anchored" width="80%">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-corr-heatmap-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -1029,110 +866,1377 @@ Figure&nbsp;6: Correlation heatmap (Cramer’s V) for all feature and feature-ta
 </figure>
 </div>
 </section>
-<section id="summary-of-anomalous-correlation-between-features" class="level2" data-number="7.2">
-<h2 data-number="7.2" class="anchored" data-anchor-id="summary-of-anomalous-correlation-between-features"><span class="header-section-number">7.2</span> Summary of Anomalous Correlation Between Features:</h2>
+<section id="summary-of-anomalous-correlation-between-features" class="level2" data-number="6.1">
+<h2 data-number="6.1" class="anchored" data-anchor-id="summary-of-anomalous-correlation-between-features"><span class="header-section-number">6.1</span> Summary of Anomalous Correlation Between Features:</h2>
 <p><a href="#fig-corr-heatmap" class="quarto-xref">Figure&nbsp;6</a> shows a high correlation between the feature <code>gill_attachment</code> and the three features <code>stalk_color_above_ring</code>, <code>stalk_color_below_ring</code>, and <code>veil_color</code>. We expect this is a feature of the dataset because it includes a high number of observations (5686 in our training data) and only 23 species, so there are many repeated instances of each species. If a particular species has fixed color and gill attachment characteristics than it is expected that we would find a high correlation between these features. It is not likely to be a sign of data leakage, but does suggest that there are weaknesses in the biological representativeness of the dataset. Therefore, the dataset may not be the strongest choice for generalizing predictions about the poisonousness of mushrooms across the full Agaricus and Lepiota (Agaricaceae) family, since it may not capture the true diversity and independence of these features found in nature.</p>
 </section>
-<section id="summary-of-anomalous-correlation-between-feature-odor-and-target" class="level2" data-number="7.3">
-<h2 data-number="7.3" class="anchored" data-anchor-id="summary-of-anomalous-correlation-between-feature-odor-and-target"><span class="header-section-number">7.3</span> Summary of Anomalous Correlation Between Feature “Odor” and Target:</h2>
+<section id="summary-of-anomalous-correlation-between-feature-odor-and-target" class="level2" data-number="6.2">
+<h2 data-number="6.2" class="anchored" data-anchor-id="summary-of-anomalous-correlation-between-feature-odor-and-target"><span class="header-section-number">6.2</span> Summary of Anomalous Correlation Between Feature “Odor” and Target:</h2>
 <p><a href="#fig-corr-heatmap" class="quarto-xref">Figure&nbsp;6</a> shows a high correlation between the feature <code>odor</code> and the target, and a moderately high correlation between <code>spore_print_color</code> and the target. However, the dataset we are using includes background information on the logical rules discovered by prior researchers Duch, Adamczak, and Grabczewski <span class="citation" data-cites="datastudy">(<a href="#ref-datastudy" role="doc-biblioref">Duch, Adamczak, and Grabczewski 1996</a>)</span>, and they found that “odor” is often the first split for identifying poisonous mushrooms, and “spore_print_color” is often the second. Hence both of these features are expected to be strong predictors of the target and the seeming anomalous correlation is simply an accurate reflection of biological reality as captured by the dataset, and not likely to be a sign of data leakage in this case.</p>
 </section>
 </section>
-<section id="model" class="level1" data-number="8">
-<h1 data-number="8"><span class="header-section-number">8</span> Model</h1>
-<p>Before we continue, we must preprocess our data such that the features work with our models. Since all of our features are strings, we can opt to use one-hot encoding for them all.</p>
-<p>We fit a <code>DummyClassifier</code> to our data as a baseline to compare our actual model with. Random state used again for reproducibility.</p>
-<div id="tbl-cross-val-dc" class="cell quarto-float quarto-figure quarto-figure-left anchored" data-execution_count="23">
-<figure class="quarto-float quarto-float-tbl figure">
-<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-cross-val-dc-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;5: Mean 10-Fold Cross-Validation Metrics for DummyClassifier Baseline
-</figcaption>
-<div aria-describedby="tbl-cross-val-dc-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div class="cell-output cell-output-error">
-<div class="ansi-escaped-output">
-<pre><span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
-<span class="ansi-cyan-fg">Cell</span><span class="ansi-cyan-fg"> </span><span class="ansi-green-fg">In[123]</span><span class="ansi-green-fg">, line 6</span>
-<span class="ansi-green-fg">      1</span> dc_pipe = make_pipeline(
-<span class="ansi-green-fg">      2</span>     preprocessor, 
-<span class="ansi-green-fg">      3</span>     DummyClassifier(random_state=<span class="ansi-green-fg">123</span>)
-<span class="ansi-green-fg">      4</span> )
-<span class="ansi-green-fg">----&gt; </span><span class="ansi-green-fg">6</span> dc_pipe.fit(<span class="ansi-yellow-bg">X_train</span>, y_train)
-<span class="ansi-green-fg">      8</span> cross_val_dc = pd.DataFrame(
-<span class="ansi-green-fg">      9</span>     cross_validate(
-<span class="ansi-green-fg">     10</span>         dc_pipe, X_train, y_train, cv=<span class="ansi-green-fg">10</span>, n_jobs=-<span class="ansi-green-fg">1</span>, return_train_score=<span style="font-weight:bold;color:rgb(0,135,0)">True</span>
-<span class="ansi-green-fg">     11</span>     )).mean().to_frame().rename(columns={<span class="ansi-green-fg">0</span>: <span class="ansi-yellow-fg">"</span><span class="ansi-yellow-fg">mean_value</span><span class="ansi-yellow-fg">"</span>})
-<span class="ansi-green-fg">     13</span> cross_val_dc
+<section id="model" class="level1" data-number="7">
+<h1 data-number="7"><span class="header-section-number">7</span> Model</h1>
+<p>Before we continue, we must preprocess our data such that the features work with our models. Since all of our features are strings, we can opt to use one-hot encoding for them all. We fit a <code>DummyClassifier</code> to our data as a baseline to compare our actual model with. Random state used again for reproducibility.</p>
+<div id="4f6c7aec" class="cell" data-execution_count="6">
+<div class="cell-output cell-output-display" data-execution_count="6">
+<style>#sk-container-id-1 {
+  /* Definition of color scheme common for light and dark mode */
+  --sklearn-color-text: #000;
+  --sklearn-color-text-muted: #666;
+  --sklearn-color-line: gray;
+  /* Definition of color scheme for unfitted estimators */
+  --sklearn-color-unfitted-level-0: #fff5e6;
+  --sklearn-color-unfitted-level-1: #f6e4d2;
+  --sklearn-color-unfitted-level-2: #ffe0b3;
+  --sklearn-color-unfitted-level-3: chocolate;
+  /* Definition of color scheme for fitted estimators */
+  --sklearn-color-fitted-level-0: #f0f8ff;
+  --sklearn-color-fitted-level-1: #d4ebff;
+  --sklearn-color-fitted-level-2: #b3dbfd;
+  --sklearn-color-fitted-level-3: cornflowerblue;
 
-<span class="ansi-red-fg">NameError</span>: name 'X_train' is not defined</pre>
+  /* Specific color for light theme */
+  --sklearn-color-text-on-default-background: var(--sg-text-color, var(--theme-code-foreground, var(--jp-content-font-color1, black)));
+  --sklearn-color-background: var(--sg-background-color, var(--theme-background, var(--jp-layout-color0, white)));
+  --sklearn-color-border-box: var(--sg-text-color, var(--theme-code-foreground, var(--jp-content-font-color1, black)));
+  --sklearn-color-icon: #696969;
+
+  @media (prefers-color-scheme: dark) {
+    /* Redefinition of color scheme for dark theme */
+    --sklearn-color-text-on-default-background: var(--sg-text-color, var(--theme-code-foreground, var(--jp-content-font-color1, white)));
+    --sklearn-color-background: var(--sg-background-color, var(--theme-background, var(--jp-layout-color0, #111)));
+    --sklearn-color-border-box: var(--sg-text-color, var(--theme-code-foreground, var(--jp-content-font-color1, white)));
+    --sklearn-color-icon: #878787;
+  }
+}
+
+#sk-container-id-1 {
+  color: var(--sklearn-color-text);
+}
+
+#sk-container-id-1 pre {
+  padding: 0;
+}
+
+#sk-container-id-1 input.sk-hidden--visually {
+  border: 0;
+  clip: rect(1px 1px 1px 1px);
+  clip: rect(1px, 1px, 1px, 1px);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+#sk-container-id-1 div.sk-dashed-wrapped {
+  border: 1px dashed var(--sklearn-color-line);
+  margin: 0 0.4em 0.5em 0.4em;
+  box-sizing: border-box;
+  padding-bottom: 0.4em;
+  background-color: var(--sklearn-color-background);
+}
+
+#sk-container-id-1 div.sk-container {
+  /* jupyter's `normalize.less` sets `[hidden] { display: none; }`
+     but bootstrap.min.css set `[hidden] { display: none !important; }`
+     so we also need the `!important` here to be able to override the
+     default hidden behavior on the sphinx rendered scikit-learn.org.
+     See: https://github.com/scikit-learn/scikit-learn/issues/21755 */
+  display: inline-block !important;
+  position: relative;
+}
+
+#sk-container-id-1 div.sk-text-repr-fallback {
+  display: none;
+}
+
+div.sk-parallel-item,
+div.sk-serial,
+div.sk-item {
+  /* draw centered vertical line to link estimators */
+  background-image: linear-gradient(var(--sklearn-color-text-on-default-background), var(--sklearn-color-text-on-default-background));
+  background-size: 2px 100%;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+/* Parallel-specific style estimator block */
+
+#sk-container-id-1 div.sk-parallel-item::after {
+  content: "";
+  width: 100%;
+  border-bottom: 2px solid var(--sklearn-color-text-on-default-background);
+  flex-grow: 1;
+}
+
+#sk-container-id-1 div.sk-parallel {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  background-color: var(--sklearn-color-background);
+  position: relative;
+}
+
+#sk-container-id-1 div.sk-parallel-item {
+  display: flex;
+  flex-direction: column;
+}
+
+#sk-container-id-1 div.sk-parallel-item:first-child::after {
+  align-self: flex-end;
+  width: 50%;
+}
+
+#sk-container-id-1 div.sk-parallel-item:last-child::after {
+  align-self: flex-start;
+  width: 50%;
+}
+
+#sk-container-id-1 div.sk-parallel-item:only-child::after {
+  width: 0;
+}
+
+/* Serial-specific style estimator block */
+
+#sk-container-id-1 div.sk-serial {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--sklearn-color-background);
+  padding-right: 1em;
+  padding-left: 1em;
+}
+
+
+/* Toggleable style: style used for estimator/Pipeline/ColumnTransformer box that is
+clickable and can be expanded/collapsed.
+- Pipeline and ColumnTransformer use this feature and define the default style
+- Estimators will overwrite some part of the style using the `sk-estimator` class
+*/
+
+/* Pipeline and ColumnTransformer style (default) */
+
+#sk-container-id-1 div.sk-toggleable {
+  /* Default theme specific background. It is overwritten whether we have a
+  specific estimator or a Pipeline/ColumnTransformer */
+  background-color: var(--sklearn-color-background);
+}
+
+/* Toggleable label */
+#sk-container-id-1 label.sk-toggleable__label {
+  cursor: pointer;
+  display: flex;
+  width: 100%;
+  margin-bottom: 0;
+  padding: 0.5em;
+  box-sizing: border-box;
+  text-align: center;
+  align-items: start;
+  justify-content: space-between;
+  gap: 0.5em;
+}
+
+#sk-container-id-1 label.sk-toggleable__label .caption {
+  font-size: 0.6rem;
+  font-weight: lighter;
+  color: var(--sklearn-color-text-muted);
+}
+
+#sk-container-id-1 label.sk-toggleable__label-arrow:before {
+  /* Arrow on the left of the label */
+  content: "▸";
+  float: left;
+  margin-right: 0.25em;
+  color: var(--sklearn-color-icon);
+}
+
+#sk-container-id-1 label.sk-toggleable__label-arrow:hover:before {
+  color: var(--sklearn-color-text);
+}
+
+/* Toggleable content - dropdown */
+
+#sk-container-id-1 div.sk-toggleable__content {
+  display: none;
+  text-align: left;
+  /* unfitted */
+  background-color: var(--sklearn-color-unfitted-level-0);
+}
+
+#sk-container-id-1 div.sk-toggleable__content.fitted {
+  /* fitted */
+  background-color: var(--sklearn-color-fitted-level-0);
+}
+
+#sk-container-id-1 div.sk-toggleable__content pre {
+  margin: 0.2em;
+  border-radius: 0.25em;
+  color: var(--sklearn-color-text);
+  /* unfitted */
+  background-color: var(--sklearn-color-unfitted-level-0);
+}
+
+#sk-container-id-1 div.sk-toggleable__content.fitted pre {
+  /* unfitted */
+  background-color: var(--sklearn-color-fitted-level-0);
+}
+
+#sk-container-id-1 input.sk-toggleable__control:checked~div.sk-toggleable__content {
+  /* Expand drop-down */
+  display: block;
+  width: 100%;
+  overflow: visible;
+}
+
+#sk-container-id-1 input.sk-toggleable__control:checked~label.sk-toggleable__label-arrow:before {
+  content: "▾";
+}
+
+/* Pipeline/ColumnTransformer-specific style */
+
+#sk-container-id-1 div.sk-label input.sk-toggleable__control:checked~label.sk-toggleable__label {
+  color: var(--sklearn-color-text);
+  background-color: var(--sklearn-color-unfitted-level-2);
+}
+
+#sk-container-id-1 div.sk-label.fitted input.sk-toggleable__control:checked~label.sk-toggleable__label {
+  background-color: var(--sklearn-color-fitted-level-2);
+}
+
+/* Estimator-specific style */
+
+/* Colorize estimator box */
+#sk-container-id-1 div.sk-estimator input.sk-toggleable__control:checked~label.sk-toggleable__label {
+  /* unfitted */
+  background-color: var(--sklearn-color-unfitted-level-2);
+}
+
+#sk-container-id-1 div.sk-estimator.fitted input.sk-toggleable__control:checked~label.sk-toggleable__label {
+  /* fitted */
+  background-color: var(--sklearn-color-fitted-level-2);
+}
+
+#sk-container-id-1 div.sk-label label.sk-toggleable__label,
+#sk-container-id-1 div.sk-label label {
+  /* The background is the default theme color */
+  color: var(--sklearn-color-text-on-default-background);
+}
+
+/* On hover, darken the color of the background */
+#sk-container-id-1 div.sk-label:hover label.sk-toggleable__label {
+  color: var(--sklearn-color-text);
+  background-color: var(--sklearn-color-unfitted-level-2);
+}
+
+/* Label box, darken color on hover, fitted */
+#sk-container-id-1 div.sk-label.fitted:hover label.sk-toggleable__label.fitted {
+  color: var(--sklearn-color-text);
+  background-color: var(--sklearn-color-fitted-level-2);
+}
+
+/* Estimator label */
+
+#sk-container-id-1 div.sk-label label {
+  font-family: monospace;
+  font-weight: bold;
+  display: inline-block;
+  line-height: 1.2em;
+}
+
+#sk-container-id-1 div.sk-label-container {
+  text-align: center;
+}
+
+/* Estimator-specific */
+#sk-container-id-1 div.sk-estimator {
+  font-family: monospace;
+  border: 1px dotted var(--sklearn-color-border-box);
+  border-radius: 0.25em;
+  box-sizing: border-box;
+  margin-bottom: 0.5em;
+  /* unfitted */
+  background-color: var(--sklearn-color-unfitted-level-0);
+}
+
+#sk-container-id-1 div.sk-estimator.fitted {
+  /* fitted */
+  background-color: var(--sklearn-color-fitted-level-0);
+}
+
+/* on hover */
+#sk-container-id-1 div.sk-estimator:hover {
+  /* unfitted */
+  background-color: var(--sklearn-color-unfitted-level-2);
+}
+
+#sk-container-id-1 div.sk-estimator.fitted:hover {
+  /* fitted */
+  background-color: var(--sklearn-color-fitted-level-2);
+}
+
+/* Specification for estimator info (e.g. "i" and "?") */
+
+/* Common style for "i" and "?" */
+
+.sk-estimator-doc-link,
+a:link.sk-estimator-doc-link,
+a:visited.sk-estimator-doc-link {
+  float: right;
+  font-size: smaller;
+  line-height: 1em;
+  font-family: monospace;
+  background-color: var(--sklearn-color-background);
+  border-radius: 1em;
+  height: 1em;
+  width: 1em;
+  text-decoration: none !important;
+  margin-left: 0.5em;
+  text-align: center;
+  /* unfitted */
+  border: var(--sklearn-color-unfitted-level-1) 1pt solid;
+  color: var(--sklearn-color-unfitted-level-1);
+}
+
+.sk-estimator-doc-link.fitted,
+a:link.sk-estimator-doc-link.fitted,
+a:visited.sk-estimator-doc-link.fitted {
+  /* fitted */
+  border: var(--sklearn-color-fitted-level-1) 1pt solid;
+  color: var(--sklearn-color-fitted-level-1);
+}
+
+/* On hover */
+div.sk-estimator:hover .sk-estimator-doc-link:hover,
+.sk-estimator-doc-link:hover,
+div.sk-label-container:hover .sk-estimator-doc-link:hover,
+.sk-estimator-doc-link:hover {
+  /* unfitted */
+  background-color: var(--sklearn-color-unfitted-level-3);
+  color: var(--sklearn-color-background);
+  text-decoration: none;
+}
+
+div.sk-estimator.fitted:hover .sk-estimator-doc-link.fitted:hover,
+.sk-estimator-doc-link.fitted:hover,
+div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
+.sk-estimator-doc-link.fitted:hover {
+  /* fitted */
+  background-color: var(--sklearn-color-fitted-level-3);
+  color: var(--sklearn-color-background);
+  text-decoration: none;
+}
+
+/* Span, style for the box shown on hovering the info icon */
+.sk-estimator-doc-link span {
+  display: none;
+  z-index: 9999;
+  position: relative;
+  font-weight: normal;
+  right: .2ex;
+  padding: .5ex;
+  margin: .5ex;
+  width: min-content;
+  min-width: 20ex;
+  max-width: 50ex;
+  color: var(--sklearn-color-text);
+  box-shadow: 2pt 2pt 4pt #999;
+  /* unfitted */
+  background: var(--sklearn-color-unfitted-level-0);
+  border: .5pt solid var(--sklearn-color-unfitted-level-3);
+}
+
+.sk-estimator-doc-link.fitted span {
+  /* fitted */
+  background: var(--sklearn-color-fitted-level-0);
+  border: var(--sklearn-color-fitted-level-3);
+}
+
+.sk-estimator-doc-link:hover span {
+  display: block;
+}
+
+/* "?"-specific style due to the `<a>` HTML tag */
+
+#sk-container-id-1 a.estimator_doc_link {
+  float: right;
+  font-size: 1rem;
+  line-height: 1em;
+  font-family: monospace;
+  background-color: var(--sklearn-color-background);
+  border-radius: 1rem;
+  height: 1rem;
+  width: 1rem;
+  text-decoration: none;
+  /* unfitted */
+  color: var(--sklearn-color-unfitted-level-1);
+  border: var(--sklearn-color-unfitted-level-1) 1pt solid;
+}
+
+#sk-container-id-1 a.estimator_doc_link.fitted {
+  /* fitted */
+  border: var(--sklearn-color-fitted-level-1) 1pt solid;
+  color: var(--sklearn-color-fitted-level-1);
+}
+
+/* On hover */
+#sk-container-id-1 a.estimator_doc_link:hover {
+  /* unfitted */
+  background-color: var(--sklearn-color-unfitted-level-3);
+  color: var(--sklearn-color-background);
+  text-decoration: none;
+}
+
+#sk-container-id-1 a.estimator_doc_link.fitted:hover {
+  /* fitted */
+  background-color: var(--sklearn-color-fitted-level-3);
+}
+
+.estimator-table summary {
+    padding: .5rem;
+    font-family: monospace;
+    cursor: pointer;
+}
+
+.estimator-table details[open] {
+    padding-left: 0.1rem;
+    padding-right: 0.1rem;
+    padding-bottom: 0.3rem;
+}
+
+.estimator-table .parameters-table {
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+.estimator-table .parameters-table tr:nth-child(odd) {
+    background-color: #fff;
+}
+
+.estimator-table .parameters-table tr:nth-child(even) {
+    background-color: #f6f6f6;
+}
+
+.estimator-table .parameters-table tr:hover {
+    background-color: #e0e0e0;
+}
+
+.estimator-table table td {
+    border: 1px solid rgba(106, 105, 104, 0.232);
+}
+
+.user-set td {
+    color:rgb(255, 94, 0);
+    text-align: left;
+}
+
+.user-set td.value pre {
+    color:rgb(255, 94, 0) !important;
+    background-color: transparent !important;
+}
+
+.default td {
+    color: black;
+    text-align: left;
+}
+
+.user-set td i,
+.default td i {
+    color: black;
+}
+
+.copy-paste-icon {
+    background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0NDggNTEyIj48IS0tIUZvbnQgQXdlc29tZSBGcmVlIDYuNy4yIGJ5IEBmb250YXdlc29tZSAtIGh0dHBzOi8vZm9udGF3ZXNvbWUuY29tIExpY2Vuc2UgLSBodHRwczovL2ZvbnRhd2Vzb21lLmNvbS9saWNlbnNlL2ZyZWUgQ29weXJpZ2h0IDIwMjUgRm9udGljb25zLCBJbmMuLS0+PHBhdGggZD0iTTIwOCAwTDMzMi4xIDBjMTIuNyAwIDI0LjkgNS4xIDMzLjkgMTQuMWw2Ny45IDY3LjljOSA5IDE0LjEgMjEuMiAxNC4xIDMzLjlMNDQ4IDMzNmMwIDI2LjUtMjEuNSA0OC00OCA0OGwtMTkyIDBjLTI2LjUgMC00OC0yMS41LTQ4LTQ4bDAtMjg4YzAtMjYuNSAyMS41LTQ4IDQ4LTQ4ek00OCAxMjhsODAgMCAwIDY0LTY0IDAgMCAyNTYgMTkyIDAgMC0zMiA2NCAwIDAgNDhjMCAyNi41LTIxLjUgNDgtNDggNDhMNDggNTEyYy0yNi41IDAtNDgtMjEuNS00OC00OEwwIDE3NmMwLTI2LjUgMjEuNS00OCA0OC00OHoiLz48L3N2Zz4=);
+    background-repeat: no-repeat;
+    background-size: 14px 14px;
+    background-position: 0;
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    cursor: pointer;
+}
+</style><div id="sk-container-id-1" class="sk-top-container"><div class="sk-text-repr-fallback"><pre>Pipeline(steps=[('onehotencoder', OneHotEncoder(handle_unknown='ignore')),
+                ('dummyclassifier', DummyClassifier(random_state=123))])</pre><b>In a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. <br>On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.</b></div><div class="sk-container" hidden=""><div class="sk-item sk-dashed-wrapped"><div class="sk-label-container"><div class="sk-label fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-1" type="checkbox"><label for="sk-estimator-id-1" class="sk-toggleable__label fitted sk-toggleable__label-arrow"><div><div>Pipeline</div></div><div><a class="sk-estimator-doc-link fitted" rel="noreferrer" target="_blank" href="https://scikit-learn.org/1.7/modules/generated/sklearn.pipeline.Pipeline.html">?<span>Documentation for Pipeline</span></a><span class="sk-estimator-doc-link fitted">i<span>Fitted</span></span></div></label><div class="sk-toggleable__content fitted" data-param-prefix="">
+        <div class="estimator-table">
+            <details>
+                <summary>Parameters</summary>
+                
+<table class="parameters-table caption-top table table-sm table-striped small" data-quarto-postprocess="true">
+<tbody>
+<tr class="user-set odd">
+<td><em></em></td>
+<td class="param">steps&nbsp;</td>
+<td class="value">[('onehotencoder', ...), ('dummyclassifier', ...)]</td>
+</tr>
+<tr class="default even">
+<td><em></em></td>
+<td class="param">transform_input&nbsp;</td>
+<td class="value">None</td>
+</tr>
+<tr class="default odd">
+<td><em></em></td>
+<td class="param">memory&nbsp;</td>
+<td class="value">None</td>
+</tr>
+<tr class="default even">
+<td><em></em></td>
+<td class="param">verbose&nbsp;</td>
+<td class="value">False</td>
+</tr>
+</tbody>
+</table>
+
+            </details>
+        </div>
+    </div></div></div><div class="sk-serial"><div class="sk-item"><div class="sk-estimator fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-2" type="checkbox"><label for="sk-estimator-id-2" class="sk-toggleable__label fitted sk-toggleable__label-arrow"><div><div>OneHotEncoder</div></div><div><a class="sk-estimator-doc-link fitted" rel="noreferrer" target="_blank" href="https://scikit-learn.org/1.7/modules/generated/sklearn.preprocessing.OneHotEncoder.html">?<span>Documentation for OneHotEncoder</span></a></div></label><div class="sk-toggleable__content fitted" data-param-prefix="onehotencoder__">
+        <div class="estimator-table">
+            <details>
+                <summary>Parameters</summary>
+                
+<table class="parameters-table caption-top table table-sm table-striped small" data-quarto-postprocess="true">
+<tbody>
+<tr class="default odd">
+<td><em></em></td>
+<td class="param">categories&nbsp;</td>
+<td class="value">'auto'</td>
+</tr>
+<tr class="default even">
+<td><em></em></td>
+<td class="param">drop&nbsp;</td>
+<td class="value">None</td>
+</tr>
+<tr class="default odd">
+<td><em></em></td>
+<td class="param">sparse_output&nbsp;</td>
+<td class="value">True</td>
+</tr>
+<tr class="default even">
+<td><em></em></td>
+<td class="param">dtype&nbsp;</td>
+<td class="value">&lt;class 'numpy.float64'&gt;</td>
+</tr>
+<tr class="user-set odd">
+<td><em></em></td>
+<td class="param">handle_unknown&nbsp;</td>
+<td class="value">'ignore'</td>
+</tr>
+<tr class="default even">
+<td><em></em></td>
+<td class="param">min_frequency&nbsp;</td>
+<td class="value">None</td>
+</tr>
+<tr class="default odd">
+<td><em></em></td>
+<td class="param">max_categories&nbsp;</td>
+<td class="value">None</td>
+</tr>
+<tr class="default even">
+<td><em></em></td>
+<td class="param">feature_name_combiner&nbsp;</td>
+<td class="value">'concat'</td>
+</tr>
+</tbody>
+</table>
+
+            </details>
+        </div>
+    </div></div></div><div class="sk-item"><div class="sk-estimator fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-3" type="checkbox"><label for="sk-estimator-id-3" class="sk-toggleable__label fitted sk-toggleable__label-arrow"><div><div>DummyClassifier</div></div><div><a class="sk-estimator-doc-link fitted" rel="noreferrer" target="_blank" href="https://scikit-learn.org/1.7/modules/generated/sklearn.dummy.DummyClassifier.html">?<span>Documentation for DummyClassifier</span></a></div></label><div class="sk-toggleable__content fitted" data-param-prefix="dummyclassifier__">
+        <div class="estimator-table">
+            <details>
+                <summary>Parameters</summary>
+                
+<table class="parameters-table caption-top table table-sm table-striped small" data-quarto-postprocess="true">
+<tbody>
+<tr class="default odd">
+<td><em></em></td>
+<td class="param">strategy&nbsp;</td>
+<td class="value">'prior'</td>
+</tr>
+<tr class="user-set even">
+<td><em></em></td>
+<td class="param">random_state&nbsp;</td>
+<td class="value">123</td>
+</tr>
+<tr class="default odd">
+<td><em></em></td>
+<td class="param">constant&nbsp;</td>
+<td class="value">None</td>
+</tr>
+</tbody>
+</table>
+
+            </details>
+        </div>
+    </div></div></div></div></div></div></div><script>function copyToClipboard(text, element) {
+    // Get the parameter prefix from the closest toggleable content
+    const toggleableContent = element.closest('.sk-toggleable__content');
+    const paramPrefix = toggleableContent ? toggleableContent.dataset.paramPrefix : '';
+    const fullParamName = paramPrefix ? `${paramPrefix}${text}` : text;
+
+    const originalStyle = element.style;
+    const computedStyle = window.getComputedStyle(element);
+    const originalWidth = computedStyle.width;
+    const originalHTML = element.innerHTML.replace('Copied!', '');
+
+    navigator.clipboard.writeText(fullParamName)
+        .then(() => {
+            element.style.width = originalWidth;
+            element.style.color = 'green';
+            element.innerHTML = "Copied!";
+
+            setTimeout(() => {
+                element.innerHTML = originalHTML;
+                element.style = originalStyle;
+            }, 2000);
+        })
+        .catch(err => {
+            console.error('Failed to copy:', err);
+            element.style.color = 'red';
+            element.innerHTML = "Failed!";
+            setTimeout(() => {
+                element.innerHTML = originalHTML;
+                element.style = originalStyle;
+            }, 2000);
+        });
+    return false;
+}
+
+document.querySelectorAll('.fa-regular.fa-copy').forEach(function(element) {
+    const toggleableContent = element.closest('.sk-toggleable__content');
+    const paramPrefix = toggleableContent ? toggleableContent.dataset.paramPrefix : '';
+    const paramName = element.parentElement.nextElementSibling.textContent.trim();
+    const fullParamName = paramPrefix ? `${paramPrefix}${paramName}` : paramName;
+
+    element.setAttribute('title', fullParamName);
+});
+</script>
 </div>
 </div>
-</div>
-</figure>
-</div>
+<p>SciKit Learn pipe for the Dummy Classifier model</p>
 <p>In our classification problem, we opt to use <code>SVC</code> <span class="citation" data-cites="svc">(<a href="#ref-svc" role="doc-biblioref">Buitinck et al. 2013</a>)</span> as our model of choice for its effective usage in this scenario. We do not have an extreme amount of data (&lt; 10000 observations) on top of only being a binary classification task.</p>
-<div id="tbl-cross-val-svc" class="cell quarto-float quarto-figure quarto-figure-left anchored" data-execution_count="24">
-<figure class="quarto-float quarto-float-tbl figure">
-<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-cross-val-svc-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;6: Mean 10-Fold Cross-Validation Metrics for SVC Model
-</figcaption>
-<div aria-describedby="tbl-cross-val-svc-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div class="cell-output cell-output-error">
-<div class="ansi-escaped-output">
-<pre><span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
-<span class="ansi-cyan-fg">Cell</span><span class="ansi-cyan-fg"> </span><span class="ansi-green-fg">In[124]</span><span class="ansi-green-fg">, line 6</span>
-<span class="ansi-green-fg">      1</span> svc_pipe = make_pipeline(
-<span class="ansi-green-fg">      2</span>     preprocessor, 
-<span class="ansi-green-fg">      3</span>     SVC(random_state=<span class="ansi-green-fg">123</span>)
-<span class="ansi-green-fg">      4</span> )
-<span class="ansi-green-fg">----&gt; </span><span class="ansi-green-fg">6</span> svc_pipe.fit(<span class="ansi-yellow-bg">X_train</span>, y_train)
-<span class="ansi-green-fg">      8</span> cross_val_svc = pd.DataFrame(
-<span class="ansi-green-fg">      9</span>     cross_validate(
-<span class="ansi-green-fg">     10</span>         svc_pipe, X_train, y_train, cv=<span class="ansi-green-fg">10</span>, n_jobs=-<span class="ansi-green-fg">1</span>, return_train_score=<span style="font-weight:bold;color:rgb(0,135,0)">True</span>
-<span class="ansi-green-fg">     11</span>     )).mean().to_frame().rename(columns={<span class="ansi-green-fg">0</span>: <span class="ansi-yellow-fg">"</span><span class="ansi-yellow-fg">mean_value</span><span class="ansi-yellow-fg">"</span>})
-<span class="ansi-green-fg">     13</span> cross_val_svc
+<div id="2b63b9c9" class="cell" data-execution_count="7">
+<div class="cell-output cell-output-display" data-execution_count="7">
+<style>#sk-container-id-2 {
+  /* Definition of color scheme common for light and dark mode */
+  --sklearn-color-text: #000;
+  --sklearn-color-text-muted: #666;
+  --sklearn-color-line: gray;
+  /* Definition of color scheme for unfitted estimators */
+  --sklearn-color-unfitted-level-0: #fff5e6;
+  --sklearn-color-unfitted-level-1: #f6e4d2;
+  --sklearn-color-unfitted-level-2: #ffe0b3;
+  --sklearn-color-unfitted-level-3: chocolate;
+  /* Definition of color scheme for fitted estimators */
+  --sklearn-color-fitted-level-0: #f0f8ff;
+  --sklearn-color-fitted-level-1: #d4ebff;
+  --sklearn-color-fitted-level-2: #b3dbfd;
+  --sklearn-color-fitted-level-3: cornflowerblue;
 
-<span class="ansi-red-fg">NameError</span>: name 'X_train' is not defined</pre>
+  /* Specific color for light theme */
+  --sklearn-color-text-on-default-background: var(--sg-text-color, var(--theme-code-foreground, var(--jp-content-font-color1, black)));
+  --sklearn-color-background: var(--sg-background-color, var(--theme-background, var(--jp-layout-color0, white)));
+  --sklearn-color-border-box: var(--sg-text-color, var(--theme-code-foreground, var(--jp-content-font-color1, black)));
+  --sklearn-color-icon: #696969;
+
+  @media (prefers-color-scheme: dark) {
+    /* Redefinition of color scheme for dark theme */
+    --sklearn-color-text-on-default-background: var(--sg-text-color, var(--theme-code-foreground, var(--jp-content-font-color1, white)));
+    --sklearn-color-background: var(--sg-background-color, var(--theme-background, var(--jp-layout-color0, #111)));
+    --sklearn-color-border-box: var(--sg-text-color, var(--theme-code-foreground, var(--jp-content-font-color1, white)));
+    --sklearn-color-icon: #878787;
+  }
+}
+
+#sk-container-id-2 {
+  color: var(--sklearn-color-text);
+}
+
+#sk-container-id-2 pre {
+  padding: 0;
+}
+
+#sk-container-id-2 input.sk-hidden--visually {
+  border: 0;
+  clip: rect(1px 1px 1px 1px);
+  clip: rect(1px, 1px, 1px, 1px);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+#sk-container-id-2 div.sk-dashed-wrapped {
+  border: 1px dashed var(--sklearn-color-line);
+  margin: 0 0.4em 0.5em 0.4em;
+  box-sizing: border-box;
+  padding-bottom: 0.4em;
+  background-color: var(--sklearn-color-background);
+}
+
+#sk-container-id-2 div.sk-container {
+  /* jupyter's `normalize.less` sets `[hidden] { display: none; }`
+     but bootstrap.min.css set `[hidden] { display: none !important; }`
+     so we also need the `!important` here to be able to override the
+     default hidden behavior on the sphinx rendered scikit-learn.org.
+     See: https://github.com/scikit-learn/scikit-learn/issues/21755 */
+  display: inline-block !important;
+  position: relative;
+}
+
+#sk-container-id-2 div.sk-text-repr-fallback {
+  display: none;
+}
+
+div.sk-parallel-item,
+div.sk-serial,
+div.sk-item {
+  /* draw centered vertical line to link estimators */
+  background-image: linear-gradient(var(--sklearn-color-text-on-default-background), var(--sklearn-color-text-on-default-background));
+  background-size: 2px 100%;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+/* Parallel-specific style estimator block */
+
+#sk-container-id-2 div.sk-parallel-item::after {
+  content: "";
+  width: 100%;
+  border-bottom: 2px solid var(--sklearn-color-text-on-default-background);
+  flex-grow: 1;
+}
+
+#sk-container-id-2 div.sk-parallel {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  background-color: var(--sklearn-color-background);
+  position: relative;
+}
+
+#sk-container-id-2 div.sk-parallel-item {
+  display: flex;
+  flex-direction: column;
+}
+
+#sk-container-id-2 div.sk-parallel-item:first-child::after {
+  align-self: flex-end;
+  width: 50%;
+}
+
+#sk-container-id-2 div.sk-parallel-item:last-child::after {
+  align-self: flex-start;
+  width: 50%;
+}
+
+#sk-container-id-2 div.sk-parallel-item:only-child::after {
+  width: 0;
+}
+
+/* Serial-specific style estimator block */
+
+#sk-container-id-2 div.sk-serial {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--sklearn-color-background);
+  padding-right: 1em;
+  padding-left: 1em;
+}
+
+
+/* Toggleable style: style used for estimator/Pipeline/ColumnTransformer box that is
+clickable and can be expanded/collapsed.
+- Pipeline and ColumnTransformer use this feature and define the default style
+- Estimators will overwrite some part of the style using the `sk-estimator` class
+*/
+
+/* Pipeline and ColumnTransformer style (default) */
+
+#sk-container-id-2 div.sk-toggleable {
+  /* Default theme specific background. It is overwritten whether we have a
+  specific estimator or a Pipeline/ColumnTransformer */
+  background-color: var(--sklearn-color-background);
+}
+
+/* Toggleable label */
+#sk-container-id-2 label.sk-toggleable__label {
+  cursor: pointer;
+  display: flex;
+  width: 100%;
+  margin-bottom: 0;
+  padding: 0.5em;
+  box-sizing: border-box;
+  text-align: center;
+  align-items: start;
+  justify-content: space-between;
+  gap: 0.5em;
+}
+
+#sk-container-id-2 label.sk-toggleable__label .caption {
+  font-size: 0.6rem;
+  font-weight: lighter;
+  color: var(--sklearn-color-text-muted);
+}
+
+#sk-container-id-2 label.sk-toggleable__label-arrow:before {
+  /* Arrow on the left of the label */
+  content: "▸";
+  float: left;
+  margin-right: 0.25em;
+  color: var(--sklearn-color-icon);
+}
+
+#sk-container-id-2 label.sk-toggleable__label-arrow:hover:before {
+  color: var(--sklearn-color-text);
+}
+
+/* Toggleable content - dropdown */
+
+#sk-container-id-2 div.sk-toggleable__content {
+  display: none;
+  text-align: left;
+  /* unfitted */
+  background-color: var(--sklearn-color-unfitted-level-0);
+}
+
+#sk-container-id-2 div.sk-toggleable__content.fitted {
+  /* fitted */
+  background-color: var(--sklearn-color-fitted-level-0);
+}
+
+#sk-container-id-2 div.sk-toggleable__content pre {
+  margin: 0.2em;
+  border-radius: 0.25em;
+  color: var(--sklearn-color-text);
+  /* unfitted */
+  background-color: var(--sklearn-color-unfitted-level-0);
+}
+
+#sk-container-id-2 div.sk-toggleable__content.fitted pre {
+  /* unfitted */
+  background-color: var(--sklearn-color-fitted-level-0);
+}
+
+#sk-container-id-2 input.sk-toggleable__control:checked~div.sk-toggleable__content {
+  /* Expand drop-down */
+  display: block;
+  width: 100%;
+  overflow: visible;
+}
+
+#sk-container-id-2 input.sk-toggleable__control:checked~label.sk-toggleable__label-arrow:before {
+  content: "▾";
+}
+
+/* Pipeline/ColumnTransformer-specific style */
+
+#sk-container-id-2 div.sk-label input.sk-toggleable__control:checked~label.sk-toggleable__label {
+  color: var(--sklearn-color-text);
+  background-color: var(--sklearn-color-unfitted-level-2);
+}
+
+#sk-container-id-2 div.sk-label.fitted input.sk-toggleable__control:checked~label.sk-toggleable__label {
+  background-color: var(--sklearn-color-fitted-level-2);
+}
+
+/* Estimator-specific style */
+
+/* Colorize estimator box */
+#sk-container-id-2 div.sk-estimator input.sk-toggleable__control:checked~label.sk-toggleable__label {
+  /* unfitted */
+  background-color: var(--sklearn-color-unfitted-level-2);
+}
+
+#sk-container-id-2 div.sk-estimator.fitted input.sk-toggleable__control:checked~label.sk-toggleable__label {
+  /* fitted */
+  background-color: var(--sklearn-color-fitted-level-2);
+}
+
+#sk-container-id-2 div.sk-label label.sk-toggleable__label,
+#sk-container-id-2 div.sk-label label {
+  /* The background is the default theme color */
+  color: var(--sklearn-color-text-on-default-background);
+}
+
+/* On hover, darken the color of the background */
+#sk-container-id-2 div.sk-label:hover label.sk-toggleable__label {
+  color: var(--sklearn-color-text);
+  background-color: var(--sklearn-color-unfitted-level-2);
+}
+
+/* Label box, darken color on hover, fitted */
+#sk-container-id-2 div.sk-label.fitted:hover label.sk-toggleable__label.fitted {
+  color: var(--sklearn-color-text);
+  background-color: var(--sklearn-color-fitted-level-2);
+}
+
+/* Estimator label */
+
+#sk-container-id-2 div.sk-label label {
+  font-family: monospace;
+  font-weight: bold;
+  display: inline-block;
+  line-height: 1.2em;
+}
+
+#sk-container-id-2 div.sk-label-container {
+  text-align: center;
+}
+
+/* Estimator-specific */
+#sk-container-id-2 div.sk-estimator {
+  font-family: monospace;
+  border: 1px dotted var(--sklearn-color-border-box);
+  border-radius: 0.25em;
+  box-sizing: border-box;
+  margin-bottom: 0.5em;
+  /* unfitted */
+  background-color: var(--sklearn-color-unfitted-level-0);
+}
+
+#sk-container-id-2 div.sk-estimator.fitted {
+  /* fitted */
+  background-color: var(--sklearn-color-fitted-level-0);
+}
+
+/* on hover */
+#sk-container-id-2 div.sk-estimator:hover {
+  /* unfitted */
+  background-color: var(--sklearn-color-unfitted-level-2);
+}
+
+#sk-container-id-2 div.sk-estimator.fitted:hover {
+  /* fitted */
+  background-color: var(--sklearn-color-fitted-level-2);
+}
+
+/* Specification for estimator info (e.g. "i" and "?") */
+
+/* Common style for "i" and "?" */
+
+.sk-estimator-doc-link,
+a:link.sk-estimator-doc-link,
+a:visited.sk-estimator-doc-link {
+  float: right;
+  font-size: smaller;
+  line-height: 1em;
+  font-family: monospace;
+  background-color: var(--sklearn-color-background);
+  border-radius: 1em;
+  height: 1em;
+  width: 1em;
+  text-decoration: none !important;
+  margin-left: 0.5em;
+  text-align: center;
+  /* unfitted */
+  border: var(--sklearn-color-unfitted-level-1) 1pt solid;
+  color: var(--sklearn-color-unfitted-level-1);
+}
+
+.sk-estimator-doc-link.fitted,
+a:link.sk-estimator-doc-link.fitted,
+a:visited.sk-estimator-doc-link.fitted {
+  /* fitted */
+  border: var(--sklearn-color-fitted-level-1) 1pt solid;
+  color: var(--sklearn-color-fitted-level-1);
+}
+
+/* On hover */
+div.sk-estimator:hover .sk-estimator-doc-link:hover,
+.sk-estimator-doc-link:hover,
+div.sk-label-container:hover .sk-estimator-doc-link:hover,
+.sk-estimator-doc-link:hover {
+  /* unfitted */
+  background-color: var(--sklearn-color-unfitted-level-3);
+  color: var(--sklearn-color-background);
+  text-decoration: none;
+}
+
+div.sk-estimator.fitted:hover .sk-estimator-doc-link.fitted:hover,
+.sk-estimator-doc-link.fitted:hover,
+div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
+.sk-estimator-doc-link.fitted:hover {
+  /* fitted */
+  background-color: var(--sklearn-color-fitted-level-3);
+  color: var(--sklearn-color-background);
+  text-decoration: none;
+}
+
+/* Span, style for the box shown on hovering the info icon */
+.sk-estimator-doc-link span {
+  display: none;
+  z-index: 9999;
+  position: relative;
+  font-weight: normal;
+  right: .2ex;
+  padding: .5ex;
+  margin: .5ex;
+  width: min-content;
+  min-width: 20ex;
+  max-width: 50ex;
+  color: var(--sklearn-color-text);
+  box-shadow: 2pt 2pt 4pt #999;
+  /* unfitted */
+  background: var(--sklearn-color-unfitted-level-0);
+  border: .5pt solid var(--sklearn-color-unfitted-level-3);
+}
+
+.sk-estimator-doc-link.fitted span {
+  /* fitted */
+  background: var(--sklearn-color-fitted-level-0);
+  border: var(--sklearn-color-fitted-level-3);
+}
+
+.sk-estimator-doc-link:hover span {
+  display: block;
+}
+
+/* "?"-specific style due to the `<a>` HTML tag */
+
+#sk-container-id-2 a.estimator_doc_link {
+  float: right;
+  font-size: 1rem;
+  line-height: 1em;
+  font-family: monospace;
+  background-color: var(--sklearn-color-background);
+  border-radius: 1rem;
+  height: 1rem;
+  width: 1rem;
+  text-decoration: none;
+  /* unfitted */
+  color: var(--sklearn-color-unfitted-level-1);
+  border: var(--sklearn-color-unfitted-level-1) 1pt solid;
+}
+
+#sk-container-id-2 a.estimator_doc_link.fitted {
+  /* fitted */
+  border: var(--sklearn-color-fitted-level-1) 1pt solid;
+  color: var(--sklearn-color-fitted-level-1);
+}
+
+/* On hover */
+#sk-container-id-2 a.estimator_doc_link:hover {
+  /* unfitted */
+  background-color: var(--sklearn-color-unfitted-level-3);
+  color: var(--sklearn-color-background);
+  text-decoration: none;
+}
+
+#sk-container-id-2 a.estimator_doc_link.fitted:hover {
+  /* fitted */
+  background-color: var(--sklearn-color-fitted-level-3);
+}
+
+.estimator-table summary {
+    padding: .5rem;
+    font-family: monospace;
+    cursor: pointer;
+}
+
+.estimator-table details[open] {
+    padding-left: 0.1rem;
+    padding-right: 0.1rem;
+    padding-bottom: 0.3rem;
+}
+
+.estimator-table .parameters-table {
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+.estimator-table .parameters-table tr:nth-child(odd) {
+    background-color: #fff;
+}
+
+.estimator-table .parameters-table tr:nth-child(even) {
+    background-color: #f6f6f6;
+}
+
+.estimator-table .parameters-table tr:hover {
+    background-color: #e0e0e0;
+}
+
+.estimator-table table td {
+    border: 1px solid rgba(106, 105, 104, 0.232);
+}
+
+.user-set td {
+    color:rgb(255, 94, 0);
+    text-align: left;
+}
+
+.user-set td.value pre {
+    color:rgb(255, 94, 0) !important;
+    background-color: transparent !important;
+}
+
+.default td {
+    color: black;
+    text-align: left;
+}
+
+.user-set td i,
+.default td i {
+    color: black;
+}
+
+.copy-paste-icon {
+    background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0NDggNTEyIj48IS0tIUZvbnQgQXdlc29tZSBGcmVlIDYuNy4yIGJ5IEBmb250YXdlc29tZSAtIGh0dHBzOi8vZm9udGF3ZXNvbWUuY29tIExpY2Vuc2UgLSBodHRwczovL2ZvbnRhd2Vzb21lLmNvbS9saWNlbnNlL2ZyZWUgQ29weXJpZ2h0IDIwMjUgRm9udGljb25zLCBJbmMuLS0+PHBhdGggZD0iTTIwOCAwTDMzMi4xIDBjMTIuNyAwIDI0LjkgNS4xIDMzLjkgMTQuMWw2Ny45IDY3LjljOSA5IDE0LjEgMjEuMiAxNC4xIDMzLjlMNDQ4IDMzNmMwIDI2LjUtMjEuNSA0OC00OCA0OGwtMTkyIDBjLTI2LjUgMC00OC0yMS41LTQ4LTQ4bDAtMjg4YzAtMjYuNSAyMS41LTQ4IDQ4LTQ4ek00OCAxMjhsODAgMCAwIDY0LTY0IDAgMCAyNTYgMTkyIDAgMC0zMiA2NCAwIDAgNDhjMCAyNi41LTIxLjUgNDgtNDggNDhMNDggNTEyYy0yNi41IDAtNDgtMjEuNS00OC00OEwwIDE3NmMwLTI2LjUgMjEuNS00OCA0OC00OHoiLz48L3N2Zz4=);
+    background-repeat: no-repeat;
+    background-size: 14px 14px;
+    background-position: 0;
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    cursor: pointer;
+}
+</style><div id="sk-container-id-2" class="sk-top-container"><div class="sk-text-repr-fallback"><pre>Pipeline(steps=[('onehotencoder', OneHotEncoder(handle_unknown='ignore')),
+                ('svc', SVC(random_state=123))])</pre><b>In a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. <br>On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.</b></div><div class="sk-container" hidden=""><div class="sk-item sk-dashed-wrapped"><div class="sk-label-container"><div class="sk-label fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-4" type="checkbox"><label for="sk-estimator-id-4" class="sk-toggleable__label fitted sk-toggleable__label-arrow"><div><div>Pipeline</div></div><div><a class="sk-estimator-doc-link fitted" rel="noreferrer" target="_blank" href="https://scikit-learn.org/1.7/modules/generated/sklearn.pipeline.Pipeline.html">?<span>Documentation for Pipeline</span></a><span class="sk-estimator-doc-link fitted">i<span>Fitted</span></span></div></label><div class="sk-toggleable__content fitted" data-param-prefix="">
+        <div class="estimator-table">
+            <details>
+                <summary>Parameters</summary>
+                
+<table class="parameters-table caption-top table table-sm table-striped small" data-quarto-postprocess="true">
+<tbody>
+<tr class="user-set odd">
+<td><em></em></td>
+<td class="param">steps&nbsp;</td>
+<td class="value">[('onehotencoder', ...), ('svc', ...)]</td>
+</tr>
+<tr class="default even">
+<td><em></em></td>
+<td class="param">transform_input&nbsp;</td>
+<td class="value">None</td>
+</tr>
+<tr class="default odd">
+<td><em></em></td>
+<td class="param">memory&nbsp;</td>
+<td class="value">None</td>
+</tr>
+<tr class="default even">
+<td><em></em></td>
+<td class="param">verbose&nbsp;</td>
+<td class="value">False</td>
+</tr>
+</tbody>
+</table>
+
+            </details>
+        </div>
+    </div></div></div><div class="sk-serial"><div class="sk-item"><div class="sk-estimator fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-5" type="checkbox"><label for="sk-estimator-id-5" class="sk-toggleable__label fitted sk-toggleable__label-arrow"><div><div>OneHotEncoder</div></div><div><a class="sk-estimator-doc-link fitted" rel="noreferrer" target="_blank" href="https://scikit-learn.org/1.7/modules/generated/sklearn.preprocessing.OneHotEncoder.html">?<span>Documentation for OneHotEncoder</span></a></div></label><div class="sk-toggleable__content fitted" data-param-prefix="onehotencoder__">
+        <div class="estimator-table">
+            <details>
+                <summary>Parameters</summary>
+                
+<table class="parameters-table caption-top table table-sm table-striped small" data-quarto-postprocess="true">
+<tbody>
+<tr class="default odd">
+<td><em></em></td>
+<td class="param">categories&nbsp;</td>
+<td class="value">'auto'</td>
+</tr>
+<tr class="default even">
+<td><em></em></td>
+<td class="param">drop&nbsp;</td>
+<td class="value">None</td>
+</tr>
+<tr class="default odd">
+<td><em></em></td>
+<td class="param">sparse_output&nbsp;</td>
+<td class="value">True</td>
+</tr>
+<tr class="default even">
+<td><em></em></td>
+<td class="param">dtype&nbsp;</td>
+<td class="value">&lt;class 'numpy.float64'&gt;</td>
+</tr>
+<tr class="user-set odd">
+<td><em></em></td>
+<td class="param">handle_unknown&nbsp;</td>
+<td class="value">'ignore'</td>
+</tr>
+<tr class="default even">
+<td><em></em></td>
+<td class="param">min_frequency&nbsp;</td>
+<td class="value">None</td>
+</tr>
+<tr class="default odd">
+<td><em></em></td>
+<td class="param">max_categories&nbsp;</td>
+<td class="value">None</td>
+</tr>
+<tr class="default even">
+<td><em></em></td>
+<td class="param">feature_name_combiner&nbsp;</td>
+<td class="value">'concat'</td>
+</tr>
+</tbody>
+</table>
+
+            </details>
+        </div>
+    </div></div></div><div class="sk-item"><div class="sk-estimator fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-6" type="checkbox"><label for="sk-estimator-id-6" class="sk-toggleable__label fitted sk-toggleable__label-arrow"><div><div>SVC</div></div><div><a class="sk-estimator-doc-link fitted" rel="noreferrer" target="_blank" href="https://scikit-learn.org/1.7/modules/generated/sklearn.svm.SVC.html">?<span>Documentation for SVC</span></a></div></label><div class="sk-toggleable__content fitted" data-param-prefix="svc__">
+        <div class="estimator-table">
+            <details>
+                <summary>Parameters</summary>
+                
+<table class="parameters-table caption-top table table-sm table-striped small" data-quarto-postprocess="true">
+<tbody>
+<tr class="default odd">
+<td><em></em></td>
+<td class="param">C&nbsp;</td>
+<td class="value">1.0</td>
+</tr>
+<tr class="default even">
+<td><em></em></td>
+<td class="param">kernel&nbsp;</td>
+<td class="value">'rbf'</td>
+</tr>
+<tr class="default odd">
+<td><em></em></td>
+<td class="param">degree&nbsp;</td>
+<td class="value">3</td>
+</tr>
+<tr class="default even">
+<td><em></em></td>
+<td class="param">gamma&nbsp;</td>
+<td class="value">'scale'</td>
+</tr>
+<tr class="default odd">
+<td><em></em></td>
+<td class="param">coef0&nbsp;</td>
+<td class="value">0.0</td>
+</tr>
+<tr class="default even">
+<td><em></em></td>
+<td class="param">shrinking&nbsp;</td>
+<td class="value">True</td>
+</tr>
+<tr class="default odd">
+<td><em></em></td>
+<td class="param">probability&nbsp;</td>
+<td class="value">False</td>
+</tr>
+<tr class="default even">
+<td><em></em></td>
+<td class="param">tol&nbsp;</td>
+<td class="value">0.001</td>
+</tr>
+<tr class="default odd">
+<td><em></em></td>
+<td class="param">cache_size&nbsp;</td>
+<td class="value">200</td>
+</tr>
+<tr class="default even">
+<td><em></em></td>
+<td class="param">class_weight&nbsp;</td>
+<td class="value">None</td>
+</tr>
+<tr class="default odd">
+<td><em></em></td>
+<td class="param">verbose&nbsp;</td>
+<td class="value">False</td>
+</tr>
+<tr class="default even">
+<td><em></em></td>
+<td class="param">max_iter&nbsp;</td>
+<td class="value">-1</td>
+</tr>
+<tr class="default odd">
+<td><em></em></td>
+<td class="param">decision_function_shape&nbsp;</td>
+<td class="value">'ovr'</td>
+</tr>
+<tr class="default even">
+<td><em></em></td>
+<td class="param">break_ties&nbsp;</td>
+<td class="value">False</td>
+</tr>
+<tr class="user-set odd">
+<td><em></em></td>
+<td class="param">random_state&nbsp;</td>
+<td class="value">123</td>
+</tr>
+</tbody>
+</table>
+
+            </details>
+        </div>
+    </div></div></div></div></div></div></div><script>function copyToClipboard(text, element) {
+    // Get the parameter prefix from the closest toggleable content
+    const toggleableContent = element.closest('.sk-toggleable__content');
+    const paramPrefix = toggleableContent ? toggleableContent.dataset.paramPrefix : '';
+    const fullParamName = paramPrefix ? `${paramPrefix}${text}` : text;
+
+    const originalStyle = element.style;
+    const computedStyle = window.getComputedStyle(element);
+    const originalWidth = computedStyle.width;
+    const originalHTML = element.innerHTML.replace('Copied!', '');
+
+    navigator.clipboard.writeText(fullParamName)
+        .then(() => {
+            element.style.width = originalWidth;
+            element.style.color = 'green';
+            element.innerHTML = "Copied!";
+
+            setTimeout(() => {
+                element.innerHTML = originalHTML;
+                element.style = originalStyle;
+            }, 2000);
+        })
+        .catch(err => {
+            console.error('Failed to copy:', err);
+            element.style.color = 'red';
+            element.innerHTML = "Failed!";
+            setTimeout(() => {
+                element.innerHTML = originalHTML;
+                element.style = originalStyle;
+            }, 2000);
+        });
+    return false;
+}
+
+document.querySelectorAll('.fa-regular.fa-copy').forEach(function(element) {
+    const toggleableContent = element.closest('.sk-toggleable__content');
+    const paramPrefix = toggleableContent ? toggleableContent.dataset.paramPrefix : '';
+    const paramName = element.parentElement.nextElementSibling.textContent.trim();
+    const fullParamName = paramPrefix ? `${paramPrefix}${paramName}` : paramName;
+
+    element.setAttribute('title', fullParamName);
+});
+</script>
 </div>
 </div>
-</div>
-</figure>
-</div>
-<div id="fig-confusion-matrix-svc" class="cell quarto-float quarto-figure quarto-figure-left anchored" data-execution_count="25">
+<p>SciKit Learn pipe for the SVC model</p>
+<div id="fig-confusion-matrix-svc" class="quarto-float quarto-figure quarto-figure-left anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-confusion-matrix-svc-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div class="cell-output cell-output-error">
-<div class="ansi-escaped-output">
-<pre><span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
-<span class="ansi-cyan-fg">Cell</span><span class="ansi-cyan-fg"> </span><span class="ansi-green-fg">In[125]</span><span class="ansi-green-fg">, line 1</span>
-<span class="ansi-green-fg">----&gt; </span><span class="ansi-green-fg">1</span> y_pred = svc_pipe.predict(<span class="ansi-yellow-bg">X_test</span>)
-<span class="ansi-green-fg">      3</span> cm = confusion_matrix(y_test, y_pred)
-<span class="ansi-green-fg">      4</span> ConfusionMatrixDisplay(cm).plot()
-
-<span class="ansi-red-fg">NameError</span>: name 'X_test' is not defined</pre>
-</div>
-</div>
+<img src="../img/confusion_matrix.png" id="fig-confusion-matrix-svc" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig quarto-uncaptioned" id="fig-confusion-matrix-svc-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;7
 </figcaption>
 </figure>
 </div>
+<p>Confusion matrix for the SVC classifier on the test set.</p>
 </section>
-<section id="results-discussion" class="level1" data-number="9">
-<h1 data-number="9"><span class="header-section-number">9</span> Results &amp; Discussion</h1>
-<p>Our prediction model performed excellently on test data, classifying all of the mushroom examples correctly as poisonous or edible, with no error. Given that our model predicted perfectly, no optimization was required. As shown in <a href="#fig-confusion-matrix-svc" class="quarto-xref">Figure&nbsp;7</a>, the SVC correctly classified every mushroom in the test set, yielding no false positives or false negatives. Furthermore, the SVC model shows consistent performance across folds, as summarized in <a href="#tbl-cross-val-svc" class="quarto-xref">Table&nbsp;6</a>.</p>
+<section id="results-discussion" class="level1" data-number="8">
+<h1 data-number="8"><span class="header-section-number">8</span> Results &amp; Discussion</h1>
+<p>Our prediction model performed excellently on test data, classifying all of the mushroom examples correctly as poisonous or edible, with no error. Given that our model predicted perfectly, no optimization was required. As shown in <a href="#fig-confusion-matrix-svc" class="quarto-xref">Figure&nbsp;7</a>, the SVC correctly classified every mushroom in the test set, yielding no false positives or false negatives.</p>
 <p>This performance is identical to the results published on the <a href="https://archive.ics.uci.edu/dataset/73/mushroom">UCI website</a> from which the data was sourced <span class="citation" data-cites="datasource">(<a href="#ref-datasource" role="doc-biblioref"><span>“Mushroom”</span> 1981</a>)</span>. As shown in the confusion matrix, the model has a recall and precision of 1, due to no false positivies or negatives. The model also shows robustness, with no difference in the accuracy of training and test scores, so it is promising that this model could be deployed effectively to protect mushroom consumers from eating poisonous mushrooms.That said, there are some practical concerns for public implementation, namely the model is fit on 20 different features that correspond to specific categorical physical characteristics of a mushroom, and thus accuracy requires accurate identification of physical characteristics.</p>
 <p>Hence, if an amateur mushroom enthusiast aimed to utilize the model to predict edibility but misidentified the physical characeristics of the mushroom they were attempting to classify, then the accuracy of the models predictions would be effectively moot as it would not be returning a prediction for the true foraged mushroom. One might consider creating a similar predictor with a smaller number of features to increase the practical efficacy of the model, though they would need to consider balancing the models accuracy with efficacy, because the risk of falsely predicting a mushroom as edible could be fatal. It is also worth noting that the hypothetical mushroom observations in this model are based upon a book from 1981 <span class="citation" data-cites="lincoff1981">(<a href="#ref-lincoff1981" role="doc-biblioref">Lincoff 1981</a>)</span>, so it would be wise to consider whether the data could be updated to be sourced from a more recent source of mushroom science.</p>
 </section>
-<section id="references" class="level1 unnumbered" data-number="10">
+<section id="references" class="level1 unnumbered" data-number="9">
 
 
 </section>
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">10 References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">9 References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
 <div id="ref-pandera" class="csl-entry" role="listitem">
 Bantilan, Niels. 2020. <em>Pandera: Statistical Data Validation for Pandas</em>. <a href="https://pandera.readthedocs.io/">https://pandera.readthedocs.io/</a>.
 </div>
