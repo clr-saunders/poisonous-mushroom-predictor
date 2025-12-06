@@ -1,20 +1,22 @@
 ---
 title: "Poisonous Mushroom Classification"
 author: "Amar Gill, Ruth Yankson, Limor Winter, Claire Saunders"
-date: "November 18, 2025"
+date: "December 6, 2025"
 jupyter: python3
-format:
+format: 
     html:
-      output-file: index.html
+        toc: true
+        toc-depth: 2
+        toc-expand: true
+        output-file: index.html
+        output-dir: docs
+bibliography: references.bib
 execute:
-  echo: true
+  echo: false
   warning: false
   error: true
   cache: false
 ---
-
-# Imports
-*Never forget to run imports first.*
 
 ```{python}
 import requests
@@ -49,22 +51,22 @@ We believe the model could be a powerful tool for preventing the misidentificati
 
 # Introduction
 
-The Agaricus and Lepiota (Agaricaceae) family of mushrooms, includes many of the common gilled mushrooms found and cultivated in urban and suburban North America (Lincoff, 1981, 500). 
-The family includes the common cultivated mushroom (Agaricus bisporus), and some of the best edible mushrooms, but it also includes poisonous mushrooms and a few that are deadly(500). 
-These mushrooms are sometimes found in forests, but many grow on lawns, in the compost, or along roadsides and grassy areas where they are readily accessible for human consumption (500). 
-Accurate assessment of the edibility of these mushrooms is extremely important prior to consumption, however there is no simple rule for determining whether any example is poisonous or edible (500-505). 
+The Agaricus and Lepiota (Agaricaceae) family of mushrooms, includes many of the common gilled mushrooms found and cultivated in urban and suburban North America [@mushbook]. 
+The family includes the common cultivated mushroom (Agaricus bisporus), and some of the best edible mushrooms, but it also includes poisonous mushrooms and a few that are deadly [@mushbook]. 
+These mushrooms are sometimes found in forests, but many grow on lawns, in the compost, or along roadsides and grassy areas where they are readily accessible for human consumption [@mushbook]. 
+Accurate assessment of the edibility of these mushrooms is extremely important prior to consumption, however there is no simple rule for determining whether any example is poisonous or edible [@mushbook]. 
 
 Here we ask if we can use a supervised machine learning algorithm to predict whether a given mushroom from the Agaricus and Lepiota family of mushrooms is edible or poisonous, based upon it's physical characteristics. 
-Answering this question is important because mushroom poisonings are common and the greatest risk factor for mushroom poisoning is the misidentification of poisonous species as edible, in particular by amateur mushroom foragers and immigrants (Diaz, 2016)
+Answering this question is important because mushroom poisonings are common and the greatest risk factor for mushroom poisoning is the misidentification of poisonous species as edible, in particular by amateur mushroom foragers and immigrants [@poisonarticle]
 If made accessible to the public in North America, accurate prediction of mushrooms in this family could prevent poisoning and support the safe consumption of common edible mushrooms. 
 
 # Methods
 
 ## Data
 
-The data set used in this project includes hypothetical mushroom samples drawn from The Audobon Society Field Guide to North American Mushrooms by Gary Lincoff (1981, 500-525). 
+The data set used in this project includes hypothetical mushroom samples drawn from The Audobon Society Field Guide to North American Mushrooms by Gary Lincoff [@mushbook]. 
 It was sourced from the UCI Machine Learning Repository, and can be found [here](https://archive.ics.uci.edu/dataset/73/mushroom), specifically the file *agarius-lepiota.data*. 
-It includes 8124 descriptions of hypothetical mushroom samples that correspond to 23 species of mushrooms in the Agaricus and Lepiota Family (Mushroom, 1981). 
+It includes 8124 descriptions of hypothetical mushroom samples that correspond to 23 species of mushrooms in the Agaricus and Lepiota Family [@datasource]. 
 Each row includes 22 categorical variables that are physical characteristics of the mushroom sample, including the odor, gill-spacing, gill-color, gill-size, population, habitat, etc, and is labelled as edible or poisonous. 
 
 # Analysis
@@ -118,7 +120,7 @@ df = pd.read_csv(data_path, names=dataset_col_names)
 df.head()
 ```
 
-A preview of the first five rows of the raw dataset is shown in Table @tbl-sample-data, which illustrates the categorical structure of all features prior to cleaning.
+A preview of the first five rows of the raw dataset is shown in @tbl-sample-data, which illustrates the categorical structure of all features prior to cleaning.
 
 ## Data Validation Checks
 
@@ -408,25 +410,6 @@ df = mushroom_schema.validate(df, lazy=True)
 
 ```
 
-# EDA Before Data Splitting 
-
-```{python}
-#| label: tbl-sample-cleaned
-#| tbl-cap: "First five rows of the cleaned dataset."
-df.head()
-```
-
-```{python}
-# Basic information
-df.info()
-
-```
-
-```{python}
-# Data dimensions
-df.shape
-```
-
 # Data Splitting 
 
 We are trying to classify whether a mushroom is edible (0) or poisonous (1). Going to do a 70/30 train/test split due to the large and roughly equal proportions of edible and poisonous mushrooms. 
@@ -530,7 +513,7 @@ feature_summary
 
 ```
 
-We summarize all 21 categorical predictors in Table @tbl-feature-summary, which reports the number of levels and the dominant category for each feature. Given that veil_type only has one level, the values are the same for all observations so we drop that column. 
+We summarize all 21 categorical predictors in @tbl-feature-summary, which reports the number of levels and the dominant category for each feature. Given that veil_type only has one level, the values are the same for all observations so we drop that column. 
 
 ```{python}
 # Drop veil_type from the feature matrices used for modeling. If check added to prevent error if not present_ in case the cell is run multiple times
@@ -765,7 +748,7 @@ stacked_poison_chart("population", "Population", population_map)
 ```
 
 #### Relationship Between Physical Features and Toxicity: An Exploratory Overview
-To explore how individual mushroom characteristics relate to toxicity, we compared the proportion of poisonous and edible mushrooms across several categorical features. Odor showed the strongest separation between classes (Figure @fig-odor-cat), with foul-, creosote-, and pungent-smelling mushrooms being almost exclusively poisonous, whereas almond and anise odors were strongly associated with edibility. Gill size also demonstrated a meaningful distinction (Figure @fig-gill-size), with broad gills far more common among edible mushrooms. Habitat exhibited notable patterns as well (Figure @fig-habitat): mushrooms found in wooded or grassy environments were more frequently poisonous, while those growing in urban or path environments tended to be edible. Bruising was another strong indicator (Figure @fig-bruise), as mushrooms that bruised were overwhelmingly edible, whereas those that did not bruise were frequently poisonous. Lastly, population type revealed clear group-level differences (Figure @fig-pop-type), with solitary or scattered mushrooms more often poisonous, while abundant or clustered populations were more commonly edible. Together, these figures illustrate that several features, odor in particular, provide strong discriminatory signals relevant to the classification task.
+To explore how individual mushroom characteristics relate to toxicity, we compared the proportion of poisonous and edible mushrooms across several categorical features. Odor showed the strongest separation between classes (@fig-odor-cat), with foul-, creosote-, and pungent-smelling mushrooms being almost exclusively poisonous, whereas almond and anise odors were strongly associated with edibility. Gill size also demonstrated a meaningful distinction (@fig-gill-size), with broad gills far more common among edible mushrooms. Habitat exhibited notable patterns as well (@fig-habitat): mushrooms found in wooded or grassy environments were more frequently poisonous, while those growing in urban or path environments tended to be edible. Bruising was another strong indicator (@fig-bruise), as mushrooms that bruised were overwhelmingly edible, whereas those that did not bruise were frequently poisonous. Lastly, population type revealed clear group-level differences (@fig-pop-type), with solitary or scattered mushrooms more often poisonous, while abundant or clustered populations were more commonly edible. Together, these figures illustrate that several features, odor in particular, provide strong discriminatory signals relevant to the classification task.
 
 ```{python}
 #| label: tbl-poison-rank
@@ -797,7 +780,7 @@ feature_importance_eda
     y_test.to_csv('../data/processed/y_test.csv')
 ```
 
-A ranking of features by their discriminatory power is shown in Table @tbl-poison-rank, using the variance in poisonous fraction across categories as an association measure.
+A ranking of features by their discriminatory power is shown in @tbl-poison-rank, using the variance in poisonous fraction across categories as an association measure.
 
 
 ## Data Validation Check: Any Anomalous Correlation Between Features and/or Target? 
@@ -863,7 +846,7 @@ correlation_heatmap
 @fig-corr-heatmap shows a high correlation between the feature gill_attachment and the three features stalk_color_above_ring, stalk_color_below_ring, and veil_color. I expect this is a feature of the dataset because it includes a high number of observations (5686 in our training data) and only 23 species, so there are many repeated instances of each species. If a particular species has fixed color and gill attachment characteristics than it is expected that we would find a high correlation between these features. It is not likely to be a sign of data leakage, but does suggest that there are weaknesses in the biological representativeness of the dataset. Therefore, the dataset may not be the strongest choice for generalizing predictions about the poisonousness of mushrooms across the full Agaricus and Lepiota (Agaricaceae) family, since it may not capture the true diversity and independence of these features found in nature.
 
 ## Summary of Anomalous Correlation Between Feature "Odor" and Target: 
-@fig-corr-heatmap shows a high correlation between the feature "odor" and the target, and a moderately high correlation between "spore_print_color" and the target. However, the dataset we are using includes background information on the logical rules discovered by prior researchers Duch, Adamczak, and Grabczewski (1996), and they found that "odor" is often the first split for identifying poisonous mushrooms, and "spore_print_color" is often the second. Hence both of these features are expected to be strong predictors of the target and the seeming anomalous correlation is simply an accurate reflection of biological reality as captured by the dataset, and not likely to be a sign of data leakage in this case. 
+@fig-corr-heatmap shows a high correlation between the feature "odor" and the target, and a moderately high correlation between "spore_print_color" and the target. However, the dataset we are using includes background information on the logical rules discovered by prior researchers Duch, Adamczak, and Grabczewski [@datastudy], and they found that "odor" is often the first split for identifying poisonous mushrooms, and "spore_print_color" is often the second. Hence both of these features are expected to be strong predictors of the target and the seeming anomalous correlation is simply an accurate reflection of biological reality as captured by the dataset, and not likely to be a sign of data leakage in this case. 
 
 # Model 
 
@@ -897,7 +880,7 @@ cross_val_dc = pd.DataFrame(
 cross_val_dc
 ```
 
-In our classification problem, we opt to use `SVC` (Buitinck, L., Louppe, G., Blondel, M., Pedregosa,               Fabian, Mueller, A., Grisel, O., … Ga"el Varoquaux. (2013)) as our model of choice for its effective usage in this scenario. We do not have an extreme amount of data (< 10000 observations) on top of only being a binary classification task. 
+In our classification problem, we opt to use `SVC` [@svc] as our model of choice for its effective usage in this scenario. We do not have an extreme amount of data (< 10000 observations) on top of only being a binary classification task. 
 
 ```{python}
 #| label: tbl-cross-val-svc
@@ -932,27 +915,14 @@ ConfusionMatrixDisplay(cm).plot()
 
 # Results & Discussion
 
-Our prediction model performed excellently on test data, classifying all of the mushroom examples correctly as poisonous or edible, with no error. Given that our model predicted perfectly, no optimization was required. As shown in Figure @fig-confusion-matrix-svc, the SVC correctly classified every mushroom in the test set, yielding no false positives or false negatives. Furthermore, the SVC model shows consistent performance across folds, as summarized in Table @tbl-cross-val-svc.
+Our prediction model performed excellently on test data, classifying all of the mushroom examples correctly as poisonous or edible, with no error. Given that our model predicted perfectly, no optimization was required. As shown in  @fig-confusion-matrix-svc, the SVC correctly classified every mushroom in the test set, yielding no false positives or false negatives. Furthermore, the SVC model shows consistent performance across folds, as summarized in @tbl-cross-val-svc.
 
-This performance is identical to the results published on the [UCI website](https://archive.ics.uci.edu/dataset/73/mushroom) from which the data was sourced (Mushroom). 
+This performance is identical to the results published on the [UCI website](https://archive.ics.uci.edu/dataset/73/mushroom) from which the data was sourced [@datasource]. 
 As shown in the confusion matrix, the model has a recall and precision of 1, due to no false positivies or negatives. 
 The model also shows robustness, with no difference in the accuracy of training and test scores, so it is promising that this model could be deployed effectively to protect mushroom consumers from eating poisonous mushrooms.That said, there are some practical concerns for public implementation, namely the model is fit on 20 different features that correspond to specific categorical physical characteristics of a mushroom, and thus accuracy requires accurate identification of physical characteristics.
 
 Hence, if an amateur mushroom enthusiast aimed to utilize the model to predict edibility but misidentified the physical characeristics of the mushroom they were attempting to classify, then the accuracy of the models predictions would be effectively moot as it would not be returning a prediction for the true foraged mushroom.
 One might consider creating a similar predictor with a smaller number of features to increase the practical efficacy of the model, though they would need to consider balancing the models accuracy with efficacy, because the risk of falsely predicting a mushroom as edible could be fatal. 
-It is also worth noting that the hypothetical mushroom observations in this model are based upon a book from 1981 (Lincoff), so it would be wise to consider whether the data could be updated to be sourced from a more recent source of mushroom science. 
+It is also worth noting that the hypothetical mushroom observations in this model are based upon a book from 1981 [@mushbook], so it would be wise to consider whether the data could be updated to be sourced from a more recent source of mushroom science. 
 
 # References 
-
-Buitinck, L., Louppe, G., Blondel, M., Pedregosa,               Fabian, Mueller, A., Grisel, O., … Ga"el Varoquaux. (2013). API design for machine learning software: experiences from the scikit-learn              project. In ECML PKDD Workshop: Languages for Data Mining and Machine Learning (pp. 108–122).
-
-Diaz, J. H. (2016). Mistaken mushroom poisonings. Wilderness & Environmental Medicine, 27(2), 330-335.
-
-Duch, W., Adamczak, R., & Grabczewski, K. (1996). Extraction of logical rules from training data using backpropagation networks. In Proceedings of the 1st Online Workshop on Soft Computing, 19-30 August 1996, pp. 25-30. [Online]. Available: http://www.bioele.nuee.nagoya-u.ac.jp/wsc1/
-
-Lincoff, G. H. (1981).The Audubon Society Field Guide to North American Mushrooms (1981). New York: Alfred A. Knopf
-
-Mushroom. (1981). UCI Machine Learning Repository. https://doi.org/10.24432/C5959T
-
-
- 
