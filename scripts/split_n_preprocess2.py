@@ -49,6 +49,12 @@ def save_train_test_split_stratified(
 
     return train_df, test_df
 
+def save_column_names_txt(col_names, out_dir):
+    """ saves column names in text file """
+    col_path = Path(out_dir) / "column_names.txt"
+    with open(col_path, "w") as f:
+        f.write("\n".join(col_names))
+
 
 @click.command()
 @click.option("--raw-data", type=str, required=True, help="Path to raw data CSV.")
@@ -222,6 +228,8 @@ def main(raw_data: str) -> None:
     # ------ Stratified train/test split + save ------
     save_train_test_split_stratified(df)
 
+    # ------ Save Dataset Col Names for Use ----
+    save_column_names_txt(dataset_col_names, out_dir="data/processed")
 
 if __name__ == "__main__":
     main()

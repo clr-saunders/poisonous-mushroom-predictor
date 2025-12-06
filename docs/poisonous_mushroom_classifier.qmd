@@ -47,6 +47,12 @@ from tabulate import tabulate
 
 ```
 
+```{python}
+with open('../data/processed/column_names.txt') as f:
+    dataset_col_names = [line.strip() for line in f]
+df = pd.read_csv('../data/raw/agaricus-lepiota.data', names=dataset_col_names)
+```
+
 # Summary
 
 Here we attempt to build a classification model using a Support Vector Machine algorithm which can use physical characteristics of mushrooms to predict whether a North American mushroom from the Agaricus and Lepiota (Agaricaceae) family is edible or poisonous for human consumption. 
@@ -89,33 +95,6 @@ This report was written and rendered using Quarto [@quarto] to ensure full repro
 #| label: tbl-sample-data
 #| tbl-cap: "First five rows of the raw dataset."
 
-dataset_col_names = [
-        "class",
-        "cap_shape",
-        "cap_surface",
-        "cap_color",
-        "bruises",
-        "odor",
-        "gill_attachment",
-        "gill_spacing",
-        "gill_size",
-        "gill_color",
-        "stalk_shape",
-        "stalk_root",
-        "stalk_surface_above_ring",
-        "stalk_surface_below_ring",
-        "stalk_color_above_ring",
-        "stalk_color_below_ring",
-        "veil_type",
-        "veil_color",
-        "ring_number",
-        "ring_type",
-        "spore_print_color",
-        "population",
-        "habitat",
-    ]
-
-df = pd.read_csv('../data/raw/agaricus-lepiota.data', names=dataset_col_names)
 df.head()
 ```
 
