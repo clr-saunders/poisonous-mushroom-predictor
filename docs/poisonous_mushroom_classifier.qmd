@@ -69,8 +69,8 @@ with open('../scripts/models/svc.pkl', 'rb') as f:
 
 Here we attempt to build a classification model using a Support Vector Machine algorithm which can use physical characteristics of mushrooms to predict whether a North American mushroom from the Agaricus and Lepiota (Agaricaceae) family is edible or poisonous for human consumption. 
 Our final classifier performed excellently on an unseen test data set, with precision and recall of 1.0 and an overall accuracy calculated to be 1.0.
-On the `{python} nrows_test_df' test data observations, the model correctly predicted all `{python} nrows_test_df'. 
-Although the model performs extremely well it has practical limitations, because it requires the correct identification of '{python} nfeats_test_df' different physical characteristics of a given mushroom in order for the corresponding prediction to be correct. 
+On the `{python} nrows_test_df` test data observations, the model correctly predicted all `{python} nrows_test_df`. 
+Although the model performs extremely well it has practical limitations, because it requires the correct identification of `{python} nfeats` different physical characteristics of a given mushroom in order for the corresponding prediction to be correct. 
 We believe the model could be a powerful tool for preventing the misidentification of the Agaricus and Lepiota family of mushrooms, but further efforts to improve the practical implementation of the model for usage by the public would be very useful.
 
 # Introduction
@@ -90,8 +90,8 @@ If made accessible to the public in North America, accurate prediction of mushro
 
 The data set used in this project includes hypothetical mushroom samples drawn from The Audubon Society Field Guide to North American Mushrooms by Gary Lincoff [@lincoff1981]. 
 It was sourced from the UCI Machine Learning Repository [@uci_mushroom], specifically the file *agarius-lepiota.data*. 
-It includes `{python} nrows_raw'  descriptions of hypothetical mushroom samples that correspond to 23 species of mushrooms in the Agaricus and Lepiota Family [@lincoff1981]. 
-Each row includes `{python} len(dataset_col_names) - 1`categorical variables that are physical characteristics of the mushroom sample, including the odor, gill-spacing, gill-color, gill-size, population, habitat, etc, and is labelled as edible or poisonous. 
+It includes `{python} nrows_raw`  descriptions of hypothetical mushroom samples that correspond to 23 species of mushrooms in the Agaricus and Lepiota Family [@lincoff1981]. 
+Each row includes `{python} len(dataset_col_names) - 1` categorical variables that are physical characteristics of the mushroom sample, including the odor, gill-spacing, gill-color, gill-size, population, habitat, etc, and is labelled as edible or poisonous. 
 
 
 ## Computing Environment
@@ -148,7 +148,7 @@ A preview of the first five rows of the training dataset is shown in @tbl-traini
 Markdown(mushroom_feature_summary.to_markdown(index = False))
 ```
 
-We summarize all `{python} nfeats ` categorical predictors in @tbl-feature-summary, which reports the number of levels and the dominant category for each feature. Given that `veil_type` only has one level, it dropped because it contains only a single category for all observations.
+We summarize all `{python} nfeats` categorical predictors in @tbl-feature-summary, which reports the number of levels and the dominant category for each feature. Given that `veil_type` only has one level, it dropped because it contains only a single category for all observations.
 A feature with no variation cannot help the model distinguish edible from poisonous mushrooms, provides no predictive signal, and only adds redundant columns after one-hot encoding. Therefore, it is removed to simplify the feature set and prevent unnecessary model complexity.
 
 
