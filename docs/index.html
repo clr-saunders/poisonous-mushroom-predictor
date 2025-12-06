@@ -163,7 +163,7 @@ div.csl-indent {
 Table&nbsp;1: First five rows of the raw dataset.
 </figcaption>
 <div aria-describedby="tbl-sample-data-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div class="cell-output cell-output-display" data-execution_count="102">
+<div class="cell-output cell-output-display" data-execution_count="5">
 <div>
 
 
@@ -328,13 +328,13 @@ Table&nbsp;1: First five rows of the raw dataset.
 <p>A preview of the first five rows of the raw dataset is shown in <a href="#tbl-sample-data" class="quarto-xref">Table&nbsp;1</a>, which illustrates the categorical structure of all features prior to cleaning.</p>
 <section id="data-validation-checks-1" class="level2">
 <h2 class="anchored" data-anchor-id="data-validation-checks-1">Data Validation Checks</h2>
-<div id="e9cf9460" class="cell" data-execution_count="7">
+<div id="3cebfcbc" class="cell" data-execution_count="7">
 <div class="cell-output cell-output-stdout">
 <pre><code>[OK] Target distribution matches expected proportions (within tolerance).</code></pre>
 </div>
 </div>
-<div id="9705edca" class="cell" data-execution_count="9">
-<div class="cell-output cell-output-display" data-execution_count="106">
+<div id="56e71889" class="cell" data-execution_count="9">
+<div class="cell-output cell-output-display" data-execution_count="9">
 <pre><code>class                       0
 cap_shape                   0
 cap_surface                 0
@@ -361,8 +361,8 @@ habitat                     0
 dtype: int64</code></pre>
 </div>
 </div>
-<div id="1d2867a9" class="cell" data-execution_count="10">
-<div class="cell-output cell-output-display" data-execution_count="107">
+<div id="14d2439e" class="cell" data-execution_count="10">
+<div class="cell-output cell-output-display" data-execution_count="10">
 <pre><code>class                          0
 cap_shape                      0
 cap_surface                    0
@@ -389,8 +389,8 @@ habitat                        0
 dtype: int64</code></pre>
 </div>
 </div>
-<div id="dd341a42" class="cell" data-execution_count="15">
-<div class="cell-output cell-output-display" data-execution_count="112">
+<div id="e523f7e4" class="cell" data-execution_count="15">
+<div class="cell-output cell-output-display" data-execution_count="15">
 <pre><code>cap_shape                   0
 cap_surface                 0
 cap_color                   0
@@ -416,12 +416,12 @@ is_poisonous                0
 dtype: int64</code></pre>
 </div>
 </div>
-<div id="edaa0909" class="cell" data-execution_count="16">
+<div id="3acc6937" class="cell" data-execution_count="16">
 <div class="cell-output cell-output-stdout">
 <pre><code>[OK] Cleaned column names validated.</code></pre>
 </div>
 </div>
-<div id="a5ea3beb" class="cell" data-execution_count="17">
+<div id="96e88150" class="cell" data-execution_count="17">
 <div class="cell-output cell-output-stdout">
 <pre><code>[OK] Pandera schema validation passed:
    - all feature columns are string-typed
@@ -444,7 +444,7 @@ dtype: int64</code></pre>
 Table&nbsp;2: First five rows of the cleaned dataset.
 </figcaption>
 <div aria-describedby="tbl-sample-cleaned-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div class="cell-output cell-output-display" data-execution_count="116">
+<div class="cell-output cell-output-display" data-execution_count="19">
 <div>
 
 
@@ -606,7 +606,7 @@ Table&nbsp;2: First five rows of the cleaned dataset.
 </figure>
 </div>
 </div>
-<div id="9eefd35d" class="cell" data-execution_count="20">
+<div id="d458f360" class="cell" data-execution_count="20">
 <div class="cell-output cell-output-stdout">
 <pre><code>&lt;class 'pandas.core.frame.DataFrame'&gt;
 RangeIndex: 8124 entries, 0 to 8123
@@ -639,8 +639,8 @@ dtypes: int64(1), object(21)
 memory usage: 1.4+ MB</code></pre>
 </div>
 </div>
-<div id="352b93f9" class="cell" data-execution_count="21">
-<div class="cell-output cell-output-display" data-execution_count="118">
+<div id="dabf9c51" class="cell" data-execution_count="21">
+<div class="cell-output cell-output-display" data-execution_count="21">
 <pre><code>(8124, 22)</code></pre>
 </div>
 </div>
@@ -692,7 +692,7 @@ print(
 Table&nbsp;3: Summary of mushroom feature characteristics
 </figcaption>
 <div aria-describedby="tbl-feature-summary-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div class="cell-output cell-output-display cell-output-markdown" data-execution_count="119">
+<div class="cell-output cell-output-display cell-output-markdown" data-execution_count="22">
 <table class="do-not-create-environment cell caption-top table table-sm table-striped small">
 <colgroup>
 <col style="width: 13%">
@@ -858,7 +858,7 @@ Table&nbsp;3: Summary of mushroom feature characteristics
 </figure>
 </div>
 </div>
-<p>We summarize all 21 categorical predictors in <a href="#tbl-feature-summary" class="quarto-xref">Table&nbsp;3</a>, which reports the number of levels and the dominant category for each feature. Given that veil_type only has one level, the values are the same for all observations so we drop that column.</p>
+<p>We summarize all 21 categorical predictors in <a href="#tbl-feature-summary" class="quarto-xref">Table&nbsp;3</a>, which reports the number of levels and the dominant category for each feature. Given that <code>veil_type</code> only has one level, the values are the same for all observations so we drop that column.</p>
 <!-- ```{python}
     X_train.to_csv('data/processed/x_train.csv')
     X_test.to_csv('data/processed/x_test.csv')
@@ -926,7 +926,7 @@ Figure&nbsp;5: Class Proportions (edible vs poisonous) by Population Type
 Table&nbsp;4: Ranking of features by how well they distinguish poisonous mushrooms
 </figcaption>
 <div aria-describedby="tbl-poison-rank-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div class="cell-output cell-output-display cell-output-markdown" data-execution_count="120">
+<div class="cell-output cell-output-display cell-output-markdown" data-execution_count="23">
 <table class="do-not-create-environment cell caption-top table table-sm table-striped small">
 <thead>
 <tr class="header">
@@ -1043,6 +1043,10 @@ Table&nbsp;4: Ranking of features by how well they distinguish poisonous mushroo
 </figure>
 </div>
 </div>
+</section>
+<section id="relationship-between-physical-features-and-toxicity-an-exploratory-overview-1" class="level4">
+<h4 class="anchored" data-anchor-id="relationship-between-physical-features-and-toxicity-an-exploratory-overview-1">Relationship Between Physical Features and Toxicity: An Exploratory Overview</h4>
+<p>To explore how individual mushroom characteristics relate to toxicity, we compared the proportion of poisonous and edible mushrooms across several categorical features. <code>python {{ odor_strength }}</code> showed the strongest separation between classes (Figure <a href="#fig-odor-cat" class="quarto-xref">Figure&nbsp;1</a>), with foul-, creosote-, and pungent-smelling mushrooms being almost exclusively poisonous, whereas almond and anise odors were strongly associated with edibility. Gill size also demonstrated a meaningful distinction (Figure <a href="#fig-gill-size" class="quarto-xref">Figure&nbsp;2</a>), with broad gills far more common among edible mushrooms. Habitat exhibited notable patterns as well (Figure <a href="#fig-habitat" class="quarto-xref">Figure&nbsp;3</a>): mushrooms found in wooded or grassy environments were more frequently poisonous, while those growing in urban or path environments tended to be edible. Bruising was another strong indicator (Figure <a href="#fig-bruise" class="quarto-xref">Figure&nbsp;4</a>), as mushrooms that bruised were overwhelmingly edible, whereas those that did not bruise were frequently poisonous. Lastly, population type revealed clear group-level differences (Figure <a href="#fig-pop-type" class="quarto-xref">Figure&nbsp;5</a>), with solitary or scattered mushrooms more often poisonous, while abundant or clustered populations were more commonly edible. Together, these figures illustrate that several features, odor in particular, provide strong discriminatory signals relevant to the classification task.</p>
 <!-- ```{python}
     X_train.to_csv('../data/processed/x_train.csv')
     X_test.to_csv('../data/processed/x_test.csv')
@@ -1078,7 +1082,6 @@ Figure&nbsp;6: Correlation heatmap (Cramer’s V) for all feature and feature-ta
 <p>Before we continue, we must preprocess our data such that the features work with our models. Since all of our features are strings, we can opt to use one-hot encoding for them all.</p>
 <p>We fit a <code>DummyClassifier</code> to our data as a baseline to compare our actual model with. Random state used again for reproducibility.</p>
 <div id="tbl-cross-val-dc" class="cell quarto-float quarto-figure quarto-figure-left anchored" data-execution_count="25">
-<div id="tbl-cross-val-dc" class="cell quarto-float quarto-figure quarto-figure-left anchored" data-execution_count="25">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-cross-val-dc-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Table&nbsp;5: Mean 10-Fold Cross-Validation Metrics for DummyClassifier Baseline
@@ -1088,7 +1091,7 @@ Table&nbsp;5: Mean 10-Fold Cross-Validation Metrics for DummyClassifier Baseline
 <div class="ansi-escaped-output">
 <pre><span class="ansi-red-fg">---------------------------------------------------------------------------</span>
 <span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
-<span class="ansi-cyan-fg">Cell</span><span class="ansi-cyan-fg"> </span><span class="ansi-green-fg">In[122]</span><span class="ansi-green-fg">, line 6</span>
+<span class="ansi-cyan-fg">Cell</span><span class="ansi-cyan-fg"> </span><span class="ansi-green-fg">In[25]</span><span class="ansi-green-fg">, line 6</span>
 <span class="ansi-green-fg">      1</span> dc_pipe = make_pipeline(
 <span class="ansi-green-fg">      2</span>     preprocessor, 
 <span class="ansi-green-fg">      3</span>     DummyClassifier(random_state=<span class="ansi-green-fg">123</span>)
@@ -1108,7 +1111,6 @@ Table&nbsp;5: Mean 10-Fold Cross-Validation Metrics for DummyClassifier Baseline
 </div>
 <p>In our classification problem, we opt to use <code>SVC</code> <span class="citation" data-cites="svc">(<a href="#ref-svc" role="doc-biblioref">Buitinck et al. 2013</a>)</span> as our model of choice for its effective usage in this scenario. We do not have an extreme amount of data (&lt; 10000 observations) on top of only being a binary classification task.</p>
 <div id="tbl-cross-val-svc" class="cell quarto-float quarto-figure quarto-figure-left anchored" data-execution_count="26">
-<div id="tbl-cross-val-svc" class="cell quarto-float quarto-figure quarto-figure-left anchored" data-execution_count="26">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-cross-val-svc-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Table&nbsp;6: Mean 10-Fold Cross-Validation Metrics for SVC Model
@@ -1118,7 +1120,7 @@ Table&nbsp;6: Mean 10-Fold Cross-Validation Metrics for SVC Model
 <div class="ansi-escaped-output">
 <pre><span class="ansi-red-fg">---------------------------------------------------------------------------</span>
 <span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
-<span class="ansi-cyan-fg">Cell</span><span class="ansi-cyan-fg"> </span><span class="ansi-green-fg">In[123]</span><span class="ansi-green-fg">, line 6</span>
+<span class="ansi-cyan-fg">Cell</span><span class="ansi-cyan-fg"> </span><span class="ansi-green-fg">In[26]</span><span class="ansi-green-fg">, line 6</span>
 <span class="ansi-green-fg">      1</span> svc_pipe = make_pipeline(
 <span class="ansi-green-fg">      2</span>     preprocessor, 
 <span class="ansi-green-fg">      3</span>     SVC(random_state=<span class="ansi-green-fg">123</span>)
@@ -1137,14 +1139,13 @@ Table&nbsp;6: Mean 10-Fold Cross-Validation Metrics for SVC Model
 </figure>
 </div>
 <div id="fig-confusion-matrix-svc" class="cell quarto-float quarto-figure quarto-figure-left anchored" data-execution_count="27">
-<div id="fig-confusion-matrix-svc" class="cell quarto-float quarto-figure quarto-figure-left anchored" data-execution_count="27">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-confusion-matrix-svc-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output cell-output-error">
 <div class="ansi-escaped-output">
 <pre><span class="ansi-red-fg">---------------------------------------------------------------------------</span>
 <span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
-<span class="ansi-cyan-fg">Cell</span><span class="ansi-cyan-fg"> </span><span class="ansi-green-fg">In[124]</span><span class="ansi-green-fg">, line 1</span>
+<span class="ansi-cyan-fg">Cell</span><span class="ansi-cyan-fg"> </span><span class="ansi-green-fg">In[27]</span><span class="ansi-green-fg">, line 1</span>
 <span class="ansi-green-fg">----&gt; </span><span class="ansi-green-fg">1</span> y_pred = svc_pipe.predict(<span class="ansi-yellow-bg">X_test</span>)
 <span class="ansi-green-fg">      3</span> cm = confusion_matrix(y_test, y_pred)
 <span class="ansi-green-fg">      4</span> ConfusionMatrixDisplay(cm).plot()

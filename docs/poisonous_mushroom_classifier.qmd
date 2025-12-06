@@ -553,9 +553,6 @@ Markdown(poison_rank.to_markdown(index = False))
 ```
 
 
-#### Relationship Between Physical Features and Toxicity: An Exploratory Overview
-To explore how individual mushroom characteristics relate to toxicity, we compared the proportion of poisonous and edible mushrooms across several categorical features. `python {{ odor_strength }}` showed the strongest separation between classes (Figure @fig-odor-cat), with foul-, creosote-, and pungent-smelling mushrooms being almost exclusively poisonous, whereas almond and anise odors were strongly associated with edibility. Gill size also demonstrated a meaningful distinction (Figure @fig-gill-size), with broad gills far more common among edible mushrooms. Habitat exhibited notable patterns as well (Figure @fig-habitat): mushrooms found in wooded or grassy environments were more frequently poisonous, while those growing in urban or path environments tended to be edible. Bruising was another strong indicator (Figure @fig-bruise), as mushrooms that bruised were overwhelmingly edible, whereas those that did not bruise were frequently poisonous. Lastly, population type revealed clear group-level differences (Figure @fig-pop-type), with solitary or scattered mushrooms more often poisonous, while abundant or clustered populations were more commonly edible. Together, these figures illustrate that several features, odor in particular, provide strong discriminatory signals relevant to the classification task.
-
 
 
 <!-- ```{python}
