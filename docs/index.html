@@ -67,36 +67,34 @@ div.csl-indent {
 
 <div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
 <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-  <nav id="TOC" role="doc-toc" class="toc-active">
+  <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="99">
     <h2 id="toc-title">Table of contents</h2>
    
   <ul class="collapse">
-  <li><a href="#imports" id="toc-imports" class="nav-link active" data-scroll-target="#imports"><span class="header-section-number">1</span> Imports</a></li>
-  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary"><span class="header-section-number">2</span> Summary</a></li>
-  <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction"><span class="header-section-number">3</span> Introduction</a></li>
-  <li><a href="#methods" id="toc-methods" class="nav-link" data-scroll-target="#methods"><span class="header-section-number">4</span> Methods</a>
+  <li><a href="#summary" id="toc-summary" class="nav-link active" data-scroll-target="#summary"><span class="header-section-number">1</span> Summary</a></li>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction"><span class="header-section-number">2</span> Introduction</a></li>
+  <li><a href="#methods" id="toc-methods" class="nav-link" data-scroll-target="#methods"><span class="header-section-number">3</span> Methods</a>
   <ul class="collapse">
-  <li><a href="#data" id="toc-data" class="nav-link" data-scroll-target="#data"><span class="header-section-number">4.1</span> Data</a></li>
-  <li><a href="#computing-environment" id="toc-computing-environment" class="nav-link" data-scroll-target="#computing-environment"><span class="header-section-number">4.2</span> Computing Environment</a></li>
+  <li><a href="#data" id="toc-data" class="nav-link" data-scroll-target="#data"><span class="header-section-number">3.1</span> Data</a></li>
+  <li><a href="#computing-environment" id="toc-computing-environment" class="nav-link" data-scroll-target="#computing-environment"><span class="header-section-number">3.2</span> Computing Environment</a></li>
   </ul></li>
-  <li><a href="#analysis" id="toc-analysis" class="nav-link" data-scroll-target="#analysis"><span class="header-section-number">5</span> Analysis</a>
+  <li><a href="#analysis" id="toc-analysis" class="nav-link" data-scroll-target="#analysis"><span class="header-section-number">4</span> Analysis</a>
   <ul class="collapse">
-  <li><a href="#data-validation-checks" id="toc-data-validation-checks" class="nav-link" data-scroll-target="#data-validation-checks"><span class="header-section-number">5.1</span> Data Validation Checks</a></li>
+  <li><a href="#data-validation-checks" id="toc-data-validation-checks" class="nav-link" data-scroll-target="#data-validation-checks"><span class="header-section-number">4.1</span> Data Validation Checks</a></li>
+  <li><a href="#data-cleaning-and-wrangling" id="toc-data-cleaning-and-wrangling" class="nav-link" data-scroll-target="#data-cleaning-and-wrangling"><span class="header-section-number">4.2</span> Data cleaning and wrangling</a></li>
+  <li><a href="#data-validation-checks-1" id="toc-data-validation-checks-1" class="nav-link" data-scroll-target="#data-validation-checks-1"><span class="header-section-number">4.3</span> Data Validation Checks</a></li>
   </ul></li>
-  <li><a href="#data-cleaning-and-wrangling" id="toc-data-cleaning-and-wrangling" class="nav-link" data-scroll-target="#data-cleaning-and-wrangling"><span class="header-section-number">6</span> Data cleaning and wrangling</a>
+  <li><a href="#basic-eda" id="toc-basic-eda" class="nav-link" data-scroll-target="#basic-eda"><span class="header-section-number">5</span> Basic EDA</a></li>
+  <li><a href="#data-splitting" id="toc-data-splitting" class="nav-link" data-scroll-target="#data-splitting"><span class="header-section-number">6</span> Data Splitting</a></li>
+  <li><a href="#eda-after-data-splitting" id="toc-eda-after-data-splitting" class="nav-link" data-scroll-target="#eda-after-data-splitting"><span class="header-section-number">7</span> EDA After Data Splitting</a>
   <ul class="collapse">
-  <li><a href="#data-validation-checks-1" id="toc-data-validation-checks-1" class="nav-link" data-scroll-target="#data-validation-checks-1"><span class="header-section-number">6.1</span> Data Validation Checks</a></li>
+  <li><a href="#data-validation-check-any-anomalous-correlation-between-features-andor-target" id="toc-data-validation-check-any-anomalous-correlation-between-features-andor-target" class="nav-link" data-scroll-target="#data-validation-check-any-anomalous-correlation-between-features-andor-target"><span class="header-section-number">7.1</span> Data Validation Check: Any Anomalous Correlation Between Features and/or Target?</a></li>
+  <li><a href="#summary-of-anomalous-correlation-between-features" id="toc-summary-of-anomalous-correlation-between-features" class="nav-link" data-scroll-target="#summary-of-anomalous-correlation-between-features"><span class="header-section-number">7.2</span> Summary of Anomalous Correlation Between Features:</a></li>
+  <li><a href="#summary-of-anomalous-correlation-between-feature-odor-and-target" id="toc-summary-of-anomalous-correlation-between-feature-odor-and-target" class="nav-link" data-scroll-target="#summary-of-anomalous-correlation-between-feature-odor-and-target"><span class="header-section-number">7.3</span> Summary of Anomalous Correlation Between Feature “Odor” and Target:</a></li>
   </ul></li>
-  <li><a href="#eda-before-data-splitting" id="toc-eda-before-data-splitting" class="nav-link" data-scroll-target="#eda-before-data-splitting"><span class="header-section-number">7</span> EDA Before Data Splitting</a></li>
-  <li><a href="#data-splitting" id="toc-data-splitting" class="nav-link" data-scroll-target="#data-splitting"><span class="header-section-number">8</span> Data Splitting</a></li>
-  <li><a href="#eda-after-data-splitting" id="toc-eda-after-data-splitting" class="nav-link" data-scroll-target="#eda-after-data-splitting"><span class="header-section-number">9</span> EDA After Data Splitting</a>
-  <ul class="collapse">
-  <li><a href="#data-validation-check-any-anomalous-correlation-between-features-andor-target" id="toc-data-validation-check-any-anomalous-correlation-between-features-andor-target" class="nav-link" data-scroll-target="#data-validation-check-any-anomalous-correlation-between-features-andor-target"><span class="header-section-number">9.1</span> Data Validation Check: Any Anomalous Correlation Between Features and/or Target?</a></li>
-  <li><a href="#summary-of-anomalous-correlation-between-features" id="toc-summary-of-anomalous-correlation-between-features" class="nav-link" data-scroll-target="#summary-of-anomalous-correlation-between-features"><span class="header-section-number">9.2</span> Summary of Anomalous Correlation Between Features:</a></li>
-  <li><a href="#summary-of-anomalous-correlation-between-feature-odor-and-target" id="toc-summary-of-anomalous-correlation-between-feature-odor-and-target" class="nav-link" data-scroll-target="#summary-of-anomalous-correlation-between-feature-odor-and-target"><span class="header-section-number">9.3</span> Summary of Anomalous Correlation Between Feature “Odor” and Target:</a></li>
-  </ul></li>
-  <li><a href="#model" id="toc-model" class="nav-link" data-scroll-target="#model"><span class="header-section-number">10</span> Model</a></li>
-  <li><a href="#results-discussion" id="toc-results-discussion" class="nav-link" data-scroll-target="#results-discussion"><span class="header-section-number">11</span> Results &amp; Discussion</a></li>
+  <li><a href="#model" id="toc-model" class="nav-link" data-scroll-target="#model"><span class="header-section-number">8</span> Model</a></li>
+  <li><a href="#results-discussion" id="toc-results-discussion" class="nav-link" data-scroll-target="#results-discussion"><span class="header-section-number">9</span> Results &amp; Discussion</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"><span class="header-section-number">10</span> References</a></li>
   </ul>
 </nav>
 </div>
@@ -133,389 +131,987 @@ div.csl-indent {
 </header>
 
 
-<section id="imports" class="level1" data-number="1">
-<h1 data-number="1"><span class="header-section-number">1</span> Imports</h1>
-<p><em>Never forget to run imports first.</em></p>
-</section>
-<section id="summary" class="level1" data-number="2">
-<h1 data-number="2"><span class="header-section-number">2</span> Summary</h1>
+<section id="summary" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> Summary</h1>
 <p>Here we attempt to build a classification model using a Support Vector Machine algorithm which can use physical characteristics of mushrooms to predict whether a North American mushroom from the Agaricus and Lepiota (Agaricaceae) family is edible or poisonous for human consumption. Our final classifier performed excellently on an unseen test data set, with precision and recall of 1.0 and an overall accuracy calculated to be 1.0. On the 2,438 test data observations, the model correctly predicted all 2,438. Although the model performs extremely well it has practical limitations, because it requires the correct identification of 20 different physical characteristics of a given mushroom in order for the corresponding prediction to be correct. We believe the model could be a powerful tool for preventing the misidentification of the Agaricus and Lepiota family of mushrooms, but further efforts to improve the practical implementation of the model for usage by the public would be very useful.</p>
 </section>
-<section id="introduction" class="level1" data-number="3">
-<h1 data-number="3"><span class="header-section-number">3</span> Introduction</h1>
-<p>The <em>Agaricus</em> and <em>Lepiota</em> (Agaricaceae) family of mushrooms, includes many of the common gilled mushrooms found and cultivated in urban and suburban North America <span class="citation" data-cites="lincoff1981">(<a href="#ref-lincoff1981" role="doc-biblioref">Lincoff 1981</a>)</span>. The family includes the common cultivated mushroom (<em>Agaricus bisporus</em>), and some of the best edible mushrooms, but it also includes poisonous mushrooms and a few that are deadly <span class="citation" data-cites="lincoff1981">(<a href="#ref-lincoff1981" role="doc-biblioref">Lincoff 1981</a>)</span>. These mushrooms are sometimes found in forests, but many grow on lawns, in the compost, or along roadsides and grassy areas where they are readily accessible for human consumption (500). Accurate assessment of the edibility of these mushrooms is extremely important prior to consumption, however there is no simple rule for determining whether any example is poisonous or edible <span class="citation" data-cites="lincoff1981">(<a href="#ref-lincoff1981" role="doc-biblioref">Lincoff 1981</a>)</span>.</p>
-<p>Here we ask if we can use a supervised machine learning algorithm to predict whether a given mushroom from the Agaricus and Lepiota family of mushrooms is edible or poisonous, based upon its physical characteristics. Answering this question is important because mushroom poisonings are common and the greatest risk factor for mushroom poisoning is the misidentification of poisonous species as edible, in particular by amateur mushroom foragers and immigrants <span class="citation" data-cites="diaz2016">(<a href="#ref-diaz2016" role="doc-biblioref">Diaz 2016</a>)</span>. If made accessible to the public in North America, accurate prediction of mushrooms in this family could prevent poisoning and support the safe consumption of common edible mushrooms.</p>
+<section id="introduction" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> Introduction</h1>
+<p>The <em>Agaricus</em> and <em>Lepiota</em> (Agaricaceae) family of mushrooms, includes many of the common gilled mushrooms found and cultivated in urban and suburban North America <span class="citation" data-cites="lincoff1981">(<a href="#ref-lincoff1981" role="doc-biblioref">Lincoff 1981</a>)</span>. The family includes the common cultivated mushroom (<em>Agaricus bisporus</em>), and some of the best edible mushrooms, but it also includes poisonous mushrooms and a few that are deadly <span class="citation" data-cites="lincoff1981">(<a href="#ref-lincoff1981" role="doc-biblioref">Lincoff 1981</a>)</span>. These mushrooms are sometimes found in forests, but many grow on lawns, in the compost, or along roadsides and grassy areas where they are readily accessible for human consumption <span class="citation" data-cites="lincoff1981">(<a href="#ref-lincoff1981" role="doc-biblioref">Lincoff 1981</a>)</span>. Accurate assessment of the edibility of these mushrooms is extremely important prior to consumption, however there is no simple rule for determining whether any example is poisonous or edible <span class="citation" data-cites="lincoff1981">(<a href="#ref-lincoff1981" role="doc-biblioref">Lincoff 1981</a>)</span>.</p>
+<p>Here we ask if we can use a supervised machine learning algorithm to predict whether a given mushroom from the Agaricus and Lepiota family of mushrooms is edible or poisonous, based upon it’s physical characteristics. Answering this question is important because mushroom poisonings are common and the greatest risk factor for mushroom poisoning is the misidentification of poisonous species as edible, in particular by amateur mushroom foragers and immigrants <span class="citation" data-cites="diaz2016">(<a href="#ref-diaz2016" role="doc-biblioref">Diaz 2016</a>)</span>. If made accessible to the public in North America, accurate prediction of mushrooms in this family could prevent poisoning and support the safe consumption of common edible mushrooms.</p>
 </section>
-<section id="methods" class="level1" data-number="4">
-<h1 data-number="4"><span class="header-section-number">4</span> Methods</h1>
-<section id="data" class="level2" data-number="4.1">
-<h2 data-number="4.1" class="anchored" data-anchor-id="data"><span class="header-section-number">4.1</span> Data</h2>
+<section id="methods" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> Methods</h1>
+<section id="data" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="data"><span class="header-section-number">3.1</span> Data</h2>
 <p>The data set used in this project includes hypothetical mushroom samples drawn from The Audubon Society Field Guide to North American Mushrooms by Gary Lincoff <span class="citation" data-cites="lincoff1981">(<a href="#ref-lincoff1981" role="doc-biblioref">Lincoff 1981</a>)</span>. It was sourced from the UCI Machine Learning Repository <span class="citation" data-cites="uci_mushroom">(<a href="#ref-uci_mushroom" role="doc-biblioref">Dua and Graff 2017</a>)</span>, specifically the file <em>agarius-lepiota.data</em>. It includes 8124 descriptions of hypothetical mushroom samples that correspond to 23 species of mushrooms in the Agaricus and Lepiota Family <span class="citation" data-cites="lincoff1981">(<a href="#ref-lincoff1981" role="doc-biblioref">Lincoff 1981</a>)</span>. Each row includes 22 categorical variables that are physical characteristics of the mushroom sample, including the odor, gill-spacing, gill-color, gill-size, population, habitat, etc, and is labelled as edible or poisonous.</p>
 </section>
-<section id="computing-environment" class="level2" data-number="4.2">
-<h2 data-number="4.2" class="anchored" data-anchor-id="computing-environment"><span class="header-section-number">4.2</span> Computing Environment</h2>
+<section id="computing-environment" class="level2" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="computing-environment"><span class="header-section-number">3.2</span> Computing Environment</h2>
 <p>All analyses were performed in Python <span class="citation" data-cites="python">(<a href="#ref-python" role="doc-biblioref">Van Rossum and Drake 2009</a>)</span> using pandas <span class="citation" data-cites="mckinney2010">(<a href="#ref-mckinney2010" role="doc-biblioref">McKinney 2010</a>)</span>, NumPy <span class="citation" data-cites="numpy">(<a href="#ref-numpy" role="doc-biblioref">Harris et al. 2020</a>)</span>, and scikit-learn <span class="citation" data-cites="scikit-learn">(<a href="#ref-scikit-learn" role="doc-biblioref">Pedregosa et al. 2011</a>)</span> for data processing and modeling. Data validation employed Pandera <span class="citation" data-cites="pandera">(<a href="#ref-pandera" role="doc-biblioref">Bantilan 2020</a>)</span>, and visualizations were generated using Altair <span class="citation" data-cites="altair">(<a href="#ref-altair" role="doc-biblioref">VanderPlas 2018</a>)</span>. The dataset was accessed via the UCI Machine Learning Repository <span class="citation" data-cites="uci_mushroom">(<a href="#ref-uci_mushroom" role="doc-biblioref">Dua and Graff 2017</a>)</span>. This report was written and rendered using Quarto <span class="citation" data-cites="quarto">(<a href="#ref-quarto" role="doc-biblioref">Posit Software, PBC 2025</a>)</span> to ensure full reproducibility.</p>
 </section>
 </section>
-<section id="analysis" class="level1" data-number="5">
-<h1 data-number="5"><span class="header-section-number">5</span> Analysis</h1>
-<section id="data-validation-checks" class="level2" data-number="5.1">
-<h2 data-number="5.1" class="anchored" data-anchor-id="data-validation-checks"><span class="header-section-number">5.1</span> Data Validation Checks</h2>
+<section id="analysis" class="level1" data-number="4">
+<h1 data-number="4"><span class="header-section-number">4</span> Analysis</h1>
+<section id="data-validation-checks" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="data-validation-checks"><span class="header-section-number">4.1</span> Data Validation Checks</h2>
 </section>
+<section id="data-cleaning-and-wrangling" class="level2" data-number="4.2">
+<h2 data-number="4.2" class="anchored" data-anchor-id="data-cleaning-and-wrangling"><span class="header-section-number">4.2</span> Data cleaning and wrangling</h2>
+<div class="cell" data-execution_count="5">
+<div id="tbl-sample-data" class="cell quarto-float quarto-figure quarto-figure-left anchored" data-execution_count="5">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-sample-data-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;1: First five rows of the raw dataset.
+</figcaption>
+<div aria-describedby="tbl-sample-data-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output cell-output-display" data-execution_count="105">
+<div>
+
+
+<table class="dataframe do-not-create-environment cell caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">class</th>
+<th data-quarto-table-cell-role="th">cap_shape</th>
+<th data-quarto-table-cell-role="th">cap_surface</th>
+<th data-quarto-table-cell-role="th">cap_color</th>
+<th data-quarto-table-cell-role="th">bruises</th>
+<th data-quarto-table-cell-role="th">odor</th>
+<th data-quarto-table-cell-role="th">gill_attachment</th>
+<th data-quarto-table-cell-role="th">gill_spacing</th>
+<th data-quarto-table-cell-role="th">gill_size</th>
+<th data-quarto-table-cell-role="th">gill_color</th>
+<th data-quarto-table-cell-role="th">...</th>
+<th data-quarto-table-cell-role="th">stalk_surface_below_ring</th>
+<th data-quarto-table-cell-role="th">stalk_color_above_ring</th>
+<th data-quarto-table-cell-role="th">stalk_color_below_ring</th>
+<th data-quarto-table-cell-role="th">veil_type</th>
+<th data-quarto-table-cell-role="th">veil_color</th>
+<th data-quarto-table-cell-role="th">ring_number</th>
+<th data-quarto-table-cell-role="th">ring_type</th>
+<th data-quarto-table-cell-role="th">spore_print_color</th>
+<th data-quarto-table-cell-role="th">population</th>
+<th data-quarto-table-cell-role="th">habitat</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>p</td>
+<td>x</td>
+<td>s</td>
+<td>n</td>
+<td>t</td>
+<td>p</td>
+<td>f</td>
+<td>c</td>
+<td>n</td>
+<td>k</td>
+<td>...</td>
+<td>s</td>
+<td>w</td>
+<td>w</td>
+<td>p</td>
+<td>w</td>
+<td>o</td>
+<td>p</td>
+<td>k</td>
+<td>s</td>
+<td>u</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>e</td>
+<td>x</td>
+<td>s</td>
+<td>y</td>
+<td>t</td>
+<td>a</td>
+<td>f</td>
+<td>c</td>
+<td>b</td>
+<td>k</td>
+<td>...</td>
+<td>s</td>
+<td>w</td>
+<td>w</td>
+<td>p</td>
+<td>w</td>
+<td>o</td>
+<td>p</td>
+<td>n</td>
+<td>n</td>
+<td>g</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>e</td>
+<td>b</td>
+<td>s</td>
+<td>w</td>
+<td>t</td>
+<td>l</td>
+<td>f</td>
+<td>c</td>
+<td>b</td>
+<td>n</td>
+<td>...</td>
+<td>s</td>
+<td>w</td>
+<td>w</td>
+<td>p</td>
+<td>w</td>
+<td>o</td>
+<td>p</td>
+<td>n</td>
+<td>n</td>
+<td>m</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>p</td>
+<td>x</td>
+<td>y</td>
+<td>w</td>
+<td>t</td>
+<td>p</td>
+<td>f</td>
+<td>c</td>
+<td>n</td>
+<td>n</td>
+<td>...</td>
+<td>s</td>
+<td>w</td>
+<td>w</td>
+<td>p</td>
+<td>w</td>
+<td>o</td>
+<td>p</td>
+<td>k</td>
+<td>s</td>
+<td>u</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>e</td>
+<td>x</td>
+<td>s</td>
+<td>g</td>
+<td>f</td>
+<td>n</td>
+<td>f</td>
+<td>w</td>
+<td>b</td>
+<td>k</td>
+<td>...</td>
+<td>s</td>
+<td>w</td>
+<td>w</td>
+<td>p</td>
+<td>w</td>
+<td>o</td>
+<td>e</td>
+<td>n</td>
+<td>a</td>
+<td>g</td>
+</tr>
+</tbody>
+</table>
+
+<p>5 rows × 23 columns</p>
+</div>
+</div>
+</div>
+</figure>
+</div>
+</div>
+<p>A preview of the first five rows of the raw dataset is shown in <a href="#tbl-sample-data" class="quarto-xref">Table&nbsp;1</a>, which illustrates the categorical structure of all features prior to cleaning.</p>
 </section>
-<section id="data-cleaning-and-wrangling" class="level1" data-number="6">
-<h1 data-number="6"><span class="header-section-number">6</span> Data cleaning and wrangling</h1>
-<p>A preview of the first five rows of the raw dataset is shown in Table <strong>?@tbl-sample-data</strong>, which illustrates the categorical structure of all features prior to cleaning.</p>
-<section id="data-validation-checks-1" class="level2" data-number="6.1">
-<h2 data-number="6.1" class="anchored" data-anchor-id="data-validation-checks-1"><span class="header-section-number">6.1</span> Data Validation Checks</h2>
-<section id="interpretation-of-outlier-anomalous-value-checks" class="level3" data-number="6.1.1">
-<h3 data-number="6.1.1" class="anchored" data-anchor-id="interpretation-of-outlier-anomalous-value-checks"><span class="header-section-number">6.1.1</span> Interpretation of Outlier / Anomalous Value Checks</h3>
+<section id="data-validation-checks-1" class="level2" data-number="4.3">
+<h2 data-number="4.3" class="anchored" data-anchor-id="data-validation-checks-1"><span class="header-section-number">4.3</span> Data Validation Checks</h2>
+<div id="59deed0d" class="cell" data-execution_count="7">
+<div class="cell-output cell-output-stdout">
+<pre><code>[OK] Target distribution matches expected proportions (within tolerance).</code></pre>
+</div>
+</div>
+<div id="60a0dd82" class="cell" data-execution_count="9">
+<div class="cell-output cell-output-display" data-execution_count="109">
+<pre><code>class                       0
+cap_shape                   0
+cap_surface                 0
+cap_color                   0
+bruises                     0
+odor                        0
+gill_attachment             0
+gill_spacing                0
+gill_size                   0
+gill_color                  0
+stalk_shape                 0
+stalk_root                  0
+stalk_surface_above_ring    0
+stalk_surface_below_ring    0
+stalk_color_above_ring      0
+stalk_color_below_ring      0
+veil_type                   0
+veil_color                  0
+ring_number                 0
+ring_type                   0
+spore_print_color           0
+population                  0
+habitat                     0
+dtype: int64</code></pre>
+</div>
+</div>
+<div id="d2ee6bee" class="cell" data-execution_count="10">
+<div class="cell-output cell-output-display" data-execution_count="110">
+<pre><code>class                          0
+cap_shape                      0
+cap_surface                    0
+cap_color                      0
+bruises                        0
+odor                           0
+gill_attachment                0
+gill_spacing                   0
+gill_size                      0
+gill_color                     0
+stalk_shape                    0
+stalk_root                  2480
+stalk_surface_above_ring       0
+stalk_surface_below_ring       0
+stalk_color_above_ring         0
+stalk_color_below_ring         0
+veil_type                      0
+veil_color                     0
+ring_number                    0
+ring_type                      0
+spore_print_color              0
+population                     0
+habitat                        0
+dtype: int64</code></pre>
+</div>
+</div>
+<div id="45d55b7a" class="cell" data-execution_count="15">
+<div class="cell-output cell-output-display" data-execution_count="115">
+<pre><code>cap_shape                   0
+cap_surface                 0
+cap_color                   0
+bruises                     0
+odor                        0
+gill_attachment             0
+gill_spacing                0
+gill_size                   0
+gill_color                  0
+stalk_shape                 0
+stalk_surface_above_ring    0
+stalk_surface_below_ring    0
+stalk_color_above_ring      0
+stalk_color_below_ring      0
+veil_type                   0
+veil_color                  0
+ring_number                 0
+ring_type                   0
+spore_print_color           0
+population                  0
+habitat                     0
+is_poisonous                0
+dtype: int64</code></pre>
+</div>
+</div>
+<div id="a3f43322" class="cell" data-execution_count="16">
+<div class="cell-output cell-output-stdout">
+<pre><code>[OK] Cleaned column names validated.</code></pre>
+</div>
+</div>
+<div id="b59aab63" class="cell" data-execution_count="17">
+<div class="cell-output cell-output-stdout">
+<pre><code>[OK] Pandera schema validation passed:
+   - all feature columns are string-typed
+   - 'is_poisonous' contains only 0/1 as expected.</code></pre>
+</div>
+</div>
+<section id="interpretation-of-outlier-anomalous-value-checks" class="level3" data-number="4.3.1">
+<h3 data-number="4.3.1" class="anchored" data-anchor-id="interpretation-of-outlier-anomalous-value-checks"><span class="header-section-number">4.3.1</span> Interpretation of Outlier / Anomalous Value Checks</h3>
 <p>All features in this dataset are categorical, so traditional numeric outlier checks (e.g., detecting extreme continuous values) do not apply. Instead, the relevant “anomalous values” for categorical data are unexpected or invalid category levels.</p>
 <p>We addressed this by validating every categorical column against the official list of allowed levels from the UCI dataset documentation. Since all observed category values matched their expected sets, we conclude that no anomalous values are present in this dataset.</p>
 </section>
 </section>
 </section>
-<section id="eda-before-data-splitting" class="level1" data-number="7">
-<h1 data-number="7"><span class="header-section-number">7</span> EDA Before Data Splitting</h1>
+<section id="basic-eda" class="level1" data-number="5">
+<h1 data-number="5"><span class="header-section-number">5</span> Basic EDA</h1>
+<div class="cell" data-execution_count="19">
+<div id="tbl-sample-cleaned" class="cell quarto-float quarto-figure quarto-figure-left anchored" data-execution_count="19">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-sample-cleaned-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;2: First five rows of the cleaned dataset.
+</figcaption>
+<div aria-describedby="tbl-sample-cleaned-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output cell-output-display" data-execution_count="119">
+<div>
+
+
+<table class="dataframe do-not-create-environment cell caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">cap_shape</th>
+<th data-quarto-table-cell-role="th">cap_surface</th>
+<th data-quarto-table-cell-role="th">cap_color</th>
+<th data-quarto-table-cell-role="th">bruises</th>
+<th data-quarto-table-cell-role="th">odor</th>
+<th data-quarto-table-cell-role="th">gill_attachment</th>
+<th data-quarto-table-cell-role="th">gill_spacing</th>
+<th data-quarto-table-cell-role="th">gill_size</th>
+<th data-quarto-table-cell-role="th">gill_color</th>
+<th data-quarto-table-cell-role="th">stalk_shape</th>
+<th data-quarto-table-cell-role="th">...</th>
+<th data-quarto-table-cell-role="th">stalk_color_above_ring</th>
+<th data-quarto-table-cell-role="th">stalk_color_below_ring</th>
+<th data-quarto-table-cell-role="th">veil_type</th>
+<th data-quarto-table-cell-role="th">veil_color</th>
+<th data-quarto-table-cell-role="th">ring_number</th>
+<th data-quarto-table-cell-role="th">ring_type</th>
+<th data-quarto-table-cell-role="th">spore_print_color</th>
+<th data-quarto-table-cell-role="th">population</th>
+<th data-quarto-table-cell-role="th">habitat</th>
+<th data-quarto-table-cell-role="th">is_poisonous</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>x</td>
+<td>s</td>
+<td>n</td>
+<td>t</td>
+<td>p</td>
+<td>f</td>
+<td>c</td>
+<td>n</td>
+<td>k</td>
+<td>e</td>
+<td>...</td>
+<td>w</td>
+<td>w</td>
+<td>p</td>
+<td>w</td>
+<td>o</td>
+<td>p</td>
+<td>k</td>
+<td>s</td>
+<td>u</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>x</td>
+<td>s</td>
+<td>y</td>
+<td>t</td>
+<td>a</td>
+<td>f</td>
+<td>c</td>
+<td>b</td>
+<td>k</td>
+<td>e</td>
+<td>...</td>
+<td>w</td>
+<td>w</td>
+<td>p</td>
+<td>w</td>
+<td>o</td>
+<td>p</td>
+<td>n</td>
+<td>n</td>
+<td>g</td>
+<td>0</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>b</td>
+<td>s</td>
+<td>w</td>
+<td>t</td>
+<td>l</td>
+<td>f</td>
+<td>c</td>
+<td>b</td>
+<td>n</td>
+<td>e</td>
+<td>...</td>
+<td>w</td>
+<td>w</td>
+<td>p</td>
+<td>w</td>
+<td>o</td>
+<td>p</td>
+<td>n</td>
+<td>n</td>
+<td>m</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>x</td>
+<td>y</td>
+<td>w</td>
+<td>t</td>
+<td>p</td>
+<td>f</td>
+<td>c</td>
+<td>n</td>
+<td>n</td>
+<td>e</td>
+<td>...</td>
+<td>w</td>
+<td>w</td>
+<td>p</td>
+<td>w</td>
+<td>o</td>
+<td>p</td>
+<td>k</td>
+<td>s</td>
+<td>u</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>x</td>
+<td>s</td>
+<td>g</td>
+<td>f</td>
+<td>n</td>
+<td>f</td>
+<td>w</td>
+<td>b</td>
+<td>k</td>
+<td>t</td>
+<td>...</td>
+<td>w</td>
+<td>w</td>
+<td>p</td>
+<td>w</td>
+<td>o</td>
+<td>e</td>
+<td>n</td>
+<td>a</td>
+<td>g</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+
+<p>5 rows × 22 columns</p>
+</div>
+</div>
+</div>
+</figure>
+</div>
+</div>
 </section>
-<section id="data-splitting" class="level1" data-number="8">
-<h1 data-number="8"><span class="header-section-number">8</span> Data Splitting</h1>
+<section id="data-splitting" class="level1" data-number="6">
+<h1 data-number="6"><span class="header-section-number">6</span> Data Splitting</h1>
 <p>We are trying to classify whether a mushroom is edible (0) or poisonous (1). Going to do a 70/30 train/test split due to the large and roughly equal proportions of edible and poisonous mushrooms.</p>
 <p>A random state of <code>123</code> will ensure reproducibility when ran by subsequent users.</p>
 </section>
-<section id="eda-after-data-splitting" class="level1" data-number="9">
-<h1 data-number="9"><span class="header-section-number">9</span> EDA After Data Splitting</h1>
-<p>We summarize all 21 categorical predictors in Table <strong>?@tbl-feature-summary</strong>, which reports the number of levels and the dominant category for each feature. Given that veil_type only has one level, the values are the same for all observations so we drop that column.</p>
+<section id="eda-after-data-splitting" class="level1" data-number="7">
+<h1 data-number="7"><span class="header-section-number">7</span> EDA After Data Splitting</h1>
+<!-- ```{python}
+# Sanity check: class balance in the training data
+
+train_target_counts = train_df["is_poisonous"].value_counts()
+train_target_prop = train_df["is_poisonous"].value_counts(normalize=True)
+
+print("Training set class counts:")
+print(train_target_counts.rename(index={0: "edible (0)", 1: "poisonous (1)"}))
+
+print("\nTraining set class proportions:")
+print(train_target_prop.rename(index={0: "edible (0)", 1: "poisonous (1)"}).round(3))
+``` -->
+<!-- ```{python}
+# Data Validation: check training target distribution roughly matches UCI proportions
+
+expected_dist = {"e": 0.518, "p": 0.482}
+# but now we’re working with numeric target: 0 = edible, 1 = poisonous
+expected_poisonous = expected_dist["p"]  # 0.482
+
+train_poisonous = train_df["is_poisonous"].mean()
+tol = 0.02
+
+assert abs(train_poisonous - expected_poisonous) <= tol, (
+    f"Training set poisonous proportion ({train_poisonous:.3f}) "
+    f"differs from expected ({expected_poisonous:.3f}) by more than {tol:.2f}."
+)
+
+print(
+    f"[OK] Training set poisonous proportion ({train_poisonous:.3f}) "
+    f"is close to expected ({expected_poisonous:.3f})."
+)
+
+``` -->
+<div class="cell" data-execution_count="20">
+<div id="tbl-feature-summary" class="cell quarto-float quarto-figure quarto-figure-left anchored" data-execution_count="20">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-feature-summary-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;3: Summary of mushroom feature characteristics
+</figcaption>
+<div aria-describedby="tbl-feature-summary-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output cell-output-display cell-output-markdown" data-execution_count="120">
+<table class="do-not-create-environment cell caption-top table table-sm table-striped small">
+<colgroup>
+<col style="width: 13%">
+<col style="width: 24%">
+<col style="width: 15%">
+<col style="width: 24%">
+<col style="width: 21%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: right;">Unnamed: 0</th>
+<th style="text-align: left;">feature</th>
+<th style="text-align: right;">n_categories</th>
+<th style="text-align: left;">most_frequent_category</th>
+<th style="text-align: right;">most_frequent_count</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">gill_color</td>
+<td style="text-align: right;">12</td>
+<td style="text-align: left;">b</td>
+<td style="text-align: right;">1202</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">2</td>
+<td style="text-align: left;">cap_color</td>
+<td style="text-align: right;">10</td>
+<td style="text-align: left;">n</td>
+<td style="text-align: right;">1567</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">3</td>
+<td style="text-align: left;">odor</td>
+<td style="text-align: right;">9</td>
+<td style="text-align: left;">n</td>
+<td style="text-align: right;">2439</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">4</td>
+<td style="text-align: left;">stalk_color_below_ring</td>
+<td style="text-align: right;">9</td>
+<td style="text-align: left;">w</td>
+<td style="text-align: right;">3071</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">5</td>
+<td style="text-align: left;">spore_print_color</td>
+<td style="text-align: right;">9</td>
+<td style="text-align: left;">w</td>
+<td style="text-align: right;">1655</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">6</td>
+<td style="text-align: left;">stalk_color_above_ring</td>
+<td style="text-align: right;">9</td>
+<td style="text-align: left;">w</td>
+<td style="text-align: right;">3131</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">7</td>
+<td style="text-align: left;">habitat</td>
+<td style="text-align: right;">7</td>
+<td style="text-align: left;">d</td>
+<td style="text-align: right;">2195</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">8</td>
+<td style="text-align: left;">cap_shape</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: left;">x</td>
+<td style="text-align: right;">2534</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">9</td>
+<td style="text-align: left;">population</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: left;">v</td>
+<td style="text-align: right;">2813</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">10</td>
+<td style="text-align: left;">ring_type</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: left;">p</td>
+<td style="text-align: right;">2778</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">11</td>
+<td style="text-align: left;">stalk_surface_below_ring</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: left;">s</td>
+<td style="text-align: right;">3434</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">12</td>
+<td style="text-align: left;">cap_surface</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: left;">y</td>
+<td style="text-align: right;">2291</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">13</td>
+<td style="text-align: left;">veil_color</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: left;">w</td>
+<td style="text-align: right;">5542</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">14</td>
+<td style="text-align: left;">stalk_surface_above_ring</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: left;">s</td>
+<td style="text-align: right;">3630</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">15</td>
+<td style="text-align: left;">ring_number</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: left;">o</td>
+<td style="text-align: right;">5246</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">16</td>
+<td style="text-align: left;">bruises</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: left;">f</td>
+<td style="text-align: right;">3330</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">17</td>
+<td style="text-align: left;">stalk_shape</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: left;">t</td>
+<td style="text-align: right;">3211</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">18</td>
+<td style="text-align: left;">gill_attachment</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: left;">f</td>
+<td style="text-align: right;">5534</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">19</td>
+<td style="text-align: left;">gill_spacing</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: left;">c</td>
+<td style="text-align: right;">4766</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">20</td>
+<td style="text-align: left;">gill_size</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: left;">b</td>
+<td style="text-align: right;">3939</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</figure>
+</div>
+</div>
+<p>We summarize all 21 categorical predictors in <a href="#tbl-feature-summary" class="quarto-xref">Table&nbsp;3</a>, which reports the number of levels and the dominant category for each feature. Given that <code>veil_type</code> only has one level, the values are the same for all observations so we drop that column.</p>
+<!-- ```{python}
+    X_train.to_csv('data/processed/x_train.csv')
+    X_test.to_csv('data/processed/x_test.csv')
+    y_train.to_csv('data/processed/y_train.csv')
+    y_test.to_csv('data/processed/y_test.csv')
+``` -->
 <p><code>veil_type</code> was dropped because it contains only a single category for all observations. A feature with no variation cannot help the model distinguish edible from poisonous mushrooms, provides no predictive signal, and only adds redundant columns after one-hot encoding. Therefore, it is removed to simplify the feature set and prevent unnecessary model complexity.</p>
-<div id="fig-odor-cat" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-fig-width="6" data-execution_count="33" data-fig-height="4">
+<div id="fig-odor-cat" class="quarto-float quarto-figure quarto-figure-left anchored" width="80%">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-odor-cat-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div class="cell-output cell-output-error">
-<div class="ansi-escaped-output">
-<pre><span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
-<span class="ansi-cyan-fg">Cell</span><span class="ansi-cyan-fg"> </span><span class="ansi-green-fg">In[33]</span><span class="ansi-green-fg">, line 2</span>
-<span class="ansi-green-fg">      1</span> <span style="font-style:italic;color:rgb(95,135,135)"># Visualize the edible vs poisonous class proportions for each odor category</span>
-<span class="ansi-green-fg">----&gt; </span><span class="ansi-green-fg">2</span> <span class="ansi-yellow-bg">stacked_poison_chart</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-fg ansi-yellow-bg">"</span><span class="ansi-yellow-fg ansi-yellow-bg">odor</span><span class="ansi-yellow-fg ansi-yellow-bg">"</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-fg ansi-yellow-bg">"</span><span class="ansi-yellow-fg ansi-yellow-bg">Odor Category</span><span class="ansi-yellow-fg ansi-yellow-bg">"</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">odor_map</span><span class="ansi-yellow-bg">)</span>
-
-<span class="ansi-cyan-fg">Cell</span><span class="ansi-cyan-fg"> </span><span class="ansi-green-fg">In[32]</span><span class="ansi-green-fg">, line 31</span>, in <span class="ansi-cyan-fg">stacked_poison_chart</span><span class="ansi-blue-fg">(feature, feature_label, category_labels)</span>
-<span class="ansi-green-fg">     28</span>     feature_label = feature.replace(<span class="ansi-yellow-fg">"</span><span class="ansi-yellow-fg">_</span><span class="ansi-yellow-fg">"</span>, <span class="ansi-yellow-fg">"</span><span class="ansi-yellow-fg"> </span><span class="ansi-yellow-fg">"</span>).title()
-<span class="ansi-green-fg">     30</span> <span style="font-style:italic;color:rgb(95,135,135)"># Table of edible / poisonous fractions by category</span>
-<span class="ansi-green-fg">---&gt; </span><span class="ansi-green-fg">31</span> ct = <span class="ansi-yellow-bg">get_poison_rate_by</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">feature</span><span class="ansi-yellow-bg">)</span>.reset_index()
-<span class="ansi-green-fg">     33</span> <span style="font-style:italic;color:rgb(95,135,135)"># If a category label map is provided, add a display column</span>
-<span class="ansi-green-fg">     34</span> <span style="font-weight:bold;color:rgb(0,135,0)">if</span> category_labels <span style="font-weight:bold;color:rgb(175,0,255)">is</span> <span style="font-weight:bold;color:rgb(175,0,255)">not</span> <span style="font-weight:bold;color:rgb(0,135,0)">None</span>:
-
-<span class="ansi-cyan-fg">Cell</span><span class="ansi-cyan-fg"> </span><span class="ansi-green-fg">In[30]</span><span class="ansi-green-fg">, line 19</span>, in <span class="ansi-cyan-fg">get_poison_rate_by</span><span class="ansi-blue-fg">(feature)</span>
-<span class="ansi-green-fg">      1</span> <span style="font-weight:bold;color:rgb(0,135,0)">def</span><span style="color:rgb(188,188,188)"> </span><span class="ansi-blue-fg">get_poison_rate_by</span>(feature: <span style="color:rgb(0,135,0)">str</span>) -&gt; pd.DataFrame:
-<span class="ansi-green-fg">      2</span> <span style="color:rgb(188,188,188)">  </span><span style="font-style:italic" class="ansi-yellow-fg">"""</span>
-<span class="ansi-green-fg">      3</span> <span style="font-style:italic" class="ansi-yellow-fg">  Compute the proportion of poisonous and edible mushrooms for each category</span>
-<span class="ansi-green-fg">      4</span> <span style="font-style:italic" class="ansi-yellow-fg">  of a given feature.</span>
-<span class="ansi-green-fg">   (...)</span><span class="ansi-green-fg">     17</span> <span style="font-style:italic" class="ansi-yellow-fg">      `poisonous_frac`.</span>
-<span class="ansi-green-fg">     18</span> <span style="font-style:italic" class="ansi-yellow-fg">  """</span>
-<span class="ansi-green-fg">---&gt; </span><span class="ansi-green-fg">19</span>   category_poisonous = pd.crosstab(<span class="ansi-yellow-bg">train_df</span>[feature], train_df[<span class="ansi-yellow-fg">'</span><span class="ansi-yellow-fg">is_poisonous</span><span class="ansi-yellow-fg">'</span>], normalize=<span class="ansi-yellow-fg">'</span><span class="ansi-yellow-fg">index</span><span class="ansi-yellow-fg">'</span>)
-<span class="ansi-green-fg">     21</span>   <span style="font-style:italic;color:rgb(95,135,135)"># By construction, column 0 = edible, 1 = poisonous</span>
-<span class="ansi-green-fg">     22</span>   category_poisonous.columns = [<span class="ansi-yellow-fg">'</span><span class="ansi-yellow-fg">edible_frac</span><span class="ansi-yellow-fg">'</span>, <span class="ansi-yellow-fg">'</span><span class="ansi-yellow-fg">poisonous_frac</span><span class="ansi-yellow-fg">'</span>]
-
-<span class="ansi-red-fg">NameError</span>: name 'train_df' is not defined</pre>
+<img src="../results/figures/stacked_odor.png" class="img-fluid figure-img">
 </div>
-</div>
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig quarto-uncaptioned" id="fig-odor-cat-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;1
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-odor-cat-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: Class Proportions (edible vs poisonous) by Odor
 </figcaption>
 </figure>
 </div>
-<div id="fig-gill-size" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-fig-width="6" data-execution_count="34" data-fig-height="4">
+<div id="fig-gill-size" class="quarto-float quarto-figure quarto-figure-left anchored" width="80%">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-gill-size-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div class="cell-output cell-output-error">
-<div class="ansi-escaped-output">
-<pre><span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
-<span class="ansi-cyan-fg">Cell</span><span class="ansi-cyan-fg"> </span><span class="ansi-green-fg">In[34]</span><span class="ansi-green-fg">, line 2</span>
-<span class="ansi-green-fg">      1</span> <span style="font-style:italic;color:rgb(95,135,135)"># Visualize the edible vs poisonous class proportions for each gill size</span>
-<span class="ansi-green-fg">----&gt; </span><span class="ansi-green-fg">2</span> <span class="ansi-yellow-bg">stacked_poison_chart</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-fg ansi-yellow-bg">"</span><span class="ansi-yellow-fg ansi-yellow-bg">gill_size</span><span class="ansi-yellow-fg ansi-yellow-bg">"</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-fg ansi-yellow-bg">"</span><span class="ansi-yellow-fg ansi-yellow-bg">Gill Size</span><span class="ansi-yellow-fg ansi-yellow-bg">"</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">gill_size_map</span><span class="ansi-yellow-bg">)</span>
-
-<span class="ansi-cyan-fg">Cell</span><span class="ansi-cyan-fg"> </span><span class="ansi-green-fg">In[32]</span><span class="ansi-green-fg">, line 31</span>, in <span class="ansi-cyan-fg">stacked_poison_chart</span><span class="ansi-blue-fg">(feature, feature_label, category_labels)</span>
-<span class="ansi-green-fg">     28</span>     feature_label = feature.replace(<span class="ansi-yellow-fg">"</span><span class="ansi-yellow-fg">_</span><span class="ansi-yellow-fg">"</span>, <span class="ansi-yellow-fg">"</span><span class="ansi-yellow-fg"> </span><span class="ansi-yellow-fg">"</span>).title()
-<span class="ansi-green-fg">     30</span> <span style="font-style:italic;color:rgb(95,135,135)"># Table of edible / poisonous fractions by category</span>
-<span class="ansi-green-fg">---&gt; </span><span class="ansi-green-fg">31</span> ct = <span class="ansi-yellow-bg">get_poison_rate_by</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">feature</span><span class="ansi-yellow-bg">)</span>.reset_index()
-<span class="ansi-green-fg">     33</span> <span style="font-style:italic;color:rgb(95,135,135)"># If a category label map is provided, add a display column</span>
-<span class="ansi-green-fg">     34</span> <span style="font-weight:bold;color:rgb(0,135,0)">if</span> category_labels <span style="font-weight:bold;color:rgb(175,0,255)">is</span> <span style="font-weight:bold;color:rgb(175,0,255)">not</span> <span style="font-weight:bold;color:rgb(0,135,0)">None</span>:
-
-<span class="ansi-cyan-fg">Cell</span><span class="ansi-cyan-fg"> </span><span class="ansi-green-fg">In[30]</span><span class="ansi-green-fg">, line 19</span>, in <span class="ansi-cyan-fg">get_poison_rate_by</span><span class="ansi-blue-fg">(feature)</span>
-<span class="ansi-green-fg">      1</span> <span style="font-weight:bold;color:rgb(0,135,0)">def</span><span style="color:rgb(188,188,188)"> </span><span class="ansi-blue-fg">get_poison_rate_by</span>(feature: <span style="color:rgb(0,135,0)">str</span>) -&gt; pd.DataFrame:
-<span class="ansi-green-fg">      2</span> <span style="color:rgb(188,188,188)">  </span><span style="font-style:italic" class="ansi-yellow-fg">"""</span>
-<span class="ansi-green-fg">      3</span> <span style="font-style:italic" class="ansi-yellow-fg">  Compute the proportion of poisonous and edible mushrooms for each category</span>
-<span class="ansi-green-fg">      4</span> <span style="font-style:italic" class="ansi-yellow-fg">  of a given feature.</span>
-<span class="ansi-green-fg">   (...)</span><span class="ansi-green-fg">     17</span> <span style="font-style:italic" class="ansi-yellow-fg">      `poisonous_frac`.</span>
-<span class="ansi-green-fg">     18</span> <span style="font-style:italic" class="ansi-yellow-fg">  """</span>
-<span class="ansi-green-fg">---&gt; </span><span class="ansi-green-fg">19</span>   category_poisonous = pd.crosstab(<span class="ansi-yellow-bg">train_df</span>[feature], train_df[<span class="ansi-yellow-fg">'</span><span class="ansi-yellow-fg">is_poisonous</span><span class="ansi-yellow-fg">'</span>], normalize=<span class="ansi-yellow-fg">'</span><span class="ansi-yellow-fg">index</span><span class="ansi-yellow-fg">'</span>)
-<span class="ansi-green-fg">     21</span>   <span style="font-style:italic;color:rgb(95,135,135)"># By construction, column 0 = edible, 1 = poisonous</span>
-<span class="ansi-green-fg">     22</span>   category_poisonous.columns = [<span class="ansi-yellow-fg">'</span><span class="ansi-yellow-fg">edible_frac</span><span class="ansi-yellow-fg">'</span>, <span class="ansi-yellow-fg">'</span><span class="ansi-yellow-fg">poisonous_frac</span><span class="ansi-yellow-fg">'</span>]
-
-<span class="ansi-red-fg">NameError</span>: name 'train_df' is not defined</pre>
+<img src="../results/figures/stacked_gill_size.png" class="img-fluid figure-img">
 </div>
-</div>
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig quarto-uncaptioned" id="fig-gill-size-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;2
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-gill-size-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2: Class Proportions (edible vs poisonous) by Gill Size
 </figcaption>
 </figure>
 </div>
-<div id="fig-habitat" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-fig-width="6" data-execution_count="35" data-fig-height="4">
+<div id="fig-habitat" class="quarto-float quarto-figure quarto-figure-left anchored" width="80%">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-habitat-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div class="cell-output cell-output-error">
-<div class="ansi-escaped-output">
-<pre><span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
-<span class="ansi-cyan-fg">Cell</span><span class="ansi-cyan-fg"> </span><span class="ansi-green-fg">In[35]</span><span class="ansi-green-fg">, line 2</span>
-<span class="ansi-green-fg">      1</span> <span style="font-style:italic;color:rgb(95,135,135)"># Visualize the edible vs poisonous class proportions for each habitat </span>
-<span class="ansi-green-fg">----&gt; </span><span class="ansi-green-fg">2</span> <span class="ansi-yellow-bg">stacked_poison_chart</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-fg ansi-yellow-bg">"</span><span class="ansi-yellow-fg ansi-yellow-bg">habitat</span><span class="ansi-yellow-fg ansi-yellow-bg">"</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-fg ansi-yellow-bg">"</span><span class="ansi-yellow-fg ansi-yellow-bg">Habitat</span><span class="ansi-yellow-fg ansi-yellow-bg">"</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">habitat_map</span><span class="ansi-yellow-bg">)</span>
-
-<span class="ansi-cyan-fg">Cell</span><span class="ansi-cyan-fg"> </span><span class="ansi-green-fg">In[32]</span><span class="ansi-green-fg">, line 31</span>, in <span class="ansi-cyan-fg">stacked_poison_chart</span><span class="ansi-blue-fg">(feature, feature_label, category_labels)</span>
-<span class="ansi-green-fg">     28</span>     feature_label = feature.replace(<span class="ansi-yellow-fg">"</span><span class="ansi-yellow-fg">_</span><span class="ansi-yellow-fg">"</span>, <span class="ansi-yellow-fg">"</span><span class="ansi-yellow-fg"> </span><span class="ansi-yellow-fg">"</span>).title()
-<span class="ansi-green-fg">     30</span> <span style="font-style:italic;color:rgb(95,135,135)"># Table of edible / poisonous fractions by category</span>
-<span class="ansi-green-fg">---&gt; </span><span class="ansi-green-fg">31</span> ct = <span class="ansi-yellow-bg">get_poison_rate_by</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">feature</span><span class="ansi-yellow-bg">)</span>.reset_index()
-<span class="ansi-green-fg">     33</span> <span style="font-style:italic;color:rgb(95,135,135)"># If a category label map is provided, add a display column</span>
-<span class="ansi-green-fg">     34</span> <span style="font-weight:bold;color:rgb(0,135,0)">if</span> category_labels <span style="font-weight:bold;color:rgb(175,0,255)">is</span> <span style="font-weight:bold;color:rgb(175,0,255)">not</span> <span style="font-weight:bold;color:rgb(0,135,0)">None</span>:
-
-<span class="ansi-cyan-fg">Cell</span><span class="ansi-cyan-fg"> </span><span class="ansi-green-fg">In[30]</span><span class="ansi-green-fg">, line 19</span>, in <span class="ansi-cyan-fg">get_poison_rate_by</span><span class="ansi-blue-fg">(feature)</span>
-<span class="ansi-green-fg">      1</span> <span style="font-weight:bold;color:rgb(0,135,0)">def</span><span style="color:rgb(188,188,188)"> </span><span class="ansi-blue-fg">get_poison_rate_by</span>(feature: <span style="color:rgb(0,135,0)">str</span>) -&gt; pd.DataFrame:
-<span class="ansi-green-fg">      2</span> <span style="color:rgb(188,188,188)">  </span><span style="font-style:italic" class="ansi-yellow-fg">"""</span>
-<span class="ansi-green-fg">      3</span> <span style="font-style:italic" class="ansi-yellow-fg">  Compute the proportion of poisonous and edible mushrooms for each category</span>
-<span class="ansi-green-fg">      4</span> <span style="font-style:italic" class="ansi-yellow-fg">  of a given feature.</span>
-<span class="ansi-green-fg">   (...)</span><span class="ansi-green-fg">     17</span> <span style="font-style:italic" class="ansi-yellow-fg">      `poisonous_frac`.</span>
-<span class="ansi-green-fg">     18</span> <span style="font-style:italic" class="ansi-yellow-fg">  """</span>
-<span class="ansi-green-fg">---&gt; </span><span class="ansi-green-fg">19</span>   category_poisonous = pd.crosstab(<span class="ansi-yellow-bg">train_df</span>[feature], train_df[<span class="ansi-yellow-fg">'</span><span class="ansi-yellow-fg">is_poisonous</span><span class="ansi-yellow-fg">'</span>], normalize=<span class="ansi-yellow-fg">'</span><span class="ansi-yellow-fg">index</span><span class="ansi-yellow-fg">'</span>)
-<span class="ansi-green-fg">     21</span>   <span style="font-style:italic;color:rgb(95,135,135)"># By construction, column 0 = edible, 1 = poisonous</span>
-<span class="ansi-green-fg">     22</span>   category_poisonous.columns = [<span class="ansi-yellow-fg">'</span><span class="ansi-yellow-fg">edible_frac</span><span class="ansi-yellow-fg">'</span>, <span class="ansi-yellow-fg">'</span><span class="ansi-yellow-fg">poisonous_frac</span><span class="ansi-yellow-fg">'</span>]
-
-<span class="ansi-red-fg">NameError</span>: name 'train_df' is not defined</pre>
+<img src="../results/figures/stacked_habitat.png" class="img-fluid figure-img">
 </div>
-</div>
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig quarto-uncaptioned" id="fig-habitat-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;3
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-habitat-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3: Class Proportions (edible vs poisonous) by Habitat
 </figcaption>
 </figure>
 </div>
-<div id="fig-bruise" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-fig-width="6" data-execution_count="36" data-fig-height="4">
+<div id="fig-bruise" class="quarto-float quarto-figure quarto-figure-left anchored" width="80%">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-bruise-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div class="cell-output cell-output-error">
-<div class="ansi-escaped-output">
-<pre><span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
-<span class="ansi-cyan-fg">Cell</span><span class="ansi-cyan-fg"> </span><span class="ansi-green-fg">In[36]</span><span class="ansi-green-fg">, line 2</span>
-<span class="ansi-green-fg">      1</span> <span style="font-style:italic;color:rgb(95,135,135)"># Visualize the edible vs poisonous class proportions for each bruise category </span>
-<span class="ansi-green-fg">----&gt; </span><span class="ansi-green-fg">2</span> <span class="ansi-yellow-bg">stacked_poison_chart</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-fg ansi-yellow-bg">"</span><span class="ansi-yellow-fg ansi-yellow-bg">bruises</span><span class="ansi-yellow-fg ansi-yellow-bg">"</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-fg ansi-yellow-bg">"</span><span class="ansi-yellow-fg ansi-yellow-bg">Bruises</span><span class="ansi-yellow-fg ansi-yellow-bg">"</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">bruises_map</span><span class="ansi-yellow-bg">)</span>
-
-<span class="ansi-cyan-fg">Cell</span><span class="ansi-cyan-fg"> </span><span class="ansi-green-fg">In[32]</span><span class="ansi-green-fg">, line 31</span>, in <span class="ansi-cyan-fg">stacked_poison_chart</span><span class="ansi-blue-fg">(feature, feature_label, category_labels)</span>
-<span class="ansi-green-fg">     28</span>     feature_label = feature.replace(<span class="ansi-yellow-fg">"</span><span class="ansi-yellow-fg">_</span><span class="ansi-yellow-fg">"</span>, <span class="ansi-yellow-fg">"</span><span class="ansi-yellow-fg"> </span><span class="ansi-yellow-fg">"</span>).title()
-<span class="ansi-green-fg">     30</span> <span style="font-style:italic;color:rgb(95,135,135)"># Table of edible / poisonous fractions by category</span>
-<span class="ansi-green-fg">---&gt; </span><span class="ansi-green-fg">31</span> ct = <span class="ansi-yellow-bg">get_poison_rate_by</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">feature</span><span class="ansi-yellow-bg">)</span>.reset_index()
-<span class="ansi-green-fg">     33</span> <span style="font-style:italic;color:rgb(95,135,135)"># If a category label map is provided, add a display column</span>
-<span class="ansi-green-fg">     34</span> <span style="font-weight:bold;color:rgb(0,135,0)">if</span> category_labels <span style="font-weight:bold;color:rgb(175,0,255)">is</span> <span style="font-weight:bold;color:rgb(175,0,255)">not</span> <span style="font-weight:bold;color:rgb(0,135,0)">None</span>:
-
-<span class="ansi-cyan-fg">Cell</span><span class="ansi-cyan-fg"> </span><span class="ansi-green-fg">In[30]</span><span class="ansi-green-fg">, line 19</span>, in <span class="ansi-cyan-fg">get_poison_rate_by</span><span class="ansi-blue-fg">(feature)</span>
-<span class="ansi-green-fg">      1</span> <span style="font-weight:bold;color:rgb(0,135,0)">def</span><span style="color:rgb(188,188,188)"> </span><span class="ansi-blue-fg">get_poison_rate_by</span>(feature: <span style="color:rgb(0,135,0)">str</span>) -&gt; pd.DataFrame:
-<span class="ansi-green-fg">      2</span> <span style="color:rgb(188,188,188)">  </span><span style="font-style:italic" class="ansi-yellow-fg">"""</span>
-<span class="ansi-green-fg">      3</span> <span style="font-style:italic" class="ansi-yellow-fg">  Compute the proportion of poisonous and edible mushrooms for each category</span>
-<span class="ansi-green-fg">      4</span> <span style="font-style:italic" class="ansi-yellow-fg">  of a given feature.</span>
-<span class="ansi-green-fg">   (...)</span><span class="ansi-green-fg">     17</span> <span style="font-style:italic" class="ansi-yellow-fg">      `poisonous_frac`.</span>
-<span class="ansi-green-fg">     18</span> <span style="font-style:italic" class="ansi-yellow-fg">  """</span>
-<span class="ansi-green-fg">---&gt; </span><span class="ansi-green-fg">19</span>   category_poisonous = pd.crosstab(<span class="ansi-yellow-bg">train_df</span>[feature], train_df[<span class="ansi-yellow-fg">'</span><span class="ansi-yellow-fg">is_poisonous</span><span class="ansi-yellow-fg">'</span>], normalize=<span class="ansi-yellow-fg">'</span><span class="ansi-yellow-fg">index</span><span class="ansi-yellow-fg">'</span>)
-<span class="ansi-green-fg">     21</span>   <span style="font-style:italic;color:rgb(95,135,135)"># By construction, column 0 = edible, 1 = poisonous</span>
-<span class="ansi-green-fg">     22</span>   category_poisonous.columns = [<span class="ansi-yellow-fg">'</span><span class="ansi-yellow-fg">edible_frac</span><span class="ansi-yellow-fg">'</span>, <span class="ansi-yellow-fg">'</span><span class="ansi-yellow-fg">poisonous_frac</span><span class="ansi-yellow-fg">'</span>]
-
-<span class="ansi-red-fg">NameError</span>: name 'train_df' is not defined</pre>
+<img src="../results/figures/stacked_bruises.png" class="img-fluid figure-img">
 </div>
-</div>
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig quarto-uncaptioned" id="fig-bruise-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;4
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-bruise-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4: Class Proportions (edible vs poisonous) by Bruises
 </figcaption>
 </figure>
 </div>
-<div id="fig-pop-type" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-fig-width="6" data-execution_count="37" data-fig-height="4">
+<div id="fig-pop-type" class="quarto-float quarto-figure quarto-figure-left anchored" width="80%">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-pop-type-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div class="cell-output cell-output-error">
-<div class="ansi-escaped-output">
-<pre><span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
-<span class="ansi-cyan-fg">Cell</span><span class="ansi-cyan-fg"> </span><span class="ansi-green-fg">In[37]</span><span class="ansi-green-fg">, line 2</span>
-<span class="ansi-green-fg">      1</span> <span style="font-style:italic;color:rgb(95,135,135)"># Visualize the edible vs poisonous class proportions for each population type </span>
-<span class="ansi-green-fg">----&gt; </span><span class="ansi-green-fg">2</span> <span class="ansi-yellow-bg">stacked_poison_chart</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-fg ansi-yellow-bg">"</span><span class="ansi-yellow-fg ansi-yellow-bg">population</span><span class="ansi-yellow-fg ansi-yellow-bg">"</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-fg ansi-yellow-bg">"</span><span class="ansi-yellow-fg ansi-yellow-bg">Population</span><span class="ansi-yellow-fg ansi-yellow-bg">"</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">population_map</span><span class="ansi-yellow-bg">)</span>
-
-<span class="ansi-cyan-fg">Cell</span><span class="ansi-cyan-fg"> </span><span class="ansi-green-fg">In[32]</span><span class="ansi-green-fg">, line 31</span>, in <span class="ansi-cyan-fg">stacked_poison_chart</span><span class="ansi-blue-fg">(feature, feature_label, category_labels)</span>
-<span class="ansi-green-fg">     28</span>     feature_label = feature.replace(<span class="ansi-yellow-fg">"</span><span class="ansi-yellow-fg">_</span><span class="ansi-yellow-fg">"</span>, <span class="ansi-yellow-fg">"</span><span class="ansi-yellow-fg"> </span><span class="ansi-yellow-fg">"</span>).title()
-<span class="ansi-green-fg">     30</span> <span style="font-style:italic;color:rgb(95,135,135)"># Table of edible / poisonous fractions by category</span>
-<span class="ansi-green-fg">---&gt; </span><span class="ansi-green-fg">31</span> ct = <span class="ansi-yellow-bg">get_poison_rate_by</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">feature</span><span class="ansi-yellow-bg">)</span>.reset_index()
-<span class="ansi-green-fg">     33</span> <span style="font-style:italic;color:rgb(95,135,135)"># If a category label map is provided, add a display column</span>
-<span class="ansi-green-fg">     34</span> <span style="font-weight:bold;color:rgb(0,135,0)">if</span> category_labels <span style="font-weight:bold;color:rgb(175,0,255)">is</span> <span style="font-weight:bold;color:rgb(175,0,255)">not</span> <span style="font-weight:bold;color:rgb(0,135,0)">None</span>:
-
-<span class="ansi-cyan-fg">Cell</span><span class="ansi-cyan-fg"> </span><span class="ansi-green-fg">In[30]</span><span class="ansi-green-fg">, line 19</span>, in <span class="ansi-cyan-fg">get_poison_rate_by</span><span class="ansi-blue-fg">(feature)</span>
-<span class="ansi-green-fg">      1</span> <span style="font-weight:bold;color:rgb(0,135,0)">def</span><span style="color:rgb(188,188,188)"> </span><span class="ansi-blue-fg">get_poison_rate_by</span>(feature: <span style="color:rgb(0,135,0)">str</span>) -&gt; pd.DataFrame:
-<span class="ansi-green-fg">      2</span> <span style="color:rgb(188,188,188)">  </span><span style="font-style:italic" class="ansi-yellow-fg">"""</span>
-<span class="ansi-green-fg">      3</span> <span style="font-style:italic" class="ansi-yellow-fg">  Compute the proportion of poisonous and edible mushrooms for each category</span>
-<span class="ansi-green-fg">      4</span> <span style="font-style:italic" class="ansi-yellow-fg">  of a given feature.</span>
-<span class="ansi-green-fg">   (...)</span><span class="ansi-green-fg">     17</span> <span style="font-style:italic" class="ansi-yellow-fg">      `poisonous_frac`.</span>
-<span class="ansi-green-fg">     18</span> <span style="font-style:italic" class="ansi-yellow-fg">  """</span>
-<span class="ansi-green-fg">---&gt; </span><span class="ansi-green-fg">19</span>   category_poisonous = pd.crosstab(<span class="ansi-yellow-bg">train_df</span>[feature], train_df[<span class="ansi-yellow-fg">'</span><span class="ansi-yellow-fg">is_poisonous</span><span class="ansi-yellow-fg">'</span>], normalize=<span class="ansi-yellow-fg">'</span><span class="ansi-yellow-fg">index</span><span class="ansi-yellow-fg">'</span>)
-<span class="ansi-green-fg">     21</span>   <span style="font-style:italic;color:rgb(95,135,135)"># By construction, column 0 = edible, 1 = poisonous</span>
-<span class="ansi-green-fg">     22</span>   category_poisonous.columns = [<span class="ansi-yellow-fg">'</span><span class="ansi-yellow-fg">edible_frac</span><span class="ansi-yellow-fg">'</span>, <span class="ansi-yellow-fg">'</span><span class="ansi-yellow-fg">poisonous_frac</span><span class="ansi-yellow-fg">'</span>]
-
-<span class="ansi-red-fg">NameError</span>: name 'train_df' is not defined</pre>
+<img src="../results/figures/stacked_population.png" class="img-fluid figure-img">
 </div>
-</div>
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig quarto-uncaptioned" id="fig-pop-type-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;5
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-pop-type-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;5: Class Proportions (edible vs poisonous) by Population Type
 </figcaption>
 </figure>
 </div>
-<section id="relationship-between-physical-features-and-toxicity-an-exploratory-overview" class="level4" data-number="9.0.0.1">
-<h4 data-number="9.0.0.1" class="anchored" data-anchor-id="relationship-between-physical-features-and-toxicity-an-exploratory-overview"><span class="header-section-number">9.0.0.1</span> Relationship Between Physical Features and Toxicity: An Exploratory Overview</h4>
-<p>To explore how individual mushroom characteristics relate to toxicity, we compared the proportion of poisonous and edible mushrooms across several categorical features. Odor showed the strongest separation between classes (<a href="#fig-odor-cat" class="quarto-xref">Figure&nbsp;1</a>), with foul-, creosote-, and pungent-smelling mushrooms being almost exclusively poisonous, whereas almond and anise odors were strongly associated with edibility. Gill size also demonstrated a meaningful distinction (<a href="#fig-gill-size" class="quarto-xref">Figure&nbsp;2</a>), with broad gills far more common among edible mushrooms. Habitat exhibited notable patterns as well (<a href="#fig-habitat" class="quarto-xref">Figure&nbsp;3</a>): mushrooms found in wooded or grassy environments were more frequently poisonous, while those growing in urban or path environments tended to be edible. Bruising was another strong indicator (<a href="#fig-bruise" class="quarto-xref">Figure&nbsp;4</a>), as mushrooms that bruised were overwhelmingly edible, whereas those that did not bruise were frequently poisonous. Lastly, population type revealed clear group-level differences (<a href="#fig-pop-type" class="quarto-xref">Figure&nbsp;5</a>), with solitary or scattered mushrooms more often poisonous, while abundant or clustered populations were more commonly edible. Together, these figures illustrate that several features, odor in particular, provide strong discriminatory signals relevant to the classification task.</p>
-<div id="tbl-poison-rank" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-execution_count="38">
+<section id="relationship-between-physical-features-and-toxicity-an-exploratory-overview" class="level3" data-number="7.0.1">
+<h3 data-number="7.0.1" class="anchored" data-anchor-id="relationship-between-physical-features-and-toxicity-an-exploratory-overview"><span class="header-section-number">7.0.1</span> Relationship Between Physical Features and Toxicity: An Exploratory Overview</h3>
+<p>To explore how individual mushroom characteristics relate to toxicity, we compared the proportion of poisonous and edible mushrooms across several categorical features. odor showed the strongest separation between classes (<a href="#fig-odor-cat" class="quarto-xref">Figure&nbsp;1</a>), with foul-, creosote-, and pungent-smelling mushrooms being almost exclusively poisonous, whereas almond and anise odors were strongly associated with edibility. Gill size also demonstrated a meaningful distinction (<a href="#fig-gill-size" class="quarto-xref">Figure&nbsp;2</a>), with broad gills far more common among edible mushrooms. Habitat exhibited notable patterns as well (<a href="#fig-habitat" class="quarto-xref">Figure&nbsp;3</a>): mushrooms found in wooded or grassy environments were more frequently poisonous, while those growing in urban or path environments tended to be edible. Bruising was another strong indicator (<a href="#fig-bruise" class="quarto-xref">Figure&nbsp;4</a>), as mushrooms that bruised were overwhelmingly edible, whereas those that did not bruise were frequently poisonous. Lastly, population type revealed clear group-level differences (<a href="#fig-pop-type" class="quarto-xref">Figure&nbsp;5</a>), with solitary or scattered mushrooms more often poisonous, while abundant or clustered populations were more commonly edible. Together, these figures illustrate that several features, odor in particular, provide strong discriminatory signals relevant to the classification task.</p>
+<div class="cell" data-execution_count="21">
+<div id="tbl-poison-rank" class="cell quarto-float quarto-figure quarto-figure-left anchored" data-execution_count="21">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-poison-rank-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;1: Ranking of features by how well they distinguish poisonous mushrooms
+Table&nbsp;4: Ranking of features by how well they distinguish poisonous mushrooms
 </figcaption>
 <div aria-describedby="tbl-poison-rank-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div class="cell-output cell-output-error">
-<div class="ansi-escaped-output">
-<pre><span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
-<span class="ansi-cyan-fg">Cell</span><span class="ansi-cyan-fg"> </span><span class="ansi-green-fg">In[38]</span><span class="ansi-green-fg">, line 6</span>
-<span class="ansi-green-fg">      1</span> <span style="font-style:italic;color:rgb(95,135,135)"># Compute the variance in poisonous fraction across the categories of each feature</span>
-<span class="ansi-green-fg">      2</span> <span style="font-style:italic;color:rgb(95,135,135)"># Show strongly the feature predicts toxicity</span>
-<span class="ansi-green-fg">      4</span> feature_scores = []
-<span class="ansi-green-fg">----&gt; </span><span class="ansi-green-fg">6</span> <span style="font-weight:bold;color:rgb(0,135,0)">for</span> col <span style="font-weight:bold;color:rgb(175,0,255)">in</span> <span class="ansi-yellow-bg">feature_cols</span>:
-<span class="ansi-green-fg">      7</span>     ct = get_poison_rate_by(col)
-<span class="ansi-green-fg">      8</span>     score = ct[<span class="ansi-yellow-fg">'</span><span class="ansi-yellow-fg">poisonous_frac</span><span class="ansi-yellow-fg">'</span>].var()
-
-<span class="ansi-red-fg">NameError</span>: name 'feature_cols' is not defined</pre>
-</div>
+<div class="cell-output cell-output-display cell-output-markdown" data-execution_count="121">
+<table class="do-not-create-environment cell caption-top table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: right;">Unnamed: 0</th>
+<th style="text-align: left;">feature</th>
+<th style="text-align: right;">poison_variance</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">odor</td>
+<td style="text-align: right;">0.25</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">2</td>
+<td style="text-align: left;">veil_color</td>
+<td style="text-align: right;">0.23</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">3</td>
+<td style="text-align: left;">stalk_color_above_ring</td>
+<td style="text-align: right;">0.22</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">4</td>
+<td style="text-align: left;">stalk_color_below_ring</td>
+<td style="text-align: right;">0.21</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">5</td>
+<td style="text-align: left;">ring_type</td>
+<td style="text-align: right;">0.21</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">6</td>
+<td style="text-align: left;">ring_number</td>
+<td style="text-align: right;">0.2</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">7</td>
+<td style="text-align: left;">spore_print_color</td>
+<td style="text-align: right;">0.2</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">8</td>
+<td style="text-align: left;">gill_size</td>
+<td style="text-align: right;">0.17</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">9</td>
+<td style="text-align: left;">gill_color</td>
+<td style="text-align: right;">0.14</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">10</td>
+<td style="text-align: left;">cap_shape</td>
+<td style="text-align: right;">0.14</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">11</td>
+<td style="text-align: left;">bruises</td>
+<td style="text-align: right;">0.13</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">12</td>
+<td style="text-align: left;">gill_spacing</td>
+<td style="text-align: right;">0.11</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">13</td>
+<td style="text-align: left;">habitat</td>
+<td style="text-align: right;">0.11</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">14</td>
+<td style="text-align: left;">stalk_surface_below_ring</td>
+<td style="text-align: right;">0.11</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">15</td>
+<td style="text-align: left;">stalk_surface_above_ring</td>
+<td style="text-align: right;">0.11</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">16</td>
+<td style="text-align: left;">cap_surface</td>
+<td style="text-align: right;">0.08</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">17</td>
+<td style="text-align: left;">gill_attachment</td>
+<td style="text-align: right;">0.08</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">18</td>
+<td style="text-align: left;">population</td>
+<td style="text-align: right;">0.07</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">19</td>
+<td style="text-align: left;">cap_color</td>
+<td style="text-align: right;">0.06</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">20</td>
+<td style="text-align: left;">stalk_shape</td>
+<td style="text-align: right;">0</td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 </figure>
 </div>
-<p>A ranking of features by their discriminatory power is shown in Table <a href="#tbl-poison-rank" class="quarto-xref">Table&nbsp;1</a>, using the variance in poisonous fraction across categories as an association measure.</p>
+</div>
+<!-- ```{python}
+    X_train.to_csv('../data/processed/x_train.csv')
+    X_test.to_csv('../data/processed/x_test.csv')
+    y_train.to_csv('../data/processed/y_train.csv')
+    y_test.to_csv('../data/processed/y_test.csv')
+``` -->
+<p>A ranking of features by their discriminatory power is shown in <a href="#tbl-poison-rank" class="quarto-xref">Table&nbsp;4</a>, using the variance in poisonous fraction across categories as an association measure.</p>
 </section>
-<section id="data-validation-check-any-anomalous-correlation-between-features-andor-target" class="level2" data-number="9.1">
-<h2 data-number="9.1" class="anchored" data-anchor-id="data-validation-check-any-anomalous-correlation-between-features-andor-target"><span class="header-section-number">9.1</span> Data Validation Check: Any Anomalous Correlation Between Features and/or Target?</h2>
-<div id="fig-corr-heatmap" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-execution_count="40">
+<section id="data-validation-check-any-anomalous-correlation-between-features-andor-target" class="level2" data-number="7.1">
+<h2 data-number="7.1" class="anchored" data-anchor-id="data-validation-check-any-anomalous-correlation-between-features-andor-target"><span class="header-section-number">7.1</span> Data Validation Check: Any Anomalous Correlation Between Features and/or Target?</h2>
+<div id="fig-corr-heatmap" class="quarto-float quarto-figure quarto-figure-left anchored" width="80%">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-corr-heatmap-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div class="cell-output cell-output-error">
-<div class="ansi-escaped-output">
-<pre><span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
-<span class="ansi-cyan-fg">Cell</span><span class="ansi-cyan-fg"> </span><span class="ansi-green-fg">In[40]</span><span class="ansi-green-fg">, line 2</span>
-<span class="ansi-green-fg">      1</span> <span style="font-style:italic;color:rgb(95,135,135)"># create list of all pairwise feature and feature-target combinations </span>
-<span class="ansi-green-fg">----&gt; </span><span class="ansi-green-fg">2</span> train_df_cols = <span style="color:rgb(0,135,0)">list</span>(<span class="ansi-yellow-bg">train_df</span>.columns)
-<span class="ansi-green-fg">      3</span> pairs = <span style="color:rgb(0,135,0)">list</span>(itertools.combinations(train_df_cols, <span class="ansi-green-fg">2</span>))
-<span class="ansi-green-fg">      5</span> <span style="font-style:italic;color:rgb(95,135,135)"># compute correlation for all feature pairs and feature-target pairs </span>
-
-<span class="ansi-red-fg">NameError</span>: name 'train_df' is not defined</pre>
+<img src="../results/figures/cramers_v_heatmap.png" class="img-fluid figure-img">
 </div>
-</div>
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig quarto-uncaptioned" id="fig-corr-heatmap-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;6
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-corr-heatmap-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;6: Correlation heatmap (Cramer’s V) for all feature and feature-target pairs in the training data.
 </figcaption>
 </figure>
 </div>
 </section>
-<section id="summary-of-anomalous-correlation-between-features" class="level2" data-number="9.2">
-<h2 data-number="9.2" class="anchored" data-anchor-id="summary-of-anomalous-correlation-between-features"><span class="header-section-number">9.2</span> Summary of Anomalous Correlation Between Features:</h2>
-<p><a href="#fig-corr-heatmap" class="quarto-xref">Figure&nbsp;6</a> shows a high correlation between the feature gill_attachment and the three features stalk_color_above_ring, stalk_color_below_ring, and veil_color. I expect this is a feature of the dataset because it includes a high number of observations (5686 in our training data) and only 23 species, so there are many repeated instances of each species. If a particular species has fixed color and gill attachment characteristics than it is expected that we would find a high correlation between these features. It is not likely to be a sign of data leakage, but does suggest that there are weaknesses in the biological representativeness of the dataset. Therefore, the dataset may not be the strongest choice for generalizing predictions about the poisonousness of mushrooms across the full Agaricus and Lepiota (Agaricaceae) family, since it may not capture the true diversity and independence of these features found in nature.</p>
+<section id="summary-of-anomalous-correlation-between-features" class="level2" data-number="7.2">
+<h2 data-number="7.2" class="anchored" data-anchor-id="summary-of-anomalous-correlation-between-features"><span class="header-section-number">7.2</span> Summary of Anomalous Correlation Between Features:</h2>
+<p><a href="#fig-corr-heatmap" class="quarto-xref">Figure&nbsp;6</a> shows a high correlation between the feature <code>gill_attachment</code> and the three features <code>stalk_color_above_ring</code>, <code>stalk_color_below_ring</code>, and <code>veil_color</code>. We expect this is a feature of the dataset because it includes a high number of observations (5686 in our training data) and only 23 species, so there are many repeated instances of each species. If a particular species has fixed color and gill attachment characteristics than it is expected that we would find a high correlation between these features. It is not likely to be a sign of data leakage, but does suggest that there are weaknesses in the biological representativeness of the dataset. Therefore, the dataset may not be the strongest choice for generalizing predictions about the poisonousness of mushrooms across the full Agaricus and Lepiota (Agaricaceae) family, since it may not capture the true diversity and independence of these features found in nature.</p>
 </section>
-<section id="summary-of-anomalous-correlation-between-feature-odor-and-target" class="level2" data-number="9.3">
-<h2 data-number="9.3" class="anchored" data-anchor-id="summary-of-anomalous-correlation-between-feature-odor-and-target"><span class="header-section-number">9.3</span> Summary of Anomalous Correlation Between Feature “Odor” and Target:</h2>
-<p><a href="#fig-corr-heatmap" class="quarto-xref">Figure&nbsp;6</a> shows a high correlation between the feature “odor” and the target, and a moderately high correlation between “spore_print_color” and the target. However, the dataset we are using includes background information on the logical rules discovered by prior researchers Duch, Adamczak, and Grabczewski (1996), and they found that “odor” is often the first split for identifying poisonous mushrooms, and “spore_print_color” is often the second. Hence both of these features are expected to be strong predictors of the target and the seeming anomalous correlation is simply an accurate reflection of biological reality as captured by the dataset, and not likely to be a sign of data leakage in this case.</p>
+<section id="summary-of-anomalous-correlation-between-feature-odor-and-target" class="level2" data-number="7.3">
+<h2 data-number="7.3" class="anchored" data-anchor-id="summary-of-anomalous-correlation-between-feature-odor-and-target"><span class="header-section-number">7.3</span> Summary of Anomalous Correlation Between Feature “Odor” and Target:</h2>
+<p><a href="#fig-corr-heatmap" class="quarto-xref">Figure&nbsp;6</a> shows a high correlation between the feature <code>odor</code> and the target, and a moderately high correlation between <code>spore_print_color</code> and the target. However, the dataset we are using includes background information on the logical rules discovered by prior researchers Duch, Adamczak, and Grabczewski <span class="citation" data-cites="datastudy">(<a href="#ref-datastudy" role="doc-biblioref">Duch, Adamczak, and Grabczewski 1996</a>)</span>, and they found that “odor” is often the first split for identifying poisonous mushrooms, and “spore_print_color” is often the second. Hence both of these features are expected to be strong predictors of the target and the seeming anomalous correlation is simply an accurate reflection of biological reality as captured by the dataset, and not likely to be a sign of data leakage in this case.</p>
 </section>
 </section>
-<section id="model" class="level1" data-number="10">
-<h1 data-number="10"><span class="header-section-number">10</span> Model</h1>
+<section id="model" class="level1" data-number="8">
+<h1 data-number="8"><span class="header-section-number">8</span> Model</h1>
 <p>Before we continue, we must preprocess our data such that the features work with our models. Since all of our features are strings, we can opt to use one-hot encoding for them all.</p>
 <p>We fit a <code>DummyClassifier</code> to our data as a baseline to compare our actual model with. Random state used again for reproducibility.</p>
-<div id="tbl-cross-val-dc" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-execution_count="42">
+<div id="tbl-cross-val-dc" class="cell quarto-float quarto-figure quarto-figure-left anchored" data-execution_count="23">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-cross-val-dc-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;2: Mean 10-Fold Cross-Validation Metrics for DummyClassifier Baseline
+Table&nbsp;5: Mean 10-Fold Cross-Validation Metrics for DummyClassifier Baseline
 </figcaption>
 <div aria-describedby="tbl-cross-val-dc-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output cell-output-error">
 <div class="ansi-escaped-output">
 <pre><span class="ansi-red-fg">---------------------------------------------------------------------------</span>
 <span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
-<span class="ansi-cyan-fg">Cell</span><span class="ansi-cyan-fg"> </span><span class="ansi-green-fg">In[42]</span><span class="ansi-green-fg">, line 1</span>
-<span class="ansi-green-fg">----&gt; </span><span class="ansi-green-fg">1</span> dc_pipe = <span class="ansi-yellow-bg">make_pipeline</span>(
+<span class="ansi-cyan-fg">Cell</span><span class="ansi-cyan-fg"> </span><span class="ansi-green-fg">In[123]</span><span class="ansi-green-fg">, line 6</span>
+<span class="ansi-green-fg">      1</span> dc_pipe = make_pipeline(
 <span class="ansi-green-fg">      2</span>     preprocessor, 
 <span class="ansi-green-fg">      3</span>     DummyClassifier(random_state=<span class="ansi-green-fg">123</span>)
 <span class="ansi-green-fg">      4</span> )
-<span class="ansi-green-fg">      6</span> dc_pipe.fit(X_train, y_train)
+<span class="ansi-green-fg">----&gt; </span><span class="ansi-green-fg">6</span> dc_pipe.fit(<span class="ansi-yellow-bg">X_train</span>, y_train)
 <span class="ansi-green-fg">      8</span> cross_val_dc = pd.DataFrame(
 <span class="ansi-green-fg">      9</span>     cross_validate(
 <span class="ansi-green-fg">     10</span>         dc_pipe, X_train, y_train, cv=<span class="ansi-green-fg">10</span>, n_jobs=-<span class="ansi-green-fg">1</span>, return_train_score=<span style="font-weight:bold;color:rgb(0,135,0)">True</span>
 <span class="ansi-green-fg">     11</span>     )).mean().to_frame().rename(columns={<span class="ansi-green-fg">0</span>: <span class="ansi-yellow-fg">"</span><span class="ansi-yellow-fg">mean_value</span><span class="ansi-yellow-fg">"</span>})
+<span class="ansi-green-fg">     13</span> cross_val_dc
 
-<span class="ansi-red-fg">NameError</span>: name 'make_pipeline' is not defined</pre>
+<span class="ansi-red-fg">NameError</span>: name 'X_train' is not defined</pre>
 </div>
 </div>
 </div>
 </figure>
 </div>
-<p>In our classification problem, we opt to use <code>SVC</code> (Buitinck, L., Louppe, G., Blondel, M., Pedregosa, Fabian, Mueller, A., Grisel, O., … Ga”el Varoquaux. (2013)) as our model of choice for its effective usage in this scenario. We do not have an extreme amount of data (&lt; 10000 observations) on top of only being a binary classification task.</p>
-<div id="tbl-cross-val-svc" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-execution_count="43">
+<p>In our classification problem, we opt to use <code>SVC</code> <span class="citation" data-cites="svc">(<a href="#ref-svc" role="doc-biblioref">Buitinck et al. 2013</a>)</span> as our model of choice for its effective usage in this scenario. We do not have an extreme amount of data (&lt; 10000 observations) on top of only being a binary classification task.</p>
+<div id="tbl-cross-val-svc" class="cell quarto-float quarto-figure quarto-figure-left anchored" data-execution_count="24">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-cross-val-svc-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;3: Mean 10-Fold Cross-Validation Metrics for SVC Model
+Table&nbsp;6: Mean 10-Fold Cross-Validation Metrics for SVC Model
 </figcaption>
 <div aria-describedby="tbl-cross-val-svc-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output cell-output-error">
 <div class="ansi-escaped-output">
 <pre><span class="ansi-red-fg">---------------------------------------------------------------------------</span>
 <span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
-<span class="ansi-cyan-fg">Cell</span><span class="ansi-cyan-fg"> </span><span class="ansi-green-fg">In[43]</span><span class="ansi-green-fg">, line 1</span>
-<span class="ansi-green-fg">----&gt; </span><span class="ansi-green-fg">1</span> svc_pipe = <span class="ansi-yellow-bg">make_pipeline</span>(
+<span class="ansi-cyan-fg">Cell</span><span class="ansi-cyan-fg"> </span><span class="ansi-green-fg">In[124]</span><span class="ansi-green-fg">, line 6</span>
+<span class="ansi-green-fg">      1</span> svc_pipe = make_pipeline(
 <span class="ansi-green-fg">      2</span>     preprocessor, 
 <span class="ansi-green-fg">      3</span>     SVC(random_state=<span class="ansi-green-fg">123</span>)
 <span class="ansi-green-fg">      4</span> )
-<span class="ansi-green-fg">      6</span> svc_pipe.fit(X_train, y_train)
+<span class="ansi-green-fg">----&gt; </span><span class="ansi-green-fg">6</span> svc_pipe.fit(<span class="ansi-yellow-bg">X_train</span>, y_train)
 <span class="ansi-green-fg">      8</span> cross_val_svc = pd.DataFrame(
 <span class="ansi-green-fg">      9</span>     cross_validate(
 <span class="ansi-green-fg">     10</span>         svc_pipe, X_train, y_train, cv=<span class="ansi-green-fg">10</span>, n_jobs=-<span class="ansi-green-fg">1</span>, return_train_score=<span style="font-weight:bold;color:rgb(0,135,0)">True</span>
 <span class="ansi-green-fg">     11</span>     )).mean().to_frame().rename(columns={<span class="ansi-green-fg">0</span>: <span class="ansi-yellow-fg">"</span><span class="ansi-yellow-fg">mean_value</span><span class="ansi-yellow-fg">"</span>})
+<span class="ansi-green-fg">     13</span> cross_val_svc
 
-<span class="ansi-red-fg">NameError</span>: name 'make_pipeline' is not defined</pre>
+<span class="ansi-red-fg">NameError</span>: name 'X_train' is not defined</pre>
 </div>
 </div>
 </div>
 </figure>
 </div>
-<div id="fig-confusion-matrix-svc" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-execution_count="44">
+<div id="fig-confusion-matrix-svc" class="cell quarto-float quarto-figure quarto-figure-left anchored" data-execution_count="25">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-confusion-matrix-svc-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output cell-output-error">
 <div class="ansi-escaped-output">
 <pre><span class="ansi-red-fg">---------------------------------------------------------------------------</span>
 <span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
-<span class="ansi-cyan-fg">Cell</span><span class="ansi-cyan-fg"> </span><span class="ansi-green-fg">In[44]</span><span class="ansi-green-fg">, line 6</span>
-<span class="ansi-green-fg">      1</span> <span style="font-style:italic;color:rgb(95,135,135)">##| fig-width: 6</span>
-<span class="ansi-green-fg">      2</span> <span style="font-style:italic;color:rgb(95,135,135)">#| fig-height: 4</span>
-<span class="ansi-green-fg">      3</span> <span style="font-style:italic;color:rgb(95,135,135)">#| out-width: 60%</span>
-<span class="ansi-green-fg">      4</span> <span style="font-style:italic;color:rgb(95,135,135)">#| fig-align: center</span>
-<span class="ansi-green-fg">----&gt; </span><span class="ansi-green-fg">6</span> y_pred = <span class="ansi-yellow-bg">svc_pipe</span>.predict(X_test)
-<span class="ansi-green-fg">      8</span> cm = confusion_matrix(y_test, y_pred)
-<span class="ansi-green-fg">      9</span> ConfusionMatrixDisplay(cm).plot()
+<span class="ansi-cyan-fg">Cell</span><span class="ansi-cyan-fg"> </span><span class="ansi-green-fg">In[125]</span><span class="ansi-green-fg">, line 1</span>
+<span class="ansi-green-fg">----&gt; </span><span class="ansi-green-fg">1</span> y_pred = svc_pipe.predict(<span class="ansi-yellow-bg">X_test</span>)
+<span class="ansi-green-fg">      3</span> cm = confusion_matrix(y_test, y_pred)
+<span class="ansi-green-fg">      4</span> ConfusionMatrixDisplay(cm).plot()
 
-<span class="ansi-red-fg">NameError</span>: name 'svc_pipe' is not defined</pre>
+<span class="ansi-red-fg">NameError</span>: name 'X_test' is not defined</pre>
 </div>
 </div>
 </div>
@@ -525,23 +1121,32 @@ Figure&nbsp;7
 </figure>
 </div>
 </section>
-<section id="results-discussion" class="level1" data-number="11">
-<h1 data-number="11"><span class="header-section-number">11</span> Results &amp; Discussion</h1>
-<p>Our prediction model performed excellently on test data, with precision {{precision:.3f}} and recall {{recall:.3f}} and an overall accuracy of {{acc:.3f}}. The model classified all of the {{test_n}} mushroom examples correctly as poisonous or edible, with no error. Given that our model predicted perfectly, no optimization was required. As shown in Figure <a href="#fig-confusion-matrix-svc" class="quarto-xref">Figure&nbsp;7</a>, the SVC correctly classified every mushroom in the test set, yielding no false positives or false negatives. Furthermore, the SVC model shows consistent performance across folds, as summarized in Table <a href="#tbl-cross-val-svc" class="quarto-xref">Table&nbsp;3</a>.</p>
-<p>This performance is identical to the results published on the <a href="https://archive.ics.uci.edu/dataset/73/mushroom">UCI website</a> from which the data was sourced (Mushroom). As shown in the confusion matrix, the model has a recall and precision of 1, due to no false positivies or negatives. The model also shows robustness, with no difference in the accuracy of training and test scores, so it is promising that this model could be deployed effectively to protect mushroom consumers from eating poisonous mushrooms.That said, there are some practical concerns for public implementation, namely the model is fit on 20 different features that correspond to specific categorical physical characteristics of a mushroom, and thus accuracy requires accurate identification of physical characteristics.</p>
-<p>Hence, if an amateur mushroom enthusiast aimed to utilize the model to predict edibility but misidentified the physical characeristics of the mushroom they were attempting to classify, then the accuracy of the models predictions would be effectively moot as it would not be returning a prediction for the true foraged mushroom. One might consider creating a similar predictor with a smaller number of features to increase the practical efficacy of the model, though they would need to consider balancing the models accuracy with efficacy, because the risk of falsely predicting a mushroom as edible could be fatal. It is also worth noting that the hypothetical mushroom observations in this model are based upon a book from <span class="citation" data-cites="lincoff1981">(<a href="#ref-lincoff1981" role="doc-biblioref">Lincoff 1981</a>)</span>, so it would be wise to consider whether the data could be updated to be sourced from a more recent source of mushroom science.</p>
+<section id="results-discussion" class="level1" data-number="9">
+<h1 data-number="9"><span class="header-section-number">9</span> Results &amp; Discussion</h1>
+<p>Our prediction model performed excellently on test data, classifying all of the mushroom examples correctly as poisonous or edible, with no error. Given that our model predicted perfectly, no optimization was required. As shown in <a href="#fig-confusion-matrix-svc" class="quarto-xref">Figure&nbsp;7</a>, the SVC correctly classified every mushroom in the test set, yielding no false positives or false negatives. Furthermore, the SVC model shows consistent performance across folds, as summarized in <a href="#tbl-cross-val-svc" class="quarto-xref">Table&nbsp;6</a>.</p>
+<p>This performance is identical to the results published on the <a href="https://archive.ics.uci.edu/dataset/73/mushroom">UCI website</a> from which the data was sourced <span class="citation" data-cites="datasource">(<a href="#ref-datasource" role="doc-biblioref"><span>“Mushroom”</span> 1981</a>)</span>. As shown in the confusion matrix, the model has a recall and precision of 1, due to no false positivies or negatives. The model also shows robustness, with no difference in the accuracy of training and test scores, so it is promising that this model could be deployed effectively to protect mushroom consumers from eating poisonous mushrooms.That said, there are some practical concerns for public implementation, namely the model is fit on 20 different features that correspond to specific categorical physical characteristics of a mushroom, and thus accuracy requires accurate identification of physical characteristics.</p>
+<p>Hence, if an amateur mushroom enthusiast aimed to utilize the model to predict edibility but misidentified the physical characeristics of the mushroom they were attempting to classify, then the accuracy of the models predictions would be effectively moot as it would not be returning a prediction for the true foraged mushroom. One might consider creating a similar predictor with a smaller number of features to increase the practical efficacy of the model, though they would need to consider balancing the models accuracy with efficacy, because the risk of falsely predicting a mushroom as edible could be fatal. It is also worth noting that the hypothetical mushroom observations in this model are based upon a book from 1981 <span class="citation" data-cites="lincoff1981">(<a href="#ref-lincoff1981" role="doc-biblioref">Lincoff 1981</a>)</span>, so it would be wise to consider whether the data could be updated to be sourced from a more recent source of mushroom science.</p>
+</section>
+<section id="references" class="level1 unnumbered" data-number="10">
+
 
 </section>
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">10 References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
 <div id="ref-pandera" class="csl-entry" role="listitem">
 Bantilan, Niels. 2020. <em>Pandera: Statistical Data Validation for Pandas</em>. <a href="https://pandera.readthedocs.io/">https://pandera.readthedocs.io/</a>.
+</div>
+<div id="ref-svc" class="csl-entry" role="listitem">
+Buitinck, L., G. Louppe, M. Blondel, F. Pedregosa, A. Mueller, O. Grisel, and G. Varoquaux. 2013. <span>“API Design for Machine Learning Software: Experiences from the Scikit-Learn Project.”</span> In <em>ECML PKDD Workshop: Languages for Data Mining and Machine Learning</em>, 108–22.
 </div>
 <div id="ref-diaz2016" class="csl-entry" role="listitem">
 Diaz, James H. 2016. <span>“Mistaken Mushroom Poisonings.”</span> <em>Wilderness &amp; Environmental Medicine</em> 27 (2): 330–35.
 </div>
 <div id="ref-uci_mushroom" class="csl-entry" role="listitem">
 Dua, Dheeru, and Casey Graff. 2017. <span>“<span>UCI</span> Machine Learning Repository: Mushroom Data Set.”</span> University of California, Irvine, School of Information; Computer Sciences. <a href="https://archive.ics.uci.edu/dataset/73/mushroom">https://archive.ics.uci.edu/dataset/73/mushroom</a>.
+</div>
+<div id="ref-datastudy" class="csl-entry" role="listitem">
+Duch, W., R. Adamczak, and K. Grabczewski. 1996. <span>“Extraction of Logical Rules from Training Data Using Backpropagation Networks.”</span> In <em>Proceedings of the 1st Online Workshop on Soft Computing</em>, 25–30.
 </div>
 <div id="ref-numpy" class="csl-entry" role="listitem">
 Harris, Charles R., K. Jarrod Millman, Stéfan J. van der Walt, Ralf Gommers, Pauli Virtanen, David Cournapeau, et al. 2020. <span>“<span class="nocase">Array programming with NumPy</span>.”</span> <em>Nature</em> 585 (7825): 357–62. <a href="https://doi.org/10.1038/s41586-020-2649-2">https://doi.org/10.1038/s41586-020-2649-2</a>.
@@ -551,6 +1156,9 @@ Lincoff, Gary H. 1981. <em>The Audubon Society Field Guide to North American Mus
 </div>
 <div id="ref-mckinney2010" class="csl-entry" role="listitem">
 McKinney, Wes. 2010. <span>“Data Structures for Statistical Computing in Python.”</span> In <em>Proceedings of the 9th Python in Science Conference</em>, edited by Stéfan van der Walt and Jarrod Millman, 51–56.
+</div>
+<div id="ref-datasource" class="csl-entry" role="listitem">
+<span>“Mushroom.”</span> 1981. <a href="https://doi.org/10.24432/C5959T" class="uri">https://doi.org/10.24432/C5959T</a>.
 </div>
 <div id="ref-scikit-learn" class="csl-entry" role="listitem">
 Pedregosa, Fabian, Gaël Varoquaux, Alexandre Gramfort, Vincent Michel, Bertrand Thirion, Olivier Grisel, Mathieu Blondel, et al. 2011. <span>“<span class="nocase">Scikit-learn: Machine Learning in Python</span>.”</span> <em>Journal of Machine Learning Research</em> 12: 2825–30.
