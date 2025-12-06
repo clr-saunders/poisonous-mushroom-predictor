@@ -10,7 +10,9 @@ The dataset used was adapted from The Audubon Society Field Guide to North Ameri
 The final report can be found [here](docs/poisonous_mushroom_classifier.qmd)
 
 ## Dependencies
-- Docker
+- [Docker](https://www.docker.com/)
+- [VS Code](https://https://code.visualstudio.com/download)
+- [VS Code Jupyter Extension](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter)
 
 ## Usage
 First time running the project, run the following from the root of this repository:
