@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.23">
+<meta name="generator" content="quarto-1.7.33">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -45,19 +45,18 @@ div.csl-indent {
 }</style>
 
 
-<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" integrity="sha384-ZvpUoO/+PpLXR1lu4jmpXWu80pZlYUAfxl5NsBMWOEPSjUn/6Z/hRTt8+pR6L4N2" crossorigin="anonymous"></script><script src="poisonous_mushroom_classifier_files/libs/clipboard/clipboard.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="poisonous_mushroom_classifier_files/libs/clipboard/clipboard.min.js"></script>
 <script src="poisonous_mushroom_classifier_files/libs/quarto-html/quarto.js" type="module"></script>
 <script src="poisonous_mushroom_classifier_files/libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="poisonous_mushroom_classifier_files/libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="poisonous_mushroom_classifier_files/libs/quarto-html/popper.min.js"></script>
 <script src="poisonous_mushroom_classifier_files/libs/quarto-html/tippy.umd.min.js"></script>
 <script src="poisonous_mushroom_classifier_files/libs/quarto-html/anchor.min.js"></script>
 <link href="poisonous_mushroom_classifier_files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="poisonous_mushroom_classifier_files/libs/quarto-html/quarto-syntax-highlighting-1fe81d0376b2c50856e68e651e390326.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="poisonous_mushroom_classifier_files/libs/quarto-html/quarto-syntax-highlighting-ea385d0e468b0dd5ea5bf0780b1290d9.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="poisonous_mushroom_classifier_files/libs/bootstrap/bootstrap.min.js"></script>
 <link href="poisonous_mushroom_classifier_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="poisonous_mushroom_classifier_files/libs/bootstrap/bootstrap-9e3ffae467580fdb927a41352e75a2e0.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
-<script src="https://cdn.jsdelivr.net/npm/requirejs@2.3.6/require.min.js" integrity="sha384-c9c+LnTbwQ3aujuU7ULEPVvgLs+Fn6fJUvIGTsuu1ZcCf11fiEubah0ttpca4ntM sha384-6V1/AdqZRWk1KAlWbKBlGhN7VG4iE/yAZcO6NZPMF8od0vukrvr0tg4qY6NSrItx" crossorigin="anonymous"></script>
+<link href="poisonous_mushroom_classifier_files/libs/bootstrap/bootstrap-bb462d781dde1847d9e3ccf7736099dd.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
 
 <script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 
@@ -164,11 +163,11 @@ div.csl-indent {
 Table&nbsp;1: First five rows of the raw dataset.
 </figcaption>
 <div aria-describedby="tbl-sample-data-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div class="cell-output cell-output-display" data-execution_count="56">
+<div class="cell-output cell-output-display" data-execution_count="61">
 <div>
 
 
-<table class="dataframe do-not-create-environment cell caption-top table table-sm table-striped small" data-border="1">
+<table class="dataframe do-not-create-environment cell caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th"></th>
@@ -197,7 +196,7 @@ Table&nbsp;1: First five rows of the raw dataset.
 </thead>
 <tbody>
 <tr class="odd">
-<th data-quarto-table-cell-role="th">0</th>
+<td data-quarto-table-cell-role="th">0</td>
 <td>p</td>
 <td>x</td>
 <td>s</td>
@@ -221,7 +220,7 @@ Table&nbsp;1: First five rows of the raw dataset.
 <td>u</td>
 </tr>
 <tr class="even">
-<th data-quarto-table-cell-role="th">1</th>
+<td data-quarto-table-cell-role="th">1</td>
 <td>e</td>
 <td>x</td>
 <td>s</td>
@@ -245,7 +244,7 @@ Table&nbsp;1: First five rows of the raw dataset.
 <td>g</td>
 </tr>
 <tr class="odd">
-<th data-quarto-table-cell-role="th">2</th>
+<td data-quarto-table-cell-role="th">2</td>
 <td>e</td>
 <td>b</td>
 <td>s</td>
@@ -269,7 +268,7 @@ Table&nbsp;1: First five rows of the raw dataset.
 <td>m</td>
 </tr>
 <tr class="even">
-<th data-quarto-table-cell-role="th">3</th>
+<td data-quarto-table-cell-role="th">3</td>
 <td>p</td>
 <td>x</td>
 <td>y</td>
@@ -293,7 +292,7 @@ Table&nbsp;1: First five rows of the raw dataset.
 <td>u</td>
 </tr>
 <tr class="odd">
-<th data-quarto-table-cell-role="th">4</th>
+<td data-quarto-table-cell-role="th">4</td>
 <td>e</td>
 <td>x</td>
 <td>s</td>
@@ -329,13 +328,13 @@ Table&nbsp;1: First five rows of the raw dataset.
 <p>A preview of the first five rows of the raw dataset is shown in <a href="#tbl-sample-data" class="quarto-xref">Table&nbsp;1</a>, which illustrates the categorical structure of all features prior to cleaning.</p>
 <section id="data-validation-checks-1" class="level2">
 <h2 class="anchored" data-anchor-id="data-validation-checks-1">Data Validation Checks</h2>
-<div id="eb3e22b5" class="cell" data-execution_count="7">
+<div id="9cf038db" class="cell" data-execution_count="7">
 <div class="cell-output cell-output-stdout">
 <pre><code>[OK] Target distribution matches expected proportions (within tolerance).</code></pre>
 </div>
 </div>
-<div id="baedab6b" class="cell" data-execution_count="9">
-<div class="cell-output cell-output-display" data-execution_count="60">
+<div id="02a624ec" class="cell" data-execution_count="9">
+<div class="cell-output cell-output-display" data-execution_count="65">
 <pre><code>class                       0
 cap_shape                   0
 cap_surface                 0
@@ -362,8 +361,8 @@ habitat                     0
 dtype: int64</code></pre>
 </div>
 </div>
-<div id="0d60433e" class="cell" data-execution_count="10">
-<div class="cell-output cell-output-display" data-execution_count="61">
+<div id="6fa5d77f" class="cell" data-execution_count="10">
+<div class="cell-output cell-output-display" data-execution_count="66">
 <pre><code>class                          0
 cap_shape                      0
 cap_surface                    0
@@ -390,8 +389,8 @@ habitat                        0
 dtype: int64</code></pre>
 </div>
 </div>
-<div id="6f59bbd6" class="cell" data-execution_count="15">
-<div class="cell-output cell-output-display" data-execution_count="66">
+<div id="7c1b32f3" class="cell" data-execution_count="15">
+<div class="cell-output cell-output-display" data-execution_count="71">
 <pre><code>cap_shape                   0
 cap_surface                 0
 cap_color                   0
@@ -417,12 +416,12 @@ is_poisonous                0
 dtype: int64</code></pre>
 </div>
 </div>
-<div id="439a0274" class="cell" data-execution_count="16">
+<div id="e4d977a0" class="cell" data-execution_count="16">
 <div class="cell-output cell-output-stdout">
 <pre><code>[OK] Cleaned column names validated.</code></pre>
 </div>
 </div>
-<div id="25fb1f05" class="cell" data-execution_count="17">
+<div id="2c4d1e09" class="cell" data-execution_count="17">
 <div class="cell-output cell-output-stdout">
 <pre><code>[OK] Pandera schema validation passed:
    - all feature columns are string-typed
@@ -445,11 +444,11 @@ dtype: int64</code></pre>
 Table&nbsp;2: First five rows of the cleaned dataset.
 </figcaption>
 <div aria-describedby="tbl-sample-cleaned-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div class="cell-output cell-output-display" data-execution_count="70">
+<div class="cell-output cell-output-display" data-execution_count="75">
 <div>
 
 
-<table class="dataframe do-not-create-environment cell caption-top table table-sm table-striped small" data-border="1">
+<table class="dataframe do-not-create-environment cell caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th"></th>
@@ -478,7 +477,7 @@ Table&nbsp;2: First five rows of the cleaned dataset.
 </thead>
 <tbody>
 <tr class="odd">
-<th data-quarto-table-cell-role="th">0</th>
+<td data-quarto-table-cell-role="th">0</td>
 <td>x</td>
 <td>s</td>
 <td>n</td>
@@ -502,7 +501,7 @@ Table&nbsp;2: First five rows of the cleaned dataset.
 <td>1</td>
 </tr>
 <tr class="even">
-<th data-quarto-table-cell-role="th">1</th>
+<td data-quarto-table-cell-role="th">1</td>
 <td>x</td>
 <td>s</td>
 <td>y</td>
@@ -526,7 +525,7 @@ Table&nbsp;2: First five rows of the cleaned dataset.
 <td>0</td>
 </tr>
 <tr class="odd">
-<th data-quarto-table-cell-role="th">2</th>
+<td data-quarto-table-cell-role="th">2</td>
 <td>b</td>
 <td>s</td>
 <td>w</td>
@@ -550,7 +549,7 @@ Table&nbsp;2: First five rows of the cleaned dataset.
 <td>0</td>
 </tr>
 <tr class="even">
-<th data-quarto-table-cell-role="th">3</th>
+<td data-quarto-table-cell-role="th">3</td>
 <td>x</td>
 <td>y</td>
 <td>w</td>
@@ -574,7 +573,7 @@ Table&nbsp;2: First five rows of the cleaned dataset.
 <td>1</td>
 </tr>
 <tr class="odd">
-<th data-quarto-table-cell-role="th">4</th>
+<td data-quarto-table-cell-role="th">4</td>
 <td>x</td>
 <td>s</td>
 <td>g</td>
@@ -607,7 +606,7 @@ Table&nbsp;2: First five rows of the cleaned dataset.
 </figure>
 </div>
 </div>
-<div id="9bcd4531" class="cell" data-execution_count="20">
+<div id="44d04277" class="cell" data-execution_count="20">
 <div class="cell-output cell-output-stdout">
 <pre><code>&lt;class 'pandas.core.frame.DataFrame'&gt;
 RangeIndex: 8124 entries, 0 to 8123
@@ -640,8 +639,8 @@ dtypes: int64(1), object(21)
 memory usage: 1.4+ MB</code></pre>
 </div>
 </div>
-<div id="5dab0b23" class="cell" data-execution_count="21">
-<div class="cell-output cell-output-display" data-execution_count="72">
+<div id="00e77dc2" class="cell" data-execution_count="21">
+<div class="cell-output cell-output-display" data-execution_count="77">
 <pre><code>(8124, 22)</code></pre>
 </div>
 </div>
@@ -712,20 +711,7 @@ print(
 )
 
 ``` -->
-<div id="6b21d6d3" class="cell" data-execution_count="22">
-<div class="cell-output cell-output-error">
-<div class="ansi-escaped-output">
-<pre><span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
-<span class="ansi-cyan-fg">Cell</span><span class="ansi-cyan-fg"> </span><span class="ansi-green-fg">In[73]</span><span class="ansi-green-fg">, line 2</span>
-<span class="ansi-green-fg">      1</span> <span style="font-style:italic;color:rgb(95,135,135)"># Feature column names</span>
-<span class="ansi-green-fg">----&gt; </span><span class="ansi-green-fg">2</span> feature_cols = <span class="ansi-yellow-bg">X_train</span>.columns
-
-<span class="ansi-red-fg">NameError</span>: name 'X_train' is not defined</pre>
-</div>
-</div>
-</div>
-<div id="tbl-feature-summary" class="cell quarto-float quarto-figure quarto-figure-left anchored" data-execution_count="23">
+<div id="tbl-feature-summary" class="cell quarto-float quarto-figure quarto-figure-left anchored" data-execution_count="22">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-feature-summary-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Table&nbsp;3: Summary of mushroom feature characteristics
@@ -735,12 +721,12 @@ Table&nbsp;3: Summary of mushroom feature characteristics
 <div class="ansi-escaped-output">
 <pre><span class="ansi-red-fg">---------------------------------------------------------------------------</span>
 <span class="ansi-red-fg">FileNotFoundError</span>                         Traceback (most recent call last)
-<span class="ansi-cyan-fg">Cell</span><span class="ansi-cyan-fg"> </span><span class="ansi-green-fg">In[74]</span><span class="ansi-green-fg">, line 2</span>
+<span class="ansi-cyan-fg">Cell</span><span class="ansi-cyan-fg"> </span><span class="ansi-green-fg">In[78]</span><span class="ansi-green-fg">, line 2</span>
 <span class="ansi-green-fg">      1</span> <span style="font-style:italic;color:rgb(95,135,135)"># Key mushroom feature summary</span>
 <span class="ansi-green-fg">----&gt; </span><span class="ansi-green-fg">2</span> mushroom_feature_summary = <span class="ansi-yellow-bg">pd</span><span class="ansi-yellow-bg">.</span><span class="ansi-yellow-bg">read_csv</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-fg ansi-yellow-bg">"</span><span class="ansi-yellow-fg ansi-yellow-bg">../results/mushroom_feature_summary.csv</span><span class="ansi-yellow-fg ansi-yellow-bg">"</span><span class="ansi-yellow-bg">)</span>
 <span class="ansi-green-fg">      3</span> Markdown(mushroom_feature_summary.to_markdown(index = <span style="font-weight:bold;color:rgb(0,135,0)">False</span>))
 
-<span class="ansi-cyan-fg">File </span><span class="ansi-green-fg">~\miniforge3\envs\mds\Lib\site-packages\pandas\io\parsers\readers.py:1026</span>, in <span class="ansi-cyan-fg">read_csv</span><span class="ansi-blue-fg">(filepath_or_buffer, sep, delimiter, header, names, index_col, usecols, dtype, engine, converters, true_values, false_values, skipinitialspace, skiprows, skipfooter, nrows, na_values, keep_default_na, na_filter, verbose, skip_blank_lines, parse_dates, infer_datetime_format, keep_date_col, date_parser, date_format, dayfirst, cache_dates, iterator, chunksize, compression, thousands, decimal, lineterminator, quotechar, quoting, doublequote, escapechar, comment, encoding, encoding_errors, dialect, on_bad_lines, delim_whitespace, low_memory, memory_map, float_precision, storage_options, dtype_backend)</span>
+<span class="ansi-cyan-fg">File </span><span class="ansi-green-fg">/opt/conda/lib/python3.13/site-packages/pandas/io/parsers/readers.py:1026</span>, in <span class="ansi-cyan-fg">read_csv</span><span class="ansi-blue-fg">(filepath_or_buffer, sep, delimiter, header, names, index_col, usecols, dtype, engine, converters, true_values, false_values, skipinitialspace, skiprows, skipfooter, nrows, na_values, keep_default_na, na_filter, verbose, skip_blank_lines, parse_dates, infer_datetime_format, keep_date_col, date_parser, date_format, dayfirst, cache_dates, iterator, chunksize, compression, thousands, decimal, lineterminator, quotechar, quoting, doublequote, escapechar, comment, encoding, encoding_errors, dialect, on_bad_lines, delim_whitespace, low_memory, memory_map, float_precision, storage_options, dtype_backend)</span>
 <span class="ansi-green-fg">   1013</span> kwds_defaults = _refine_defaults_read(
 <span class="ansi-green-fg">   1014</span>     dialect,
 <span class="ansi-green-fg">   1015</span>     delimiter,
@@ -749,19 +735,19 @@ Table&nbsp;3: Summary of mushroom feature characteristics
 <span class="ansi-green-fg">   1024</span> kwds.update(kwds_defaults)
 <span class="ansi-green-fg">-&gt; </span><span class="ansi-green-fg">1026</span> <span style="font-weight:bold;color:rgb(0,135,0)">return</span> <span class="ansi-yellow-bg">_read</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">filepath_or_buffer</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">kwds</span><span class="ansi-yellow-bg">)</span>
 
-<span class="ansi-cyan-fg">File </span><span class="ansi-green-fg">~\miniforge3\envs\mds\Lib\site-packages\pandas\io\parsers\readers.py:620</span>, in <span class="ansi-cyan-fg">_read</span><span class="ansi-blue-fg">(filepath_or_buffer, kwds)</span>
+<span class="ansi-cyan-fg">File </span><span class="ansi-green-fg">/opt/conda/lib/python3.13/site-packages/pandas/io/parsers/readers.py:620</span>, in <span class="ansi-cyan-fg">_read</span><span class="ansi-blue-fg">(filepath_or_buffer, kwds)</span>
 <span class="ansi-green-fg">    617</span> _validate_names(kwds.get(<span class="ansi-yellow-fg">"</span><span class="ansi-yellow-fg">names</span><span class="ansi-yellow-fg">"</span>, <span style="font-weight:bold;color:rgb(0,135,0)">None</span>))
 <span class="ansi-green-fg">    619</span> <span style="font-style:italic;color:rgb(95,135,135)"># Create the parser.</span>
 <span class="ansi-green-fg">--&gt; </span><span class="ansi-green-fg">620</span> parser = <span class="ansi-yellow-bg">TextFileReader</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">filepath_or_buffer</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">*</span><span class="ansi-yellow-bg">*</span><span class="ansi-yellow-bg">kwds</span><span class="ansi-yellow-bg">)</span>
 <span class="ansi-green-fg">    622</span> <span style="font-weight:bold;color:rgb(0,135,0)">if</span> chunksize <span style="font-weight:bold;color:rgb(175,0,255)">or</span> iterator:
 <span class="ansi-green-fg">    623</span>     <span style="font-weight:bold;color:rgb(0,135,0)">return</span> parser
 
-<span class="ansi-cyan-fg">File </span><span class="ansi-green-fg">~\miniforge3\envs\mds\Lib\site-packages\pandas\io\parsers\readers.py:1620</span>, in <span class="ansi-cyan-fg">TextFileReader.__init__</span><span class="ansi-blue-fg">(self, f, engine, **kwds)</span>
+<span class="ansi-cyan-fg">File </span><span class="ansi-green-fg">/opt/conda/lib/python3.13/site-packages/pandas/io/parsers/readers.py:1620</span>, in <span class="ansi-cyan-fg">TextFileReader.__init__</span><span class="ansi-blue-fg">(self, f, engine, **kwds)</span>
 <span class="ansi-green-fg">   1617</span>     <span style="color:rgb(0,135,0)">self</span>.options[<span class="ansi-yellow-fg">"</span><span class="ansi-yellow-fg">has_index_names</span><span class="ansi-yellow-fg">"</span>] = kwds[<span class="ansi-yellow-fg">"</span><span class="ansi-yellow-fg">has_index_names</span><span class="ansi-yellow-fg">"</span>]
 <span class="ansi-green-fg">   1619</span> <span style="color:rgb(0,135,0)">self</span>.handles: IOHandles | <span style="font-weight:bold;color:rgb(0,135,0)">None</span> = <span style="font-weight:bold;color:rgb(0,135,0)">None</span>
 <span class="ansi-green-fg">-&gt; </span><span class="ansi-green-fg">1620</span> <span style="color:rgb(0,135,0)">self</span>._engine = <span style="color:rgb(0,135,0)" class="ansi-yellow-bg">self</span><span class="ansi-yellow-bg">.</span><span class="ansi-yellow-bg">_make_engine</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">f</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span style="color:rgb(0,135,0)" class="ansi-yellow-bg">self</span><span class="ansi-yellow-bg">.</span><span class="ansi-yellow-bg">engine</span><span class="ansi-yellow-bg">)</span>
 
-<span class="ansi-cyan-fg">File </span><span class="ansi-green-fg">~\miniforge3\envs\mds\Lib\site-packages\pandas\io\parsers\readers.py:1880</span>, in <span class="ansi-cyan-fg">TextFileReader._make_engine</span><span class="ansi-blue-fg">(self, f, engine)</span>
+<span class="ansi-cyan-fg">File </span><span class="ansi-green-fg">/opt/conda/lib/python3.13/site-packages/pandas/io/parsers/readers.py:1880</span>, in <span class="ansi-cyan-fg">TextFileReader._make_engine</span><span class="ansi-blue-fg">(self, f, engine)</span>
 <span class="ansi-green-fg">   1878</span>     <span style="font-weight:bold;color:rgb(0,135,0)">if</span> <span class="ansi-yellow-fg">"</span><span class="ansi-yellow-fg">b</span><span class="ansi-yellow-fg">"</span> <span style="font-weight:bold;color:rgb(175,0,255)">not</span> <span style="font-weight:bold;color:rgb(175,0,255)">in</span> mode:
 <span class="ansi-green-fg">   1879</span>         mode += <span class="ansi-yellow-fg">"</span><span class="ansi-yellow-fg">b</span><span class="ansi-yellow-fg">"</span>
 <span class="ansi-green-fg">-&gt; </span><span class="ansi-green-fg">1880</span> <span style="color:rgb(0,135,0)">self</span>.handles = <span class="ansi-yellow-bg">get_handle</span><span class="ansi-yellow-bg">(</span>
@@ -777,7 +763,7 @@ Table&nbsp;3: Summary of mushroom feature characteristics
 <span class="ansi-green-fg">   1890</span> <span style="font-weight:bold;color:rgb(0,135,0)">assert</span> <span style="color:rgb(0,135,0)">self</span>.handles <span style="font-weight:bold;color:rgb(175,0,255)">is</span> <span style="font-weight:bold;color:rgb(175,0,255)">not</span> <span style="font-weight:bold;color:rgb(0,135,0)">None</span>
 <span class="ansi-green-fg">   1891</span> f = <span style="color:rgb(0,135,0)">self</span>.handles.handle
 
-<span class="ansi-cyan-fg">File </span><span class="ansi-green-fg">~\miniforge3\envs\mds\Lib\site-packages\pandas\io\common.py:873</span>, in <span class="ansi-cyan-fg">get_handle</span><span class="ansi-blue-fg">(path_or_buf, mode, encoding, compression, memory_map, is_text, errors, storage_options)</span>
+<span class="ansi-cyan-fg">File </span><span class="ansi-green-fg">/opt/conda/lib/python3.13/site-packages/pandas/io/common.py:873</span>, in <span class="ansi-cyan-fg">get_handle</span><span class="ansi-blue-fg">(path_or_buf, mode, encoding, compression, memory_map, is_text, errors, storage_options)</span>
 <span class="ansi-green-fg">    868</span> <span style="font-weight:bold;color:rgb(0,135,0)">elif</span> <span style="color:rgb(0,135,0)">isinstance</span>(handle, <span style="color:rgb(0,135,0)">str</span>):
 <span class="ansi-green-fg">    869</span>     <span style="font-style:italic;color:rgb(95,135,135)"># Check whether the filename is to be opened in binary mode.</span>
 <span class="ansi-green-fg">    870</span>     <span style="font-style:italic;color:rgb(95,135,135)"># Binary mode does not support 'encoding' and 'newline'.</span>
@@ -800,7 +786,7 @@ Table&nbsp;3: Summary of mushroom feature characteristics
 </div>
 </figure>
 </div>
-<p>We summarize all 21 categorical predictors in <a href="#tbl-feature-summary" class="quarto-xref">Table&nbsp;3</a>, which reports the number of levels and the dominant category for each feature. Given that veil_type only has one level, the values are the same for all observations so we drop that column.</p>
+<p>We summarize all 21 categorical predictors in <a href="#tbl-feature-summary" class="quarto-xref">Table&nbsp;3</a>, which reports the number of levels and the dominant category for each feature. Given that <code>veil_type</code> only has one level, the values are the same for all observations so we drop that column.</p>
 <!-- ```{python}
     X_train.to_csv('data/processed/x_train.csv')
     X_test.to_csv('data/processed/x_test.csv')
@@ -861,14 +847,14 @@ Figure&nbsp;5: Class Proportions (edible vs poisonous) by Population Type
 <section id="relationship-between-physical-features-and-toxicity-an-exploratory-overview" class="level4">
 <h4 class="anchored" data-anchor-id="relationship-between-physical-features-and-toxicity-an-exploratory-overview">Relationship Between Physical Features and Toxicity: An Exploratory Overview</h4>
 <p>To explore how individual mushroom characteristics relate to toxicity, we compared the proportion of poisonous and edible mushrooms across several categorical features. <code>python {{ odor_strength }}</code> showed the strongest separation between classes (Figure <a href="#fig-odor-cat" class="quarto-xref">Figure&nbsp;1</a>), with foul-, creosote-, and pungent-smelling mushrooms being almost exclusively poisonous, whereas almond and anise odors were strongly associated with edibility. Gill size also demonstrated a meaningful distinction (Figure <a href="#fig-gill-size" class="quarto-xref">Figure&nbsp;2</a>), with broad gills far more common among edible mushrooms. Habitat exhibited notable patterns as well (Figure <a href="#fig-habitat" class="quarto-xref">Figure&nbsp;3</a>): mushrooms found in wooded or grassy environments were more frequently poisonous, while those growing in urban or path environments tended to be edible. Bruising was another strong indicator (Figure <a href="#fig-bruise" class="quarto-xref">Figure&nbsp;4</a>), as mushrooms that bruised were overwhelmingly edible, whereas those that did not bruise were frequently poisonous. Lastly, population type revealed clear group-level differences (Figure <a href="#fig-pop-type" class="quarto-xref">Figure&nbsp;5</a>), with solitary or scattered mushrooms more often poisonous, while abundant or clustered populations were more commonly edible. Together, these figures illustrate that several features, odor in particular, provide strong discriminatory signals relevant to the classification task.</p>
-<div class="cell" data-execution_count="24">
-<div id="tbl-poison-rank" class="cell quarto-float quarto-figure quarto-figure-left anchored" data-execution_count="24">
+<div class="cell" data-execution_count="23">
+<div id="tbl-poison-rank" class="cell quarto-float quarto-figure quarto-figure-left anchored" data-execution_count="23">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-poison-rank-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Table&nbsp;4: Ranking of features by how well they distinguish poisonous mushrooms
 </figcaption>
 <div aria-describedby="tbl-poison-rank-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div class="cell-output cell-output-display cell-output-markdown" data-execution_count="75">
+<div class="cell-output cell-output-display cell-output-markdown" data-execution_count="79">
 <table class="do-not-create-environment cell caption-top table table-sm table-striped small">
 <thead>
 <tr class="header">
@@ -1008,18 +994,18 @@ Figure&nbsp;6: Correlation heatmap (Cramer’s V) for all feature and feature-ta
 </section>
 <section id="summary-of-anomalous-correlation-between-features" class="level2">
 <h2 class="anchored" data-anchor-id="summary-of-anomalous-correlation-between-features">Summary of Anomalous Correlation Between Features:</h2>
-<p><a href="#fig-corr-heatmap" class="quarto-xref">Figure&nbsp;6</a> shows a high correlation between the feature gill_attachment and the three features stalk_color_above_ring, stalk_color_below_ring, and veil_color. I expect this is a feature of the dataset because it includes a high number of observations (5686 in our training data) and only 23 species, so there are many repeated instances of each species. If a particular species has fixed color and gill attachment characteristics than it is expected that we would find a high correlation between these features. It is not likely to be a sign of data leakage, but does suggest that there are weaknesses in the biological representativeness of the dataset. Therefore, the dataset may not be the strongest choice for generalizing predictions about the poisonousness of mushrooms across the full Agaricus and Lepiota (Agaricaceae) family, since it may not capture the true diversity and independence of these features found in nature.</p>
+<p><a href="#fig-corr-heatmap" class="quarto-xref">Figure&nbsp;6</a> shows a high correlation between the feature <code>gill_attachment</code> and the three features <code>stalk_color_above_ring</code>, <code>stalk_color_below_ring</code>, and <code>veil_color</code>. We expect this is a feature of the dataset because it includes a high number of observations (5686 in our training data) and only 23 species, so there are many repeated instances of each species. If a particular species has fixed color and gill attachment characteristics than it is expected that we would find a high correlation between these features. It is not likely to be a sign of data leakage, but does suggest that there are weaknesses in the biological representativeness of the dataset. Therefore, the dataset may not be the strongest choice for generalizing predictions about the poisonousness of mushrooms across the full Agaricus and Lepiota (Agaricaceae) family, since it may not capture the true diversity and independence of these features found in nature.</p>
 </section>
 <section id="summary-of-anomalous-correlation-between-feature-odor-and-target" class="level2">
 <h2 class="anchored" data-anchor-id="summary-of-anomalous-correlation-between-feature-odor-and-target">Summary of Anomalous Correlation Between Feature “Odor” and Target:</h2>
-<p><a href="#fig-corr-heatmap" class="quarto-xref">Figure&nbsp;6</a> shows a high correlation between the feature “odor” and the target, and a moderately high correlation between “spore_print_color” and the target. However, the dataset we are using includes background information on the logical rules discovered by prior researchers Duch, Adamczak, and Grabczewski <span class="citation" data-cites="datastudy">(<a href="#ref-datastudy" role="doc-biblioref">Duch, Adamczak, and Grabczewski 1996</a>)</span>, and they found that “odor” is often the first split for identifying poisonous mushrooms, and “spore_print_color” is often the second. Hence both of these features are expected to be strong predictors of the target and the seeming anomalous correlation is simply an accurate reflection of biological reality as captured by the dataset, and not likely to be a sign of data leakage in this case.</p>
+<p><a href="#fig-corr-heatmap" class="quarto-xref">Figure&nbsp;6</a> shows a high correlation between the feature <code>odor</code> and the target, and a moderately high correlation between <code>spore_print_color</code> and the target. However, the dataset we are using includes background information on the logical rules discovered by prior researchers Duch, Adamczak, and Grabczewski <span class="citation" data-cites="datastudy">(<a href="#ref-datastudy" role="doc-biblioref">Duch, Adamczak, and Grabczewski 1996</a>)</span>, and they found that “odor” is often the first split for identifying poisonous mushrooms, and “spore_print_color” is often the second. Hence both of these features are expected to be strong predictors of the target and the seeming anomalous correlation is simply an accurate reflection of biological reality as captured by the dataset, and not likely to be a sign of data leakage in this case.</p>
 </section>
 </section>
 <section id="model" class="level1">
 <h1>Model</h1>
 <p>Before we continue, we must preprocess our data such that the features work with our models. Since all of our features are strings, we can opt to use one-hot encoding for them all.</p>
 <p>We fit a <code>DummyClassifier</code> to our data as a baseline to compare our actual model with. Random state used again for reproducibility.</p>
-<div id="tbl-cross-val-dc" class="cell quarto-float quarto-figure quarto-figure-left anchored" data-execution_count="26">
+<div id="tbl-cross-val-dc" class="cell quarto-float quarto-figure quarto-figure-left anchored" data-execution_count="25">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-cross-val-dc-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Table&nbsp;5: Mean 10-Fold Cross-Validation Metrics for DummyClassifier Baseline
@@ -1029,7 +1015,7 @@ Table&nbsp;5: Mean 10-Fold Cross-Validation Metrics for DummyClassifier Baseline
 <div class="ansi-escaped-output">
 <pre><span class="ansi-red-fg">---------------------------------------------------------------------------</span>
 <span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
-<span class="ansi-cyan-fg">Cell</span><span class="ansi-cyan-fg"> </span><span class="ansi-green-fg">In[77]</span><span class="ansi-green-fg">, line 6</span>
+<span class="ansi-cyan-fg">Cell</span><span class="ansi-cyan-fg"> </span><span class="ansi-green-fg">In[81]</span><span class="ansi-green-fg">, line 6</span>
 <span class="ansi-green-fg">      1</span> dc_pipe = make_pipeline(
 <span class="ansi-green-fg">      2</span>     preprocessor, 
 <span class="ansi-green-fg">      3</span>     DummyClassifier(random_state=<span class="ansi-green-fg">123</span>)
@@ -1048,7 +1034,7 @@ Table&nbsp;5: Mean 10-Fold Cross-Validation Metrics for DummyClassifier Baseline
 </figure>
 </div>
 <p>In our classification problem, we opt to use <code>SVC</code> <span class="citation" data-cites="svc">(<a href="#ref-svc" role="doc-biblioref">Buitinck et al. 2013</a>)</span> as our model of choice for its effective usage in this scenario. We do not have an extreme amount of data (&lt; 10000 observations) on top of only being a binary classification task.</p>
-<div id="tbl-cross-val-svc" class="cell quarto-float quarto-figure quarto-figure-left anchored" data-execution_count="27">
+<div id="tbl-cross-val-svc" class="cell quarto-float quarto-figure quarto-figure-left anchored" data-execution_count="26">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-cross-val-svc-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Table&nbsp;6: Mean 10-Fold Cross-Validation Metrics for SVC Model
@@ -1058,7 +1044,7 @@ Table&nbsp;6: Mean 10-Fold Cross-Validation Metrics for SVC Model
 <div class="ansi-escaped-output">
 <pre><span class="ansi-red-fg">---------------------------------------------------------------------------</span>
 <span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
-<span class="ansi-cyan-fg">Cell</span><span class="ansi-cyan-fg"> </span><span class="ansi-green-fg">In[78]</span><span class="ansi-green-fg">, line 6</span>
+<span class="ansi-cyan-fg">Cell</span><span class="ansi-cyan-fg"> </span><span class="ansi-green-fg">In[82]</span><span class="ansi-green-fg">, line 6</span>
 <span class="ansi-green-fg">      1</span> svc_pipe = make_pipeline(
 <span class="ansi-green-fg">      2</span>     preprocessor, 
 <span class="ansi-green-fg">      3</span>     SVC(random_state=<span class="ansi-green-fg">123</span>)
@@ -1076,14 +1062,14 @@ Table&nbsp;6: Mean 10-Fold Cross-Validation Metrics for SVC Model
 </div>
 </figure>
 </div>
-<div id="fig-confusion-matrix-svc" class="cell quarto-float quarto-figure quarto-figure-left anchored" data-execution_count="28">
+<div id="fig-confusion-matrix-svc" class="cell quarto-float quarto-figure quarto-figure-left anchored" data-execution_count="27">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-confusion-matrix-svc-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output cell-output-error">
 <div class="ansi-escaped-output">
 <pre><span class="ansi-red-fg">---------------------------------------------------------------------------</span>
 <span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
-<span class="ansi-cyan-fg">Cell</span><span class="ansi-cyan-fg"> </span><span class="ansi-green-fg">In[79]</span><span class="ansi-green-fg">, line 1</span>
+<span class="ansi-cyan-fg">Cell</span><span class="ansi-cyan-fg"> </span><span class="ansi-green-fg">In[83]</span><span class="ansi-green-fg">, line 1</span>
 <span class="ansi-green-fg">----&gt; </span><span class="ansi-green-fg">1</span> y_pred = svc_pipe.predict(<span class="ansi-yellow-bg">X_test</span>)
 <span class="ansi-green-fg">      3</span> cm = confusion_matrix(y_test, y_pred)
 <span class="ansi-green-fg">      4</span> ConfusionMatrixDisplay(cm).plot()
@@ -1178,14 +1164,13 @@ Lincoff, G. H. 1981. <em>The Audubon Society Field Guide to North American Mushr
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-      const outerScaffold = trigger.parentElement.cloneNode(true);
-      const codeEl = outerScaffold.querySelector('code');
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
         }
-      }
-      return codeEl.innerText;
+        return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
