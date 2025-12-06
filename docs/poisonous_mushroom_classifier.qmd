@@ -22,6 +22,8 @@ execute:
 *Never forget to run imports first.*
 
 ```{python}
+#| label: setup
+#| include: false
 import requests
 import zipfile
 import pandas as pd
@@ -38,6 +40,7 @@ from sklearn.model_selection import cross_validate
 from sklearn.pipeline import make_pipeline
 from sklearn.svm import SVC
 from sklearn.metrics import confusion_matrix, ConfusionMatrixDisplay
+from sklearn.metrics import accuracy_score, precision_score, recall_score
 from scipy.stats import chi2_contingency
 import itertools
 from pathlib import Path
@@ -59,7 +62,7 @@ The family includes the common cultivated mushroom (Agaricus bisporus), and some
 These mushrooms are sometimes found in forests, but many grow on lawns, in the compost, or along roadsides and grassy areas where they are readily accessible for human consumption (500). 
 Accurate assessment of the edibility of these mushrooms is extremely important prior to consumption, however there is no simple rule for determining whether any example is poisonous or edible (500-505). 
 
-Here we ask if we can use a supervised machine learning algorithm to predict whether a given mushroom from the Agaricus and Lepiota family of mushrooms is edible or poisonous, based upon it's physical characteristics. 
+Here we ask if we can use a supervised machine learning algorithm to predict whether a given mushroom from the Agaricus and Lepiota family of mushrooms is edible or poisonous, based upon its physical characteristics. 
 Answering this question is important because mushroom poisonings are common and the greatest risk factor for mushroom poisoning is the misidentification of poisonous species as edible, in particular by amateur mushroom foragers and immigrants (Diaz, 2016)
 If made accessible to the public in North America, accurate prediction of mushrooms in this family could prevent poisoning and support the safe consumption of common edible mushrooms. 
 
@@ -67,7 +70,7 @@ If made accessible to the public in North America, accurate prediction of mushro
 
 ## Data
 
-The data set used in this project includes hypothetical mushroom samples drawn from The Audobon Society Field Guide to North American Mushrooms by Gary Lincoff (1981, 500-525). 
+The data set used in this project includes hypothetical mushroom samples drawn from The Audubon Society Field Guide to North American Mushrooms by Gary Lincoff (1981, 500-525). 
 It was sourced from the UCI Machine Learning Repository, and can be found [here](https://archive.ics.uci.edu/dataset/73/mushroom), specifically the file *agarius-lepiota.data*. 
 It includes 8124 descriptions of hypothetical mushroom samples that correspond to 23 species of mushrooms in the Agaricus and Lepiota Family (Mushroom, 1981). 
 Each row includes 22 categorical variables that are physical characteristics of the mushroom sample, including the odor, gill-spacing, gill-color, gill-size, population, habitat, etc, and is labelled as edible or poisonous. 
@@ -75,6 +78,8 @@ Each row includes 22 categorical variables that are physical characteristics of 
 # Analysis
 
 ```{python}
+#| label: download-data
+#| include: false
 #adding the downloaded data to the data directory by code
 # download data as zip and extract
 url = "https://archive.ics.uci.edu/static/public/73/mushroom.zip"
@@ -422,12 +427,14 @@ df.head()
 ```
 
 ```{python}
+#| include: false
 # Basic information
 df.info()
 
 ```
 
 ```{python}
+#| include: false
 # Data dimensions
 df.shape
 ```
@@ -549,10 +556,11 @@ if "veil_type" in X_train.columns:
 ```
 
 ```{python}
-    X_train.to_csv('data/processed/x_train.csv')
-    X_test.to_csv('data/processed/x_test.csv')
-    y_train.to_csv('data/processed/y_train.csv')
-    y_test.to_csv('data/processed/y_test.csv')
+#| include: false
+X_train.to_csv('data/processed/x_train.csv')
+X_test.to_csv('data/processed/x_test.csv')
+y_train.to_csv('data/processed/y_train.csv')
+y_test.to_csv('data/processed/y_test.csv')
 ```
 
 `veil_type` was dropped because it contains only a single category for all observations.
@@ -727,6 +735,10 @@ def stacked_poison_chart(
 ```{python}
 #| label: fig-odor-cat
 #| fig-cap: "Class Proportions (edible vs poisonous) by Odor"
+#| fig-width: 6
+#| fig-height: 4
+#| out-width: 75%
+#| fig-align: center
 
 # Visualize the edible vs poisonous class proportions for each odor category
 stacked_poison_chart("odor", "Odor Category", odor_map)
@@ -736,6 +748,10 @@ stacked_poison_chart("odor", "Odor Category", odor_map)
 ```{python}
 #| label: fig-gill-size
 #| fig-cap: "Class Proportions (edible vs poisonous) by Gill Size"
+#| fig-width: 6
+#| fig-height: 4
+#| out-width: 60%
+#| fig-align: center
 
 # Visualize the edible vs poisonous class proportions for each gill size
 stacked_poison_chart("gill_size", "Gill Size", gill_size_map)
@@ -745,6 +761,10 @@ stacked_poison_chart("gill_size", "Gill Size", gill_size_map)
 ```{python}
 #| label: fig-habitat
 #| fig-cap: "Class Proportions (edible vs poisonous) by Habitat"
+#| fig-width: 6
+#| fig-height: 4
+#| out-width: 60%
+#| fig-align: center
 
 # Visualize the edible vs poisonous class proportions for each habitat 
 stacked_poison_chart("habitat", "Habitat", habitat_map)
@@ -754,6 +774,10 @@ stacked_poison_chart("habitat", "Habitat", habitat_map)
 ```{python}
 #| label: fig-bruise
 #| fig-cap: "Class Proportions (edible vs poisonous) by Bruises"
+##| fig-width: 6
+#| fig-height: 4
+#| out-width: 60%
+#| fig-align: center
 
 # Visualize the edible vs poisonous class proportions for each bruise category 
 stacked_poison_chart("bruises", "Bruises", bruises_map)
@@ -763,6 +787,10 @@ stacked_poison_chart("bruises", "Bruises", bruises_map)
 ```{python}
 #| label: fig-pop-type
 #| fig-cap: "Class Proportions (edible vs poisonous) by Population Type"
+#| fig-width: 6
+#| fig-height: 4
+#| out-width: 60%
+#| fig-align: center
 
 # Visualize the edible vs poisonous class proportions for each population type 
 stacked_poison_chart("population", "Population", population_map)
@@ -796,10 +824,11 @@ feature_importance_eda
 ```
 
 ```{python}
-    X_train.to_csv('../data/processed/x_train.csv')
-    X_test.to_csv('../data/processed/x_test.csv')
-    y_train.to_csv('../data/processed/y_train.csv')
-    y_test.to_csv('../data/processed/y_test.csv')
+#| include: false
+X_train.to_csv('../data/processed/x_train.csv')
+X_test.to_csv('../data/processed/x_test.csv')
+y_train.to_csv('../data/processed/y_train.csv')
+y_test.to_csv('../data/processed/y_test.csv')
 ```
 
 A ranking of features by their discriminatory power is shown in Table @tbl-poison-rank, using the variance in poisonous fraction across categories as an association measure.
@@ -927,6 +956,10 @@ cross_val_svc
 ```{python}
 #| label: fig-confusion-matrix-svc
 #| fig-cap: "Confusion matrix for the SVC classifier on the test set."
+##| fig-width: 6
+#| fig-height: 4
+#| out-width: 60%
+#| fig-align: center
 
 y_pred = svc_pipe.predict(X_test)
 
@@ -935,9 +968,20 @@ ConfusionMatrixDisplay(cm).plot()
 
 ```
 
+```{python}
+#| label: inline-vars
+#| include: false
+test_n = len(y_test)
+acc = accuracy_score(y_test, y_pred)
+precision = precision_score(y_test, y_pred)
+recall = recall_score(y_test, y_pred)
+
+```
+
+
 # Results & Discussion
 
-Our prediction model performed excellently on test data, classifying all of the mushroom examples correctly as poisonous or edible, with no error. Given that our model predicted perfectly, no optimization was required. As shown in Figure @fig-confusion-matrix-svc, the SVC correctly classified every mushroom in the test set, yielding no false positives or false negatives. Furthermore, the SVC model shows consistent performance across folds, as summarized in Table @tbl-cross-val-svc.
+Our prediction model performed excellently on test data, with precision `precision`{.python} and recall `recall`{.python} and an overall accuracy of `acc`{.python}. The model classified all of the `test_n`{.python} mushroom examples correctly as poisonous or edible, with no error. Given that our model predicted perfectly, no optimization was required. As shown in Figure @fig-confusion-matrix-svc, the SVC correctly classified every mushroom in the test set, yielding no false positives or false negatives. Furthermore, the SVC model shows consistent performance across folds, as summarized in Table @tbl-cross-val-svc.
 
 This performance is identical to the results published on the [UCI website](https://archive.ics.uci.edu/dataset/73/mushroom) from which the data was sourced (Mushroom). 
 As shown in the confusion matrix, the model has a recall and precision of 1, due to no false positivies or negatives. 
