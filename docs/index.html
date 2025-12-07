@@ -55,7 +55,7 @@ div.csl-indent {
 <link href="poisonous_mushroom_classifier_files/libs/quarto-html/quarto-syntax-highlighting-ea385d0e468b0dd5ea5bf0780b1290d9.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="poisonous_mushroom_classifier_files/libs/bootstrap/bootstrap.min.js"></script>
 <link href="poisonous_mushroom_classifier_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="poisonous_mushroom_classifier_files/libs/bootstrap/bootstrap-bb462d781dde1847d9e3ccf7736099dd.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="poisonous_mushroom_classifier_files/libs/bootstrap/bootstrap-cb6950e0e5e2363624774f51cf6c75cf.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
 
 <script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
@@ -70,24 +70,13 @@ div.csl-indent {
   <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="99">
     <h2 id="toc-title">Table of contents</h2>
    
-  <ul class="collapse">
+  <ul>
   <li><a href="#summary" id="toc-summary" class="nav-link active" data-scroll-target="#summary"><span class="header-section-number">1</span> Summary</a></li>
   <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction"><span class="header-section-number">2</span> Introduction</a></li>
-  <li><a href="#methods" id="toc-methods" class="nav-link" data-scroll-target="#methods"><span class="header-section-number">3</span> Methods</a>
-  <ul class="collapse">
-  <li><a href="#data" id="toc-data" class="nav-link" data-scroll-target="#data"><span class="header-section-number">3.1</span> Data</a></li>
-  <li><a href="#computing-environment" id="toc-computing-environment" class="nav-link" data-scroll-target="#computing-environment"><span class="header-section-number">3.2</span> Computing Environment</a></li>
-  </ul></li>
-  <li><a href="#analysis" id="toc-analysis" class="nav-link" data-scroll-target="#analysis"><span class="header-section-number">4</span> Analysis</a>
-  <ul class="collapse">
-  <li><a href="#interpretation-of-outlier-anomalous-value-checks" id="toc-interpretation-of-outlier-anomalous-value-checks" class="nav-link" data-scroll-target="#interpretation-of-outlier-anomalous-value-checks"><span class="header-section-number">4.1</span> Interpretation of Outlier / Anomalous Value Checks</a></li>
-  </ul></li>
+  <li><a href="#methods" id="toc-methods" class="nav-link" data-scroll-target="#methods"><span class="header-section-number">3</span> Methods</a></li>
+  <li><a href="#analysis" id="toc-analysis" class="nav-link" data-scroll-target="#analysis"><span class="header-section-number">4</span> Analysis</a></li>
   <li><a href="#data-splitting" id="toc-data-splitting" class="nav-link" data-scroll-target="#data-splitting"><span class="header-section-number">5</span> Data Splitting</a></li>
-  <li><a href="#eda-after-data-splitting" id="toc-eda-after-data-splitting" class="nav-link" data-scroll-target="#eda-after-data-splitting"><span class="header-section-number">6</span> EDA After Data Splitting</a>
-  <ul class="collapse">
-  <li><a href="#summary-of-anomalous-correlation-between-features" id="toc-summary-of-anomalous-correlation-between-features" class="nav-link" data-scroll-target="#summary-of-anomalous-correlation-between-features"><span class="header-section-number">6.1</span> Summary of Anomalous Correlation Between Features:</a></li>
-  <li><a href="#summary-of-anomalous-correlation-between-feature-odor-and-target" id="toc-summary-of-anomalous-correlation-between-feature-odor-and-target" class="nav-link" data-scroll-target="#summary-of-anomalous-correlation-between-feature-odor-and-target"><span class="header-section-number">6.2</span> Summary of Anomalous Correlation Between Feature “Odor” and Target:</a></li>
-  </ul></li>
+  <li><a href="#eda-after-data-splitting" id="toc-eda-after-data-splitting" class="nav-link" data-scroll-target="#eda-after-data-splitting"><span class="header-section-number">6</span> EDA After Data Splitting</a></li>
   <li><a href="#model" id="toc-model" class="nav-link" data-scroll-target="#model"><span class="header-section-number">7</span> Model</a></li>
   <li><a href="#results-discussion" id="toc-results-discussion" class="nav-link" data-scroll-target="#results-discussion"><span class="header-section-number">8</span> Results &amp; Discussion</a></li>
   <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"><span class="header-section-number">9</span> References</a></li>
@@ -877,7 +866,7 @@ Figure&nbsp;6: Correlation heatmap (Cramer’s V) for all feature and feature-ta
 <section id="model" class="level1" data-number="7">
 <h1 data-number="7"><span class="header-section-number">7</span> Model</h1>
 <p>Before we continue, we must preprocess our data such that the features work with our models. Since all of our features are strings, we can opt to use one-hot encoding for them all. We fit a <code>DummyClassifier</code> to our data as a baseline to compare our actual model with. Random state used again for reproducibility.</p>
-<div id="8d7c8f2f" class="cell" data-execution_count="7">
+<div id="cfad90cb" class="cell" data-execution_count="7">
 <div class="cell-output cell-output-display" data-execution_count="7">
 <style>#sk-container-id-1 {
   /* Definition of color scheme common for light and dark mode */
@@ -1515,7 +1504,7 @@ document.querySelectorAll('.fa-regular.fa-copy').forEach(function(element) {
 </div>
 <p>SciKit Learn pipe for the Dummy Classifier model</p>
 <p>In our classification problem, we opt to use <code>SVC</code> <span class="citation" data-cites="svc">(<a href="#ref-svc" role="doc-biblioref">Buitinck et al. 2013</a>)</span> as our model of choice for its effective usage in this scenario. We do not have an extreme amount of data (&lt; 10000 observations) on top of only being a binary classification task.</p>
-<div id="440c8c9e" class="cell" data-execution_count="8">
+<div id="ef416a02" class="cell" data-execution_count="8">
 <div class="cell-output cell-output-display" data-execution_count="8">
 <style>#sk-container-id-2 {
   /* Definition of color scheme common for light and dark mode */
