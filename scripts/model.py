@@ -69,7 +69,11 @@ def main(train_df, test_df):
     disp.plot()
 
     disp.figure_.savefig("img/confusion_matrix.png")
-
+    precision = cm[1, 1] / (cm[0, 1] + cm[1, 1])
+    recall    = cm[1, 1] / (cm[1, 0] + cm[1, 1])
+    scores_df = pd.DataFrame([{"precision": precision, "recall": recall}])
+    os.makedirs("results/tables", exist_ok=True)
+    scores_df.to_csv("results/tables/test_scores.csv", index=False)
 
 if __name__ == '__main__':
     main()

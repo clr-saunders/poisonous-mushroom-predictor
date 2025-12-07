@@ -64,12 +64,15 @@ with open('../scripts/models/dummy.pkl', 'rb') as f:
     dc_pipe = pickle.load(f)
 with open('../scripts/models/svc.pkl', 'rb') as f:
     svc_pipe = pickle.load(f)
+test_scores_df = pd.read_csv("../results/tables/test_scores.csv")
+precision = f"{test_scores_df['precision'].iloc[0]:.2f}"
+recall = f"{test_scores_df['recall'].iloc[0]:.2f}"
 ```
 
 # Summary
 
 Here we attempt to build a classification model using a Support Vector Machine algorithm which can use physical characteristics of mushrooms to predict whether a North American mushroom from the Agaricus and Lepiota (Agaricaceae) family is edible or poisonous for human consumption. 
-Our final classifier performed excellently on an unseen test data set, with precision and recall of 1.0 and an overall accuracy calculated to be 1.0.
+Our final classifier performed excellently on an unseen test data set, with precision of `{python} precision` and recall of `{python} recall` and an overall accuracy calculated to be 1.0.
 On the `{python} nrows_test_df` test data observations, the model correctly predicted all `{python} nrows_test_df`. 
 Although the model performs extremely well it has practical limitations, because it requires the correct identification of `{python} nfeats` different physical characteristics of a given mushroom in order for the corresponding prediction to be correct. 
 We believe the model could be a powerful tool for preventing the misidentification of the Agaricus and Lepiota family of mushrooms, but further efforts to improve the practical implementation of the model for usage by the public would be very useful.
@@ -250,10 +253,10 @@ Confusion matrix for the SVC classifier on the test set.
 
 # Results & Discussion
 
-Our prediction model performed excellently on test data, classifying all of the mushroom examples correctly as poisonous or edible, with no error. Given that our model predicted perfectly, no optimization was required. As shown in  @fig-confusion-matrix-svc, the SVC correctly classified every mushroom in the test set, yielding no false positives or false negatives. 
+Our prediction model performed excellently on test data, classifying all of the mushroom examples correctly as poisonous or edible, with an accuracy of 1.0. Given that our model predicted perfectly, no optimization was required. As shown in  @fig-confusion-matrix-svc, the SVC correctly classified every mushroom in the test set, yielding no false positives or false negatives. 
 
 This performance is identical to the results published on the [UCI website](https://archive.ics.uci.edu/dataset/73/mushroom) from which the data was sourced [@datasource]. 
-As shown in the confusion matrix, the model has a recall and precision of 1, due to no false positivies or negatives. 
+As shown in the confusion matrix, the model has a recall of `{python} recall `and precision of `{python} precision`, due to no false positivies or negatives. 
 The model also shows robustness, with no difference in the accuracy of training and test scores, so it is promising that this model could be deployed effectively to protect mushroom consumers from eating poisonous mushrooms.That said, there are some practical concerns for public implementation, namely the model is fit on `{python} nfeats` different features that correspond to specific categorical physical characteristics of a mushroom, and thus accuracy requires accurate identification of physical characteristics.
 
 Hence, if an amateur mushroom enthusiast aimed to utilize the model to predict edibility but misidentified the physical characeristics of the mushroom they were attempting to classify, then the accuracy of the models predictions would be effectively moot as it would not be returning a prediction for the true foraged mushroom.
