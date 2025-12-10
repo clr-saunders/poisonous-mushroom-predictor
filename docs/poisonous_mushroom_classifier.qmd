@@ -10,6 +10,7 @@ format:
         toc-expand: true
         fig-align: left 
         number-sections: true
+        embed-resources: true
         output-file: index.html
         output-dir: docs
 bibliography: references.bib
@@ -159,7 +160,7 @@ A feature with no variation cannot help the model distinguish edible from poison
 
 ::: {#fig-odor-cat width=80%}
 
-![](results/figures/stacked_odor.png)
+![](../results/figures/stacked_odor.png)
 
 Class Proportions (edible vs poisonous) by Odor
 :::
