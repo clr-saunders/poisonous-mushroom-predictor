@@ -3,8 +3,6 @@
 # date: 2025-12-02
 
 import click
-import requests
-import zipfile
 import os
 from src.read_zip import read
 
