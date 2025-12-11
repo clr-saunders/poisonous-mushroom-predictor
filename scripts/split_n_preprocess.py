@@ -9,6 +9,8 @@ from src.write_csv import write_csv
 TEST_SIZE = 0.3
 RANDOM_STATE = 123
 
+out_dir = Path("data/processed")
+out_dir.mkdir(parents=True, exist_ok=True)
 
 def save_column_names_txt(col_names, out_dir):
     """ saves column names in text file """
@@ -194,11 +196,9 @@ def main(raw_data: str) -> None:
         stratify=df["is_poisonous"],
     )
     
-    out_dir = Path(out_dir)
-    out_dir.mkdir(parents=True, exist_ok=True)
 
-    write_csv(train_df, out_dir, "mushroom_train.csv")
-    write_csv(test_df, out_dir, "musthroom_test.csv")
+    write_csv(train_df, str(out_dir), "mushroom_train.csv")
+    write_csv(test_df, str(out_dir), "mushroom_test.csv")
 
     # ------ Save Dataset Col Names for Use ----
     save_column_names_txt(dataset_col_names, out_dir="data/processed")
