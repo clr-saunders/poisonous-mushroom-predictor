@@ -13,7 +13,7 @@ sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
 from src.make_pipeline import create_model_pipeline 
 
 
-# 1. Fixture to provide standard test data
+# 1. Fixture to provide standard test data  
 @pytest.fixture
 def sample_data():
     """Provides sample features (X) and target (y) arrays."""
