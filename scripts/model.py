@@ -8,7 +8,10 @@ from sklearn.pipeline import make_pipeline
 from sklearn.svm import SVC
 from sklearn.metrics import confusion_matrix, ConfusionMatrixDisplay
 import click
+import sys
 import os
+sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
+from src.make_pipeline import create_model_pipeline
 from matplotlib import pyplot as plt
 import pickle
 
@@ -28,9 +31,14 @@ def main(train_df, test_df):
 
     preprocessor = OneHotEncoder(handle_unknown="ignore")
 
-    dc_pipe = make_pipeline(
-        preprocessor, 
-        DummyClassifier(random_state=123)
+    # dc_pipe = make_pipeline(
+    #     preprocessor, 
+    #     DummyClassifier(random_state=123)
+    # )
+
+    dc_pipe = create_model_pipeline(
+        DummyClassifier(random_state=123),
+        preprocessor
     )
 
     os.makedirs('scripts/models', exist_ok=True)
@@ -45,9 +53,9 @@ def main(train_df, test_df):
             dc_pipe, x_train, y_train, cv=10, n_jobs=-1, return_train_score=True
         )).mean().to_frame().rename(columns={0: "mean_value"})
 
-    svc_pipe = make_pipeline(
-        preprocessor, 
-        SVC(random_state=123)
+    svc_pipe = create_model_pipeline(
+        SVC(random_state=123),
+        preprocessor
     )
 
     svc_pipe.fit(x_train, y_train)
