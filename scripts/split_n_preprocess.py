@@ -4,50 +4,16 @@ import pandas as pd
 import pandera.pandas as pa
 from pathlib import Path
 from sklearn.model_selection import train_test_split
-
+import sys
+import os
+sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
+from src.write_csv import write_csv
 
 TEST_SIZE = 0.3
 RANDOM_STATE = 123
 
-
-def save_train_test_split_stratified(
-    df: pd.DataFrame,
-    out_dir: str | Path = "data/processed",
-) -> tuple[pd.DataFrame, pd.DataFrame]:
-    """
-    Perform a reproducible stratified train/test split on the full dataframe
-    and save the resulting train/test dataframes to CSV.
-
-    Parameters
-    ----------
-    df : pandas.DataFrame
-        Cleaned mushroom dataframe with `is_poisonous` as the target.
-    out_dir : str or Path, optional
-        Directory where train and test CSVs should be saved.
-
-    Returns
-    -------
-    (train_df, test_df)
-        DataFrames for the training and test sets.
-    """
-    out_dir = Path(out_dir)
-    out_dir.mkdir(parents=True, exist_ok=True)
-
-    train_df, test_df = train_test_split(
-        df,
-        test_size=TEST_SIZE,
-        random_state=RANDOM_STATE,
-        stratify=df["is_poisonous"],
-    )
-
-    print("\n=== Train/Test split ===")
-    print("Train df shape:", train_df.shape)
-    print("Test df shape: ", test_df.shape)
-
-    train_df.to_csv(out_dir / "mushroom_train.csv", index=False)
-    test_df.to_csv(out_dir / "mushroom_test.csv", index=False)
-
-    return train_df, test_df
+out_dir = Path("data/processed")
+out_dir.mkdir(parents=True, exist_ok=True)
 
 def save_column_names_txt(col_names, out_dir):
     """ saves column names in text file """
@@ -226,7 +192,16 @@ def main(raw_data: str) -> None:
     df = mushroom_schema.validate(df, lazy=True)
 
     # ------ Stratified train/test split + save ------
-    save_train_test_split_stratified(df)
+    train_df, test_df = train_test_split(
+        df,
+        test_size=TEST_SIZE,
+        random_state=RANDOM_STATE,
+        stratify=df["is_poisonous"],
+    )
+    
+
+    write_csv(train_df, str(out_dir), "mushroom_train.csv")
+    write_csv(test_df, str(out_dir), "mushroom_test.csv")
 
     # ------ Save Dataset Col Names for Use ----
     save_column_names_txt(dataset_col_names, out_dir="data/processed")

@@ -16,6 +16,7 @@ dependencies:
   - conda=25.7.0
   - click=8.3.1
   - tabulate=0.9.0
+  - pytest=9.0.2
 platforms:
   - linux-64
   - osx-64
