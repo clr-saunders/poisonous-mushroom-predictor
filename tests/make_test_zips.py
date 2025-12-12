@@ -32,7 +32,7 @@ with zipfile.ZipFile('files_txt_subdir.zip', 'w', zipfile.ZIP_DEFLATED) as zipf:
 with zipfile.ZipFile('empty.zip', 'w', zipfile.ZIP_DEFLATED):
     pass
 
-# Clean up the files and directories created
+# Clean up the temporary files and directory
 for f in ['test1.txt', 'test2.csv']:
     if os.path.exists(f):
         os.remove(f)
