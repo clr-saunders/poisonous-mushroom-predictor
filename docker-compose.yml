@@ -1,6 +1,6 @@
 services:
   analysis-env:
-    image: csaunde95/dsci522-group6-mushroomclassifier:4ee5425
+    image: csaunde95/dsci522-group6-mushroomclassifier:e664cd0
     user: root
     environment:
       GRANT_SUDO: "yes"
