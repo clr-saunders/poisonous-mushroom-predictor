@@ -9,7 +9,7 @@ Reproducible EDA for the mushroom classification project:
 - Drop non-informative 'veil_type' feature from X (if present)
 - Save updated mushroom_train/mushroom_test with any changes
 - Save X_train, X_test, y_train, y_test to data/processed/ (optional, remove if not needed)
-- Compute Cramér's V correlation matrix and save a heatmap
+- Compute Cramer's V correlation matrix and save a heatmap
 - Generate stacked bar charts for selected categorical features
 
 This script assumes pre-split data are available as:
@@ -26,7 +26,16 @@ import itertools
 import numpy as np
 import pandas as pd
 import altair as alt
-from scipy.stats import chi2_contingency
+
+from src.mushroom_eda_utils import (
+    build_feature_matrices,
+    summarize_features,
+    drop_veil_type_if_present,
+    get_poison_rate_by,
+    cramers_v,
+    compute_poison_variance_rank,
+)
+
 
 # -------------------------------------------------------------------
 # Configuration for reproducibility and paths
@@ -108,58 +117,58 @@ def eda_after_split(train_df: pd.DataFrame) -> None:
     )
 
 
-def build_feature_matrices(train_df: pd.DataFrame, test_df: pd.DataFrame):
-    """Construct X/y matrices from train/test splits."""
-    X_train = train_df.drop(columns=["is_poisonous"])
-    y_train = train_df["is_poisonous"]
+# def build_feature_matrices(train_df: pd.DataFrame, test_df: pd.DataFrame):
+#     """Construct X/y matrices from train/test splits."""
+#     X_train = train_df.drop(columns=["is_poisonous"])
+#     y_train = train_df["is_poisonous"]
 
-    X_test = test_df.drop(columns=["is_poisonous"])
-    y_test = test_df["is_poisonous"]
+#     X_test = test_df.drop(columns=["is_poisonous"])
+#     y_test = test_df["is_poisonous"]
 
-    return X_train, X_test, y_train, y_test
-
-
-def summarize_features(X_train: pd.DataFrame) -> pd.DataFrame:
-    """
-    Summarize categorical feature characteristics:
-    - number of categories
-    - most frequent category
-    - its count
-    """
-    summary_rows: list[dict] = []
-    for col in X_train.columns:
-        vc = X_train[col].value_counts()
-        summary_rows.append(
-            {
-                "feature": col,
-                "n_categories": vc.shape[0],
-                "most_frequent_category": vc.index[0],
-                "most_frequent_count": int(vc.iloc[0]),
-            }
-        )
-
-    feature_summary = (
-        pd.DataFrame(summary_rows)
-        .sort_values("n_categories", ascending=False)
-        .reset_index(drop=True)
-    )
-    feature_summary.index = feature_summary.index + 1
-    return feature_summary
+#     return X_train, X_test, y_train, y_test
 
 
-def drop_veil_type_if_present(
-    train_df: pd.DataFrame, test_df: pd.DataFrame
-) -> tuple[pd.DataFrame, pd.DataFrame]:
-    """
-    Drop 'veil_type' if present (single-category, non-informative feature)
-    from both train and test dataframes.
-    """
-    if "veil_type" in train_df.columns:
-        train_df = train_df.drop(columns=["veil_type"])
-        if "veil_type" in test_df.columns:
-            test_df = test_df.drop(columns=["veil_type"])
-        print("\nDropped 'veil_type' column from train and test data (single level).")
-    return train_df, test_df
+# def summarize_features(X_train: pd.DataFrame) -> pd.DataFrame:
+#     """
+#     Summarize categorical feature characteristics:
+#     - number of categories
+#     - most frequent category
+#     - its count
+#     """
+#     summary_rows: list[dict] = []
+#     for col in X_train.columns:
+#         vc = X_train[col].value_counts()
+#         summary_rows.append(
+#             {
+#                 "feature": col,
+#                 "n_categories": vc.shape[0],
+#                 "most_frequent_category": vc.index[0],
+#                 "most_frequent_count": int(vc.iloc[0]),
+#             }
+#         )
+
+#     feature_summary = (
+#         pd.DataFrame(summary_rows)
+#         .sort_values("n_categories", ascending=False)
+#         .reset_index(drop=True)
+#     )
+#     feature_summary.index = feature_summary.index + 1
+#     return feature_summary
+
+
+# def drop_veil_type_if_present(
+#     train_df: pd.DataFrame, test_df: pd.DataFrame
+# ) -> tuple[pd.DataFrame, pd.DataFrame]:
+#     """
+#     Drop 'veil_type' if present (single-category, non-informative feature)
+#     from both train and test dataframes.
+#     """
+#     if "veil_type" in train_df.columns:
+#         train_df = train_df.drop(columns=["veil_type"])
+#         if "veil_type" in test_df.columns:
+#             test_df = test_df.drop(columns=["veil_type"])
+#         print("\nDropped 'veil_type' column from train and test data (single level).")
+#     return train_df, test_df
 
 
 def save_updated_train_test(train_df: pd.DataFrame, test_df: pd.DataFrame) -> None:
@@ -169,19 +178,19 @@ def save_updated_train_test(train_df: pd.DataFrame, test_df: pd.DataFrame) -> No
     print("\nUpdated mushroom_train.csv and mushroom_test.csv in data/processed/.")
 
 
-def get_poison_rate_by(train_df: pd.DataFrame, feature: str) -> pd.DataFrame:
-    """
-    Compute the proportion of poisonous and edible mushrooms for each category
-    of a given feature, based on the training set.
-    """
-    category_poisonous = pd.crosstab(
-        train_df[feature],
-        train_df["is_poisonous"],
-        normalize="index",
-    )
-    # 0 = edible, 1 = poisonous
-    category_poisonous.columns = ["edible_frac", "poisonous_frac"]
-    return category_poisonous.sort_values("poisonous_frac", ascending=False)
+# def get_poison_rate_by(train_df: pd.DataFrame, feature: str) -> pd.DataFrame:
+#     """
+#     Compute the proportion of poisonous and edible mushrooms for each category
+#     of a given feature, based on the training set.
+#     """
+#     category_poisonous = pd.crosstab(
+#         train_df[feature],
+#         train_df["is_poisonous"],
+#         normalize="index",
+#     )
+#     # 0 = edible, 1 = poisonous
+#     category_poisonous.columns = ["edible_frac", "poisonous_frac"]
+#     return category_poisonous.sort_values("poisonous_frac", ascending=False)
 
 
 def stacked_poison_chart(
@@ -303,49 +312,91 @@ def save_stacked_charts(train_df: pd.DataFrame) -> None:
         chart.save(out_path)  # extension `.png` tells Altair to export PNG
         print(f"Saved stacked chart for '{feature}' to {out_path}")
 
-def compute_and_save_poison_variance_rank(train_df: pd.DataFrame) -> pd.DataFrame:
+# def compute_and_save_poison_variance_rank(train_df: pd.DataFrame) -> pd.DataFrame:
+#     """
+#     Rank features by how strongly they separate poisonous vs edible mushrooms.
+
+#     Uses the variance of the 'poisonous_frac' across categories of each feature
+#     as an association measure.
+#     """
+#     feature_cols = [c for c in train_df.columns if c != "is_poisonous"]
+
+#     feature_scores: list[dict] = []
+
+#     for col in feature_cols:
+#         ct = get_poison_rate_by(train_df, col)
+#         score = ct["poisonous_frac"].var()
+#         feature_scores.append(
+#             {
+#                 "feature": col,
+#                 "poison_variance": round(float(score), 2),
+#             }
+#         )
+
+#     feature_importance_eda = (
+#         pd.DataFrame(feature_scores)
+#         .sort_values("poison_variance", ascending=False)
+#         .reset_index(drop=True)
+#     )
+#     feature_importance_eda.index = feature_importance_eda.index + 1
+
+#     out_path = TABLES_DIR / "feature_poison_variance_rank.csv"
+#     feature_importance_eda.to_csv(out_path, index=True)
+#     print(f"Saved poison-variance feature ranking to {out_path}")
+
+#     return feature_importance_eda
+
+def compute_and_save_poison_variance_rank(
+    train_df: pd.DataFrame,
+    out_path: Path | None = None,
+    target_col: str = "is_poisonous",
+) -> pd.DataFrame:
     """
-    Rank features by how strongly they separate poisonous vs edible mushrooms.
+    Compute and persist a ranking of features by their poison-variance score.
 
-    Uses the variance of the 'poisonous_frac' across categories of each feature
-    as an association measure.
+    This is a thin I/O wrapper around ``compute_poison_variance_rank`` from
+    ``mushroom_eda_utils``. It computes the ranking from the training data and
+    writes it to CSV for downstream reporting.
+
+    Parameters
+    ----------
+    train_df : pandas.DataFrame
+        Training dataset containing feature columns and the target column.
+    out_path : pathlib.Path or None, default=None
+        Output CSV path. If None, defaults to:
+        ``TABLES_DIR / "feature_poison_variance_rank.csv"``.
+    target_col : str, default="is_poisonous"
+        Name of the target column used to compute class proportions.
+
+    Returns
+    -------
+    pandas.DataFrame
+        Ranked features with columns ``['feature', 'poison_variance']``.
     """
-    feature_cols = [c for c in train_df.columns if c != "is_poisonous"]
+    if out_path is None:
+        out_path = TABLES_DIR / "feature_poison_variance_rank.csv"
 
-    feature_scores: list[dict] = []
-
-    for col in feature_cols:
-        ct = get_poison_rate_by(train_df, col)
-        score = ct["poisonous_frac"].var()
-        feature_scores.append(
-            {
-                "feature": col,
-                "poison_variance": round(float(score), 2),
-            }
-        )
-
-    feature_importance_eda = (
-        pd.DataFrame(feature_scores)
-        .sort_values("poison_variance", ascending=False)
-        .reset_index(drop=True)
+    feature_importance_eda = compute_poison_variance_rank(
+        train_df=train_df,
+        target_col=target_col,
     )
-    feature_importance_eda.index = feature_importance_eda.index + 1
 
-    out_path = TABLES_DIR / "feature_poison_variance_rank.csv"
+    # Save with the rank index (1-based) included as the first column
     feature_importance_eda.to_csv(out_path, index=True)
     print(f"Saved poison-variance feature ranking to {out_path}")
 
     return feature_importance_eda
 
 
-def cramers_v(df: pd.DataFrame, feature1: str, feature2: str) -> float:
-    """Compute Cramér's V between two categorical features."""
-    table = pd.crosstab(df[feature1], df[feature2])
-    chi2, _, _, _ = chi2_contingency(table)
-    n = table.sum().sum()
-    phi2 = chi2 / n
-    r, k = table.shape
-    return float(np.sqrt(phi2 / min(k - 1, r - 1)))
+
+# def cramers_v(df: pd.DataFrame, feature1: str, feature2: str) -> float:
+#     """Compute Cramér's V between two categorical features."""
+#     table = pd.crosstab(df[feature1], df[feature2])
+#     chi2, _, _, _ = chi2_contingency(table)
+#     n = table.sum().sum()
+#     phi2 = chi2 / n
+#     r, k = table.shape
+#     return float(np.sqrt(phi2 / min(k - 1, r - 1)))
 
 
 # def compute_and_save_cramers_matrix(train_df: pd.DataFrame) -> None:
