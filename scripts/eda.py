@@ -71,7 +71,39 @@ INPUT_TEST_CSV = PROCESSED_DIR / "mushroom_test.csv"
 def load_train_test_data(
     train_path: Path, test_path: Path
 ) -> tuple[pd.DataFrame, pd.DataFrame]:
-    """Load pre-split train and test mushroom datasets."""
+    """
+    Load pre-split training and test datasets from disk.
+
+    This is a small I/O helper for the EDA pipeline. It validates that both
+    input files exist, then loads them with ``pandas.read_csv``.
+
+    Parameters
+    ----------
+    train_path : pathlib.Path
+        Path to the training CSV (e.g., ``data/processed/mushroom_train.csv``).
+    test_path : pathlib.Path
+        Path to the test CSV (e.g., ``data/processed/mushroom_test.csv``).
+
+    Returns
+    -------
+    (train_df, test_df) : tuple[pandas.DataFrame, pandas.DataFrame]
+        The loaded train and test datasets.
+
+    Raises
+    ------
+    FileNotFoundError
+        If either ``train_path`` or ``test_path`` does not exist.
+
+    Examples
+    --------
+    >>> from pathlib import Path
+    >>> train_df, test_df = load_train_test_data(
+    ...     Path("data/processed/mushroom_train.csv"),
+    ...     Path("data/processed/mushroom_test.csv"),
+    ... )
+    >>> train_df.shape[0] > 0
+    True
+    """
     if not train_path.exists():
         raise FileNotFoundError(f"Expected train data at {train_path}.")
     if not test_path.exists():
@@ -83,7 +115,33 @@ def load_train_test_data(
 
 
 def basic_eda_train(train_df: pd.DataFrame) -> None:
-    """Print basic EDA diagnostics on the training set."""
+    """
+    Print basic exploratory diagnostics for the training dataset.
+
+    Outputs:
+    - ``DataFrame.info()``
+    - dataset shape
+    - first five rows (``head()``)
+
+    This function is intended for human-readable console diagnostics and is
+    not designed to return structured values.
+
+    Parameters
+    ----------
+    train_df : pandas.DataFrame
+        Training dataset to summarize.
+
+    Returns
+    -------
+    None
+        Prints diagnostics to stdout.
+
+    Examples
+    --------
+    >>> basic_eda_train(train_df)  # doctest: +SKIP
+    === EDA on training data ===
+    DataFrame info():
+    """
     print("\n=== EDA on training data ===")
     print("\nDataFrame info():")
     print(train_df.info())
@@ -93,7 +151,42 @@ def basic_eda_train(train_df: pd.DataFrame) -> None:
 
 
 def eda_after_split(train_df: pd.DataFrame) -> None:
-    """Check class balance and validate target distribution in the training set."""
+    """
+    Validate training-set class balance and check target distribution tolerance.
+
+    This function is intended to be run after a reproducible train/test split.
+    It prints class counts and proportions for the target column
+    ``is_poisonous`` and asserts that the observed proportion of poisonous
+    samples in the training set is within ``EXPECTED_TOL`` of
+    ``EXPECTED_POISONOUS``.
+
+    Parameters
+    ----------
+    train_df : pandas.DataFrame
+        Training dataset containing the target column ``is_poisonous``,
+        where 0 = edible and 1 = poisonous.
+
+    Returns
+    -------
+    None
+        Prints diagnostics to stdout.
+
+    Raises
+    ------
+    KeyError
+        If ``is_poisonous`` is missing from ``train_df``.
+    AssertionError
+        If the training-set poisonous proportion differs from
+        ``EXPECTED_POISONOUS`` by more than ``EXPECTED_TOL``.
+
+    Examples
+    --------
+    >>> eda_after_split(train_df)  # doctest: +SKIP
+    === EDA after data splitting (training set) ===
+    Training set class counts:
+    ...
+    [OK] Training poisonous proportion (...) is close to expected (...).
+    """
     print("\n=== EDA after data splitting (training set) ===")
     counts = train_df["is_poisonous"].value_counts()
     props = train_df["is_poisonous"].value_counts(normalize=True)
@@ -120,7 +213,37 @@ def eda_after_split(train_df: pd.DataFrame) -> None:
 
 
 def save_updated_train_test(train_df: pd.DataFrame, test_df: pd.DataFrame) -> None:
-    """Overwrite mushroom_train/test with any updated columns (e.g., veil_type dropped)."""
+    """
+    Overwrite the persisted train/test CSVs with updated versions.
+
+    This function is used when the EDA step applies agreed-upon, deterministic
+    updates to the pre-split datasets (for example, dropping a non-informative
+    feature like ``veil_type``). The updated datasets are written to the
+    standard pipeline locations in ``data/processed``.
+
+    Parameters
+    ----------
+    train_df : pandas.DataFrame
+        Updated training dataset to write to ``data/processed/mushroom_train.csv``.
+    test_df : pandas.DataFrame
+        Updated test dataset to write to ``data/processed/mushroom_test.csv``.
+
+    Returns
+    -------
+    None
+        Side effect only: writes CSV files to disk.
+
+    Side Effects
+    ------------
+    Writes:
+    - ``PROCESSED_DIR / "mushroom_train.csv"``
+    - ``PROCESSED_DIR / "mushroom_test.csv"``
+
+    Examples
+    --------
+    >>> save_updated_train_test(train_df, test_df)  # doctest: +SKIP
+    Updated mushroom_train.csv and mushroom_test.csv in data/processed/.
+    """
     train_df.to_csv(PROCESSED_DIR / "mushroom_train.csv", index=False)
     test_df.to_csv(PROCESSED_DIR / "mushroom_test.csv", index=False)
     print("\nUpdated mushroom_train.csv and mushroom_test.csv in data/processed/.")
@@ -131,10 +254,45 @@ def stacked_poison_chart(
     feature: str,
     feature_label: str | None = None,
     category_labels: dict[str, str] | None = None,
-):
+):    
     """
-    Create a stacked bar chart (Altair) showing edible vs poisonous fractions
-    for each category of a given feature.
+    Create an Altair stacked horizontal bar chart of class composition by category.
+
+    For a given categorical feature, this function computes the within-category
+    fractions of edible (0) vs poisonous (1) mushrooms (from ``train_df``) and
+    returns a stacked bar chart. Bars are sorted by decreasing poisonous fraction
+    to emphasize categories most associated with toxicity.
+
+    Parameters
+    ----------
+    train_df : pandas.DataFrame
+        Training dataset containing the feature column and the binary target
+        column ``is_poisonous`` (0 = edible, 1 = poisonous).
+    feature : str
+        Name of the categorical feature column to visualize (e.g., ``"odor"``).
+    feature_label : str, optional
+        Human-readable label to use for the y-axis title. If None, a label is
+        derived from ``feature`` (underscores replaced with spaces, title-cased).
+    category_labels : dict[str, str], optional
+        Mapping from raw category codes to display labels (e.g.,
+        ``{"a": "almond", "n": "none"}``). If provided, the mapped values are used
+        for axis labels; unmapped codes fall back to the raw category value.
+
+    Returns
+    -------
+    altair.Chart
+        An Altair chart object. The caller is responsible for displaying or saving it.
+
+    Notes
+    -----
+    - Relies on ``get_poison_rate_by(train_df, feature)`` to compute fractions.
+    - Assumes the target column is named ``is_poisonous`` and encoded as {0, 1}.
+
+    Examples
+    --------
+    >>> odor_map = {"a": "almond", "f": "foul", "n": "none"}
+    >>> chart = stacked_poison_chart(train_df, "odor", "Odor Category", odor_map)
+    >>> chart  # display in notebook/report
     """
     if feature_label is None:
         feature_label = feature.replace("_", " ").title()
@@ -183,8 +341,45 @@ def stacked_poison_chart(
     return chart
 
 
-def save_stacked_charts(train_df: pd.DataFrame) -> None:
-    """Generate and save stacked bar charts for selected features as PNG files."""
+def save_stacked_charts(train_df: pd.DataFrame) -> None:    
+    """
+    Generate and save stacked class-composition charts for selected features.
+
+    This function is a thin orchestration layer around ``stacked_poison_chart``:
+    it defines feature-specific label maps, generates one chart per selected
+    feature using the training data, and saves each chart as a PNG file in
+    ``FIGURES_DIR``.
+
+    Parameters
+    ----------
+    train_df : pandas.DataFrame
+        Training dataset containing the selected feature columns and the binary
+        target column ``is_poisonous`` (0 = edible, 1 = poisonous).
+
+    Returns
+    -------
+    None
+        Side effect only: writes PNG files to disk.
+
+    Side Effects
+    ------------
+    Writes the following files (unless you change the filenames in ``charts``):
+    - ``FIGURES_DIR/stacked_odor.png``
+    - ``FIGURES_DIR/stacked_gill_size.png``
+    - ``FIGURES_DIR/stacked_habitat.png``
+    - ``FIGURES_DIR/stacked_bruises.png``
+    - ``FIGURES_DIR/stacked_population.png``
+
+    Notes
+    -----
+    - Requires that ``FIGURES_DIR`` exists (or that the caller created it).
+    - PNG export depends on the Altair/Vega export configuration available in
+      the runtime environment.
+
+    Examples
+    --------
+    >>> save_stacked_charts(train_df)
+    """
     odor_map = {
         "a": "almond",
         "c": "creosote",
@@ -290,8 +485,42 @@ def compute_and_save_poison_variance_rank(
 
 def compute_and_save_cramers_matrix(train_df: pd.DataFrame) -> None:
     """
-    Compute Cramer's V matrix for all pairwise feature/target combinations
-    and save only the PNG heatmap.
+    Compute pairwise Cramér's V associations and save a heatmap as a PNG.
+
+    This function calculates Cramér's V (a chi-squared–based association measure
+    for categorical variables) for all pairwise combinations of columns in
+    ``train_df`` (including the target column, if present). It then reshapes the
+    resulting square matrix to long format and renders an Altair heatmap,
+    which is saved to ``FIGURES_DIR/cramers_v_heatmap.png``.
+
+    Parameters
+    ----------
+    train_df : pandas.DataFrame
+        Training dataset containing categorical feature columns and typically
+        the binary target column ``is_poisonous``. All columns are treated as
+        categorical for association computation.
+
+    Returns
+    -------
+    None
+        Side effect only: writes a PNG heatmap to disk.
+
+    Side Effects
+    ------------
+    Writes:
+    - ``FIGURES_DIR/cramers_v_heatmap.png``
+
+    Notes
+    -----
+    - Uses ``cramers_v(train_df, f1, f2)`` to compute each pairwise association.
+    - The diagonal of the matrix is set to 1.0 by construction.
+    - PNG export depends on the Altair/Vega export configuration available in
+      the runtime environment (e.g., appropriate renderer/export backend).
+
+    Examples
+    --------
+    >>> compute_and_save_cramers_matrix(train_df)
+    >>> # outputs: results/figures/cramers_v_heatmap.png (assuming FIGURES_DIR is configured)
     """
     cols = list(train_df.columns)
     feature_cols = cols
