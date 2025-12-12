@@ -298,7 +298,7 @@ def cramers_v(df: pd.DataFrame, feature1: str, feature2: str) -> float:
         raise KeyError("Both feature1 and feature2 must be columns in df.")
 
     table = pd.crosstab(df[feature1], df[feature2])
-    chi2, _, _, _ = chi2_contingency(table)
+    chi2, _, _, _ = chi2_contingency(table, correction=False)
     n = table.sum().sum()
     phi2 = chi2 / n
     r, k = table.shape
@@ -359,7 +359,7 @@ def compute_poison_variance_rank(
 
     for col in feature_cols:
         ct = get_poison_rate_by(train_df, col, target_col=target_col)
-        score = ct["poisonous_frac"].var()
+        score = ct["poisonous_frac"].var(ddof=0)  # population variance
         feature_scores.append(
             {
                 "feature": col,
