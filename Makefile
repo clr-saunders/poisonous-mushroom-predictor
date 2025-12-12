@@ -1,5 +1,5 @@
-# Author: Amar Gill
-# Date: Dec-07-2025
+# Authors: Amar Gill
+# Date: Dec-12-2025
 
 .PHONY: all download preprocess eda train report clean
 
@@ -12,15 +12,15 @@ download:
 
 # 2. Split and Preprocess
 preprocess: download
-	python scripts/split_n_preprocess.py --raw-data "data/raw/agaricus-lepiota.data"
+	PYTHONPATH=. python scripts/split_n_preprocess.py --raw-data "data/raw/agaricus-lepiota.data"
 
 # 3. EDA 
 eda: preprocess
-	python scripts/eda.py
+	PYTHONPATH=. python scripts/eda.py
 
 # 4. Model
 train: preprocess
-	python scripts/model.py "data/processed/mushroom_train.csv" "data/processed/mushroom_test.csv"
+	PYTHONPATH=. python scripts/model.py "data/processed/mushroom_train.csv" "data/processed/mushroom_test.csv"
 
 # 5. Render Report
 report: eda train

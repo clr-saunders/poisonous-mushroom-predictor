@@ -1,4 +1,4 @@
-,feature,n_categories,most_frequent_category,most_frequent_count
+#,feature,n_categories,most_frequent_category,most_frequent_count
 1,gill_color,12,b,1202
 2,cap_color,10,n,1567
 3,odor,9,n,2439

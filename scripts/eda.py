@@ -17,10 +17,13 @@ This script assumes pre-split data are available as:
     data/processed/mushroom_test.csv
 with a binary target column `is_poisonous` (0 = edible, 1 = poisonous).
 """
-
-from __future__ import annotations
-
 from pathlib import Path
+import sys
+
+# Ensure repo root is on PYTHONPATH so `import src...` works when running scripts directly
+REPO_ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(REPO_ROOT))
+
 import itertools
 
 import numpy as np
@@ -35,7 +38,6 @@ from src.mushroom_eda_utils import (
     cramers_v,
     compute_poison_variance_rank,
 )
-
 
 # -------------------------------------------------------------------
 # Configuration for reproducibility and paths
@@ -115,61 +117,6 @@ def eda_after_split(train_df: pd.DataFrame) -> None:
         f"\n[OK] Training poisonous proportion ({train_poisonous:.3f}) "
         f"is close to expected ({EXPECTED_POISONOUS:.3f})."
     )
-
-
-# def build_feature_matrices(train_df: pd.DataFrame, test_df: pd.DataFrame):
-#     """Construct X/y matrices from train/test splits."""
-#     X_train = train_df.drop(columns=["is_poisonous"])
-#     y_train = train_df["is_poisonous"]
-
-#     X_test = test_df.drop(columns=["is_poisonous"])
-#     y_test = test_df["is_poisonous"]
-
-#     return X_train, X_test, y_train, y_test
-
-
-# def summarize_features(X_train: pd.DataFrame) -> pd.DataFrame:
-#     """
-#     Summarize categorical feature characteristics:
-#     - number of categories
-#     - most frequent category
-#     - its count
-#     """
-#     summary_rows: list[dict] = []
-#     for col in X_train.columns:
-#         vc = X_train[col].value_counts()
-#         summary_rows.append(
-#             {
-#                 "feature": col,
-#                 "n_categories": vc.shape[0],
-#                 "most_frequent_category": vc.index[0],
-#                 "most_frequent_count": int(vc.iloc[0]),
-#             }
-#         )
-
-#     feature_summary = (
-#         pd.DataFrame(summary_rows)
-#         .sort_values("n_categories", ascending=False)
-#         .reset_index(drop=True)
-#     )
-#     feature_summary.index = feature_summary.index + 1
-#     return feature_summary
-
-
-# def drop_veil_type_if_present(
-#     train_df: pd.DataFrame, test_df: pd.DataFrame
-# ) -> tuple[pd.DataFrame, pd.DataFrame]:
-#     """
-#     Drop 'veil_type' if present (single-category, non-informative feature)
-#     from both train and test dataframes.
-#     """
-#     if "veil_type" in train_df.columns:
-#         train_df = train_df.drop(columns=["veil_type"])
-#         if "veil_type" in test_df.columns:
-#             test_df = test_df.drop(columns=["veil_type"])
-#         print("\nDropped 'veil_type' column from train and test data (single level).")
-#     return train_df, test_df
-
 
 def save_updated_train_test(train_df: pd.DataFrame, test_df: pd.DataFrame) -> None:
     """Overwrite mushroom_train/test with any updated columns (e.g., veil_type dropped)."""

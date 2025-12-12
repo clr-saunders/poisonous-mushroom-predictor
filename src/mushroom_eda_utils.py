@@ -134,6 +134,7 @@ def summarize_features(X_train: pd.DataFrame) -> pd.DataFrame:
         .reset_index(drop=True)
     )
     feature_summary.index = feature_summary.index + 1
+    feature_summary.index.name = "#"
     return feature_summary
 
 
