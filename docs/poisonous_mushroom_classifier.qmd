@@ -62,10 +62,6 @@ mushroom_feature_summary = pd.read_csv("../results/tables/feature_summary.csv")
 odor_strength = mushroom_feature_summary["feature"].iloc[2]
 poison_rank = pd.read_csv("../results/tables/feature_poison_variance_rank.csv")
 poison_rank = poison_rank.rename(columns={poison_rank.columns[0]: "#"})
-with open('../scripts/models/dummy.pkl', 'rb') as f:
-    dc_pipe = pickle.load(f)
-with open('../scripts/models/svc.pkl', 'rb') as f:
-    svc_pipe = pickle.load(f)
 test_scores_df = pd.read_csv("../results/tables/test_scores.csv")
 precision = f"{test_scores_df['precision'].iloc[0]:.2f}"
 recall = f"{test_scores_df['recall'].iloc[0]:.2f}"
