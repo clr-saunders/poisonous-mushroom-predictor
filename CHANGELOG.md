@@ -62,7 +62,7 @@ Feedback addressed:
     - Cramér’s V calculation
     -Feature ranking by poison variance
 
-**Evidence:** Commits [#90353c2](https://github.com/clr-saunders/poisonous-mushroom-classifier/pull/68/commits/90353c251bf2e9c9ab96bc1a8f44d7687ced61d3), [#3380d74}](https://github.com/clr-saunders/poisonous-mushroom-classifier/pull/68/commits/3380d74747675a9c42bcc67dc19fda23a281fb9c) and [#fa93274](https://github.com/clr-saunders/poisonous-mushroom-classifier/pull/68/commits/fa93274b8f07456ce835d1e01d5c1f65b02eeac2)
+**Evidence:** Commits [#90353c2](https://github.com/clr-saunders/poisonous-mushroom-classifier/pull/68/commits/90353c251bf2e9c9ab96bc1a8f44d7687ced61d3), [#3380d74](https://github.com/clr-saunders/poisonous-mushroom-classifier/pull/68/commits/3380d74747675a9c42bcc67dc19fda23a281fb9c) and [#fa93274](https://github.com/clr-saunders/poisonous-mushroom-classifier/pull/68/commits/fa93274b8f07456ce835d1e01d5c1f65b02eeac2)
 - New test file: `tests/test_mushroom_eda_utils.py`
 - All tests pass locally and inside Docker using `python -m pytest -q`
 - Tests include both typical and edge cases (e.g., constant features, perfect association).
