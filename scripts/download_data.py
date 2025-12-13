@@ -1,6 +1,11 @@
 # download_data.py
-# author: Limor Winter
-# date: 2025-12-02
+
+"""
+This module provides functions to download a remote ZIP/CSV,
+validate the HTTP response, and write extracted artifacts to disk with safe
+defaults (no overwrite by default).
+"""
+
 
 import click
 import os
@@ -13,11 +18,36 @@ from src.read_zip import read
 @click.option('--data_path', type=str, help="Path to the data directory")
 
 def main(url, data_path):
-    """Download and extract the UCI Mushroom dataset, then check its format."""
+    """ 
+    Download and extract the UCI Mushroom dataset, then verify its format.
+
+    This function downloads a remote dataset (ZIP or CSV), extracts it to the
+    specified directory using the `read` helper, and checks that at least one
+    file with a valid extension (.csv or .data) exists afterward. If no such
+    file is found, an informative error is raised.
+
+    Parameters
+    ----------
+    url : str
+        HTTP(S) URL pointing to a ZIP archive or a single CSV file.
+    data_path : str
+        Directory where files will be written. Created if it does not exist.
+
+    Returns
+    -------
+    None
+        This function is used for downloading and writing files.
+
+     Raises
+    ------
+    ValueError
+        If the provided URL is invalid (handled internally by `read`).
+    FileNotFoundError
+        If extraction completes but no valid file (.csv or .data) is found in
+        `data_path`.
+"""
+
     read(url, data_path)
-
-
-        
     correct_exts = {".csv",".data"}
     found_file = False
 
@@ -33,12 +63,6 @@ def main(url, data_path):
             f"Extraction failed to produce a file with extensions {sorted(correct_exts)} "
             f"in directory: '{data_path}'"
         )
-
-    # ext = os.path.splitext(data_path)[1].lower()
-    # assert ext in correct_exts, (
-    #     f"[File format] '{data_path}' has extension '{ext}', "
-    #     f"expected one of {sorted(correct_exts)}."
-    # )
 
 if __name__ == '__main__':
     main()
