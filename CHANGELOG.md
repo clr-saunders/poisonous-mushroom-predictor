@@ -44,6 +44,19 @@ Feedback addressed:
 - Cleaned `scripts/eda.py` to contain only executable pipeline logic.
 - Moved reusable EDA logic into `src/mushroom_eda_utils.py`.
 
+**4. Added attribution and corrected link in Code of Conduct**
+
+**Feedback adreesed:**
+>"Include attribution for the Code of Conduct and ensure that the source link is working.”
+
+**What was changed:**
+
+- Added proper attribution to the Contributor Covenant in the Code of Conduct document.
+- Fixed the broken hyperlink to the official version (https://www.contributor-covenant.org/version/3/0/code_of_conduct/).
+- Verified that the rendered link functions correctly in the HTML report and GitHub view.
+
+**Evidence:** Commits [#8b2482f](https://github.com/clr-saunders/poisonous-mushroom-classifier/commit/8b2482fd93c819fd612fe70a61a02b0acc67a950) and [#ba63d79](https://github.com/clr-saunders/poisonous-mushroom-classifier/commit/ba63d79d0e5eeaed9a5a8eddc6f40a1c953c11d7).
+- File: `CODE_OF_CONDUCT.md`
 ---
 
 ### Added
