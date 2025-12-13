@@ -121,6 +121,23 @@ Expanded docstrings in:
 - Docstrings now follow a structured format including Parameters, Returns, Raises, and Examples where relevant.
 - Tests in tests/test_mushroom_eda_utils.py align with documented error handling behavior.
 
+
+**6. Expanded docstring and removed obsolete commented-out code in `download_data.py`**
+
+**Feedback addressed:**
+
+> "The docstrings in some of the script files could be more thorough to aid project review or future users"
+
+**What was changed:**
+
+- Rewrote the `main()` function docstring in `scripts/download_data.py` using a structured NumPy-style format.  
+- Added detailed sections for "Parameters*", "Returns" and "Raises" to improve clarity and testability.  
+- Removed outdated commented out code that was no longer relevant to the final pipeline.  
+
+
+**Evidence:** Commit [#4d85360](https://github.com/clr-saunders/poisonous-mushroom-classifier/commit/4d853600ccd9bebe78d270849971645a9bef0e24)  
+- File: `scripts/download_data.py`
+
 ---
 
 ### Notes
