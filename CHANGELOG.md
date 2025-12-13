@@ -55,8 +55,8 @@ Feedback addressed:
 - Confirmed the heatmap still exports correctly as a PNG to results/figures/.
 
 **Evidence:** Commit [#bb5ac3](https://github.com/clr-saunders/poisonous-mushroom-classifier/pull/75/commits/bb5ac3c32992d214518cc799713cd8b4529d7693)
-- Updated compute_and_save_cramers_matrix() in scripts/eda.py (or src/<file>.py) to use viridis instead of the previous purple/orange scheme.
-- Verified output file results/figures/cramers_v_heatmap.png renders with the updated palette in the Quarto report (docs/poisonous_mushroom_classifier.qmd).
+- Updated `compute_and_save_cramers_matrix()` in `scripts/eda.py` to use `viridis` instead of the previous `purpleorange` scheme.
+- Verified output file `results/figures/cramers_v_heatmap.png` renders with the updated palette in the Quarto report (`docs/poisonous_mushroom_classifier.qmd`).
 
 
 
