@@ -143,3 +143,18 @@ Expanded docstrings in:
 ### Notes
 - All changes were made to improve clarity, robustness, and reproducibility, without altering the analytical conclusions of the project.
 - Some feedback overlapped with TA guidance; in those cases, changes are documented once but address both sources.
+
+
+**7. Expanded Discussion to include more clear and specific mention of future work in `poisonous_mushrooms.qmd`**
+
+**Feedback addressed:**
+
+> "Future work could be suggested in the discussion and reflection section."
+
+**What was changed:**
+
+- Expanded on the discussion to include more details regarding future work and adjusted passive language to be more active and thus draw more attention the future work discussion.
+
+**Evidence** Commit 
+
+- File: `poisonous_mushrooms_classifier.qmd`
