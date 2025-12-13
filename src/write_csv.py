@@ -1,7 +1,10 @@
+# write_csv.py
+# author: Claire Saunders
+# date: 2025-12-10
+# elements of the code below are attributed to Tiffany Timbers, DSCI 522, Milestone 4 Example. 
+
 import os
 import pandas as pd
-
-# elements of the code below are attributed to Tiffany Timbers, DSCI 522, Milestone 4 Example. 
 
 def write_csv(df: pd.DataFrame, directory: str, file: str, index: bool = False):
     """
