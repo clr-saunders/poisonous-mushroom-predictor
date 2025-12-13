@@ -53,9 +53,9 @@ with open('../data/processed/column_names.txt') as f:
     dataset_col_names = [line.strip() for line in f]
 df = pd.read_csv('../data/raw/agaricus-lepiota.data', names=dataset_col_names)
 nrows_raw = df.shape[0]
-train_df = pd.read_csv("../data/processed/mushroom_train.csv", index=False)
+train_df = pd.read_csv("../data/processed/mushroom_train.csv")
 nrows_train_df = train_df.shape[0]
-test_df = pd.read_csv("../data/processed/mushroom_test.csv", index=False)
+test_df = pd.read_csv("../data/processed/mushroom_test.csv")
 nrows_test_df = test_df.shape[0]
 nfeats = test_df.shape[1] - 1
 mushroom_feature_summary = pd.read_csv("../results/tables/feature_summary.csv")
