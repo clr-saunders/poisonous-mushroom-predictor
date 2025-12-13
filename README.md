@@ -89,10 +89,27 @@ python -m pytest -q
 
 ### Run specific test file
 To run a specific test file, provide the path to the file:
+
+- For Download Data tests:
+
+```bash
+python -m pytest tests/test_read_datay.py -q
+```
+- For Write CSC tests:
+
+```bash
+python -m pytest tests/test_write_csv.py -q
+```
+
 - For EDA utilities tests:
 
 ```bash
 python -m pytest tests/test_mushroom_eda_utils.py -q
+```
+- For Make Pipeline tests:
+
+```bash
+python -m pytest tests/test_make_pipeline.py -q
 ```
 
 ## License
