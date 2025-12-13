@@ -93,7 +93,7 @@ To run a specific test file, provide the path to the file:
 - For Download Data tests:
 
 ```bash
-python -m pytest tests/test_read_datay.py -q
+python -m pytest tests/test_read_data.py -q
 ```
 - For Write CSC tests:
 
