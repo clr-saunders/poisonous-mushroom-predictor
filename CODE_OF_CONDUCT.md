@@ -39,6 +39,5 @@ Instances of unacceptable behaviour may be reported by contacting the project te
 ## Attribution
 
 This Code of Conduct is adapted from the [Contributor Covenant 3.0 Code of Conduct](https://www.contributor-covenant.org/version/3/0/code_of_conduct/),  
-version 3.0, available at https://www.contributor-covenant.org/version/3/0/code_of_conduct/. Contributor Covenant is stewarded by the Organization for Ethical Source and licensed under CC BY-SA 4.0. :contentReference[oaicite:0]{index=0}
+version 3.0, available at https://www.contributor-covenant.org/version/3/0/code_of_conduct/. 
 
-For answers to common questions about the Contributor Covenant, see https://www.contributor-covenant.org/faq. :contentReference[oaicite:1]{index=1}
