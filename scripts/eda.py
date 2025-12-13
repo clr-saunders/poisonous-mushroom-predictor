@@ -549,7 +549,7 @@ def compute_and_save_cramers_matrix(train_df: pd.DataFrame) -> None:
             y=alt.Y("feature_2:N", sort=feature_cols, title="Feature 2"),
             color=alt.Color(
                 "cramers_v:Q",
-                scale=alt.Scale(domain=[0, 1], scheme="purpleorange"),
+                scale=alt.Scale(domain=[0, 1], scheme="viridis"),
                 title="Cramer's V",
             ),
         )
